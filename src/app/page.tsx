@@ -162,13 +162,16 @@ export default function Home() {
       {/* Hero Section (contrasting skyscraper/sunset image and dark gradient overlay) */}
       <section className="relative h-[calc(100vh-80px)] md:h-[calc(100vh-96px)] min-h-[550px] flex flex-col items-center justify-center px-6 md:px-12 text-white overflow-hidden -mt-20 sm:-mt-[108px]">
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero_corporate_bg_v2.png"
-            alt="DIGINET Corporate IT Background"
-            fill
-            priority
-            className="object-cover object-center"
-          />
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/images/hero_corporate_bg_v2.png"
+            className="w-full h-full object-cover object-center"
+          >
+            <source src="/images/singapore_skyline.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-slate-950/55 z-10"></div>
         </div>
 
