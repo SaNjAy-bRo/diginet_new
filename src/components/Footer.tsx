@@ -19,7 +19,7 @@ export default function Footer() {
                 alt="DIGINET Logo"
                 width={130}
                 height={36}
-                className="h-9 w-auto object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-all duration-300"
+                className="h-9 w-auto object-contain"
               />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed">
