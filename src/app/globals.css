@@ -16,9 +16,15 @@
 }
 
 :root {
-  font-size: 18px; /* Globally increases all rem-based font sizes by ~2px */
+  font-size: 17px; /* Mobile font size: increased by 1px */
   --background: #ffffff;
   --foreground: #0f172a;
+}
+
+@media (min-width: 768px) {
+  :root {
+    font-size: 18px; /* Tablet & Desktop font size: increased by 2px */
+  }
 }
 
 body {
