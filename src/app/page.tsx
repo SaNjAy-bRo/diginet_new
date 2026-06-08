@@ -5,7 +5,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { 
   ArrowRight, Shield, Monitor, AppWindow, Share2, Megaphone, 
-  ChevronRight, Award, Cpu, Database, Cloud, Network, Activity
+  ChevronRight, Award, Cpu, Database, Cloud, Network, Activity,
+  Smartphone
 } from "lucide-react";
 
 // Served partners for infinite logo carousel with custom inline SVGs (no cards)
@@ -82,6 +83,14 @@ const infinitePartners = [...partners, ...partners, ...partners, ...partners];
 
 const services = [
   {
+    name: "Website Designing",
+    slug: "website-designing",
+    desc: "Create bespoke, ultra-fast web experiences designed with immersive animations and conversion optimization.",
+    icon: Monitor,
+    image: "/images/service_design.png",
+    color: "hover:border-primary/50 hover:shadow-lg bg-white",
+  },
+  {
     name: "Cybersecurity Solutions",
     slug: "cybersecurity",
     desc: "Deploy comprehensive zero-trust architectures, end-to-end vulnerability testing, and unified response protocols.",
@@ -90,11 +99,11 @@ const services = [
     color: "hover:border-primary/50 hover:shadow-lg bg-white",
   },
   {
-    name: "Website Designing",
-    slug: "website-designing",
-    desc: "Create bespoke, ultra-fast web experiences designed with immersive animations and conversion optimization.",
-    icon: Monitor,
-    image: "/images/service_design.png",
+    name: "Mobile Development",
+    slug: "mobile-development",
+    desc: "Develop native and cross-platform mobile apps for iOS and Android with premium performance and offline syncing.",
+    icon: Smartphone,
+    image: "/images/service_mobile.png",
     color: "hover:border-primary/50 hover:shadow-lg bg-white",
   },
   {
@@ -462,7 +471,7 @@ export default function Home() {
                     "Multi-cloud architectures & server clustering",
                     "Point-in-time database replications & sync maps"
                   ].map((item, idx) => (
-                    <li key={idx} className="flex gap-3 items-center text-xs text-slate-700">
+                    <li key={idx} className="flex gap-3 items-center text-sm lg:text-xs text-slate-700">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#00a1e0] shrink-0"></span>
                       <span>{item}</span>
                     </li>
@@ -496,7 +505,7 @@ export default function Home() {
                     "Automated backup pipelines & secure firewalls",
                     "Seamless web platforms & mobile app delivery"
                   ].map((item, idx) => (
-                    <li key={idx} className="flex gap-3 items-center text-xs text-slate-700">
+                    <li key={idx} className="flex gap-3 items-center text-sm lg:text-xs text-slate-700">
                       <span className="w-1.5 h-1.5 rounded-full bg-orange-brand shrink-0"></span>
                       <span>{item}</span>
                     </li>

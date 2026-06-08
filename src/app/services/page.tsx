@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Shield, Monitor, AppWindow, Share2, Megaphone, CheckCircle2, ArrowRight } from "lucide-react";
+import { Shield, Monitor, AppWindow, Share2, Megaphone, CheckCircle2, ArrowRight, Smartphone } from "lucide-react";
 
 const services = [
   {
@@ -30,6 +30,18 @@ const services = [
     ],
   },
   {
+    name: "Mobile Development",
+    slug: "mobile-development",
+    icon: Smartphone,
+    desc: "Design and engineer custom mobile applications for iOS and Android platforms with advanced system integrations and smooth offline operations.",
+    benefits: [
+      "Native iOS (Swift) & Android (Kotlin) Dev",
+      "Cross-Platform Hybrid Frameworks (React Native / Flutter)",
+      "Offline-first Synchronization & Local Cache",
+      "App Store & Google Play Publishing Pipelines",
+    ],
+  },
+  {
     name: "Application Development",
     slug: "application-development",
     icon: AppWindow,
@@ -42,18 +54,6 @@ const services = [
     ],
   },
   {
-    name: "Cybersecurity",
-    slug: "cybersecurity",
-    icon: Shield,
-    desc: "Impenetrable zero-trust corporate protection, security audits, vulnerability monitoring, and custom policy configurations.",
-    benefits: [
-      "Zero-Trust Access Management",
-      "Vulnerability Pen-Testing & Auditing",
-      "Continuous Monitoring Operations",
-      "Data Compliance Alignment (HIPAA/GDPR)",
-    ],
-  },
-  {
     name: "Website Designing",
     slug: "website-designing",
     icon: Monitor,
@@ -63,6 +63,18 @@ const services = [
       "Fast Core Web Vitals Optimization",
       "Immersive Micro-animations",
       "SEO-ready Structural Layouts",
+    ],
+  },
+  {
+    name: "Cybersecurity",
+    slug: "cybersecurity",
+    icon: Shield,
+    desc: "Impenetrable zero-trust corporate protection, security audits, vulnerability monitoring, and custom policy configurations.",
+    benefits: [
+      "Zero-Trust Access Management",
+      "Vulnerability Pen-Testing & Auditing",
+      "Continuous Monitoring Operations",
+      "Data Compliance Alignment (HIPAA/GDPR)",
     ],
   },
 ];

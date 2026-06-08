@@ -125,18 +125,23 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/services/mobile-development" className="text-slate-400 text-sm hover:text-primary transition-colors">
+                  Mobile Development
+                </Link>
+              </li>
+              <li>
                 <Link href="/services/application-development" className="text-slate-400 text-sm hover:text-primary transition-colors">
                   Application Development
                 </Link>
               </li>
               <li>
-                <Link href="/services/cybersecurity" className="text-slate-400 text-sm hover:text-primary transition-colors">
-                  Cybersecurity
+                <Link href="/services/website-designing" className="text-slate-400 text-sm hover:text-primary transition-colors">
+                  Website Designing
                 </Link>
               </li>
               <li>
-                <Link href="/services/website-designing" className="text-slate-400 text-sm hover:text-primary transition-colors">
-                  Website Designing
+                <Link href="/services/cybersecurity" className="text-slate-400 text-sm hover:text-primary transition-colors">
+                  Cybersecurity
                 </Link>
               </li>
             </ul>

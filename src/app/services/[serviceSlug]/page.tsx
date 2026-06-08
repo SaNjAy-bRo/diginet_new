@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { Shield, Monitor, AppWindow, Share2, Megaphone, CheckCircle, ArrowRight, Layers, Compass, Check } from "lucide-react";
+import { Shield, Monitor, AppWindow, Share2, Megaphone, CheckCircle, ArrowRight, Layers, Compass, Check, Smartphone } from "lucide-react";
 import React from "react";
 
 // Static data structure for service details
@@ -51,6 +51,25 @@ const serviceDetails: Record<string, {
       { label: "Audience Engagement Rate", value: "+4.8%" },
       { label: "B2B Lead Acquisition", value: "3.2x" },
       { label: "Total Impressions Generated", value: "12M+" }
+    ]
+  },
+  "mobile-development": {
+    name: "Mobile Development",
+    tagline: "Premium Native iOS & Android Apps & High-Fidelity Cross-Platform Solutions",
+    icon: Smartphone,
+    description: "We design and build top-tier mobile apps that integrate seamlessly with your backend architecture. From swift native coding to cost-effective cross-platform solutions, we deliver responsive, highly performant apps.",
+    features: [
+      { title: "Native Engineering", desc: "Custom Swift and Kotlin applications optimized for OS performance and platform integration." },
+      { title: "Cross-Platform Scaling", desc: "Utilize React Native and Flutter to build single-codebase products without compromising on design." },
+      { title: "Offline-First Sync", desc: "Ensure app functionality remains uninterrupted with local-first databases and queued sync systems." },
+      { title: "App Store Distribution", desc: "Complete handling of certificates, provisioning profiles, store listing optimization, and reviews." }
+    ],
+    techStack: ["Swift / iOS SDK", "Kotlin / Android SDK", "React Native", "Flutter", "SQLite / Realm", "Firebase Suite", "App Store Connect", "Play Console"],
+    workflow: ["UI/UX Mobile Design", "Core Native Development", "Offline Sync Integration", "Store Publishing & Launch"],
+    metrics: [
+      { label: "App Load Time Reduction", value: "-45%" },
+      { label: "Crash-Free Sessions Ratio", value: "99.9%" },
+      { label: "Active Store Downloads", value: "2.4M+" }
     ]
   },
   "application-development": {
@@ -115,6 +134,7 @@ const serviceDetails: Record<string, {
 const serviceImages: Record<string, string> = {
   "cybersecurity": "/images/service_cyber.png",
   "website-designing": "/images/service_design.png",
+  "mobile-development": "/images/service_mobile.png",
   "application-development": "/images/service_appdev.png",
   "digital-marketing": "/images/service_marketing.png",
   "social-media-management": "/images/service_social.png",
@@ -141,6 +161,13 @@ const serviceThemes: Record<string, {
     gradientHero: "from-cyan-950 via-slate-900 to-slate-950",
     themeColor: "cyan",
     pillBorder: "border-cyan-500/20 hover:border-cyan-400/50"
+  },
+  "mobile-development": {
+    accentText: "text-indigo-400",
+    accentBg: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
+    gradientHero: "from-indigo-950 via-slate-900 to-slate-950",
+    themeColor: "indigo",
+    pillBorder: "border-indigo-500/20 hover:border-indigo-400/50"
   },
   "application-development": {
     accentText: "text-purple-400",

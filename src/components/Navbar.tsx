@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Menu, X, ArrowRight, Monitor, Shield, AppWindow, Share2, Megaphone, Phone, Mail } from "lucide-react";
+import { ChevronDown, Menu, X, ArrowRight, Monitor, Shield, AppWindow, Share2, Megaphone, Phone, Mail, Smartphone } from "lucide-react";
 import Image from "next/image";
 
 const services = [
@@ -23,6 +23,13 @@ const services = [
     color: "text-purple-600",
   },
   {
+    name: "Mobile Development",
+    href: "/services/mobile-development",
+    description: "Native iOS & Android apps and cross-platform arrays.",
+    icon: Smartphone,
+    color: "text-indigo-600",
+  },
+  {
     name: "Application Dev",
     href: "/services/application-development",
     description: "Custom, scalable software & mobile apps.",
@@ -30,18 +37,18 @@ const services = [
     color: "text-pink-600",
   },
   {
-    name: "Cybersecurity",
-    href: "/services/cybersecurity",
-    description: "Protecting your corporate digital assets.",
-    icon: Shield,
-    color: "text-emerald-600",
-  },
-  {
     name: "Website Designing",
     href: "/services/website-designing",
     description: "Stunning, fast, and responsive web design.",
     icon: Monitor,
     color: "text-amber-600",
+  },
+  {
+    name: "Cybersecurity",
+    href: "/services/cybersecurity",
+    description: "Protecting your corporate digital assets.",
+    icon: Shield,
+    color: "text-emerald-600",
   },
 ];
 
