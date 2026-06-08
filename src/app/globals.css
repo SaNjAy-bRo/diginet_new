@@ -16,6 +16,7 @@
 }
 
 :root {
+  font-size: 18px; /* Globally increases all rem-based font sizes by ~2px */
   --background: #ffffff;
   --foreground: #0f172a;
 }

@@ -1025,31 +1025,28 @@ export default function Home() {
               </p>
               
               <div className="flex flex-col gap-5 mt-2">
-                <div className="flex gap-4 items-start">
+                <div className="flex gap-4 items-center">
                   <div className="w-8 h-8 rounded-lg bg-orange-brand/10 flex items-center justify-center text-orange-brand shrink-0">
                     <Cloud className="w-4.5 h-4.5" />
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-slate-100">Multi-Cloud Configurations</h4>
-                    <p className="text-xs text-slate-400 mt-0.5">High availability clustering on AWS, GCP, and Azure environments.</p>
                   </div>
                 </div>
-                <div className="flex gap-4 items-start">
+                <div className="flex gap-4 items-center">
                   <div className="w-8 h-8 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400 shrink-0">
                     <Database className="w-4.5 h-4.5" />
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-slate-100">Failover Storage Pools</h4>
-                    <p className="text-xs text-slate-400 mt-0.5">Automated PostgreSQL master-replica synching and point-in-time recovery maps.</p>
                   </div>
                 </div>
-                <div className="flex gap-4 items-start">
+                <div className="flex gap-4 items-center">
                   <div className="w-8 h-8 rounded-lg bg-orange-brand/10 flex items-center justify-center text-orange-brand shrink-0">
                     <Network className="w-4.5 h-4.5" />
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-slate-100">Optimized Edge Network</h4>
-                    <p className="text-xs text-slate-400 mt-0.5">Advanced CDN topologies reducing time-to-first-byte (TTFB) globally.</p>
                   </div>
                 </div>
               </div>
@@ -1066,25 +1063,21 @@ export default function Home() {
                 {[
                   {
                     title: "Corporate Security",
-                    desc: "Deploy zero-trust architectures, unified access privileges, and physical hardware keys to secure every entry point.",
                     stat: "99.99%",
                     statLabel: "Threat Deflection Rate"
                   },
                   {
                     title: "Infrastructure Uptime",
-                    desc: "Leverage automated container orchestration to eliminate single-point downtime risks across regions.",
                     stat: "24/7/365",
                     statLabel: "Active Operations Monitoring"
                   },
                   {
                     title: "Data Integrity",
-                    desc: "Encrypted data layers utilizing AES-256 protocols at-rest and TLS 1.3 systems during active transit.",
                     stat: "100%",
                     statLabel: "Sync Accuracy"
                   },
                   {
                     title: "Compliance Standard",
-                    desc: "Configured to completely satisfy requirements for SOC 2 Type II, HIPAA health data, and GDPR privacy codes.",
                     stat: "SOC 2 / HIPAA",
                     statLabel: "Audited & Certified"
                   }
@@ -1092,7 +1085,6 @@ export default function Home() {
                   <div key={idx} className="p-6 rounded-2xl border border-slate-800 bg-slate-900/40 backdrop-blur-sm flex flex-col justify-between hover:border-slate-700 transition-colors">
                     <div>
                       <h3 className="text-sm font-bold text-white mb-2">{item.title}</h3>
-                      <p className="text-xs text-slate-400 leading-relaxed mb-6">{item.desc}</p>
                     </div>
                     <div className="pt-4 border-t border-slate-800">
                       <p className="text-lg font-black text-orange-brand">{item.stat}</p>
