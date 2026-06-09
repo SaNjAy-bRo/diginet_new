@@ -185,38 +185,20 @@ export default function Home() {
         </div>
 
         <div className="relative z-20 max-w-4xl text-center flex flex-col items-center pt-28 sm:pt-36 pb-4">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-sky-500/30 bg-sky-500/10 text-sky-300 text-xs font-bold mb-6 sm:mb-8 uppercase tracking-widest backdrop-blur-sm shadow-sm"
-          >
-            <Award className="w-3.5 h-3.5 text-orange-brand animate-bounce" /> Enterprise IT Consulting & Growth
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.12] mb-4 sm:mb-6"
+            className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.15] mb-8 sm:mb-10 max-w-4xl mx-auto"
           >
-            Every device managed.<br />
-            Every infrastructure secured.
+            <span className="block mb-2">Complete IT Services.</span>
+            <span className="block text-sky-300">One Trusted Partner.</span>
           </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-2xl text-slate-300 text-base sm:text-lg md:text-xl leading-relaxed mb-8 sm:mb-10"
-          >
-            DIGINET designs, secures, and scales technology systems for high-growth enterprises and corporations worldwide.
-          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 mb-4"
           >
             <Link
@@ -231,7 +213,7 @@ export default function Home() {
               href="/contact"
               className="px-8 py-4 rounded-xl border border-sky-400 bg-sky-500/10 text-sky-200 font-bold hover:bg-sky-500/20 transition-all backdrop-blur-sm"
             >
-              Consult an Engineer
+              Contact us
             </Link>
           </motion.div>
         </div>
@@ -269,7 +251,7 @@ export default function Home() {
           <div>
             <span className="text-xs font-bold uppercase tracking-widest text-sky-400 mb-3 block">OUR COMPANY</span>
             <h2 className="text-3xl md:text-4.5xl font-extrabold leading-tight">
-              DigiNet is your trusted source in IT services and support
+              DigiNet is your trusted support
             </h2>
           </div>
           <p className="text-slate-300 text-sm md:text-base leading-relaxed max-w-xl md:pb-2">
@@ -297,8 +279,7 @@ export default function Home() {
             />
             <div className="absolute inset-0 bg-blue-900/35 mix-blend-multiply transition-colors group-hover:bg-blue-900/25"></div>
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-white p-5 rounded-xl border border-slate-100 shadow-lg text-center transition-all group-hover:-translate-y-1">
-              <span className="text-[10px] font-bold text-[#00a1e0] uppercase tracking-wider block">Our services</span>
-              <h3 className="text-slate-900 font-extrabold text-base sm:text-lg mt-1">How we can help</h3>
+              <h3 className="text-slate-900 font-extrabold text-base sm:text-lg mt-1">See more</h3>
             </div>
           </motion.div>
 
@@ -329,15 +310,15 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="relative rounded-2xl overflow-hidden aspect-[16/11] shadow-2xl group cursor-pointer bg-amber-500"
+            className="relative rounded-2xl overflow-hidden aspect-[16/11] shadow-2xl group cursor-pointer bg-slate-900"
           >
             <Image
-              src="/images/client_success.png"
+              src="/images/client_success_v2.png"
               alt="Client success background"
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-cover transition-transform duration-500 group-hover:scale-105 filter brightness-95"
             />
-            <div className="absolute inset-0 bg-amber-500/10 transition-colors group-hover:bg-amber-500/5"></div>
+            <div className="absolute inset-0 bg-slate-900/15 transition-colors group-hover:bg-slate-900/5"></div>
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-white p-5 rounded-xl border border-slate-100 shadow-lg text-center transition-all group-hover:-translate-y-1">
               <span className="text-[10px] font-bold text-[#00a1e0] uppercase tracking-wider block">Our customers</span>
               <h3 className="text-slate-900 font-extrabold text-base sm:text-lg mt-1">Client success stories</h3>
@@ -561,9 +542,6 @@ export default function Home() {
                   {/* Overlapping White Card */}
                   <div className="relative z-20 mx-4 -mt-10 p-6 rounded-xl bg-white border border-slate-200 shadow-md group-hover:shadow-lg transition-shadow duration-300 flex-grow flex flex-col justify-between">
                     <div>
-                      <span className="text-[10px] font-bold text-[#00a1e0] uppercase tracking-widest flex items-center gap-1.5 mb-2">
-                        <IconComp className="w-3.5 h-3.5" /> Our services
-                      </span>
                       <h3 className="text-base font-bold text-slate-900 mb-2 group-hover:text-[#00a1e0] transition-colors">{svc.name}</h3>
                       <p className="text-xs text-slate-600 leading-relaxed mb-6">{svc.desc}</p>
                     </div>
@@ -572,7 +550,7 @@ export default function Home() {
                       href={`/services/${svc.slug}`}
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-orange-brand transition-colors mt-auto self-start group/link border-b border-transparent hover:border-orange-brand/30 pb-0.5"
                     >
-                      How we can help
+                      See more
                       <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />
                     </Link>
                   </div>
@@ -1117,9 +1095,9 @@ export default function Home() {
             src="/images/cta_bg.png"
             alt="DIGINET Corporate Collaboration CTA Background"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center filter grayscale brightness-90 contrast-125"
           />
-          <div className="absolute inset-0 bg-slate-950/45 z-10"></div>
+          <div className="absolute inset-0 bg-slate-950/60 z-10"></div>
         </div>
         
         <div className="relative z-20 max-w-7xl mx-auto w-full px-6 md:px-12">
