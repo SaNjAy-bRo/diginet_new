@@ -114,19 +114,10 @@ export default function ServiceDetailClient({
               {service.tagline}
             </motion.p>
 
-            <motion.p 
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-slate-350 text-sm md:text-base leading-relaxed max-w-2xl"
-            >
-              {service.description}
-            </motion.p>
-
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-wrap gap-4 mt-2"
             >
               <Link
