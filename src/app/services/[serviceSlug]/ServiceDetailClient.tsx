@@ -817,7 +817,7 @@ export default function ServiceDetailClient({
         return (
           <>
             {/* Custom Section 1: SIEM Security Operations Center & Live Logs */}
-            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
+            <section className="pt-8 md:pt-12 pb-14 md:pb-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
                   
@@ -1008,7 +1008,7 @@ export default function ServiceDetailClient({
         return (
           <>
             {/* Custom Section 1: Figma System Showcase */}
-            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
+            <section className="pt-8 md:pt-12 pb-14 md:pb-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="order-2 lg:order-1 relative rounded-2xl border border-slate-200 shadow-xl overflow-hidden bg-slate-950 p-2">
                   <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-slate-900">
@@ -1016,9 +1016,6 @@ export default function ServiceDetailClient({
                   </div>
                 </div>
                 <div className="order-1 lg:order-2">
-                  <div className="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center shadow-sm border border-cyan-100 mb-6">
-                    <Layers className="w-5 h-5" />
-                  </div>
                   <h2 className="text-3xl font-extrabold text-slate-900 mb-6">
                     Harmonized UI Component Libraries
                   </h2>
@@ -1194,7 +1191,7 @@ export default function ServiceDetailClient({
         return (
           <>
             {/* Custom Section 1: Offline Sync Database explanation */}
-            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
+            <section className="pt-8 md:pt-12 pb-14 md:pb-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
                   
@@ -1386,7 +1383,7 @@ export default function ServiceDetailClient({
         return (
           <>
             {/* Custom Section 1: Kubernetes Cluster Scaling */}
-            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
+            <section className="pt-8 md:pt-12 pb-14 md:pb-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="order-2 lg:order-1 relative rounded-2xl border border-slate-200 shadow-xl overflow-hidden bg-slate-950 p-2">
                   <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-slate-900">
@@ -1394,9 +1391,6 @@ export default function ServiceDetailClient({
                   </div>
                 </div>
                 <div className="order-1 lg:order-2">
-                  <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shadow-sm border border-purple-100 mb-6">
-                    <Server className="w-5 h-5" />
-                  </div>
                   <h2 className="text-3xl font-extrabold text-slate-900 mb-6">
                     High-Availability Cloud Containerization
                   </h2>
@@ -1577,12 +1571,9 @@ export default function ServiceDetailClient({
         return (
           <>
             {/* Custom Section 1: Revenue Acquisition Funnel */}
-            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
+            <section className="pt-8 md:pt-12 pb-14 md:pb-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shadow-sm border border-sky-100 mb-6">
-                    <Compass className="w-5 h-5" />
-                  </div>
                   <h2 className="text-3xl font-extrabold text-slate-900 mb-6">
                     High-Intent Acquisition Funnel Audits
                   </h2>
@@ -1771,7 +1762,7 @@ export default function ServiceDetailClient({
         return (
           <>
             {/* Custom Section 1: Thematic Calendar */}
-            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
+            <section className="pt-8 md:pt-12 pb-14 md:pb-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="order-2 lg:order-1 relative rounded-2xl border border-slate-200 shadow-xl overflow-hidden bg-slate-950 p-2">
                   <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-slate-900">
@@ -1779,9 +1770,6 @@ export default function ServiceDetailClient({
                   </div>
                 </div>
                 <div className="order-1 lg:order-2">
-                  <div className="w-10 h-10 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center shadow-sm border border-violet-100 mb-6">
-                    <BarChart2 className="w-5 h-5" />
-                  </div>
                   <h2 className="text-3xl font-extrabold text-slate-900 mb-6">
                     Structured Editorial Post Calendars
                   </h2>
