@@ -183,22 +183,31 @@ export default function ServiceDetailClient({
     switch (serviceSlug) {
       case "cybersecurity":
         return (
-          <section className={`relative z-10 pt-16 pb-16 px-6 md:px-12 bg-gradient-to-b ${theme.gradientHero} text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 pt-24 sm:pt-28 md:pt-32 pb-14 md:pb-20 px-6 md:px-12 bg-gradient-to-b ${theme.gradientHero} text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="absolute top-1/2 left-2/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-20 blur-3xl pointer-events-none z-0" style={{ background: `radial-gradient(circle, ${theme.glowColor} 0%, transparent 70%)` }} />
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-              <div className="lg:col-span-7 flex flex-col gap-6">
-                <h1 className="text-3xl md:text-5.5xl font-black tracking-tight leading-[1.1] text-white">
+              <div className="lg:col-span-7 flex flex-col gap-4">
+                <div className="flex items-center gap-3">
+                  <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    ZERO-TRUST SECURITY COMPLIANCE
+                  </span>
+                  <div className="h-0.5 w-8 bg-slate-800 rounded-full"></div>
+                </div>
+                <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.2] text-white">
                   Zero-Trust Infrastructure Protection & <span className="text-emerald-400">Vulnerability Isolation</span>
                 </h1>
-                <p className={`text-base md:text-lg font-semibold tracking-wide max-w-xl ${theme.accentText}`}>
+                <p className={`text-base md:text-lg font-semibold tracking-wide ${theme.accentText}`}>
                   Securing active cloud systems, core networks, and database endpoints from malicious access.
+                </p>
+                <p className="text-slate-300 text-sm leading-relaxed max-w-xl">
+                  We implement robust, end-to-end security configurations. Our security engineers configure Wazuh threat monitoring SIEMs, WireGuard encryption networks, and Cloudflare Web Application Firewalls (WAF) to isolate potential vulnerability vectors.
                 </p>
                 <div className="flex flex-wrap gap-4 mt-2">
                   <Link href="/contact" className="px-6 py-3 rounded-xl bg-orange-brand hover:bg-orange-brand-hover text-white font-bold text-sm shadow-lg shadow-orange-brand/20 transition-all flex items-center gap-2">
                     Request Security Audit <ArrowRight className="w-4 h-4" />
                   </Link>
-                  <a href="#capabilities" className="px-6 py-3 rounded-xl border border-slate-800 bg-slate-900/40 text-slate-350 font-bold text-sm hover:bg-slate-900/80 hover:text-white transition-all backdrop-blur-sm">
+                  <a href="#capabilities" className="px-6 py-3 rounded-xl border border-slate-805 bg-slate-900/40 text-slate-350 font-bold text-sm hover:bg-slate-900/80 hover:text-white transition-all backdrop-blur-sm">
                     Technical Specifications
                   </a>
                 </div>
@@ -206,7 +215,7 @@ export default function ServiceDetailClient({
               <div className="lg:col-span-5 relative w-full mt-6 lg:mt-0 max-w-lg lg:max-w-none mx-auto">
                 <motion.div initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="relative w-full aspect-[16/10] rounded-2xl p-2 border border-slate-800/80 bg-slate-900/35 backdrop-blur-sm shadow-2xl overflow-visible group">
                   <div className="absolute -inset-1.5 rounded-[20px] opacity-25 blur-xl z-0" style={{ background: `linear-gradient(135deg, ${theme.glowColor}, transparent)` }} />
-                  <div className="relative w-full h-full rounded-xl overflow-hidden z-10 border border-slate-800">
+                  <div className="relative w-full h-full rounded-xl overflow-hidden z-10 border border-slate-855">
                     <Image src={serviceImg} alt={service.name} fill className="object-cover object-center" priority />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent pointer-events-none" />
                   </div>
@@ -226,7 +235,7 @@ export default function ServiceDetailClient({
 
       case "website-designing":
         return (
-          <section className={`relative z-10 pt-16 pb-16 px-6 md:px-12 bg-gradient-to-br from-cyan-950 via-slate-950 to-slate-900 text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 pt-24 sm:pt-28 md:pt-32 pb-14 md:pb-20 px-6 md:px-12 bg-gradient-to-br from-cyan-950 via-slate-950 to-slate-900 text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full opacity-15 blur-3xl pointer-events-none z-0" style={{ background: `radial-gradient(circle, ${theme.glowColor} 0%, transparent 70%)` }} />
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
@@ -238,12 +247,21 @@ export default function ServiceDetailClient({
                   </div>
                 </motion.div>
               </div>
-              <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col gap-6">
-                <h1 className="text-3xl md:text-5.5xl font-black tracking-tight leading-none text-white">
+              <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col gap-5">
+                <div className="flex items-center gap-3">
+                  <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                    AESTHETIC SPEED ENGINEERING
+                  </span>
+                  <div className="h-0.5 w-8 bg-slate-800 rounded-full"></div>
+                </div>
+                <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.2] text-white">
                   High-Conversion <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-indigo-400">Web Architectures</span>
                 </h1>
                 <p className={`text-base md:text-lg font-bold tracking-wide ${theme.accentText}`}>
                   Custom wireframes, immersive layouts, and Core Web Vitals optimizations.
+                </p>
+                <p className="text-slate-350 text-sm leading-relaxed max-w-xl">
+                  We craft bespoke corporate web systems combining fluid Framer Motion micro-animations, clean type layouts, and optimized script execution. We deliver 99/100 Google PageSpeed scores that increase customer trust and lead conversion ratios.
                 </p>
                 <div className="grid grid-cols-3 gap-4 border-y border-slate-800/60 py-4 max-w-xl">
                   {service.metrics.map((metric, idx) => (
@@ -265,18 +283,24 @@ export default function ServiceDetailClient({
 
       case "mobile-development":
         return (
-          <section className={`relative z-10 pt-16 pb-16 px-6 md:px-12 bg-gradient-to-b from-indigo-950 via-slate-900 to-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 pt-24 sm:pt-28 md:pt-32 pb-14 md:pb-20 px-6 md:px-12 bg-gradient-to-b from-indigo-950 via-slate-900 to-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="absolute top-1/2 left-2/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-15 blur-3xl pointer-events-none z-0" style={{ background: `radial-gradient(circle, ${theme.glowColor} 0%, transparent 70%)` }} />
             
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
               {/* Left Column: Text Content and Metrics */}
-              <div className="lg:col-span-7 flex flex-col gap-6 text-left items-start">
-                <h1 className="text-3xl md:text-5.5xl font-black tracking-tight leading-none text-white">
+              <div className="lg:col-span-7 flex flex-col gap-5 text-left items-start">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/20 bg-indigo-500/10 text-indigo-400 text-xs font-bold uppercase tracking-wider">
+                  <Smartphone className="w-3.5 h-3.5 animate-bounce" /> iOS & Android Engineering
+                </div>
+                <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.2] text-white">
                   Custom Mobile Applications
                 </h1>
                 <p className={`text-base md:text-lg font-semibold ${theme.accentText}`}>
                   {service.tagline}
+                </p>
+                <p className="text-slate-350 text-sm leading-relaxed max-w-xl">
+                  {service.description}
                 </p>
                 
                 <div className="flex flex-wrap gap-4 mt-2">
@@ -352,23 +376,32 @@ export default function ServiceDetailClient({
 
       case "application-development":
         return (
-          <section className={`relative z-10 pt-16 pb-16 px-6 md:px-12 bg-gradient-to-r from-slate-950 via-purple-950 to-slate-900 text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 pt-24 sm:pt-28 md:pt-32 pb-14 md:pb-20 px-6 md:px-12 bg-gradient-to-r from-slate-950 via-purple-950 to-slate-900 text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-15 blur-3xl pointer-events-none z-0" style={{ background: `radial-gradient(circle, ${theme.glowColor} 0%, transparent 70%)` }} />
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-              <div className="lg:col-span-7 flex flex-col gap-6">
-                <h1 className="text-3xl md:text-5.5xl font-black tracking-tight text-white leading-tight">
+              <div className="lg:col-span-7 flex flex-col gap-5">
+                <div className="flex items-center gap-3">
+                  <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                    HIGH-PERFORMANCE CORE SYSTEMS
+                  </span>
+                  <div className="h-0.5 w-8 bg-slate-800 rounded-full"></div>
+                </div>
+                <h1 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-[1.2]">
                   Custom Enterprise Software & <span className="text-purple-400">Cloud Portals</span>
                 </h1>
                 <p className={`text-base md:text-lg font-semibold tracking-wide ${theme.accentText}`}>
                   Cloud-native server architectures, high-concurrency databases, and custom API layers.
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center mt-2">
-                  <div className="md:col-span-12 flex flex-col sm:flex-row gap-4 bg-slate-900/40 p-4 rounded-xl border border-slate-800 backdrop-blur-sm justify-between">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start mt-2">
+                  <div className="md:col-span-7 text-slate-355 text-sm leading-relaxed">
+                    We architect customized web systems, SaaS platforms, and distributed software databases built to handle high concurrent user traffic. Our developers prioritize TypeScript codebases, Docker containerization, and automated CI/CD configurations.
+                  </div>
+                  <div className="md:col-span-5 flex flex-col gap-3.5 bg-slate-900/40 p-4 rounded-xl border border-slate-808/85 backdrop-blur-sm">
                     {service.metrics.map((metric, idx) => (
-                      <div key={idx} className="flex flex-col gap-1 items-start sm:border-r sm:border-slate-800 last:border-0 last:pr-0 pr-6 w-full">
-                        <span className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">{metric.label}</span>
-                        <span className="text-base font-extrabold text-purple-400">{metric.value}</span>
+                      <div key={idx} className="flex justify-between items-center border-b border-slate-850 pb-2 last:border-0 last:pb-0">
+                        <span className="text-[9px] text-slate-455 font-bold uppercase tracking-wider">{metric.label}</span>
+                        <span className="text-sm font-extrabold text-purple-400">{metric.value}</span>
                       </div>
                     ))}
                   </div>
@@ -395,7 +428,7 @@ export default function ServiceDetailClient({
                     <div className="w-12" />
                   </div>
                   <div className="p-1.5 aspect-[4/3] relative w-full overflow-hidden bg-slate-900/40">
-                    <div className="relative w-full h-full rounded-lg overflow-hidden border border-slate-800">
+                    <div className="relative w-full h-full rounded-lg overflow-hidden border border-slate-850">
                       <Image src={serviceImg} alt={service.name} fill className="object-cover object-center" priority />
                     </div>
                   </div>
@@ -407,15 +440,24 @@ export default function ServiceDetailClient({
 
       case "digital-marketing":
         return (
-          <section className={`relative z-10 pt-16 pb-0 bg-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 pt-24 sm:pt-28 md:pt-32 pb-0 bg-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch relative z-10">
-              <div className="lg:col-span-6 flex flex-col gap-6 justify-center pb-12">
-                <h1 className="text-4xl md:text-5.5xl font-black text-white leading-none tracking-tight">
+              <div className="lg:col-span-6 flex flex-col gap-5 justify-center pb-12">
+                <div className="flex items-center gap-3">
+                  <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                    DATA-BACKED REVENUE GROWTH
+                  </span>
+                  <div className="h-0.5 w-8 bg-slate-800 rounded-full"></div>
+                </div>
+                <h1 className="text-4xl md:text-5xl font-black text-white leading-[1.2] tracking-tight">
                   High-Performance <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-blue-500">Growth Funnels</span>
                 </h1>
                 <p className={`text-base md:text-lg font-semibold ${theme.accentText}`}>
                   Search Engine Optimization (SEO) dominance, PPC targeting, and CRM pipeline mapping.
+                </p>
+                <p className="text-slate-400 text-sm leading-relaxed max-w-xl">
+                  We engineer search algorithms and targeted acquisition paths. By deploying customized keyword content structures, high-intent landing layouts, and telemetry data audits, we maximize user signups and sales conversions.
                 </p>
                 <div className="flex flex-wrap gap-4 mt-2">
                   <Link href="/contact" className="px-6 py-3 rounded-xl bg-orange-brand hover:bg-orange-brand-hover text-white font-bold text-sm shadow-lg shadow-orange-brand/20 transition-all flex items-center gap-2">
@@ -450,16 +492,25 @@ export default function ServiceDetailClient({
 
       case "social-media-management":
         return (
-          <section className={`relative z-10 pt-16 pb-16 px-6 md:px-12 bg-gradient-to-b from-violet-950 via-slate-900 to-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 pt-24 sm:pt-28 md:pt-32 pb-14 md:pb-20 px-6 md:px-12 bg-gradient-to-b from-violet-950 via-slate-900 to-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="absolute top-1/3 left-2/3 -translate-x-1/2 w-[550px] h-[550px] rounded-full opacity-15 blur-3xl pointer-events-none z-0" style={{ background: `radial-gradient(circle, ${theme.glowColor} 0%, transparent 70%)` }} />
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-              <div className="lg:col-span-7 flex flex-col gap-6">
-                <h1 className="text-3xl md:text-5.5xl font-black tracking-tight leading-[1.1] text-white">
+              <div className="lg:col-span-7 flex flex-col gap-5">
+                <div className="flex items-center gap-3">
+                  <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-violet-500/10 text-violet-400 border border-violet-500/20">
+                    B2B Thought Leadership & Brand Equity
+                  </span>
+                  <div className="h-0.5 w-8 bg-slate-800 rounded-full"></div>
+                </div>
+                <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.2] text-white">
                   Organic Acquisition & <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-pink-400 to-orange-400">Social Moderation</span>
                 </h1>
                 <p className={`text-base md:text-lg font-bold ${theme.accentText}`}>
                   Thematic calendars, influencer integrations, and real-time social content pipelines.
+                </p>
+                <p className="text-slate-350 text-sm leading-relaxed max-w-xl">
+                  We construct brand kits, draft editorial post plans, and manage profile engagement curves across LinkedIn, X, Meta, and video portals. We connect social traffic vectors to target lead acquisition pipelines.
                 </p>
                 <div className="flex flex-wrap gap-4 mt-2">
                   <Link href="/contact" className="px-6 py-3 rounded-xl bg-orange-brand hover:bg-orange-brand-hover text-white font-bold text-sm shadow-lg shadow-orange-brand/20 transition-all flex items-center gap-2">
@@ -473,7 +524,7 @@ export default function ServiceDetailClient({
                 <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="relative w-[280px] sm:w-[320px] aspect-square rounded-full border border-violet-500/30 p-2.5 bg-slate-900/35 backdrop-blur-sm shadow-2xl z-10 flex items-center justify-center overflow-visible">
                   <div className="relative w-full h-full rounded-full overflow-hidden border border-slate-800">
                     <Image src={serviceImg} alt={service.name} fill className="object-cover object-center" priority />
-                    <div className="absolute inset-0 bg-gradient-to-tr from-violet-900/40 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-violet-950/40 via-transparent to-transparent pointer-events-none" />
                   </div>
 
                   {service.metrics[0] && (
