@@ -420,7 +420,7 @@ export default function ServiceDetailClient({
     switch (serviceSlug) {
       case "cybersecurity":
         return (
-          <section className={`relative z-10 pt-10 sm:pt-12 md:pt-14 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-b ${theme.gradientHero} text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 -mt-20 sm:-mt-[108px] pt-28 sm:pt-32 md:pt-36 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-b ${theme.gradientHero} text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="absolute top-1/2 left-2/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-20 blur-3xl pointer-events-none z-0" style={{ background: `radial-gradient(circle, ${theme.glowColor} 0%, transparent 70%)` }} />
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">
@@ -472,7 +472,7 @@ export default function ServiceDetailClient({
 
       case "website-designing":
         return (
-          <section className={`relative z-10 pt-10 sm:pt-12 md:pt-14 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-br from-cyan-950 via-slate-950 to-slate-900 text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 -mt-20 sm:-mt-[108px] pt-28 sm:pt-32 md:pt-36 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-br from-cyan-950 via-slate-950 to-slate-900 text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full opacity-15 blur-3xl pointer-events-none z-0" style={{ background: `radial-gradient(circle, ${theme.glowColor} 0%, transparent 70%)` }} />
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">
@@ -520,7 +520,7 @@ export default function ServiceDetailClient({
 
       case "mobile-development":
         return (
-          <section className={`relative z-10 pt-10 sm:pt-12 md:pt-14 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-b from-indigo-950 via-slate-900 to-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 -mt-20 sm:-mt-[108px] pt-28 sm:pt-32 md:pt-36 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-b from-indigo-950 via-slate-900 to-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="absolute top-1/2 left-2/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-15 blur-3xl pointer-events-none z-0" style={{ background: `radial-gradient(circle, ${theme.glowColor} 0%, transparent 70%)` }} />
             
@@ -613,7 +613,7 @@ export default function ServiceDetailClient({
 
       case "application-development":
         return (
-          <section className={`relative z-10 pt-10 sm:pt-12 md:pt-14 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-r from-slate-950 via-purple-950 to-slate-900 text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 -mt-20 sm:-mt-[108px] pt-28 sm:pt-32 md:pt-36 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-r from-slate-950 via-purple-950 to-slate-900 text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-15 blur-3xl pointer-events-none z-0" style={{ background: `radial-gradient(circle, ${theme.glowColor} 0%, transparent 70%)` }} />
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">
@@ -677,7 +677,7 @@ export default function ServiceDetailClient({
 
       case "digital-marketing":
         return (
-          <section className={`relative z-10 pt-10 sm:pt-12 md:pt-14 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-b ${theme.gradientHero} text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 -mt-20 sm:-mt-[108px] pt-28 sm:pt-32 md:pt-36 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-b ${theme.gradientHero} text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">
               <div className="lg:col-span-7 flex flex-col gap-5 justify-center pb-4 lg:pb-0">
@@ -729,7 +729,7 @@ export default function ServiceDetailClient({
 
       case "social-media-management":
         return (
-          <section className={`relative z-10 pt-10 sm:pt-12 md:pt-14 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-b from-violet-950 via-slate-900 to-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 -mt-20 sm:-mt-[108px] pt-28 sm:pt-32 md:pt-36 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-b from-violet-950 via-slate-900 to-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="absolute top-1/3 left-2/3 -translate-x-1/2 w-[550px] h-[550px] rounded-full opacity-15 blur-3xl pointer-events-none z-0" style={{ background: `radial-gradient(circle, ${theme.glowColor} 0%, transparent 70%)` }} />
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">

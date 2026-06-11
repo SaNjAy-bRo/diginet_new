@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -55,10 +55,55 @@ const services = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const isDarkHeroPage = pathname === "/" || pathname.startsWith("/services/");
+
+  const getLinkClass = (path: string) => {
+    const isActive = pathname === path;
+    const base = "text-sm font-semibold transition-all duration-200";
+    
+    if (isScrolled || isOpen) {
+      return `${base} hover:text-primary ${isActive ? "text-primary font-bold" : "text-slate-600"}`;
+    }
+    
+    if (isDarkHeroPage) {
+      return `${base} hover:text-white ${isActive ? "text-white font-bold" : "text-white/80"}`;
+    }
+    
+    return `${base} hover:text-primary ${isActive ? "text-primary font-bold" : "text-slate-600"}`;
+  };
+
+  const getDropdownClass = () => {
+    const isActive = pathname.startsWith("/services");
+    const base = "flex items-center gap-1 text-sm font-semibold transition-all duration-200 cursor-pointer";
+    
+    if (isScrolled || isOpen) {
+      return `${base} hover:text-primary ${isActive ? "text-primary font-bold" : "text-slate-600"}`;
+    }
+    
+    if (isDarkHeroPage) {
+      return `${base} hover:text-white ${isActive ? "text-white font-bold" : "text-white/80"}`;
+    }
+    
+    return `${base} hover:text-primary ${isActive ? "text-primary font-bold" : "text-slate-600"}`;
+  };
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       {/* Top Bar (Contacts & Socials) */}
       <div className="bg-slate-900 text-slate-300 text-[11px] sm:text-xs py-2 px-4 sm:px-6 md:px-12 flex justify-between items-center border-b border-slate-800">
         <div className="flex gap-3 sm:gap-6 items-center">
@@ -112,7 +157,11 @@ export default function Navbar() {
       </div>
 
       {/* Main Navbar */}
-      <div className="bg-white/90 backdrop-blur-md border-b border-slate-200/80 py-4">
+      <div className={`transition-all duration-300 py-4 ${
+        (isScrolled || isOpen)
+          ? "bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm" 
+          : "bg-transparent border-b border-transparent"
+      }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
@@ -121,7 +170,9 @@ export default function Navbar() {
               alt="DIGINET Logo"
               width={130}
               height={36}
-              className="h-9 w-auto object-contain"
+              className={`h-9 w-auto object-contain transition-all duration-300 ${
+                (!isScrolled && !isOpen && isDarkHeroPage) ? "brightness-0 invert" : ""
+              }`}
               priority
             />
           </Link>
@@ -130,17 +181,13 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center gap-8">
             <Link
               href="/"
-              className={`text-sm font-semibold transition-colors hover:text-primary ${
-                pathname === "/" ? "text-primary" : "text-slate-600"
-              }`}
+              className={getLinkClass("/")}
             >
               Home
             </Link>
             <Link
               href="/about"
-              className={`text-sm font-semibold transition-colors hover:text-primary ${
-                pathname === "/about" ? "text-primary" : "text-slate-600"
-              }`}
+              className={getLinkClass("/about")}
             >
               About
             </Link>
@@ -151,11 +198,7 @@ export default function Navbar() {
               onMouseEnter={() => setDropdownOpen(true)}
               onMouseLeave={() => setDropdownOpen(false)}
             >
-              <button
-                className={`flex items-center gap-1 text-sm font-semibold transition-colors hover:text-primary cursor-pointer ${
-                  pathname.startsWith("/services") ? "text-primary" : "text-slate-600"
-                }`}
-              >
+              <button className={getDropdownClass()}>
                 Services
                 <ChevronDown className="w-4 h-4" />
               </button>
@@ -199,9 +242,7 @@ export default function Navbar() {
 
             <Link
               href="/contact"
-              className={`text-sm font-semibold transition-colors hover:text-primary ${
-                pathname === "/contact" ? "text-primary" : "text-slate-600"
-              }`}
+              className={getLinkClass("/contact")}
             >
               Contact
             </Link>
@@ -220,7 +261,13 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 transition-all"
+            className={`md:hidden p-2 rounded-lg border transition-all duration-200 ${
+              (isScrolled || isOpen)
+                ? "border-slate-200 text-slate-700 hover:bg-slate-50" 
+                : isDarkHeroPage 
+                  ? "border-white/20 text-white hover:bg-white/10" 
+                  : "border-slate-200 text-slate-700 hover:bg-slate-50"
+            }`}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
