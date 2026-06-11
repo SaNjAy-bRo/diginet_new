@@ -440,7 +440,7 @@ export default function ServiceDetailClient({
 
       case "digital-marketing":
         return (
-          <section className={`relative z-10 pt-14 sm:pt-20 md:pt-32 pb-0 px-6 md:px-12 bg-slate-955 text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 pt-14 sm:pt-20 md:pt-32 pb-0 px-6 md:px-12 bg-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-stretch relative z-10">
               <div className="lg:col-span-6 flex flex-col gap-5 justify-center pb-12">
