@@ -31,7 +31,7 @@ export default function About() {
   return (
     <div className="relative min-h-screen bg-white">
       {/* Header Banner (Light) */}
-      <section className="relative z-10 py-20 px-6 md:px-12 text-center max-w-4xl mx-auto">
+      <section className="relative z-10 pt-10 md:pt-14 pb-12 px-6 md:px-12 text-center max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

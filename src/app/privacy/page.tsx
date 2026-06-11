@@ -5,11 +5,11 @@ import { Shield } from "lucide-react";
 
 export default function Privacy() {
   return (
-    <div className="relative min-h-screen pt-16">
+    <div className="relative min-h-screen pt-4">
       {/* Background patterns */}
       <div className="absolute inset-0 tech-grid opacity-[0.08] pointer-events-none z-0"></div>
       
-      <div className="max-w-4xl mx-auto px-6 py-20 relative z-10">
+      <div className="max-w-4xl mx-auto px-6 pt-10 md:pt-14 pb-20 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}

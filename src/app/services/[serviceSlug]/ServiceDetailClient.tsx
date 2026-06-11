@@ -22,6 +22,15 @@ const serviceIcons: Record<string, React.ComponentType<{ className?: string }>> 
   "website-designing": Monitor,
 };
 
+const ctaBgImages: Record<string, string> = {
+  "cybersecurity": "/images/cta_cyber.png",
+  "website-designing": "/images/cta_webdesign.png",
+  "mobile-development": "/images/cta_mobile.png",
+  "application-development": "/images/cta_appdev.png",
+  "digital-marketing": "/images/cta_marketing.png",
+  "social-media-management": "/images/cta_social.png",
+};
+
 const serviceFaqs: Record<string, { q: string; a: string }[]> = {
   "cybersecurity": [
     {
@@ -155,6 +164,234 @@ interface ServiceDetailClientProps {
   serviceImg: string;
 }
 
+function getTechIcon(tech: string) {
+  const normalized = tech.toLowerCase();
+  
+  // Mobile Development
+  if (normalized.includes("swift")) {
+    return (
+      <svg className="w-5 h-5" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M211.5 174C175 225 111.5 240 68 214.5C65.5 213 83.5 208.5 98.5 198C60 196.5 26.5 174 15 137C12.5 129 18 130 25 130C-5 113.5 -21.5 77.5 -9 45.5C-8 43 -5.5 45.5 -3 47.5C-12 18.5 7.5 5 7.5 5C7.5 5 6 17 14 28C15 29.5 13.5 28.5 12.5 27C34 5.5 67 0.5 89 12C68 15 52.5 26.5 45 42C79.5 35 116 54 133 86.5C133 86.5 146.5 71.5 167 65.5C152 79 146.5 95 146.5 95C175 106.5 196.5 131 211.5 174Z" fill="#F05138"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("kotlin")) {
+    return (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 24H0V0H24L12 12L24 24Z" fill="url(#kotlin-grad)"/>
+        <defs>
+          <linearGradient id="kotlin-grad" x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stopColor="#E44857"/>
+            <stop offset="0.468" stopColor="#C10ECA"/>
+            <stop offset="1" stopColor="#00E4FF"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    );
+  }
+  if (normalized.includes("react")) {
+    return (
+      <svg className="w-5 h-5 text-[#61DAFB]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 8.7C8.4 8.7 5.5 9.7 5.5 11C5.5 12.3 8.4 13.3 12 13.3C15.6 13.3 18.5 12.3 18.5 11C18.5 9.7 15.6 8.7 12 8.7ZM12 12.3C11.3 12.3 10.7 11.7 10.7 11C10.7 10.3 11.3 9.7 12 9.7C12.7 9.7 13.3 10.3 13.3 11C13.3 11.7 12.7 12.3 12 12.3Z" fill="currentColor"/>
+        <ellipse cx="12" cy="11" rx="9" ry="3.5" transform="rotate(30 12 11)" stroke="currentColor" strokeWidth="1.5" />
+        <ellipse cx="12" cy="11" rx="9" ry="3.5" transform="rotate(90 12 11)" stroke="currentColor" strokeWidth="1.5" />
+        <ellipse cx="12" cy="11" rx="9" ry="3.5" transform="rotate(150 12 11)" stroke="currentColor" strokeWidth="1.5" />
+      </svg>
+    );
+  }
+  if (normalized.includes("flutter")) {
+    return (
+      <svg className="w-5 h-5 text-[#02569B]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.3 0L5.5 8.8L14.3 17.6H21.5L12.7 8.8L21.5 0H14.3ZM14.3 12L8.7 17.6L14.3 23.2H21.5L15.9 17.6L21.5 12H14.3Z" fill="currentColor"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("firebase")) {
+    return (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.9 18.2L11 3.5C11.2 3.1 11.8 3.1 12 3.5L14.4 7.6L3.9 18.2Z" fill="#FFA000"/>
+        <path d="M20.2 14.9L18.1 10.6C17.9 10.2 17.3 10.2 17.1 10.6L15.2 14.2L20.2 14.9Z" fill="#F57C00"/>
+        <path d="M3.9 18.2L12 21.5C12.3 21.6 12.7 21.6 13 21.5L20.2 14.9L3.9 18.2Z" fill="#FFCA28"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("apple") || normalized.includes("app store")) {
+    return (
+      <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.82M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.2.67-2.92 1.51-.63.73-1.18 1.87-1.03 2.98 1.11.09 2.26-.59 2.96-1.43z"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("google") || normalized.includes("play console") || normalized.includes("ads") || normalized.includes("analytics")) {
+    return (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22c-.87-2.6-2.86-4.53-6.16-4.53z" fill="#FBBC05"/>
+        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("sqlite") || normalized.includes("database") || normalized.includes("sql") || normalized.includes("postgres") || normalized.includes("redis") || normalized.includes("realm")) {
+    return (
+      <svg className="w-5 h-5 text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="12" cy="5" rx="9" ry="3" />
+        <path d="M3 5v6c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+        <path d="M3 11v6c0 1.66 4 3 9 3s9-1.34 9-3v-6" />
+      </svg>
+    );
+  }
+
+  // Application Development
+  if (normalized.includes("typescript") || normalized.includes("node") || normalized.includes("nest")) {
+    return (
+      <svg className="w-5 h-5 text-[#3178C6]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.5 1.5h21v21h-21zM20 18.25V9h-3.25v9.25zm-6-2.5h-2.5V9H8.25v6.75h3.25z"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("aws") || normalized.includes("amazon")) {
+    return (
+      <svg className="w-5 h-5 text-[#FF9900]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.3 13.9c-.3.2-.6.4-.9.6-.3.2-.7.3-1.1.4-.4.1-.8.1-1.2.1s-.8 0-1.1-.1c-.4-.1-.7-.2-.9-.4-.3-.2-.5-.4-.6-.7-.1-.3-.2-.6-.2-1s.1-.8.2-1.1c.1-.3.4-.6.6-.8.3-.2.7-.4 1.1-.5.4-.1.9-.2 1.5-.2h1.2v-.4c0-.4-.1-.7-.3-.9-.2-.2-.6-.3-1.1-.3s-.9.1-1.2.3c-.3.2-.5.4-.5.8H8.5c0-.6.2-1.1.5-1.5.3-.4.8-.7 1.4-.9.6-.2 1.4-.3 2.2-.3s1.5.1 2 .3c.5.2.9.5 1.2.9.3.4.4.9.4 1.6v3.2c0 .5.1.8.2.9s.3.2.5.2c.1 0 .2 0 .3-.1v1c-.3.1-.6.1-.9.1-.5 0-.9-.1-1.1-.4zm-2.1-3.3h-1c-.4 0-.7.1-.9.2-.2.1-.4.2-.5.4-.1.2-.2.4-.2.7 0 .3.1.5.2.6.1.1.3.2.6.2.3 0 .6-.1.8-.2.2-.1.4-.3.5-.5.1-.2.2-.5.2-.8v-.2z"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("docker")) {
+    return (
+      <svg className="w-5 h-5 text-[#2496ED]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.983 8.877h2.273v-2.21h-2.273v2.21zm-.24 3.705H16.27v-2.21h-2.528v2.21zm-2.525-3.705h2.257v-2.21H11.22v2.21zM5.84 12.582H8.11v-2.21H5.84v2.21zm-2.766 0h2.273v-2.21H3.074v2.21zm5.84-3.705H11.19v-2.21H8.914v2.21zm-2.766 0h2.273v-2.21H6.148v2.21zm-3.074 0H5.35v-2.21H3.074v2.21zM24 13.079c-.062-.05-.382-.258-.97-.258a2.51 2.51 0 0 0-1.202.274 2.82 2.82 0 0 0-1.195-1.656 5.827 5.827 0 0 0-.583-.34 8.01 8.01 0 0 0-.258-.088 1.134 1.134 0 0 0-.208-.036 1.096 1.096 0 0 0-.181.005c-.062 0-.206.015-.356.08a.723.723 0 0 0-.232.17.653.653 0 0 0-.124.22c-.062.206-.062.624-.03 1.037.03.413.123.826.216 1.033.093.206.186.206.28.206.092 0 .185 0 .278-.02a.842.842 0 0 0 .15-.052 2.885 2.885 0 0 0 .288-.135 2.224 2.224 0 0 1 .71-.248 1.94 1.94 0 0 1 .84.1c.367.147.531.545.542.923.01.378-.134.78-.495.96a4.83 4.83 0 0 1-2.186.536c-5.108 0-9.248-4.097-9.248-9.156 0-.547.047-1.089.14-1.616L0 12.003c.093 3.654 3.01 6.594 6.605 6.594 5.923 0 10.722-4.758 10.722-10.627a10.437 10.437 0 0 0-.072-1.22c.28.163.6.28.934.33a3.528 3.528 0 0 0 1.258-.052 3.19 3.19 0 0 0 1.166-.46c.552-.377.728-.996.79-1.548a3.14 3.14 0 0 0-.077-.929z"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("kubernetes")) {
+    return (
+      <svg className="w-5 h-5 text-[#326CE5]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.44 0a1 1 0 0 0-.88 0L3.11 4.86a1 1 0 0 0-.55.88v9.52a1 1 0 0 0 .55.88l8.45 4.86a1 1 0 0 0 .88 0l8.45-4.86a1 1 0 0 0 .55-.88V5.74a1 1 0 0 0-.55-.88zm-.44 2.3L19.26 6.3l-2.4 1.38L12 5.07zm-7.26 4L12 2.3v5.52L7.14 9.18zm0 2.28L12 7.2v5.52l-4.86 2.8zm0 5.1L12 11.28v7.2L4.74 13.68zm9.66.72L12 18.48v-7.2l7.26 2.4z"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("github")) {
+    return (
+      <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("graphql")) {
+    return (
+      <svg className="w-5 h-5 text-[#E10098]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15.9c-.3.2-.6.4-.9.6-.3.2-.7.3-1.1.4-.4.1-.8.1-1.2.1s-.8 0-1.1-.1c-.4-.1-.7-.2-.9-.4-.3-.2-.5-.4-.6-.7-.1-.3-.2-.6-.2-1s.1-.8.2-1.1c.1-.3.4-.6.6-.8.3-.2.7-.4 1.1-.5.4-.1.9-.2 1.5-.2h1.2v-.4c0-.4-.1-.7-.3-.9-.2-.2-.6-.3-1.1-.3s-.9.1-1.2.3c-.3.2-.5.4-.5.8H8.5c0-.6.2-1.1.5-1.5.3-.4.8-.7 1.4-.9.6-.2 1.4-.3 2.2-.3s1.5.1 2 .3c.5.2.9.5 1.2.9.3.4.4.9.4 1.6v3.2c0 .5.1.8.2.9s.3.2.5.2c.1 0 .2 0 .3-.1v1c-.3.1-.6.1-.9.1-.5 0-.9-.1-1.1-.4zm-2.1-3.3h-1c-.4 0-.7.1-.9.2-.2.1-.4.2-.5.4-.1.2-.2.4-.2.7 0 .3.1.5.2.6.1.1.3.2.6.2.3 0 .6-.1.8-.2.2-.1.4-.3.5-.5.1-.2.2-.5.2-.8v-.2z"/>
+      </svg>
+    );
+  }
+
+  // Website Designing
+  if (normalized.includes("figma")) {
+    return (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C9.2 2 7 4.2 7 7c0 2.2 1.4 4.1 3.4 4.8C9 12.3 7 14.5 7 17c0 2.8 2.2 5 5 5s5-2.2 5-5c0-2.5-2-4.7-4.4-5.2C14.6 11.1 16 9.2 16 7c0-2.8-2.2-5-5-5zm0 2c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.3-3 3-3zm0 10c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.3-3 3-3z" fill="#F24E1E"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("framer")) {
+    return (
+      <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0h12v12H0V0zm0 12h12v12L0 12zm12 0h12V0L12 12z"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("tailwind")) {
+    return (
+      <svg className="w-5 h-5 text-[#38BDF8]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 6.086C17.79 6.086 21.6 12 21.6 12s-3.81 5.914-9.6 5.914C6.21 17.914 2.4 12 2.4 12s3.81-5.914 9.6-5.914M12 4.086C5.07 4.086 0 12 0 12s5.07 7.914 12 7.914S24 12 24 12s-5.07-7.914-12-7.914"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("next")) {
+    return (
+      <svg className="w-5 h-5 text-white bg-black rounded-full p-0.5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.6 15.3l-5.6-7.8h-1.6v8.9h1.4v-6.9l5.1 7.2c.4-.4.8-1 1-1.4M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm3.3 14.8l-7.7-10.8v10.8H6.2V6.2h1.6l7.7 10.8v-10.8h1.4v10.6z"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("vercel")) {
+    return (
+      <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 22.525H0L12 1.475L24 22.525Z"/>
+      </svg>
+    );
+  }
+
+  // Cybersecurity
+  if (normalized.includes("cloudflare")) {
+    return (
+      <svg className="w-5 h-5 text-[#F38020]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.03 6.06c-3.32 0-6 2.68-6 6a6 6 0 0 0 .18 1.46c-2.14.73-3.68 2.76-3.68 5.15c0 3 2.45 5.43 5.47 5.43h11c2.75 0 5-2.25 5-5a5 5 0 0 0-3.65-4.81c.03-.2.05-.4.05-.62a6.38 6.38 0 0 0-6.37-6.37c-.7 0-1.37.12-2 .32a6 6 0 0 0-4-.83m0 2c1.78 0 3.32 1.05 4.07 2.57c.25-.09.5-.14.76-.14c2.42 0 4.38 1.96 4.38 4.38c0 .24-.03.48-.07.72c1.37.58 2.33 1.95 2.33 3.52c0 2.15-1.75 3.9-3.9 3.9h-11c-2.15 0-3.9-1.75-3.9-3.9c0-1.63 1-3.04 2.45-3.62c-.1-.31-.15-.65-.15-.99c0-3.32 2.68-6 6-6"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("wireguard")) {
+    return (
+      <svg className="w-5 h-5 text-[#88171A]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 1L2 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5L12 1zm0 2.18l7 2.8v5.02c0 4.43-2.94 8.58-7 9.8-4.06-1.22-7-5.37-7-9.8V5.98l7-2.8z"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("wireshark")) {
+    return (
+      <svg className="w-5 h-5 text-[#1679A7]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5.67 1.5 1.5 1.5 1.5-.67 1.5-1.5zm-1.5-4c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1s1.45 1 1 1v3.5c0 .55-.45 1-1 1z"/>
+      </svg>
+    );
+  }
+
+  // Social Media / Digital Marketing
+  if (normalized.includes("hubspot")) {
+    return (
+      <svg className="w-5 h-5 text-[#FF7A59]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 11.5c0-3.32-2.18-6.13-5.18-7.15c.1-.4.18-.82.18-1.25C17 1.62 15.38 0 13.5 0S10 1.62 10 3.1c0 .43.08.85.18 1.25C7.18 5.37 5 8.18 5 11.5c0 2.21.97 4.19 2.5 5.56v3.84c0 .6.49 1.1 1.1 1.1h5.8c.6 0 1.1-.5 1.1-1.1v-3.84c1.53-1.37 2.5-3.35 2.5-5.56m-8.5-9c0-.44.36-.8.8-.8s.8.36.8.8c0 .44-.36.8-.8.8s-.8-.36-.8-.8m.8 19.3h-1.6v-3.3h1.6v3.3m0-4.9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5s1.5.67 1.5 1.5s-.67 1.5-1.5 1.5m3.7-5.4c-.2.2-.5.2-.7 0l-.8-.8c-.2-.2-.2-.5 0-.7c.8-.8.8-2.1 0-2.9c-.2-.2-.2-.5 0-.7l.8-.8c.2-.2.5-.2.7 0c1.6 1.6 1.6 4.3 0 5.9"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("meta") || normalized.includes("facebook")) {
+    return (
+      <svg className="w-5 h-5 text-[#0668E1]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.05 18c-2.45 0-4.61-1.25-5.83-3.15C5 13 4 10.65 4.05 8c.03-1.63.7-3.17 1.83-4.32C7.1 2.53 8.78 2 10.5 2c1.7 0 3.3.52 4.54 1.48C16.28 4.44 17 5.8 17.03 7.3c.03 1.5-.51 2.95-1.53 4.07C14.28 12.7 12.7 13.2 11 13.2c-1.7 0-3.3-.52-4.54-1.48C5.22 10.76 4.5 9.4 4.47 7.9c-.03-1.5.51-2.95 1.53-4.07C7.22 2.5 8.8 2 10.5 2c1.7 0 3.3.52 4.54 1.48C16.28 4.44 17 5.8 17.03 7.3"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("linkedin")) {
+    return (
+      <svg className="w-5 h-5 text-[#0A66C2]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("trello")) {
+    return (
+      <svg className="w-5 h-5 text-[#0079BF]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21.2 0H2.8C1.25 0 0 1.25 0 2.8v18.4C0 22.75 1.25 24 2.8 24h18.4c1.55 0 2.8-1.25 2.8-2.8V2.8C24 1.25 22.75 0 21.2 0zm-11 17.6c0 .88-.72 1.6-1.6 1.6H5.2c-.88 0-1.6-.72-1.6-1.6V5.2c0-.88.72-1.6 1.6-1.6h3.4c.88 0 1.6.72 1.6 1.6v12.4zm10.2-5.6c0 .88-.72 1.6-1.6 1.6h-3.4c-.88 0-1.6-.72-1.6-1.6V5.2c0-.88.72-1.6 1.6-1.6h3.4c.88 0 1.6.72 1.6 1.6v6.8z"/>
+      </svg>
+    );
+  }
+  if (normalized.includes("zapier")) {
+    return (
+      <svg className="w-5 h-5 text-[#FF4A00]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.78 12.8l-4 4c-.39.39-1.02.39-1.41 0l-4-4c-.39-.39-.39-1.02 0-1.41l4-4c.39-.39 1.02-.39 1.41 0l4 4c.39.39.39 1.02 0 1.41z"/>
+      </svg>
+    );
+  }
+
+  // Fallback generic dynamic code/tech icon
+  return (
+    <svg className="w-5 h-5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 18L22 12L16 6" />
+      <path d="M8 6L2 12L8 18" />
+    </svg>
+  );
+}
+
 export default function ServiceDetailClient({
   serviceSlug,
   service,
@@ -183,7 +420,7 @@ export default function ServiceDetailClient({
     switch (serviceSlug) {
       case "cybersecurity":
         return (
-          <section className={`relative z-10 pt-14 sm:pt-20 md:pt-32 pb-10 sm:pb-14 md:pb-20 px-6 md:px-12 bg-gradient-to-b ${theme.gradientHero} text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 pt-10 sm:pt-12 md:pt-14 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-b ${theme.gradientHero} text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="absolute top-1/2 left-2/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-20 blur-3xl pointer-events-none z-0" style={{ background: `radial-gradient(circle, ${theme.glowColor} 0%, transparent 70%)` }} />
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">
@@ -197,10 +434,10 @@ export default function ServiceDetailClient({
                 <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.2] text-white">
                   Zero-Trust Infrastructure Protection & <span className="text-emerald-400">Vulnerability Isolation</span>
                 </h1>
-                <p className={`text-base md:text-lg font-semibold tracking-wide ${theme.accentText}`}>
+                <p className="text-base md:text-lg font-semibold tracking-wide text-white">
                   Securing active cloud systems, core networks, and database endpoints from malicious access.
                 </p>
-                <p className="text-slate-300 text-sm leading-relaxed max-w-xl">
+                <p className="text-slate-300 text-sm leading-relaxed max-w-xl hidden md:block">
                   We implement robust, end-to-end security configurations. Our security engineers configure Wazuh threat monitoring SIEMs, WireGuard encryption networks, and Cloudflare Web Application Firewalls (WAF) to isolate potential vulnerability vectors.
                 </p>
                 <div className="flex flex-wrap gap-4 mt-2">
@@ -235,7 +472,7 @@ export default function ServiceDetailClient({
 
       case "website-designing":
         return (
-          <section className={`relative z-10 pt-14 sm:pt-20 md:pt-32 pb-10 sm:pb-14 md:pb-20 px-6 md:px-12 bg-gradient-to-br from-cyan-950 via-slate-950 to-slate-900 text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 pt-10 sm:pt-12 md:pt-14 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-br from-cyan-950 via-slate-950 to-slate-900 text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full opacity-15 blur-3xl pointer-events-none z-0" style={{ background: `radial-gradient(circle, ${theme.glowColor} 0%, transparent 70%)` }} />
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">
@@ -257,10 +494,10 @@ export default function ServiceDetailClient({
                 <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.2] text-white">
                   High-Conversion <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-indigo-400">Web Architectures</span>
                 </h1>
-                <p className={`text-base md:text-lg font-bold tracking-wide ${theme.accentText}`}>
+                <p className="text-base md:text-lg font-bold tracking-wide text-white">
                   Custom wireframes, immersive layouts, and Core Web Vitals optimizations.
                 </p>
-                <p className="text-slate-350 text-sm leading-relaxed max-w-xl">
+                <p className="text-slate-350 text-sm leading-relaxed max-w-xl hidden md:block">
                   We craft bespoke corporate web systems combining fluid Framer Motion micro-animations, clean type layouts, and optimized script execution. We deliver 99/100 Google PageSpeed scores that increase customer trust and lead conversion ratios.
                 </p>
                 <div className="grid grid-cols-3 gap-4 border-y border-slate-800/60 py-4 max-w-xl">
@@ -283,7 +520,7 @@ export default function ServiceDetailClient({
 
       case "mobile-development":
         return (
-          <section className={`relative z-10 pt-14 sm:pt-20 md:pt-32 pb-10 sm:pb-14 md:pb-20 px-6 md:px-12 bg-gradient-to-b from-indigo-950 via-slate-900 to-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 pt-10 sm:pt-12 md:pt-14 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-b from-indigo-950 via-slate-900 to-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="absolute top-1/2 left-2/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-15 blur-3xl pointer-events-none z-0" style={{ background: `radial-gradient(circle, ${theme.glowColor} 0%, transparent 70%)` }} />
             
@@ -294,12 +531,12 @@ export default function ServiceDetailClient({
                   <Smartphone className="w-3.5 h-3.5 animate-bounce" /> iOS & Android Engineering
                 </div>
                 <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.2] text-white">
-                  Custom Mobile Applications
+                  Custom Mobile <span className={theme.accentText}>Applications</span>
                 </h1>
-                <p className={`text-base md:text-lg font-semibold ${theme.accentText}`}>
+                <p className="text-base md:text-lg font-semibold text-white">
                   {service.tagline}
                 </p>
-                <p className="text-slate-350 text-sm leading-relaxed max-w-xl">
+                <p className="text-slate-350 text-sm leading-relaxed max-w-xl hidden md:block">
                   {service.description}
                 </p>
                 
@@ -310,7 +547,7 @@ export default function ServiceDetailClient({
                 </div>
 
                 {/* Metrics horizontal row */}
-                <div className="w-full max-w-xl grid grid-cols-3 gap-6 border-t border-slate-800/60 pt-6 mt-4">
+                <div className="w-full max-w-xl grid grid-cols-3 gap-6 border-t border-slate-800/60 pt-4 mt-2 md:pt-6 md:mt-4">
                   {service.metrics.map((metric, idx) => (
                     <div key={idx} className="flex flex-col gap-1">
                       <span className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">{metric.label}</span>
@@ -321,7 +558,7 @@ export default function ServiceDetailClient({
               </div>
 
               {/* Right Column: Floating Phone Mockup & Telemetry Badges */}
-              <div className="lg:col-span-5 relative w-full mt-10 lg:mt-0 max-w-sm lg:max-w-none mx-auto flex items-center justify-center p-6">
+              <div className="lg:col-span-5 relative w-full mt-4 lg:mt-0 max-w-sm lg:max-w-none mx-auto flex items-center justify-center p-2 lg:p-6">
                 {/* Floating Metrics Badge 1 (Left Side of Phone) */}
                 <motion.div 
                   initial={{ x: -20, opacity: 0 }} 
@@ -376,7 +613,7 @@ export default function ServiceDetailClient({
 
       case "application-development":
         return (
-          <section className={`relative z-10 pt-14 sm:pt-20 md:pt-32 pb-10 sm:pb-14 md:pb-20 px-6 md:px-12 bg-gradient-to-r from-slate-950 via-purple-950 to-slate-900 text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 pt-10 sm:pt-12 md:pt-14 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-r from-slate-950 via-purple-950 to-slate-900 text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-15 blur-3xl pointer-events-none z-0" style={{ background: `radial-gradient(circle, ${theme.glowColor} 0%, transparent 70%)` }} />
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">
@@ -390,11 +627,11 @@ export default function ServiceDetailClient({
                 <h1 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-[1.2]">
                   Custom Enterprise Software & <span className="text-purple-400">Cloud Portals</span>
                 </h1>
-                <p className={`text-base md:text-lg font-semibold tracking-wide ${theme.accentText}`}>
+                <p className="text-base md:text-lg font-semibold tracking-wide text-white">
                   Cloud-native server architectures, high-concurrency databases, and custom API layers.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start mt-2">
-                  <div className="md:col-span-7 text-slate-355 text-sm leading-relaxed">
+                  <div className="md:col-span-7 text-slate-355 text-sm leading-relaxed hidden md:block">
                     We architect customized web systems, SaaS platforms, and distributed software databases built to handle high concurrent user traffic. Our developers prioritize TypeScript codebases, Docker containerization, and automated CI/CD configurations.
                   </div>
                   <div className="md:col-span-5 flex flex-col gap-3.5 bg-slate-900/40 p-4 rounded-xl border border-slate-808/85 backdrop-blur-sm">
@@ -440,10 +677,10 @@ export default function ServiceDetailClient({
 
       case "digital-marketing":
         return (
-          <section className={`relative z-10 pt-14 sm:pt-20 md:pt-32 pb-0 px-6 md:px-12 bg-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 pt-10 sm:pt-12 md:pt-14 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-b ${theme.gradientHero} text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-stretch relative z-10">
-              <div className="lg:col-span-6 flex flex-col gap-5 justify-center pb-12">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">
+              <div className="lg:col-span-7 flex flex-col gap-5 justify-center pb-4 lg:pb-0">
                 <div className="flex items-center gap-3">
                   <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-sky-500/10 text-sky-400 border border-sky-500/20">
                     DATA-BACKED REVENUE GROWTH
@@ -453,10 +690,10 @@ export default function ServiceDetailClient({
                 <h1 className="text-4xl md:text-5xl font-black text-white leading-[1.2] tracking-tight">
                   High-Performance <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-blue-500">Growth Funnels</span>
                 </h1>
-                <p className={`text-base md:text-lg font-semibold ${theme.accentText}`}>
+                <p className="text-base md:text-lg font-semibold text-white">
                   Search Engine Optimization (SEO) dominance, PPC targeting, and CRM pipeline mapping.
                 </p>
-                <p className="text-slate-400 text-sm leading-relaxed max-w-xl">
+                <p className="text-slate-400 text-sm leading-relaxed max-w-xl hidden md:block">
                   We engineer search algorithms and targeted acquisition paths. By deploying customized keyword content structures, high-intent landing layouts, and telemetry data audits, we maximize user signups and sales conversions.
                 </p>
                 <div className="flex flex-wrap gap-4 mt-2">
@@ -466,7 +703,7 @@ export default function ServiceDetailClient({
                 </div>
               </div>
 
-              <div className="lg:col-span-6 relative w-full min-h-[350px] lg:min-h-none h-auto rounded-2xl border border-slate-800/60 overflow-hidden flex items-end">
+              <div className="lg:col-span-5 relative w-full min-h-[300px] lg:min-h-[380px] rounded-2xl border border-slate-800/60 overflow-hidden flex items-end max-w-md mx-auto lg:mx-0">
                 <div className="absolute inset-0 z-0">
                   <Image src={serviceImg} alt={service.name} fill className="object-cover object-center" priority />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent pointer-events-none lg:bg-gradient-to-r lg:from-slate-950 lg:via-transparent lg:to-transparent" />
@@ -492,7 +729,7 @@ export default function ServiceDetailClient({
 
       case "social-media-management":
         return (
-          <section className={`relative z-10 pt-14 sm:pt-20 md:pt-32 pb-10 sm:pb-14 md:pb-20 px-6 md:px-12 bg-gradient-to-b from-violet-950 via-slate-900 to-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 pt-10 sm:pt-12 md:pt-14 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-b from-violet-950 via-slate-900 to-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="absolute top-1/3 left-2/3 -translate-x-1/2 w-[550px] h-[550px] rounded-full opacity-15 blur-3xl pointer-events-none z-0" style={{ background: `radial-gradient(circle, ${theme.glowColor} 0%, transparent 70%)` }} />
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">
@@ -506,10 +743,10 @@ export default function ServiceDetailClient({
                 <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.2] text-white">
                   Organic Acquisition & <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-pink-400 to-orange-400">Social Moderation</span>
                 </h1>
-                <p className={`text-base md:text-lg font-bold ${theme.accentText}`}>
+                <p className="text-base md:text-lg font-bold text-white">
                   Thematic calendars, influencer integrations, and real-time social content pipelines.
                 </p>
-                <p className="text-slate-350 text-sm leading-relaxed max-w-xl">
+                <p className="text-slate-350 text-sm leading-relaxed max-w-xl hidden md:block">
                   We construct brand kits, draft editorial post plans, and manage profile engagement curves across LinkedIn, X, Meta, and video portals. We connect social traffic vectors to target lead acquisition pipelines.
                 </p>
                 <div className="flex flex-wrap gap-4 mt-2">
@@ -519,7 +756,7 @@ export default function ServiceDetailClient({
                 </div>
               </div>
 
-              <div className="lg:col-span-5 relative w-full mt-10 lg:mt-0 max-w-md lg:max-w-none mx-auto flex items-center justify-center p-8">
+              <div className="lg:col-span-5 relative w-full mt-4 lg:mt-0 max-w-md lg:max-w-none mx-auto flex items-center justify-center p-2 lg:p-8">
                 <div className="absolute -inset-1.5 rounded-full opacity-10 blur-2xl z-0" style={{ background: theme.glowColor }} />
                 <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="relative w-[280px] sm:w-[320px] aspect-square rounded-full border border-violet-500/30 p-2.5 bg-slate-900/35 backdrop-blur-sm shadow-2xl z-10 flex items-center justify-center overflow-visible">
                   <div className="relative w-full h-full rounded-full overflow-hidden border border-slate-800">
@@ -580,12 +817,10 @@ export default function ServiceDetailClient({
         return (
           <>
             {/* Custom Section 1: SIEM Security Operations Center & Live Logs */}
-            <section className="py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shadow-sm border border-emerald-100 mb-6">
-                    <Lock className="w-5 h-5" />
-                  </div>
+                  
                   <h2 className="text-3xl font-extrabold text-slate-900 mb-6">
                     Continuous Threat Hunting & SOC Management
                   </h2>
@@ -615,7 +850,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 2: Vulnerability Compliance Grid */}
-            <section className="py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Enterprise Compliance & Auditing Systems</h2>
@@ -642,7 +877,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 3: Live Incident Response SLA Timeline */}
-            <section className="py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-16">
                   <div className="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center shadow-sm border border-red-100 mb-4 mx-auto">
@@ -675,7 +910,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 4: Security Audit Scope Deliverables */}
-            <section className="py-24 px-6 md:px-12 bg-slate-909 text-white relative z-10 border-b border-slate-950">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-909 text-white relative z-10 border-b border-slate-950">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <h2 className="text-3xl font-black text-white mb-4">Complete Audit Package Scope</h2>
@@ -698,7 +933,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 5: Implementation Process Roadmap */}
-            <section className="py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">
@@ -773,7 +1008,7 @@ export default function ServiceDetailClient({
         return (
           <>
             {/* Custom Section 1: Figma System Showcase */}
-            <section className="py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="order-2 lg:order-1 relative rounded-2xl border border-slate-200 shadow-xl overflow-hidden bg-slate-950 p-2">
                   <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-slate-900">
@@ -808,7 +1043,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 2: Core Web Vitals targets */}
-            <section className="py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Core Web Vitals Performance Targets</h2>
@@ -834,7 +1069,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 3: High-Fidelity Design Sprint Workflow */}
-            <section className="py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-16">
                   <div className="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center shadow-sm border border-cyan-100 mb-4 mx-auto">
@@ -861,7 +1096,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 4: Dynamic Conversion CRO Utilities */}
-            <section className="py-24 px-6 md:px-12 bg-slate-900 text-white relative z-10 border-b border-slate-950">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-900 text-white relative z-10 border-b border-slate-950">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <h2 className="text-3xl font-black text-white mb-4">Conversion Rate Optimization Features</h2>
@@ -884,7 +1119,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 5: Implementation Process Roadmap */}
-            <section className="py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-cyan-500/10 text-cyan-600 border border-cyan-500/20">
@@ -959,12 +1194,10 @@ export default function ServiceDetailClient({
         return (
           <>
             {/* Custom Section 1: Offline Sync Database explanation */}
-            <section className="py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shadow-sm border border-indigo-100 mb-6">
-                    <RefreshCw className="w-5 h-5" />
-                  </div>
+                  
                   <h2 className="text-3xl font-extrabold text-slate-900 mb-6">
                     Robust Offline-First Data Sync Engines
                   </h2>
@@ -994,14 +1227,14 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 2: Device Testing Matrix */}
-            <section className="py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Multi-Platform Device Verification</h2>
                   <p className="text-slate-600 text-sm">We test build compilation, layout scaling, and hardware sensors across dozens of testing configurations.</p>
                 </div>
-                <div className="border border-slate-200 bg-white rounded-2xl overflow-hidden shadow-sm">
-                  <table className="w-full text-left border-collapse">
+                <div className="border border-slate-200 bg-white rounded-2xl shadow-sm overflow-x-auto">
+                  <table className="w-full min-w-[600px] text-left border-collapse">
                     <thead>
                       <tr className="bg-slate-50 border-b border-slate-200 text-[10px] text-slate-455 uppercase font-black tracking-widest">
                         <th className="p-4">Platform</th>
@@ -1030,7 +1263,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 3: App Store Optimization (ASO) & Publishing Suite */}
-            <section className="py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-16">
                   <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shadow-sm border border-indigo-100 mb-4 mx-auto">
@@ -1055,7 +1288,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 4: Native Hardware Security Layers */}
-            <section className="py-24 px-6 md:px-12 bg-slate-900 text-white relative z-10 border-b border-slate-950">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-900 text-white relative z-10 border-b border-slate-950">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <h2 className="text-3xl font-black text-white mb-4">Device Security Integrity</h2>
@@ -1078,7 +1311,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 5: Implementation Process Roadmap */}
-            <section className="py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-indigo-500/10 text-indigo-600 border border-indigo-500/20">
@@ -1153,7 +1386,7 @@ export default function ServiceDetailClient({
         return (
           <>
             {/* Custom Section 1: Kubernetes Cluster Scaling */}
-            <section className="py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="order-2 lg:order-1 relative rounded-2xl border border-slate-200 shadow-xl overflow-hidden bg-slate-950 p-2">
                   <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-slate-900">
@@ -1188,7 +1421,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 2: Technical API Telemetry Schema */}
-            <section className="py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Core API Scaling Parameters</h2>
@@ -1219,7 +1452,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 3: Automated Database Replication & Backup Scheduling */}
-            <section className="py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-16">
                   <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shadow-sm border border-purple-100 mb-4 mx-auto">
@@ -1244,7 +1477,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 4: CI/CD GitHub Action Pipelines */}
-            <section className="py-24 px-6 md:px-12 bg-slate-900 text-white relative z-10 border-b border-slate-950">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-900 text-white relative z-10 border-b border-slate-950">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <h2 className="text-3xl font-black text-white mb-4">CI/CD Deployment Automation</h2>
@@ -1269,7 +1502,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 5: Implementation Process Roadmap */}
-            <section className="py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-purple-500/10 text-purple-600 border border-purple-500/20">
@@ -1344,7 +1577,7 @@ export default function ServiceDetailClient({
         return (
           <>
             {/* Custom Section 1: Revenue Acquisition Funnel */}
-            <section className="py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shadow-sm border border-sky-100 mb-6">
@@ -1379,7 +1612,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 2: Conversion Channels Matrix */}
-            <section className="py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Ad Channel Acquisition Parameters</h2>
@@ -1415,7 +1648,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 3: Conversion Rate Optimization (CRO) Funnels */}
-            <section className="py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-16">
                   <div className="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shadow-sm border border-sky-100 mb-4 mx-auto">
@@ -1440,7 +1673,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 4: High-Authority Organic Lead Capture */}
-            <section className="py-24 px-6 md:px-12 bg-slate-900 text-white relative z-10 border-b border-slate-950">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-900 text-white relative z-10 border-b border-slate-950">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <h2 className="text-3xl font-black text-white mb-4">Organic Lead Generation Optimization</h2>
@@ -1463,7 +1696,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 5: Implementation Process Roadmap */}
-            <section className="py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-sky-500/10 text-sky-600 border border-sky-500/20">
@@ -1538,7 +1771,7 @@ export default function ServiceDetailClient({
         return (
           <>
             {/* Custom Section 1: Thematic Calendar */}
-            <section className="py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="order-2 lg:order-1 relative rounded-2xl border border-slate-200 shadow-xl overflow-hidden bg-slate-950 p-2">
                   <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-slate-900">
@@ -1573,7 +1806,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 2: Engagement Telemetry Parameters */}
-            <section className="py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Audience Growth Telemetry Parameters</h2>
@@ -1604,7 +1837,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 3: Executive Thought Leadership Ghostwriting */}
-            <section className="py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-16">
                   <div className="w-10 h-10 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center shadow-sm border border-violet-100 mb-4 mx-auto">
@@ -1629,7 +1862,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 4: Paid Social Ads Funnel */}
-            <section className="py-24 px-6 md:px-12 bg-slate-900 text-white relative z-10 border-b border-slate-950">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-900 text-white relative z-10 border-b border-slate-950">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <h2 className="text-3xl font-black text-white mb-4">Paid Social Ad Lead Conversion</h2>
@@ -1652,7 +1885,7 @@ export default function ServiceDetailClient({
             </section>
 
             {/* Custom Section 5: Implementation Process Roadmap */}
-            <section className="py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
+            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                   <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-violet-500/10 text-violet-600 border border-violet-500/20">
@@ -1747,7 +1980,7 @@ export default function ServiceDetailClient({
           </svg>
         </div>
         
-        <div className="max-w-4xl mx-auto relative z-10">
+        <div className="max-w-3xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <span className={`px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest ${theme.accentBg} ${theme.accentText} border ${theme.pillBorder}`}>
               QUESTIONS & ANSWERS
@@ -1774,7 +2007,7 @@ export default function ServiceDetailClient({
                 >
                   <button
                     onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
-                    className="w-full flex justify-between items-center p-6 text-left focus:outline-none group cursor-pointer"
+                    className="w-full flex justify-between items-center py-4.5 px-6 text-left focus:outline-none group cursor-pointer"
                   >
                     <span className={`text-base font-bold transition-colors ${
                       isOpen ? theme.accentText : "text-slate-800 group-hover:text-slate-900"
@@ -1793,7 +2026,7 @@ export default function ServiceDetailClient({
                       isOpen ? "max-h-60 border-t border-slate-100" : "max-h-0"
                     }`}
                   >
-                    <div className="p-6 text-sm text-slate-600 leading-relaxed bg-slate-50/30">
+                    <div className="pt-3 pb-5 px-6 text-sm text-slate-600 leading-relaxed bg-slate-50/30">
                       {faq.a}
                     </div>
                   </div>
@@ -1830,9 +2063,10 @@ export default function ServiceDetailClient({
             {service.techStack.map((tech, idx) => (
               <span
                 key={idx}
-                className={`px-5 py-2.5 rounded-lg bg-slate-900 border ${theme.pillBorder} text-slate-200 text-sm font-semibold shadow-md`}
+                className={`inline-flex items-center gap-2.5 px-5 py-2.5 rounded-lg bg-slate-900 border ${theme.pillBorder} text-slate-200 text-sm font-semibold shadow-md`}
               >
-                {tech}
+                {getTechIcon(tech)}
+                <span>{tech}</span>
               </span>
             ))}
 
@@ -1840,9 +2074,10 @@ export default function ServiceDetailClient({
             {service.techStack.map((tech, idx) => (
               <span
                 key={`dup-${idx}`}
-                className={`px-5 py-2.5 rounded-lg bg-slate-900 border ${theme.pillBorder} text-slate-200 text-sm font-semibold shadow-md`}
+                className={`inline-flex items-center gap-2.5 px-5 py-2.5 rounded-lg bg-slate-900 border ${theme.pillBorder} text-slate-200 text-sm font-semibold shadow-md`}
               >
-                {tech}
+                {getTechIcon(tech)}
+                <span>{tech}</span>
               </span>
             ))}
           </div>
@@ -1852,15 +2087,15 @@ export default function ServiceDetailClient({
       {/* SECTION 4: Shared Consultation Briefing CTA with Custom Background Image & Reduced Height */}
       <section className="relative z-10 py-10 sm:py-12 px-6 md:px-12 bg-slate-950 border-b border-slate-900 text-white overflow-hidden">
         {/* Premium Dark Tech Abstract Background Image */}
-        <div className="absolute inset-0 z-0 opacity-30 pointer-events-none select-none">
+        <div className="absolute inset-0 z-0 opacity-35 pointer-events-none select-none">
           <Image 
-            src="/images/cta_bg_abstract.png" 
+            src={ctaBgImages[serviceSlug] || "/images/cta_bg_abstract.png"} 
             alt="CTA Background Pattern" 
             fill 
             className="object-cover object-center" 
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-slate-950/50" />
+          <div className="absolute inset-0 bg-slate-950/60" />
         </div>
 
         <div className="max-w-3xl mx-auto text-center flex flex-col items-center gap-4 sm:gap-5 relative z-10">

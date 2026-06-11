@@ -28,7 +28,7 @@ export default function Contact() {
       {/* Background patterns */}
       <div className="absolute inset-0 tech-grid opacity-[0.05] pointer-events-none z-0"></div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-10 md:pt-14 pb-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           
           {/* Left Column: Info & Details */}
