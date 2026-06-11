@@ -440,7 +440,7 @@ export default function ServiceDetailClient({
 
       case "digital-marketing":
         return (
-          <section className={`relative z-10 pt-24 sm:pt-28 md:pt-32 pb-0 bg-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
+          <section className={`relative z-10 pt-24 sm:pt-28 md:pt-32 pb-0 px-6 md:px-12 bg-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch relative z-10">
               <div className="lg:col-span-6 flex flex-col gap-5 justify-center pb-12">
@@ -466,7 +466,7 @@ export default function ServiceDetailClient({
                 </div>
               </div>
 
-              <div className="lg:col-span-6 relative w-full min-h-[350px] lg:min-h-none h-auto overflow-hidden flex items-end">
+              <div className="lg:col-span-6 relative w-full min-h-[350px] lg:min-h-none h-auto rounded-2xl border border-slate-800/60 overflow-hidden flex items-end">
                 <div className="absolute inset-0 z-0">
                   <Image src={serviceImg} alt={service.name} fill className="object-cover object-center" priority />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent pointer-events-none lg:bg-gradient-to-r lg:from-slate-950 lg:via-transparent lg:to-transparent" />
