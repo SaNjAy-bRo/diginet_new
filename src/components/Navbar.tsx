@@ -170,9 +170,7 @@ export default function Navbar() {
               alt="DIGINET Logo"
               width={130}
               height={36}
-              className={`h-9 w-auto object-contain transition-all duration-300 ${
-                (!isScrolled && !isOpen && isDarkHeroPage) ? "brightness-0 invert" : ""
-              }`}
+              className="h-9 w-auto object-contain transition-all duration-300"
               priority
             />
           </Link>
