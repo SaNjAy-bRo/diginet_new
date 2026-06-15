@@ -637,7 +637,7 @@ export default function Chatbot() {
             initial={{ opacity: 0, scale: 0.9, y: 40, transformOrigin: "bottom right" }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 40 }}
-            className="fixed bottom-[80px] left-4 right-4 sm:left-auto sm:bottom-[100px] sm:right-6 z-[9999] w-auto sm:w-[340px] md:w-[380px] max-w-[calc(100vw-2rem)] h-[70dvh] sm:h-[32rem] md:h-[36rem] max-h-[650px] flex flex-col rounded-3xl bg-white/95 backdrop-blur-xl border border-slate-200/80 shadow-[0_25px_60px_rgba(15,23,42,0.12)] overflow-hidden font-sans"
+            className="fixed bottom-[80px] left-4 right-4 sm:left-auto sm:bottom-[100px] sm:right-6 z-[9999] w-auto sm:w-[340px] md:w-[380px] max-w-[calc(100vw-2rem)] h-[70dvh] sm:h-[32rem] md:h-[36rem] max-h-[650px] flex flex-col rounded-3xl bg-slate-950/90 backdrop-blur-xl border border-slate-800/80 shadow-[0_25px_60px_rgba(15,23,42,0.3)] overflow-hidden font-sans text-white"
           >
             {/* Cybernetic Aura Background */}
             <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -646,20 +646,20 @@ export default function Chatbot() {
             </div>
 
             {/* Header - Compact High Tech Glass */}
-            <div className="relative p-4 flex justify-between items-center bg-slate-50/60 backdrop-blur-md border-b border-slate-200/60 z-10">
+            <div className="relative p-4 flex justify-between items-center bg-slate-900/60 backdrop-blur-md border-b border-slate-800/60 z-10">
               <div className="flex items-center gap-3">
                 <div className="relative flex items-center justify-center">
                   <AnimatedBot isSpeaking={isTyping} className="w-10 h-10" expression={currentExpression} />
-                  <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-white shadow-[0_0_8px_rgba(16,185,129,0.4)]"></span>
+                  <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-slate-950 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></span>
                 </div>
                 <div>
-                  <h3 className="font-bold text-sm text-slate-800 tracking-tight leading-none mb-1">DIGINET AI</h3>
+                  <h3 className="font-bold text-sm text-slate-100 tracking-tight leading-none mb-1">DIGINET AI</h3>
                   <p className="text-[9px] text-slate-400 font-extrabold uppercase tracking-widest leading-none">Online</p>
                 </div>
               </div>
               <button 
                 onClick={() => setIsOpen(false)} 
-                className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 border border-slate-200/40 transition-colors"
+                className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-slate-100 border border-slate-850 transition-colors cursor-pointer"
               >
                 <X size={16} />
               </button>
@@ -678,7 +678,7 @@ export default function Chatbot() {
                     className={`px-4 py-2.5 text-sm leading-relaxed font-semibold ${
                       msg.sender === "user"
                         ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-2xl rounded-tr-sm shadow-sm"
-                        : "bg-slate-100 border border-slate-200/80 text-slate-800 rounded-2xl rounded-tl-sm shadow-sm"
+                        : "bg-slate-850 border border-slate-800 text-slate-100 rounded-2xl rounded-tl-sm shadow-sm"
                     }`}
                     style={{ maxWidth: '88%' }}
                   >
@@ -690,7 +690,7 @@ export default function Chatbot() {
               {/* Typing Indicator */}
               {isTyping && (
                 <div className="flex justify-start items-end gap-2">
-                  <div className="px-4 py-3 bg-slate-100 border border-slate-200/80 rounded-2xl rounded-tl-sm flex items-center">
+                  <div className="px-4 py-3 bg-slate-850 border border-slate-800 rounded-2xl rounded-tl-sm flex items-center">
                     <div className="flex gap-1.5">
                       {[0, 1, 2].map((i) => (
                         <div 
@@ -710,7 +710,7 @@ export default function Chatbot() {
                     <button
                       key={idx}
                       onClick={() => handleOptionClick(opt)}
-                      className="text-xs font-bold bg-white border border-slate-200 hover:border-orange-500/50 hover:bg-orange-500 hover:text-white text-slate-700 px-3.5 py-2 rounded-full transition-all duration-300 shadow-sm cursor-pointer"
+                      className="text-xs font-bold bg-slate-800/50 border border-slate-700/80 hover:border-orange-500/50 hover:bg-orange-500 hover:text-white text-slate-200 px-3.5 py-2 rounded-full transition-all duration-300 shadow-sm cursor-pointer"
                     >
                       {opt}
                     </button>
@@ -721,7 +721,7 @@ export default function Chatbot() {
             </div>
 
             {/* Input - Compact Glass */}
-            <div className="relative p-3 bg-slate-50/80 backdrop-blur-md border-t border-slate-200/60 z-10">
+            <div className="relative p-3 bg-slate-900/80 backdrop-blur-md border-t border-slate-800/60 z-10">
               <form onSubmit={(e) => { e.preventDefault(); handleSend(inputValue); }} className="relative">
                 <input
                   type="text"
@@ -729,7 +729,7 @@ export default function Chatbot() {
                   onChange={(e) => setInputValue(e.target.value)}
                   disabled={isTyping}
                   placeholder="Type a message..."
-                  className="w-full pl-4 pr-12 py-3 bg-white border border-slate-200 rounded-full text-xs sm:text-sm font-semibold focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500/20 text-slate-800 placeholder-slate-400 transition-all"
+                  className="w-full pl-4 pr-12 py-3 bg-slate-950 border border-slate-800 rounded-full text-xs sm:text-sm font-semibold focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500/20 text-slate-100 placeholder-slate-500 transition-all"
                 />
                 <button 
                   type="submit" 
@@ -763,18 +763,18 @@ export default function Chatbot() {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`flex items-center justify-center transition-all duration-500 hover:scale-110 focus:outline-none rounded-full border bg-white border-slate-200 shadow-lg relative cursor-pointer ${
+          className={`flex items-center justify-center transition-all duration-500 hover:scale-110 focus:outline-none rounded-full relative cursor-pointer ${
             isOpen 
-              ? "w-[56px] h-[56px] sm:w-[64px] sm:h-[64px]" 
-              : "w-[100px] h-[100px] sm:w-[120px] sm:h-[120px]"
+              ? "w-[56px] h-[56px] sm:w-[64px] sm:h-[64px] bg-slate-900 border border-slate-800 shadow-lg" 
+              : "w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] bg-transparent border-transparent"
           }`}
         >
           {isOpen ? (
-            <X size={24} className="text-slate-600" />
+            <X size={24} className="text-slate-400 hover:text-white" />
           ) : (
             <div className="relative flex items-center justify-center w-[84px] h-[84px] sm:w-[102px] sm:h-[102px] p-0">
               <AnimatedBot isSpeaking={isTriggerSpeaking} className="w-full h-full" animate={true} expression={bubbleExpression} />
-              <span className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)] z-20"></span>
+              <span className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-slate-950 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)] z-20"></span>
             </div>
           )}
         </button>
