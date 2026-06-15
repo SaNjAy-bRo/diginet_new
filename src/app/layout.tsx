@@ -3,6 +3,7 @@ import { Outfit, Inter, Geist_Mono, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ClientChatbot from "@/components/ClientChatbot";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -49,6 +50,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <ClientChatbot />
       </body>
     </html>
   );
