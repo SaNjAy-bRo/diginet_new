@@ -718,10 +718,10 @@ export default function CybersecurityPage() {
         </div>
 
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 lg:items-stretch items-center">
             
             {/* Left side Accordion */}
-            <div className="lg:col-span-7 flex flex-col justify-start lg:border-r lg:border-slate-800/60 lg:pr-12">
+            <div className="lg:col-span-7 flex flex-col justify-between h-full lg:border-r lg:border-slate-800/60 lg:pr-12">
               <div>
                 <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-cyan-400 mb-4 block">
                   FREQUENTLY ASKED QUESTIONS
@@ -769,41 +769,69 @@ export default function CybersecurityPage() {
               </div>
             </div>
 
-            {/* Right side help info (Seamless, border-less vertical split) */}
-            <div className="lg:col-span-5 flex flex-col justify-start lg:pl-12 relative w-full">
-              {/* Subtle background glow for the contact card area */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/0 blur-2xl pointer-events-none -z-10" />
+            {/* Right side help info */}
+            <div className="lg:col-span-5 flex flex-col justify-start lg:pl-12 w-full h-full">
+              <div 
+                className="w-full bg-[#081630]/60 border border-slate-800/80 rounded-[28px] p-6 md:p-8 relative overflow-hidden flex flex-col justify-between h-full min-h-[340px]"
+                style={{
+                  background: "radial-gradient(circle at 100% 100%, rgba(6, 182, 212, 0.08), transparent 50%), #081630/60"
+                }}
+              >
+                {/* Cyber grid lines */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:1.25rem_1.25rem] opacity-20 pointer-events-none" />
 
-              {/* Headset and Question Block */}
-              <div className="flex items-start gap-4 mb-4">
-                <div className="h-12 w-12 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0">
-                  <Headphones className="h-6 w-6 text-cyan-400" />
-                </div>
-                <div className="flex flex-col text-left">
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-cyan-400 mb-1">
-                    HAVE QUESTIONS?
-                  </span>
-                  <p className="text-sm md:text-base font-bold text-white font-poppins leading-relaxed">
-                    Our experts are here to help you strengthen your security posture.
-                  </p>
-                </div>
-              </div>
+                <div className="relative z-10 flex flex-col gap-5">
+                  {/* Status Indicator */}
+                  <div className="flex items-center justify-start w-full">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-[0.12em] text-cyan-400 bg-cyan-950/40 border border-cyan-800/30">
+                      <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                      Support Online
+                    </span>
+                  </div>
 
-              {/* Vertical Stack Contact Details */}
-              <div className="text-left mt-4 pt-4 border-t border-slate-800/60 flex flex-col gap-3.5">
-                <div className="flex items-center gap-3 text-xs md:text-sm">
-                  <Phone className="h-4 w-4 text-cyan-400 shrink-0" />
-                  <span className="text-slate-300">Call us:</span>
-                  <a href="tel:+15554322023" className="font-bold text-white hover:text-cyan-400 transition-colors">
-                    +1 (555) 432-2023
-                  </a>
+                  {/* Headset and Question Block */}
+                  <div className="flex items-start gap-3.5 mt-2">
+                    <div className="h-11 w-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0">
+                      <Headphones className="h-5.5 w-5.5 text-cyan-400" />
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-cyan-400 mb-1">
+                        HAVE QUESTIONS?
+                      </span>
+                      <p className="text-sm md:text-base font-bold text-white font-poppins leading-snug">
+                        Our experts are here to help you strengthen your security posture.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Vertical Stack Contact Details */}
+                  <div className="text-left mt-3 pt-5 border-t border-slate-800/60 flex flex-col gap-3.5">
+                    <div className="flex items-center gap-3 text-xs md:text-sm">
+                      <Phone className="h-4 w-4 text-cyan-400 shrink-0" />
+                      <span className="text-slate-350">Call us:</span>
+                      <a href="tel:+15554322023" className="font-bold text-white hover:text-cyan-400 transition-colors">
+                        +1 (555) 432-2023
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-3 text-xs md:text-sm">
+                      <Mail className="h-4 w-4 text-cyan-400 shrink-0" />
+                      <span className="text-slate-350">Email:</span>
+                      <a href="mailto:hello@diginetsolutions.com" className="font-bold text-white hover:text-cyan-400 transition-colors">
+                        hello@diginetsolutions.com
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3 text-xs md:text-sm">
-                  <Mail className="h-4 w-4 text-cyan-400 shrink-0" />
-                  <span className="text-slate-300">Email:</span>
-                  <a href="mailto:hello@diginetsolutions.com" className="font-bold text-white hover:text-cyan-400 transition-colors">
-                    hello@diginetsolutions.com
-                  </a>
+
+                {/* Quick Action Button */}
+                <div className="relative z-10 mt-6 pt-2">
+                  <button 
+                    onClick={openBooking}
+                    className="w-full cursor-pointer inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-md shadow-blue-500/10"
+                  >
+                    Start a Live Chat
+                    <ArrowRight className="ml-2 h-3.5 w-3.5" />
+                  </button>
                 </div>
               </div>
             </div>
