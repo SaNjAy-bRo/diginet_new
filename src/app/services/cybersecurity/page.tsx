@@ -643,27 +643,35 @@ export default function CybersecurityPage() {
             {/* Right Column: CTA Banner Card with vertical layout */}
             <div className="w-full lg:w-[42%] flex flex-col">
               <div 
-                className="w-full bg-[#06142D] rounded-[32px] border border-slate-800/40 shadow-xl p-6 md:p-8 relative overflow-hidden flex flex-col justify-between h-full min-h-[420px]"
+                className="w-full rounded-[32px] border border-slate-800/40 shadow-xl p-6 md:p-8 relative overflow-hidden flex flex-col justify-between h-full min-h-[420px]"
                 style={{ 
-                  backgroundImage: "url('/images/cta_vibrant_bg.png')", 
-                  backgroundSize: "cover", 
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat"
+                  background: "linear-gradient(135deg, #020617 0%, #0b1528 50%, #0f172a 100%)",
                 }}
               >
-                {/* Gradient overlay for readability */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[#06142D]/90 via-[#071633]/70 to-[#06142D]/95 pointer-events-none z-0" />
+                {/* Cyber-grid background pattern */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] opacity-35 pointer-events-none z-0" />
 
-                <div className="relative z-20 flex flex-col items-start text-left w-full">
+                {/* Glowing radial accents */}
+                <div className="absolute -bottom-20 -right-20 w-60 h-60 rounded-full bg-cyan-500/10 blur-[60px] pointer-events-none z-0" />
+                <div className="absolute -top-20 -left-20 w-60 h-60 rounded-full bg-blue-600/10 blur-[60px] pointer-events-none z-0" />
+
+                {/* Hologram graphic placed absolutely in the background (bottom right) */}
+                <img 
+                  src="/images/security_cta_clean_hologram.png" 
+                  alt="Cyber Security Hologram" 
+                  className="absolute bottom-[-15px] right-[-15px] w-[210px] h-[210px] md:w-[250px] md:h-[250px] object-contain pointer-events-none z-0 mix-blend-screen opacity-45 filter drop-shadow-[0_0_15px_rgba(6,182,212,0.15)]"
+                />
+
+                <div className="relative z-10 flex flex-col items-start text-left w-full h-full justify-center">
                   <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-cyan-300 mb-2 block">
                     READY TO STRENGTHEN YOUR SECURITY?
                   </span>
                   
-                  <h3 className="text-base md:text-lg font-black text-white leading-tight font-poppins mb-3">
+                  <h3 className="text-base md:text-lg font-black text-white leading-tight font-poppins mb-3 max-w-[280px] md:max-w-[320px]">
                     Let&apos;s Build a Security Strategy That Protects What Matters
                   </h3>
 
-                  <p className="text-[11px] md:text-xs text-slate-400 leading-relaxed mb-4 font-normal">
+                  <p className="text-[11px] md:text-xs text-slate-400 leading-relaxed mb-5 font-normal max-w-[260px] md:max-w-[300px]">
                     Talk to our experts today and take the first step toward a more resilient digital future.
                   </p>
 
@@ -674,17 +682,6 @@ export default function CybersecurityPage() {
                     Book a Consultation
                     <ArrowRight className="ml-2 h-3.5 w-3.5" />
                   </button>
-                </div>
-
-                {/* Smaller Hologram Projector at the bottom center */}
-                <div className="relative z-20 w-full flex items-center justify-center pointer-events-none mt-auto pt-4">
-                  <div className="w-[120px] h-[120px] md:w-[130px] md:h-[130px] relative">
-                    <img 
-                      src="/images/security_cta_clean_hologram.png" 
-                      alt="Cyber Security Hologram" 
-                      className="w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(6,182,212,0.2)] mix-blend-screen border-none outline-none bg-transparent"
-                    />
-                  </div>
                 </div>
 
               </div>
