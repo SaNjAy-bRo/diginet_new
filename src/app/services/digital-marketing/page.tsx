@@ -142,14 +142,14 @@ export default function DigitalMarketingPage() {
               <div className="flex flex-col sm:flex-row gap-3.5 w-full sm:w-auto">
                 <button
                   onClick={openBooking}
-                  className="cursor-pointer inline-flex items-center justify-center px-7 py-3 rounded-full text-sm font-semibold text-white bg-cta-blue hover:bg-hover-blue transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-cta-blue/20"
+                  className="cursor-pointer inline-flex items-center justify-center px-7 py-3 rounded-xl text-sm font-semibold text-white bg-cta-blue hover:bg-hover-blue transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-cta-blue/20"
                 >
                   Book a Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </button>
                 <a
                   href="#process"
-                  className="inline-flex items-center justify-center px-7 py-3 rounded-full text-sm font-semibold text-slate-300 border border-slate-700 bg-white/[0.04] hover:bg-white/[0.08] hover:text-white transition-all duration-300"
+                  className="inline-flex items-center justify-center px-7 py-3 rounded-xl text-sm font-semibold text-slate-300 border border-slate-700 bg-white/[0.04] hover:bg-white/[0.08] hover:text-white transition-all duration-300"
                 >
                   Explore Our Process
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -210,7 +210,7 @@ export default function DigitalMarketingPage() {
                       { label: "Clicks", val: "12,540", pct: "+18.7%" },
                       { label: "Conversions", val: "1,246", pct: "+25.4%" },
                       { label: "Cost / Conv.", val: "$18.45", pct: "+12.3%" },
-                      { label: "ROAS", val: "4.6x", pct: "+31.2%" }
+                      { label: "Cost / Conv.", val: "4.6x", pct: "+31.2%" }
                     ].map((stat, idx) => (
                       <div key={idx} className="bg-slate-900/60 border border-slate-850 p-2 rounded-xl flex flex-col justify-between min-h-[64px]">
                         <span className="text-[7.5px] text-slate-500 font-bold uppercase tracking-wider leading-none block truncate">{stat.label}</span>
@@ -344,30 +344,35 @@ export default function DigitalMarketingPage() {
                     animate={{ y: [0, -5, 0] }}
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                   >
-                    <div className="flex justify-between items-center text-[7px] text-slate-550 font-extrabold uppercase tracking-wider">
-                      <span className="flex items-center gap-1">
-                        <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
-                        Google Ads
+                    <div className="flex justify-between items-center text-[7.5px] text-slate-400 font-bold">
+                      <span className="flex items-center gap-1 text-slate-850">
+                        {/* Google logo */}
+                        <svg className="h-3.5 w-3.5" viewBox="0 0 24 24">
+                          <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.9h6.6c-.28 1.5-.1.3-1.14 2.22l2.76 2.14c1.62-1.5 2.52-3.7 2.52-6.19z"/>
+                          <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-2.76-2.14c-1.05.7-2.38 1.14-3.8 1.14-2.92 0-5.4-1.98-6.28-4.64L4.25 18.25C6.26 21.69 9.87 24 12 24z"/>
+                          <path fill="#FBBC05" d="M5.72 15.45c-.23-.7-.36-1.45-.36-2.23s.13-1.53.36-2.23L4.25 8.79C3.42 10.39 3 12.16 3 14s.42 3.61 1.25 5.21l2.47-1.92-.04-.04c-.06-.12-.32-.82-.04-1.8z"/>
+                          <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 9.87 0 6.26 2.31 4.25 5.75l2.47 1.92c.88-2.66 3.36-4.64 6.28-4.64z"/>
+                        </svg>
+                        <span className="text-[7.5px] font-bold text-slate-700">Google Ads</span>
                       </span>
-                      <span>Sponsored</span>
                     </div>
 
-                    {/* Sneaker Image asset */}
-                    <div className="h-20 w-full rounded-xl overflow-hidden bg-slate-50 border border-slate-100 relative">
-                      <img 
-                        src="/images/google_shoe_ad.png" 
-                        alt="Sneaker Product Ad"
-                        className="h-full w-full object-cover object-center"
-                      />
-                    </div>
-
-                    <div className="flex flex-col gap-1">
-                      <span className="text-[10px] font-black text-slate-900 leading-tight">Step Ahead. Stay Ahead.</span>
-                      <div className="flex justify-between items-center mt-1">
-                        <span className="text-[7.5px] text-slate-400 font-semibold truncate max-w-[80px]">Shop Premium Sneakers</span>
-                        <button className="px-2.5 py-1 rounded bg-black text-white font-extrabold text-[7px] hover:bg-slate-800 transition-colors uppercase tracking-wider">
+                    <div className="grid grid-cols-12 gap-2 items-center">
+                      <div className="col-span-7 flex flex-col items-start gap-1">
+                        <span className="text-[11px] md:text-[12px] font-extrabold text-slate-900 leading-tight">
+                          Step Ahead.<br />
+                          Stay Ahead.
+                        </span>
+                        <button className="mt-1 px-3 py-1 rounded-md bg-[#071125] text-white font-extrabold text-[7px] uppercase tracking-wider hover:bg-black transition-colors">
                           Shop Now
                         </button>
+                      </div>
+                      <div className="col-span-5 h-14 w-full rounded-lg overflow-hidden bg-slate-50 border border-slate-100">
+                        <img 
+                          src="/images/google_shoe_ad.png" 
+                          alt="Sneaker Product" 
+                          className="h-full w-full object-cover" 
+                        />
                       </div>
                     </div>
                   </motion.div>
@@ -378,43 +383,45 @@ export default function DigitalMarketingPage() {
                     animate={{ y: [0, -5, 0] }}
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                   >
-                    <div className="flex justify-between items-center text-[7px] text-slate-550 font-extrabold uppercase tracking-wider">
-                      <span className="flex items-center gap-1">
-                        <span className="h-1.5 w-1.5 rounded-full bg-sky-500" />
-                        Meta Ad
+                    <div className="flex justify-between items-center text-[7.5px] text-slate-400 font-bold">
+                      <span className="flex items-center gap-1 text-[#1877F2]">
+                        {/* Meta Logo */}
+                        <svg className="h-3 w-3 fill-[#1877F2]" viewBox="0 0 24 24">
+                          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        <span className="text-[7.5px] font-bold text-slate-700">Meta Ad</span>
                       </span>
-                      <span>Sponsored</span>
                     </div>
 
-                    {/* Lifestyle Image asset */}
-                    <div className="h-20 w-full rounded-xl overflow-hidden bg-slate-50 border border-slate-100 relative">
-                      <img 
-                        src="/images/meta_person_ad.png" 
-                        alt="Lifestyle Apparel Ad" 
-                        className="h-full w-full object-cover object-center"
-                      />
-                    </div>
-
-                    <div className="flex flex-col gap-1">
-                      <span className="text-[10px] font-black text-slate-900 leading-tight">Elevate Your Everyday Style.</span>
-                      <div className="flex justify-between items-center mt-1 pb-1.5 border-b border-slate-100">
-                        <span className="text-[7.5px] text-slate-400 font-semibold truncate max-w-[80px]">New Collections</span>
-                        <button className="px-2.5 py-1 rounded bg-black text-white font-extrabold text-[7px] hover:bg-slate-800 transition-colors uppercase tracking-wider">
+                    <div className="grid grid-cols-12 gap-2 items-center">
+                      <div className="col-span-7 flex flex-col items-start gap-1">
+                        <span className="text-[11px] md:text-[12px] font-extrabold text-slate-900 leading-tight">
+                          Elevate Your <br />
+                          Everyday Style.
+                        </span>
+                        <button className="mt-1 px-3 py-1 rounded-md bg-[#071125] text-white font-extrabold text-[7px] uppercase tracking-wider hover:bg-black transition-colors">
                           Shop Now
                         </button>
                       </div>
-                      
-                      {/* Social Reaction footer */}
-                      <div className="flex justify-between items-center text-[7.5px] text-slate-400 font-semibold pt-0.5">
-                        <div className="flex items-center gap-1">
-                          <span className="flex items-center -space-x-1">
-                            <span className="h-3.5 w-3.5 rounded-full bg-blue-500 flex items-center justify-center text-white border border-white text-[6px]">👍</span>
-                            <span className="h-3.5 w-3.5 rounded-full bg-red-500 flex items-center justify-center text-white border border-white text-[6px]">❤️</span>
-                          </span>
-                          <span>123</span>
-                        </div>
-                        <span>23 Comments</span>
+                      <div className="col-span-5 h-14 w-full rounded-lg overflow-hidden bg-slate-50 border border-slate-100">
+                        <img 
+                          src="/images/meta_person_ad.png" 
+                          alt="Lifestyle Model" 
+                          className="h-full w-full object-cover object-top" 
+                        />
                       </div>
+                    </div>
+
+                    {/* Social Reaction footer */}
+                    <div className="flex justify-between items-center text-[7.5px] text-slate-400 font-bold pt-1.5 border-t border-slate-100">
+                      <div className="flex items-center gap-1">
+                        <span className="flex items-center -space-x-1">
+                          <span className="h-3.5 w-3.5 rounded-full bg-blue-500 flex items-center justify-center text-white border border-white text-[6px]">👍</span>
+                          <span className="h-3.5 w-3.5 rounded-full bg-red-500 flex items-center justify-center text-white border border-white text-[6px]">❤️</span>
+                        </span>
+                        <span>123</span>
+                      </div>
+                      <span>23 Comments</span>
                     </div>
                   </motion.div>
 
