@@ -779,7 +779,7 @@ export default function DigitalMarketingPage() {
       {/* ========================================================
           6. WHY CHOOSE & INDUSTRIES (Split layout)
           ======================================================== */}
-      <section className="relative w-full py-16 md:py-20 bg-slate-50/30">
+      <section className="relative w-full pt-16 pb-6 md:pt-20 md:pb-8 bg-slate-50/30">
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -920,22 +920,29 @@ export default function DigitalMarketingPage() {
       {/* ========================================================
           7. REAL RESULTS (Case Studies) SECTION
           ======================================================== */}
-      <section className="relative w-full py-16 md:py-20 bg-slate-50/50 border-t border-slate-100">
+      <section className="relative w-full pt-6 pb-16 md:pt-8 md:pb-20 bg-slate-50/50 border-t border-slate-100">
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12">
           
-          <div className="text-center mb-12 flex flex-col items-center">
-            <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-accent-blue mb-2.5">
+          <div className="text-left mb-12 flex flex-col items-start">
+            <h2 className="text-2xl md:text-3xl font-black text-[#06142D] tracking-tight leading-tight font-poppins mb-1.5">
               Real Results. Real Impact.
-            </span>
-            <h2 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight leading-tight font-poppins">
-              A few examples of how we help businesses grow.
             </h2>
+            <p className="text-xs md:text-sm text-slate-500 leading-normal">
+              A few examples of how we help businesses grow.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-10">
             {[
               {
                 tag: "E-commerce",
+                tagIcon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-blue-600">
+                    <circle cx="8" cy="21" r="1" />
+                    <circle cx="19" cy="21" r="1" />
+                    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                  </svg>
+                ),
                 title: "Fashion Retail Brand",
                 desc: "Increased online sales with targeted performance marketing campaigns.",
                 img: "/images/case_marketing.png",
@@ -947,6 +954,11 @@ export default function DigitalMarketingPage() {
               },
               {
                 tag: "SaaS",
+                tagIcon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-blue-600">
+                    <path d="M17.5 19A5.5 5.5 0 0 0 22 13.5a5.5 5.5 0 0 0-5.5-5.5H16a7.5 7.5 0 0 0-14 3.5c0 1 .2 2 .5 3A5.5 5.5 0 0 0 8 19Z" />
+                  </svg>
+                ),
                 title: "B2B SaaS Company",
                 desc: "Generated high-quality leads and improved pipeline with multi-channel campaigns.",
                 img: "/images/case_cloud.png",
@@ -958,6 +970,11 @@ export default function DigitalMarketingPage() {
               },
               {
                 tag: "Healthcare",
+                tagIcon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-blue-600">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                  </svg>
+                ),
                 title: "Dental Clinic Network",
                 desc: "Grew local visibility and patient bookings through SEO & Local Ads.",
                 img: "/images/case_platform.png",
@@ -968,27 +985,28 @@ export default function DigitalMarketingPage() {
                 ]
               }
             ].map((cs, idx) => (
-              <div key={idx} className="bg-white border border-slate-200/60 rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-xl hover:border-sky-200 transition-all duration-300">
+              <div key={idx} className="bg-white border border-slate-200/60 rounded-[24px] overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 hover:border-slate-300 transition-all duration-300">
                 <div>
                   {/* Case Study Image Wrapper */}
-                  <div className="relative h-44 w-full bg-slate-100 overflow-hidden border-b border-slate-100">
+                  <div className="relative h-48 md:h-52 w-full bg-slate-100 overflow-hidden border-b border-slate-100">
                     <img src={cs.img} alt={cs.title} className="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
-                    <span className="absolute top-3 left-3 bg-[#06142D] border border-white/10 text-[9px] font-bold uppercase tracking-wider text-sky-400 py-1 px-2.5 rounded-full backdrop-blur-sm shadow">
+                    <span className="absolute top-4 left-4 bg-white/95 border border-slate-200/50 text-[10px] font-bold text-slate-800 py-1.5 px-3 rounded-full backdrop-blur-sm shadow-sm flex items-center gap-1.5">
+                      {cs.tagIcon}
                       {cs.tag}
                     </span>
                   </div>
 
                   {/* Body Content */}
-                  <div className="p-6 md:p-7">
-                    <h3 className="text-[16px] font-bold text-slate-950 font-poppins mb-2">{cs.title}</h3>
+                  <div className="p-6 md:p-8 flex flex-col">
+                    <h3 className="text-lg md:text-[19px] font-bold text-[#06142D] font-poppins mb-2.5 leading-tight">{cs.title}</h3>
                     <p className="text-xs md:text-sm text-slate-500 leading-relaxed font-normal mb-6">{cs.desc}</p>
                     
                     {/* Metrics Row */}
-                    <div className="grid grid-cols-3 gap-2 pt-4 border-t border-slate-100">
+                    <div className="grid grid-cols-3 gap-2 pt-6 border-t border-slate-100/80">
                       {cs.metrics.map((m, mIdx) => (
                         <div key={mIdx} className="flex flex-col text-left">
-                          <span className="text-[14px] md:text-[15px] font-black text-sky-500 leading-none">{m.val}</span>
-                          <span className="text-[8px] text-slate-400 uppercase font-semibold tracking-wider mt-1 leading-normal">{m.label}</span>
+                          <span className="text-[16px] md:text-[18px] font-black text-blue-600 leading-none">{m.val}</span>
+                          <span className="text-[9px] text-slate-400 font-bold uppercase tracking-wider mt-1.5 leading-normal">{m.label}</span>
                         </div>
                       ))}
                     </div>
@@ -996,10 +1014,10 @@ export default function DigitalMarketingPage() {
                 </div>
 
                 {/* Footer Link */}
-                <div className="px-6 md:px-7 pb-6 pt-1">
+                <div className="px-6 md:px-8 pb-6 md:pb-8 pt-1">
                   <button
                     onClick={openBooking}
-                    className="inline-flex items-center text-xs font-bold text-sky-500 hover:text-sky-600 transition-colors group/cs"
+                    className="inline-flex items-center text-xs font-bold text-blue-600 hover:text-blue-700 transition-colors group/cs"
                   >
                     View Case Study
                     <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover/cs:translate-x-1" />
