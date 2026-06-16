@@ -1090,7 +1090,7 @@ export default function DigitalMarketingPage() {
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
           
           {/* Dark Banner Container */}
-          <div className="relative w-full bg-[#06142D] border border-slate-800/40 rounded-[32px] p-6 md:p-12 md:py-14 overflow-hidden shadow-2xl">
+          <div className="relative w-full bg-[#06142D] border border-slate-800/40 rounded-[32px] py-8 px-5 md:py-10 md:px-10 overflow-hidden shadow-2xl">
             
             {/* Background ambient spots inside the banner */}
             <div className="absolute inset-0 pointer-events-none z-0">
@@ -1101,14 +1101,14 @@ export default function DigitalMarketingPage() {
             {/* Content wrapper to float above background */}
             <div className="relative z-10">
               
-              <div className="text-center mb-10 flex flex-col items-center">
+              <div className="text-center mb-6 flex flex-col items-center">
                 <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-tight font-poppins">
                   What Our Clients Say
                 </h2>
               </div>
 
               {/* Slider Outer Container */}
-              <div className="relative w-full overflow-hidden px-1 md:px-12 py-2">
+              <div className="relative w-full overflow-hidden px-0 py-2">
                 
                 {/* Navigation Arrows */}
                 <button
@@ -1116,7 +1116,7 @@ export default function DigitalMarketingPage() {
                     const maxIdx = testimonials.length - visibleCards;
                     setActiveTestimonial((prev) => (prev === 0 ? maxIdx : prev - 1));
                   }}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full border border-slate-800 bg-slate-900/60 hover:bg-slate-800 text-white flex items-center justify-center transition-all z-20"
+                  className="absolute left-[-12px] md:left-[-24px] top-1/2 -translate-y-1/2 h-10 w-10 rounded-full border border-slate-800 bg-slate-900/60 hover:bg-slate-800 text-white flex items-center justify-center transition-all z-20"
                   aria-label="Previous slide"
                 >
                   <ChevronLeft className="h-5 w-5" />
@@ -1127,7 +1127,7 @@ export default function DigitalMarketingPage() {
                     const maxIdx = testimonials.length - visibleCards;
                     setActiveTestimonial((prev) => (prev >= maxIdx ? 0 : prev + 1));
                   }}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full border border-slate-800 bg-slate-900/60 hover:bg-slate-800 text-white flex items-center justify-center transition-all z-20"
+                  className="absolute right-[-12px] md:right-[-24px] top-1/2 -translate-y-1/2 h-10 w-10 rounded-full border border-slate-800 bg-slate-900/60 hover:bg-slate-800 text-white flex items-center justify-center transition-all z-20"
                   aria-label="Next slide"
                 >
                   <ChevronRight className="h-5 w-5" />
@@ -1147,13 +1147,13 @@ export default function DigitalMarketingPage() {
                         className="px-3 shrink-0 flex flex-col" 
                         style={{ width: `${100 / testimonials.length}%` }}
                       >
-                        <div className="bg-[#0a1628]/85 border border-slate-800/40 p-6 md:p-8 rounded-2xl flex flex-col justify-between shadow-2xl relative min-h-[220px] md:min-h-[240px] h-full">
+                        <div className="bg-[#0a1628]/85 border border-slate-800/40 p-5 md:p-6 rounded-2xl flex flex-col justify-between shadow-2xl relative min-h-[160px] md:min-h-[180px] h-full">
                           <div>
                             {/* Quote Mark */}
                             <span className="text-4xl font-serif text-sky-500 font-black leading-none block mb-1">
                               “
                             </span>
-                            <p className="text-slate-300 text-xs md:text-sm leading-relaxed mb-6 font-normal">
+                            <p className="text-slate-300 text-xs md:text-sm leading-relaxed mb-4 font-normal">
                               {t.text}
                             </p>
                           </div>
