@@ -659,29 +659,45 @@ export default function CybersecurityPage() {
                 <img 
                   src="/images/security_cta_clean_hologram.png" 
                   alt="Cyber Security Hologram" 
-                  className="absolute bottom-[-15px] right-[-15px] w-[210px] h-[210px] md:w-[250px] md:h-[250px] object-contain pointer-events-none z-0 mix-blend-screen opacity-45 filter drop-shadow-[0_0_15px_rgba(6,182,212,0.15)]"
+                  className="absolute bottom-[-30px] right-[-30px] w-[270px] h-[270px] md:w-[320px] md:h-[320px] object-contain pointer-events-none z-0 mix-blend-screen opacity-50 filter drop-shadow-[0_0_20px_rgba(6,182,212,0.2)]"
                 />
 
-                <div className="relative z-10 flex flex-col items-start text-left w-full h-full justify-center">
-                  <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-cyan-300 mb-2 block">
-                    READY TO STRENGTHEN YOUR SECURITY?
-                  </span>
-                  
-                  <h3 className="text-base md:text-lg font-black text-white leading-tight font-poppins mb-3 max-w-[280px] md:max-w-[320px]">
-                    Let&apos;s Build a Security Strategy That Protects What Matters
-                  </h3>
+                <div className="relative z-10 flex flex-col items-start text-left w-full h-full justify-between py-1">
+                  <div className="flex flex-col items-start text-left">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-[0.15em] text-cyan-400 bg-cyan-950/40 border border-cyan-800/30 mb-4">
+                      <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                      Ready to Strengthen Your Security?
+                    </span>
+                    
+                    <h3 className="text-xl md:text-[25px] font-black text-white leading-tight font-poppins mb-3 max-w-[280px] md:max-w-[340px]">
+                      Let&apos;s Build a <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Security Strategy</span> That Protects What Matters
+                    </h3>
 
-                  <p className="text-[11px] md:text-xs text-slate-400 leading-relaxed mb-5 font-normal max-w-[260px] md:max-w-[300px]">
-                    Talk to our experts today and take the first step toward a more resilient digital future.
-                  </p>
+                    <p className="text-[11px] md:text-xs text-slate-300 leading-relaxed mb-4 font-normal max-w-[260px] md:max-w-[300px]">
+                      Talk to our experts today and take the first step toward a more resilient digital future.
+                    </p>
 
-                  <button
-                    onClick={openBooking}
-                    className="cursor-pointer inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs font-semibold text-blue-600 bg-white hover:bg-slate-50 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-black/10"
-                  >
-                    Book a Consultation
-                    <ArrowRight className="ml-2 h-3.5 w-3.5" />
-                  </button>
+                    <ul className="flex flex-col gap-1.5 text-[10px] md:text-[11px] text-slate-400 font-medium">
+                      <li className="flex items-center gap-2">
+                        <span className="h-1 w-1 rounded-full bg-cyan-400" />
+                        Free Initial Vulnerability Assessment
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="h-1 w-1 rounded-full bg-cyan-400" />
+                        Custom Zero-Trust Roadmapping
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="mt-6">
+                    <button
+                      onClick={openBooking}
+                      className="cursor-pointer inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs font-bold text-slate-900 bg-white hover:bg-slate-50 border border-slate-100 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-black/10"
+                    >
+                      Book a Consultation
+                      <ArrowRight className="ml-2 h-3.5 w-3.5" />
+                    </button>
+                  </div>
                 </div>
 
               </div>
