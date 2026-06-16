@@ -49,6 +49,30 @@ const testimonials: Testimonial[] = [
     role: "Marketing Director",
     company: "SmileCare",
     avatarUrl: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&h=120&q=80"
+  },
+  {
+    id: 3,
+    text: "The lead quality and volume have surpassed all our targets since partnering with Diginet. Their analytics dashboard makes tracking performance simple.",
+    name: "David Chen",
+    role: "VP of Growth",
+    company: "Finverge",
+    avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80"
+  },
+  {
+    id: 4,
+    text: "Diginet transformed our online presence. Our cost per acquisition dropped by 40%, and our overall sales have consistently increased month-over-month.",
+    name: "Amanda Ross",
+    role: "Founder",
+    company: "Bloom & Co",
+    avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80"
+  },
+  {
+    id: 5,
+    text: "Exceptional strategy, responsive communication, and stellar execution. They operate as an extension of our in-house team rather than just an agency.",
+    name: "Marcus Brody",
+    role: "Director of Sales",
+    company: "Apex Solutions",
+    avatarUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&h=120&q=80"
   }
 ];
 
@@ -69,7 +93,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "How long does it take to see results?",
-    answer: "Paid marketing campaigns (like Google Ads and Meta Ads) can start driving traffic and leads almost instantly upon deployment. For organic search strategies (SEO), you can expect to see compounding growth, keyword ranking improvements, and sustained organic lead generation within 3 to 6 months."
+    answer: "Paid marketing campaigns (like Google Ads and Meta Ads) can start driving traffic and leads almost instantly upon deployment. For organic search strategies (SEO), you can expect to see compounding growth, ranking improvements, and sustained organic lead generation within 3 to 6 months."
   },
   {
     question: "Do you offer customized strategies?",
@@ -80,15 +104,42 @@ const faqs: FAQItem[] = [
 export default function DigitalMarketingPage() {
   const { openBooking } = useBooking();
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [visibleCards, setVisibleCards] = useState(1);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  // Auto-scroll testimonials slider every 2 seconds
+  // Responsive visible cards listener
   useEffect(() => {
+    const handleResize = () => {
+      let cards = 1;
+      if (window.innerWidth >= 1024) {
+        cards = 3;
+      } else if (window.innerWidth >= 640) {
+        cards = 2;
+      }
+      setVisibleCards(cards);
+      
+      // Clamp active index to the new maxIndex
+      const maxIdx = testimonials.length - cards;
+      setActiveTestimonial((prev) => Math.min(prev, maxIdx));
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Auto-scroll testimonials slider
+  useEffect(() => {
+    const maxIndex = testimonials.length - visibleCards;
     const interval = setInterval(() => {
-      setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 2000);
+      setActiveTestimonial((prev) => {
+        if (prev >= maxIndex) {
+          return 0;
+        }
+        return prev + 1;
+      });
+    }, 3000);
     return () => clearInterval(interval);
-  }, [activeTestimonial]);
+  }, [visibleCards]);
 
   const toggleFaq = (idx: number) => {
     setOpenFaq(openFaq === idx ? null : idx);
@@ -985,24 +1036,26 @@ export default function DigitalMarketingPage() {
                 ]
               }
             ].map((cs, idx) => (
-              <div key={idx} className="bg-white border border-slate-200/60 rounded-[24px] overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 hover:border-slate-300 transition-all duration-300">
-                <div>
-                  {/* Case Study Image Wrapper */}
-                  <div className="relative h-48 md:h-52 w-full bg-slate-100 overflow-hidden border-b border-slate-100">
-                    <img src={cs.img} alt={cs.title} className="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
-                    <span className="absolute top-4 left-4 bg-white/95 border border-slate-200/50 text-[10px] font-bold text-slate-800 py-1.5 px-3 rounded-full backdrop-blur-sm shadow-sm flex items-center gap-1.5">
-                      {cs.tagIcon}
-                      {cs.tag}
-                    </span>
-                  </div>
+              <div key={idx} className="bg-white border border-slate-200/60 rounded-[24px] overflow-hidden shadow-sm flex flex-col hover:shadow-xl hover:-translate-y-1 hover:border-slate-300 transition-all duration-300">
+                {/* Case Study Image Wrapper */}
+                <div className="relative h-48 md:h-52 w-full bg-slate-100 overflow-hidden border-b border-slate-100">
+                  <img src={cs.img} alt={cs.title} className="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
+                  <span className="absolute top-4 left-4 bg-white/95 border border-slate-200/50 text-[10px] font-bold text-slate-800 py-1.5 px-3 rounded-full backdrop-blur-sm shadow-sm flex items-center gap-1.5">
+                    {cs.tagIcon}
+                    {cs.tag}
+                  </span>
+                </div>
 
-                  {/* Body Content */}
-                  <div className="p-6 md:p-8 flex flex-col">
-                    <h3 className="text-lg md:text-[19px] font-bold text-[#06142D] font-poppins mb-2.5 leading-tight">{cs.title}</h3>
-                    <p className="text-xs md:text-sm text-slate-500 leading-relaxed font-normal mb-6">{cs.desc}</p>
-                    
+                {/* Body Content */}
+                <div className="p-5 md:p-6 flex flex-col flex-1 justify-between">
+                  <div>
+                    <h3 className="text-lg md:text-[19px] font-bold text-[#06142D] font-poppins mb-2 leading-tight">{cs.title}</h3>
+                    <p className="text-xs md:text-sm text-slate-500 leading-relaxed font-normal mb-4">{cs.desc}</p>
+                  </div>
+                  
+                  <div className="mt-4">
                     {/* Metrics Row */}
-                    <div className="grid grid-cols-3 gap-2 pt-6 border-t border-slate-100/80">
+                    <div className="grid grid-cols-3 gap-2 pt-4 border-t border-slate-100/80">
                       {cs.metrics.map((m, mIdx) => (
                         <div key={mIdx} className="flex flex-col text-left">
                           <span className="text-[16px] md:text-[18px] font-black text-blue-600 leading-none">{m.val}</span>
@@ -1010,18 +1063,18 @@ export default function DigitalMarketingPage() {
                         </div>
                       ))}
                     </div>
-                  </div>
-                </div>
 
-                {/* Footer Link */}
-                <div className="px-6 md:px-8 pb-6 md:pb-8 pt-1">
-                  <button
-                    onClick={openBooking}
-                    className="inline-flex items-center text-xs font-bold text-blue-600 hover:text-blue-700 transition-colors group/cs"
-                  >
-                    View Case Study
-                    <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover/cs:translate-x-1" />
-                  </button>
+                    {/* Action Link */}
+                    <div className="pt-4 mt-1">
+                      <button
+                        onClick={openBooking}
+                        className="inline-flex items-center text-xs font-bold text-blue-600 hover:text-blue-700 transition-colors group/cs"
+                      >
+                        View Case Study
+                        <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover/cs:translate-x-1" />
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -1031,85 +1084,119 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* ========================================================
-          8. TESTIMONIALS SECTION (Dark background)
+          8. TESTIMONIALS SECTION (Dark banner inside light bg)
           ======================================================== */}
-      <section className="relative w-full py-16 md:py-20 bg-[#06142D] overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-[-20%] right-[-10%] h-[450px] w-[450px] rounded-full bg-sky-500/5 blur-[120px]" />
-          <div className="absolute bottom-[-20%] left-[-10%] h-[450px] w-[450px] rounded-full bg-blue-600/5 blur-[120px]" />
-        </div>
-
+      <section className="relative w-full py-16 md:py-20 bg-white overflow-hidden">
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
           
-          <div className="text-center mb-12 flex flex-col items-center">
-            <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-sky-400 mb-2.5">
-              What Our Clients Say
-            </span>
-            <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight leading-tight font-poppins">
-              Trusted by businesses that scale
-            </h2>
-          </div>
-
-          {/* Testimonial slider / carousel */}
-          <div className="relative w-full max-w-[900px] mx-auto overflow-hidden py-4">
+          {/* Dark Banner Container */}
+          <div className="relative w-full bg-[#06142D] border border-slate-800/40 rounded-[32px] p-6 md:p-12 md:py-14 overflow-hidden shadow-2xl">
             
-            <motion.div 
-              className="flex"
-              style={{ width: `${testimonials.length * 100}%` }}
-              animate={{ x: `-${activeTestimonial * (100 / testimonials.length)}%` }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            >
-              {testimonials.map((t) => (
-                <div key={t.id} className="px-3 md:px-6 shrink-0" style={{ width: `${100 / testimonials.length}%` }}>
-                  <div className="bg-[#0a1628]/85 border border-slate-800/40 p-8 rounded-2xl flex flex-col justify-between shadow-2xl relative min-h-[200px]">
-                    <div>
-                      {/* Quote Mark */}
-                      <span className="text-4xl font-serif text-sky-500 font-black leading-none block mb-1">
-                        “
-                      </span>
-                      <p className="text-slate-300 text-xs md:text-sm leading-relaxed mb-6 font-normal">
-                        {t.text}
-                      </p>
-                    </div>
-
-                    <div className="flex justify-between items-center pt-4 border-t border-slate-800/60">
-                      
-                      {/* User Info */}
-                      <div className="flex items-center gap-3">
-                        <img src={t.avatarUrl} alt={t.name} className="h-10 w-10 rounded-full object-cover shrink-0 bg-slate-900 border border-slate-800" />
-                        <div className="flex flex-col">
-                          <h4 className="font-bold text-white text-xs md:text-sm font-poppins leading-tight">{t.name}</h4>
-                          <p className="text-[10px] text-slate-400 leading-normal mt-0.5">{t.role}, {t.company}</p>
-                        </div>
-                      </div>
-
-                      {/* Stars */}
-                      <div className="flex gap-1 text-amber-400">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-3.5 w-3.5 fill-current stroke-current" />
-                        ))}
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-
-            {/* Slider Dots */}
-            <div className="flex gap-2 justify-center mt-8 relative z-20">
-              {testimonials.map((t) => (
-                <button
-                  key={t.id}
-                  onClick={() => setActiveTestimonial(t.id)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    activeTestimonial === t.id ? "w-5 bg-sky-500" : "w-2 bg-slate-700"
-                  }`}
-                  aria-label={`Go to slide ${t.id + 1}`}
-                />
-              ))}
+            {/* Background ambient spots inside the banner */}
+            <div className="absolute inset-0 pointer-events-none z-0">
+              <div className="absolute top-[-30%] right-[-10%] h-[350px] w-[350px] rounded-full bg-sky-500/10 blur-[100px]" />
+              <div className="absolute bottom-[-30%] left-[-10%] h-[350px] w-[350px] rounded-full bg-blue-600/5 blur-[100px]" />
             </div>
 
+            {/* Content wrapper to float above background */}
+            <div className="relative z-10">
+              
+              <div className="text-center mb-10 flex flex-col items-center">
+                <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-tight font-poppins">
+                  What Our Clients Say
+                </h2>
+              </div>
+
+              {/* Slider Outer Container */}
+              <div className="relative w-full overflow-hidden px-1 md:px-12 py-2">
+                
+                {/* Navigation Arrows */}
+                <button
+                  onClick={() => {
+                    const maxIdx = testimonials.length - visibleCards;
+                    setActiveTestimonial((prev) => (prev === 0 ? maxIdx : prev - 1));
+                  }}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full border border-slate-800 bg-slate-900/60 hover:bg-slate-800 text-white flex items-center justify-center transition-all z-20"
+                  aria-label="Previous slide"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+
+                <button
+                  onClick={() => {
+                    const maxIdx = testimonials.length - visibleCards;
+                    setActiveTestimonial((prev) => (prev >= maxIdx ? 0 : prev + 1));
+                  }}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full border border-slate-800 bg-slate-900/60 hover:bg-slate-800 text-white flex items-center justify-center transition-all z-20"
+                  aria-label="Next slide"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+
+                {/* Slider Track */}
+                <div className="w-full overflow-hidden">
+                  <motion.div 
+                    className="flex"
+                    style={{ width: `${(testimonials.length / visibleCards) * 100}%` }}
+                    animate={{ x: `-${activeTestimonial * (100 / testimonials.length)}%` }}
+                    transition={{ type: "spring", stiffness: 180, damping: 25 }}
+                  >
+                    {testimonials.map((t) => (
+                      <div 
+                        key={t.id} 
+                        className="px-3 shrink-0 flex flex-col" 
+                        style={{ width: `${100 / testimonials.length}%` }}
+                      >
+                        <div className="bg-[#0a1628]/85 border border-slate-800/40 p-6 md:p-8 rounded-2xl flex flex-col justify-between shadow-2xl relative min-h-[220px] md:min-h-[240px] h-full">
+                          <div>
+                            {/* Quote Mark */}
+                            <span className="text-4xl font-serif text-sky-500 font-black leading-none block mb-1">
+                              “
+                            </span>
+                            <p className="text-slate-300 text-xs md:text-sm leading-relaxed mb-6 font-normal">
+                              {t.text}
+                            </p>
+                          </div>
+
+                          <div className="flex items-center gap-3 pt-4 border-t border-slate-800/60">
+                            {/* User Info */}
+                            <img 
+                              src={t.avatarUrl} 
+                              alt={t.name} 
+                              className="h-10 w-10 rounded-full object-cover shrink-0 bg-slate-900 border border-slate-800" 
+                            />
+                            <div className="flex flex-col">
+                              <h4 className="font-bold text-white text-xs md:text-sm font-poppins leading-tight">
+                                {t.name}
+                              </h4>
+                              <p className="text-[10px] text-slate-400 leading-normal mt-0.5">
+                                {t.role}, {t.company}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </motion.div>
+                </div>
+
+                {/* Slider Dots */}
+                <div className="flex gap-2 justify-center mt-8 relative z-20">
+                  {Array.from({ length: testimonials.length - visibleCards + 1 }).map((_, dIdx) => (
+                    <button
+                      key={dIdx}
+                      onClick={() => setActiveTestimonial(dIdx)}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        activeTestimonial === dIdx ? "w-5 bg-sky-500" : "w-2 bg-slate-700"
+                      }`}
+                      aria-label={`Go to slide ${dIdx + 1}`}
+                    />
+                  ))}
+                </div>
+
+              </div>
+
+            </div>
           </div>
 
         </div>
