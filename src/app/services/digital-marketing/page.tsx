@@ -714,45 +714,63 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* ========================================================
-          5. PROVEN PROCESS SECTION (Dark background block)
+          5. PROVEN PROCESS SECTION (Redesigned Container Card)
           ======================================================== */}
-      <section id="process" className="relative w-full py-16 md:py-20 bg-[#06142D] overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-[-20%] left-[-10%] h-[450px] w-[450px] rounded-full bg-sky-500/5 blur-[120px]" />
-          <div className="absolute bottom-[-20%] right-[-10%] h-[450px] w-[450px] rounded-full bg-blue-600/5 blur-[120px]" />
-        </div>
-
+      <section id="process" className="relative w-full py-16 md:py-20 bg-white">
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
           
-          <div className="text-center mb-14 flex flex-col items-center">
-            <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-sky-400 mb-2.5">
-              Our Proven Process
-            </span>
-            <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight leading-tight font-poppins">
-              A collaborative approach that delivers consistent, measurable growth.
-            </h2>
-          </div>
-
-          <div className="relative">
-            {/* Connecting Dotted Line - desktop only */}
-            <div className="hidden lg:block absolute top-7 left-12 right-12 h-0.5 border-t border-dashed border-slate-700/60 z-0" />
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 relative z-10">
-              {[
-                { step: "01", title: "Discover & Research", desc: "We understand your business, audience, goals and current performance." },
-                { step: "02", title: "Strategy & Planning", desc: "We create a data-driven strategy with the right channels and campaign roadmap." },
-                { step: "03", title: "Execute & Optimize", desc: "We launch, monitor and optimize campaigns for maximum performance." },
-                { step: "04", title: "Measure & Scale", desc: "We analyze results, share insights and scale what works for sustainable growth." }
-              ].map((proc, idx) => (
-                <div key={idx} className="flex flex-col items-start text-left group">
-                  <div className="h-14 w-14 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center mb-6 text-sky-400 font-extrabold text-sm tracking-wide z-10 transition-colors group-hover:border-sky-500 bg-gradient-to-br from-slate-900 to-slate-950">
-                    {proc.step}
-                  </div>
-                  <h3 className="text-[14px] md:text-[15px] font-bold text-white font-poppins mb-2">{proc.title}</h3>
-                  <p className="text-[11px] md:text-xs text-slate-450 leading-relaxed font-normal">{proc.desc}</p>
-                </div>
-              ))}
+          <div className="relative w-full bg-[#06142D] border border-slate-800/60 rounded-[32px] p-8 md:p-12 md:py-16 overflow-hidden shadow-2xl bg-gradient-to-br from-[#06142D] via-[#081733] to-[#0b2046]">
+            
+            {/* Background ambient grids/effects inside card */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute top-[-10%] right-[-10%] h-[350px] w-[350px] rounded-full bg-sky-500/10 blur-[90px]" />
+              <div className="absolute bottom-[-10%] left-[-10%] h-[300px] w-[300px] rounded-full bg-blue-600/5 blur-[80px]" />
             </div>
+
+            <div className="relative z-10 flex flex-col">
+              
+              <div className="text-center mb-14 flex flex-col items-center">
+                <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-sky-400 mb-2.5">
+                  Our Proven Process
+                </span>
+                <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight leading-tight font-poppins">
+                  A collaborative approach that delivers consistent, measurable growth.
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+                {[
+                  { title: "Discover & Research", desc: "We understand your business, audience, goals and current performance." },
+                  { title: "Strategy & Planning", desc: "We create a data-driven strategy with the right channels and campaign roadmap." },
+                  { title: "Execute & Optimize", desc: "We launch, monitor and optimize campaigns for maximum performance." },
+                  { title: "Measure & Scale", desc: "We analyze results, share insights and scale what works for sustainable growth." }
+                ].map((proc, idx) => (
+                  <div key={idx} className="relative flex flex-col items-start text-left group z-10">
+                    
+                    {/* Connecting Dotted Arrow - desktop only */}
+                    {idx < 3 && (
+                      <div className="hidden lg:block absolute top-[15px] left-10 w-[calc(100%-16px)] h-0.5 z-0">
+                        <div className="w-full h-full border-t border-dashed border-slate-600/50 flex items-center justify-end relative">
+                          <svg className="absolute right-[-4px] top-[-4px] h-2.5 w-2.5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Step Number Circle */}
+                    <div className="h-8 w-8 rounded-full bg-white flex items-center justify-center mb-5 text-slate-900 font-bold text-xs tracking-wide z-10 shadow-md">
+                      {idx + 1}
+                    </div>
+
+                    <h3 className="text-[14px] md:text-[15px] font-bold text-white font-poppins mb-2">{proc.title}</h3>
+                    <p className="text-[11px] md:text-xs text-slate-400 leading-relaxed font-normal">{proc.desc}</p>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+
           </div>
 
         </div>
