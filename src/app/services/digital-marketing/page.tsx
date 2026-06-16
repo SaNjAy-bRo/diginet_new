@@ -1208,64 +1208,79 @@ export default function DigitalMarketingPage() {
       <section className="relative w-full py-16 md:py-20 bg-white">
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
             
-            {/* Left Column: FAQs Accordion */}
-            <div className="lg:col-span-5 flex flex-col items-start text-left">
-              <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-accent-blue mb-2.5">
-                Frequently Asked Questions
-              </span>
-              <h2 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight leading-tight font-poppins mb-8">
-                Got questions? We have answers.
-              </h2>
+            {/* Left Column: FAQs Accordion Card */}
+            <div className="lg:col-span-5 w-full">
+              <div className="bg-white border border-slate-200/60 rounded-[32px] p-6 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 h-full">
+                
+                <div>
+                  <h2 className="text-xl md:text-2xl font-black text-[#06142D] tracking-tight leading-tight font-poppins mb-6">
+                    Frequently Asked Questions
+                  </h2>
 
-              <div className="w-full flex flex-col gap-3">
-                {faqs.map((faq, idx) => {
-                  const isOpen = openFaq === idx;
-                  return (
-                    <div key={idx} className="border border-slate-200/60 rounded-xl overflow-hidden shadow-sm transition-all duration-200">
-                      <button
-                        onClick={() => toggleFaq(idx)}
-                        className="w-full px-5 py-4 flex items-center justify-between text-left font-bold text-xs md:text-sm text-slate-950 font-poppins bg-slate-50 hover:bg-slate-100/50 transition-colors"
-                      >
-                        <span>{faq.question}</span>
-                        <ChevronDown className={`h-4 w-4 text-slate-500 shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-sky-500" : ""}`} />
-                      </button>
-                      <AnimatePresence initial={false}>
-                        {isOpen && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="bg-white"
+                  <div className="w-full flex flex-col mt-4">
+                    {faqs.map((faq, idx) => {
+                      const isOpen = openFaq === idx;
+                      return (
+                        <div key={idx} className="border-b border-slate-100 last:border-0">
+                          <button
+                            onClick={() => toggleFaq(idx)}
+                            className="w-full py-4 flex items-center justify-between text-left font-bold text-xs md:text-[14px] text-[#06142D] font-poppins hover:text-blue-600 transition-colors"
                           >
-                            <p className="px-5 pb-5 pt-3 text-xs md:text-sm text-slate-500 leading-relaxed border-t border-slate-100/80 font-normal">
-                              {faq.answer}
-                            </p>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  );
-                })}
-              </div>
+                            <span>{faq.question}</span>
+                            <span className="text-slate-400 font-normal text-lg ml-2 shrink-0 select-none">
+                              {isOpen ? "−" : "+"}
+                            </span>
+                          </button>
+                          <AnimatePresence initial={false}>
+                            {isOpen && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.2 }}
+                              >
+                                <p className="pb-4 text-xs md:text-sm text-slate-500 leading-relaxed font-normal">
+                                  {faq.answer}
+                                </p>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
 
-              <Link href="/contact" className="inline-flex items-center text-xs font-bold text-sky-500 hover:text-sky-600 transition-colors mt-6 group">
-                View all FAQs
-                <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-              </Link>
+                <div className="mt-8 pt-2">
+                  <Link href="/contact" className="inline-flex items-center text-xs font-bold text-blue-600 hover:text-blue-700 transition-colors group">
+                    View all FAQs
+                    <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+
+              </div>
             </div>
 
             {/* Right Column: CTA Banner Card */}
             <div className="lg:col-span-7 w-full h-full">
               
-              {/* Blue Gradient Container */}
-              <div className="w-full bg-gradient-to-br from-[#0EA5E9] to-[#2563EB] rounded-[24px] shadow-xl p-8 md:p-10 relative overflow-hidden flex flex-col justify-between min-h-[360px]">
-                
+              {/* Blue Gradient Container with Vibrant BG Image */}
+              <div 
+                className="w-full bg-[#06142D] rounded-[32px] border border-slate-800/40 shadow-xl p-8 md:p-10 relative overflow-hidden flex flex-col justify-between min-h-[380px] h-full"
+                style={{ 
+                  backgroundImage: "url('/images/cta_vibrant_bg.png')", 
+                  backgroundSize: "cover", 
+                  backgroundPosition: "center" 
+                }}
+              >
+                {/* Gradient overlay for readability */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#06142D]/95 via-[#071633]/80 to-transparent pointer-events-none z-0" />
+
                 {/* Background Rocket Line Illustration overlay */}
-                <div className="absolute right-0 bottom-0 top-0 w-[55%] opacity-[0.09] pointer-events-none z-0 overflow-hidden flex items-end justify-end">
-                  <svg className="w-full h-full text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <div className="absolute right-4 bottom-4 top-4 w-[45%] opacity-[0.18] pointer-events-none z-10 overflow-hidden flex items-center justify-end">
+                  <svg className="w-full h-full text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.2">
                     <path d="M50 10 C 65 30, 65 60, 50 90 C 35 60, 35 30, 50 10 Z" />
                     <path d="M50 20 L60 40 L40 40 Z" />
                     <path d="M50 40 L50 90" />
@@ -1274,24 +1289,24 @@ export default function DigitalMarketingPage() {
                   </svg>
                 </div>
 
-                <div className="relative z-10 flex flex-col items-start text-left">
-                  <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-white/80 mb-3 block">
-                    Ready to grow?
+                <div className="relative z-20 flex flex-col items-start text-left">
+                  <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-blue-300 mb-3 block">
+                    READY TO GROW?
                   </span>
                   
                   <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-white leading-tight font-poppins max-w-[420px] mb-4">
                     Let&apos;s Build a Digital Marketing Strategy That Delivers Results
                   </h3>
 
-                  <p className="text-[13px] md:text-[14px] text-white/85 leading-relaxed max-w-[440px] mb-8 font-normal">
+                  <p className="text-[13px] md:text-[14px] text-slate-300 leading-relaxed max-w-[440px] mb-8 font-normal">
                     Get a free consultation and discover how we can help you attract more customers and grow your business.
                   </p>
                 </div>
 
-                <div className="relative z-10 pt-4">
+                <div className="relative z-20 pt-4">
                   <button
                     onClick={openBooking}
-                    className="cursor-pointer inline-flex items-center justify-center px-7 py-3 rounded-full text-sm font-semibold text-[#0E52C9] bg-white hover:bg-slate-50 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-black/10"
+                    className="cursor-pointer inline-flex items-center justify-center px-7 py-3 rounded-full text-sm font-semibold text-blue-600 bg-white hover:bg-slate-50 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-black/10"
                   >
                     Book a Consultation
                     <ArrowRight className="ml-2 h-4 w-4" />
