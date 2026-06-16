@@ -28,10 +28,10 @@ export default function Hero() {
 
       {/* Main hero content */}
       <div className="w-full max-w-[1280px] mx-auto px-6 md:px-10 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 xl:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-12 items-center">
 
           {/* ===== LEFT: Text Content ===== */}
-          <div className="flex flex-col text-center lg:text-left items-center lg:items-start relative z-10 lg:max-w-[480px]">
+          <div className="flex flex-col text-center lg:text-left items-center lg:items-start relative z-10 lg:max-w-[540px]">
 
             {/* Tagline — no background */}
             <motion.span
@@ -89,7 +89,7 @@ export default function Hero() {
 
           {/* ===== RIGHT: Console Dashboard ===== */}
           <motion.div
-            className="relative flex justify-center lg:justify-end items-center lg:pl-6 xl:pl-10"
+            className="relative flex justify-center lg:justify-end items-center lg:pl-2 xl:pl-4"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -182,7 +182,7 @@ export default function Hero() {
 
               {/* ---- Floating Left Card (Service List) ---- */}
               <motion.div
-                className="absolute -left-4 sm:-left-10 lg:-left-12 top-[15%] z-20 w-[145px] sm:w-[195px] rounded-2xl border border-white/[0.08] shadow-2xl p-2.5 sm:p-4 bg-[#0a1424]/85 backdrop-blur-lg flex flex-col gap-2.5 sm:gap-3"
+                className="absolute -left-2 sm:-left-6 lg:-left-8 top-[15%] z-20 w-[145px] sm:w-[195px] rounded-2xl border border-white/[0.08] shadow-2xl p-2.5 sm:p-4 bg-[#0a1424]/85 backdrop-blur-lg flex flex-col gap-2.5 sm:gap-3"
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               >
