@@ -144,7 +144,7 @@ export default function CybersecurityPage() {
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3.5 w-full sm:w-auto mb-8">
+              <div className="flex flex-col sm:flex-row gap-3.5 w-full sm:w-auto">
                 <button
                   onClick={openBooking}
                   className="cursor-pointer inline-flex items-center justify-center px-7 py-3 rounded-xl text-sm font-semibold text-white bg-cta-blue hover:bg-hover-blue transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-cta-blue/20"
@@ -154,35 +154,15 @@ export default function CybersecurityPage() {
                 </button>
               </div>
 
-              {/* 4 Value Pillars inside the left column */}
-              <div className="grid grid-cols-2 gap-4 mt-2 max-w-[500px] w-full border-t border-slate-800/40 pt-6">
-                {[
-                  { title: "24/7 Threat Monitoring", desc: "Constant vigil over active infrastructure.", icon: <Eye className="h-4.5 w-4.5 text-cyan-400 stroke-[2.5px]" /> },
-                  { title: "Reduce Risk & Minimize Impact", desc: "Isolate vulnerabilities before escalation.", icon: <ShieldAlert className="h-4.5 w-4.5 text-cyan-400 stroke-[2.5px]" /> },
-                  { title: "Rapid Incident Response", desc: "Immediate containment and system recovery.", icon: <Zap className="h-4.5 w-4.5 text-cyan-400 stroke-[2.5px]" /> },
-                  { title: "Compliance & Governance", desc: "Enforce SOC2, ISO, and data protocols.", icon: <FileSpreadsheet className="h-4.5 w-4.5 text-cyan-400 stroke-[2.5px]" /> }
-                ].map((item, idx) => (
-                  <div key={idx} className="flex gap-2.5 items-start">
-                    <div className="h-8.5 w-8.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0">
-                      {item.icon}
-                    </div>
-                    <div className="flex flex-col leading-tight pt-0.5">
-                      <span className="text-[11px] md:text-xs font-bold text-white tracking-wide">{item.title}</span>
-                      <span className="text-[10px] text-slate-400 mt-1 leading-normal">{item.desc}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
             </div>
 
             {/* Right Hero Graphic: High-fidelity animated SVG cyber shield & World Map */}
             <div className="lg:col-span-6 relative flex justify-center lg:justify-end items-start py-0">
-              <div className="relative w-full max-w-[500px] aspect-square flex items-center justify-center">
+              <div className="relative w-full max-w-[500px] aspect-[4/3] flex items-center justify-center">
                 
                 {/* SVG background grid & world map with active threat nodes */}
                 <div className="absolute inset-0 opacity-[0.4] pointer-events-none">
-                  <svg className="w-full h-full" viewBox="0 0 500 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="w-full h-full" viewBox="0 0 500 380" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                       <radialGradient id="mapGlow" cx="50%" cy="50%" r="50%">
                         <stop offset="0%" stopColor="#00ffff" stopOpacity="0.1" />
@@ -195,15 +175,15 @@ export default function CybersecurityPage() {
                     </defs>
 
                     {/* Concentric grid lines */}
-                    <circle cx="250" cy="220" r="200" stroke="rgba(0, 216, 255, 0.08)" strokeWidth="1" strokeDasharray="4 8" />
-                    <circle cx="250" cy="220" r="160" stroke="rgba(0, 85, 255, 0.12)" strokeWidth="1" />
-                    <circle cx="250" cy="220" r="120" stroke="rgba(0, 216, 255, 0.08)" strokeWidth="1" strokeDasharray="12 6" />
+                    <circle cx="250" cy="180" r="180" stroke="rgba(0, 216, 255, 0.08)" strokeWidth="1" strokeDasharray="4 8" />
+                    <circle cx="250" cy="180" r="140" stroke="rgba(0, 85, 255, 0.12)" strokeWidth="1" />
+                    <circle cx="250" cy="180" r="100" stroke="rgba(0, 216, 255, 0.08)" strokeWidth="1" strokeDasharray="12 6" />
 
                     {/* Ambient Glow behind map */}
-                    <circle cx="250" cy="220" r="180" fill="url(#mapGlow)" />
+                    <circle cx="250" cy="180" r="140" fill="url(#mapGlow)" />
 
                     {/* Vector World Map Paths */}
-                    <g transform="translate(10, 40) scale(1.15)">
+                    <g transform="translate(10, 20) scale(1.15)">
                       {/* North America */}
                       <path 
                         d="M40,60 L55,55 L70,52 L85,55 L95,50 L105,55 L118,52 L128,55 L138,50 L148,50 L153,55 L155,62 L148,70 L143,78 L136,82 L130,88 L126,95 L120,102 L113,110 L108,118 L106,125 L100,132 L96,138 L93,142 L88,145 L83,140 L86,132 L90,125 L93,118 L96,110 L93,102 L88,95 L80,92 L73,88 L68,82 L63,78 L58,70 L63,65 Z" 
@@ -257,49 +237,49 @@ export default function CybersecurityPage() {
 
                     {/* Active Blinking Threat Nodes (Red Glowing Points) & Network Lines */}
                     {/* Node 1: North America */}
-                    <circle cx="110" cy="115" r="4" fill="#ef4444" className="animate-pulse" />
-                    <circle cx="110" cy="115" r="10" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "3s" }} opacity="0.45" fill="none" />
+                    <circle cx="110" cy="95" r="4" fill="#ef4444" className="animate-pulse" />
+                    <circle cx="110" cy="95" r="10" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "3s" }} opacity="0.45" fill="none" />
                     
                     {/* Node 2: Europe */}
-                    <circle cx="215" cy="120" r="4" fill="#ef4444" className="animate-pulse" />
-                    <circle cx="215" cy="120" r="10" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "2.5s" }} opacity="0.45" fill="none" />
+                    <circle cx="215" cy="100" r="4" fill="#ef4444" className="animate-pulse" />
+                    <circle cx="215" cy="100" r="10" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "2.5s" }} opacity="0.45" fill="none" />
 
                     {/* Node 3: India */}
-                    <circle cx="310" cy="200" r="4" fill="#ef4444" className="animate-pulse" />
-                    <circle cx="310" cy="200" r="10" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "4s" }} opacity="0.45" fill="none" />
+                    <circle cx="310" cy="180" r="4" fill="#ef4444" className="animate-pulse" />
+                    <circle cx="310" cy="180" r="10" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "4s" }} opacity="0.45" fill="none" />
 
                     {/* Node 4: Japan */}
-                    <circle cx="440" cy="130" r="4.5" fill="#ef4444" className="animate-pulse" />
-                    <circle cx="440" cy="130" r="12" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "3.2s" }} opacity="0.45" fill="none" />
+                    <circle cx="440" cy="110" r="4.5" fill="#ef4444" className="animate-pulse" />
+                    <circle cx="440" cy="110" r="12" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "3.2s" }} opacity="0.45" fill="none" />
 
                     {/* Node 5: South America */}
-                    <circle cx="160" cy="270" r="4" fill="#ef4444" className="animate-pulse" />
-                    <circle cx="160" cy="270" r="10" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "3.8s" }} opacity="0.45" fill="none" />
+                    <circle cx="160" cy="250" r="4" fill="#ef4444" className="animate-pulse" />
+                    <circle cx="160" cy="250" r="10" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "3.8s" }} opacity="0.45" fill="none" />
 
                     {/* Node 6: South Africa */}
-                    <circle cx="265" cy="340" r="4" fill="#ef4444" className="animate-pulse" />
-                    <circle cx="265" cy="340" r="10" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "4.2s" }} opacity="0.45" fill="none" />
+                    <circle cx="265" cy="320" r="4" fill="#ef4444" className="animate-pulse" />
+                    <circle cx="265" cy="320" r="10" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "4.2s" }} opacity="0.45" fill="none" />
 
                     {/* Node 7: Australia */}
-                    <circle cx="410" cy="310" r="4" fill="#ef4444" className="animate-pulse" />
-                    <circle cx="410" cy="310" r="10" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "2.8s" }} opacity="0.45" fill="none" />
+                    <circle cx="410" cy="290" r="4" fill="#ef4444" className="animate-pulse" />
+                    <circle cx="410" cy="290" r="10" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "2.8s" }} opacity="0.45" fill="none" />
 
                     {/* Circuit Board / Glowing Cyber Connection Lines */}
-                    <path d="M110,115 L215,120 L310,200 L440,130" stroke="rgba(0, 216, 255, 0.2)" strokeWidth="1" fill="none" />
-                    <path d="M160,270 L215,120" stroke="rgba(0, 216, 255, 0.15)" strokeWidth="0.8" strokeDasharray="3 3" fill="none" />
-                    <path d="M265,340 L310,200 L410,310" stroke="rgba(0, 216, 255, 0.2)" strokeWidth="1" fill="none" />
+                    <path d="M110,95 L215,100 L310,180 L440,110" stroke="rgba(0, 216, 255, 0.2)" strokeWidth="1" fill="none" />
+                    <path d="M160,250 L215,100" stroke="rgba(0, 216, 255, 0.15)" strokeWidth="0.8" strokeDasharray="3 3" fill="none" />
+                    <path d="M265,320 L310,180 L410,290" stroke="rgba(0, 216, 255, 0.2)" strokeWidth="1" fill="none" />
                   </svg>
                 </div>
 
                 {/* Rotating SVG concentric coordinate/scanner rings */}
                 <motion.div 
-                  className="absolute w-[86%] h-[86%] opacity-40"
+                  className="absolute w-[80%] h-[80%] opacity-40"
                   animate={{ rotate: -360 }}
                   transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
                 >
                   <svg className="w-full h-full" viewBox="0 0 400 400" fill="none">
-                    <circle cx="200" cy="200" r="140" stroke="url(#cyanRadarGrad)" strokeWidth="1.5" strokeDasharray="10 30 50 20" />
-                    <circle cx="200" cy="200" r="170" stroke="url(#blueRadarGrad)" strokeWidth="1" strokeDasharray="80 60 120 40" />
+                    <circle cx="200" cy="200" r="130" stroke="url(#cyanRadarGrad)" strokeWidth="1.5" strokeDasharray="10 30 50 20" />
+                    <circle cx="200" cy="200" r="160" stroke="url(#blueRadarGrad)" strokeWidth="1" strokeDasharray="80 60 120 40" />
                     <defs>
                       <linearGradient id="cyanRadarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" stopColor="#00f0ff" stopOpacity="0.7" />
@@ -314,8 +294,8 @@ export default function CybersecurityPage() {
                 </motion.div>
 
                 {/* High-Tech Glowing Pedestal Platform */}
-                <div className="absolute bottom-8 w-full flex justify-center pointer-events-none">
-                  <svg width="320" height="80" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className="absolute bottom-2 w-full flex justify-center pointer-events-none">
+                  <svg width="300" height="70" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                       <radialGradient id="pedestalGlow" cx="50%" cy="50%" r="50%">
                         <stop offset="0%" stopColor="#00ffff" stopOpacity="0.5" />
@@ -350,12 +330,12 @@ export default function CybersecurityPage() {
 
                 {/* Core Shield & Padlock Container with floating animation */}
                 <motion.div
-                  className="relative z-10 flex flex-col items-center bottom-12"
+                  className="relative z-10 flex flex-col items-center bottom-6"
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
                 >
                   {/* Glowing Shield + Lock SVG */}
-                  <svg className="w-[185px] h-[225px] filter drop-shadow-[0_0_30px_rgba(6,182,212,0.45)]" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="w-[175px] h-[215px] filter drop-shadow-[0_0_25px_rgba(6,182,212,0.45)]" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                       <linearGradient id="shieldFillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" stopColor="#00ffff" stopOpacity="0.25" />
@@ -418,6 +398,26 @@ export default function CybersecurityPage() {
               </div>
             </div>
 
+          </div>
+
+          {/* Underneath: 4 Value Pillars at the bottom of the section */}
+          <div className="mt-8 pt-8 border-t border-slate-800/40 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-[1100px] w-full">
+            {[
+              { title: "24/7 Threat Monitoring", desc: "Constant vigil over active infrastructure.", icon: <Eye className="h-4.5 w-4.5 text-cyan-400 stroke-[2.5px]" /> },
+              { title: "Reduce Risk & Minimize Impact", desc: "Isolate vulnerabilities before escalation.", icon: <ShieldAlert className="h-4.5 w-4.5 text-cyan-400 stroke-[2.5px]" /> },
+              { title: "Rapid Incident Response", desc: "Immediate containment and system recovery.", icon: <Zap className="h-4.5 w-4.5 text-cyan-400 stroke-[2.5px]" /> },
+              { title: "Compliance & Governance", desc: "Enforce SOC2, ISO, and data protocols.", icon: <FileSpreadsheet className="h-4.5 w-4.5 text-cyan-400 stroke-[2.5px]" /> }
+            ].map((item, idx) => (
+              <div key={idx} className="flex gap-3.5 items-start">
+                <div className="h-9.5 w-9.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0">
+                  {item.icon}
+                </div>
+                <div className="flex flex-col leading-tight pt-0.5">
+                  <span className="text-xs md:text-sm font-bold text-white tracking-wide">{item.title}</span>
+                  <span className="text-[11px] md:text-xs text-slate-400 mt-1.5 leading-normal">{item.desc}</span>
+                </div>
+              </div>
+            ))}
           </div>
 
         </div>
