@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, X, ArrowRight, Monitor, Shield, AppWindow, Share2, Megaphone, Phone, Mail, Smartphone } from "lucide-react";
-import Image from "next/image";
+import { useBooking } from "@/context/BookingContext";
 
 const services = [
   {
@@ -13,42 +14,48 @@ const services = [
     href: "/services/digital-marketing",
     description: "Results-driven online growth and SEO.",
     icon: Megaphone,
-    color: "text-cyan-600",
+    color: "text-cyan-400",
+    bg: "bg-cyan-500/10",
   },
   {
     name: "Social Media Management",
     href: "/services/social-media-management",
     description: "Engage and build your digital community.",
     icon: Share2,
-    color: "text-purple-600",
+    color: "text-purple-400",
+    bg: "bg-purple-500/10",
   },
   {
     name: "Mobile Development",
     href: "/services/mobile-development",
     description: "Native iOS & Android apps and cross-platform arrays.",
     icon: Smartphone,
-    color: "text-indigo-600",
+    color: "text-indigo-400",
+    bg: "bg-indigo-500/10",
   },
   {
     name: "Application Dev",
     href: "/services/application-development",
     description: "Custom, scalable software & mobile apps.",
     icon: AppWindow,
-    color: "text-pink-600",
+    color: "text-pink-400",
+    bg: "bg-pink-500/10",
   },
   {
     name: "Website Designing",
     href: "/services/website-designing",
     description: "Stunning, fast, and responsive web design.",
     icon: Monitor,
-    color: "text-amber-600",
+    color: "text-amber-400",
+    bg: "bg-amber-500/10",
   },
   {
     name: "Cybersecurity",
     href: "/services/cybersecurity",
     description: "Protecting your corporate digital assets.",
     icon: Shield,
-    color: "text-emerald-600",
+    color: "text-emerald-400",
+    bg: "bg-emerald-500/10",
   },
 ];
 
@@ -57,65 +64,48 @@ export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const { openBooking } = useBooking();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isDarkHeroPage = pathname === "/" || pathname.startsWith("/services/");
-
   const getLinkClass = (path: string) => {
     const isActive = pathname === path;
-    const base = "text-sm font-semibold transition-all duration-200";
+    const base = "text-[13px] font-semibold transition-all duration-200 py-2 relative group";
     
     if (isScrolled || isOpen) {
-      return `${base} hover:text-primary ${isActive ? "text-primary font-bold" : "text-slate-600"}`;
+      return `${base} hover:text-white ${isActive ? "text-white font-bold" : "text-slate-300"}`;
     }
-    
-    if (isDarkHeroPage) {
-      return `${base} hover:text-white ${isActive ? "text-white font-bold" : "text-white/80"}`;
-    }
-    
-    return `${base} hover:text-primary ${isActive ? "text-primary font-bold" : "text-slate-600"}`;
+    return `${base} hover:text-white ${isActive ? "text-white font-bold" : "text-white/80"}`;
   };
 
   const getDropdownClass = () => {
     const isActive = pathname.startsWith("/services");
-    const base = "flex items-center gap-1 text-sm font-semibold transition-all duration-200 cursor-pointer";
+    const base = "flex items-center gap-1 text-[13px] font-semibold transition-all duration-200 cursor-pointer py-2";
     
     if (isScrolled || isOpen) {
-      return `${base} hover:text-primary ${isActive ? "text-primary font-bold" : "text-slate-600"}`;
+      return `${base} hover:text-white ${isActive ? "text-white font-bold" : "text-slate-300"}`;
     }
-    
-    if (isDarkHeroPage) {
-      return `${base} hover:text-white ${isActive ? "text-white font-bold" : "text-white/80"}`;
-    }
-    
-    return `${base} hover:text-primary ${isActive ? "text-primary font-bold" : "text-slate-600"}`;
+    return `${base} hover:text-white ${isActive ? "text-white font-bold" : "text-white/80"}`;
   };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       {/* Top Bar (Contacts & Socials) */}
-      <div className="bg-slate-900 text-slate-300 text-[11px] sm:text-xs py-2 px-4 sm:px-6 md:px-12 flex justify-between items-center border-b border-slate-800">
-        <div className="flex gap-3 sm:gap-6 items-center">
-          <a href="tel:+15550199" className="flex items-center gap-1 hover:text-white transition-colors">
-            <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary" />
-            <span className="hidden xs:inline">+1 (555) 0199</span>
-            <span className="xs:hidden">+1 (555) 0199</span>
+      <div className="bg-[#040d1e] text-slate-450 text-[10px] sm:text-xs py-2 px-6 sm:px-8 md:px-12 flex justify-between items-center border-b border-white/5 select-none">
+        <div className="flex gap-4 sm:gap-6 items-center">
+          <a href="tel:+15550199" className="flex items-center gap-1.5 hover:text-white text-slate-400 transition-colors">
+            <Phone className="w-3 h-3 text-accent-blue" />
+            <span>+1 (555) 0199</span>
           </a>
-          <a href="mailto:info@diginet.com" className="flex items-center gap-1 hover:text-white transition-colors">
-            <Mail className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary" />
-            <span className="hidden xs:inline">info@diginet.com</span>
-            <span className="xs:hidden">Email Us</span>
+          <a href="mailto:info@diginet.com" className="flex items-center gap-1.5 hover:text-white text-slate-400 transition-colors">
+            <Mail className="w-3 h-3 text-accent-blue" />
+            <span>info@diginet.com</span>
           </a>
         </div>
         
@@ -125,7 +115,7 @@ export default function Navbar() {
             {
               name: "Facebook",
               svg: (
-                <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
                 </svg>
               )
@@ -133,7 +123,7 @@ export default function Navbar() {
             {
               name: "Twitter",
               svg: (
-                <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
                 </svg>
               )
@@ -141,7 +131,7 @@ export default function Navbar() {
             {
               name: "Linkedin",
               svg: (
-                <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
                   <rect width="4" height="12" x="2" y="9"/>
                   <circle cx="4" cy="4" r="2"/>
@@ -149,7 +139,7 @@ export default function Navbar() {
               )
             }
           ].map((item, idx) => (
-            <a key={idx} href="#" aria-label={item.name} className="hover:text-white transition-colors">
+            <a key={idx} href="#" aria-label={item.name} className="text-slate-400 hover:text-white transition-colors">
               {item.svg}
             </a>
           ))}
@@ -157,37 +147,33 @@ export default function Navbar() {
       </div>
 
       {/* Main Navbar */}
-      <div className={`transition-all duration-300 py-4 ${
+      <div className={`transition-all duration-300 py-3.5 ${
         (isScrolled || isOpen)
-          ? "bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm" 
+          ? "bg-[#06142D]/95 backdrop-blur-md border-b border-white/5 shadow-md" 
           : "bg-transparent border-b border-transparent"
       }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between">
+        <div className="max-w-[1280px] mx-auto px-6 sm:px-8 md:px-12 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
+          <Link href="/" className="flex items-center group shrink-0">
             <Image
               src="/images/diginetnewlogo.png"
               alt="DIGINET Logo"
               width={130}
               height={36}
-              className="h-9 w-auto object-contain transition-all duration-300"
+              className="h-8.5 w-auto object-contain transition-all duration-300"
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <Link
-              href="/"
-              className={getLinkClass("/")}
-            >
+          <nav className="hidden md:flex items-center gap-7">
+            <Link href="/" className={getLinkClass("/")}>
               Home
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-accent-blue transition-all duration-300 ${pathname === "/" ? "w-full" : "w-0 group-hover:w-full"}`} />
             </Link>
-            <Link
-              href="/about"
-              className={getLinkClass("/about")}
-            >
+            <Link href="/about" className={getLinkClass("/about")}>
               About
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-accent-blue transition-all duration-300 ${pathname === "/about" ? "w-full" : "w-0 group-hover:w-full"}`} />
             </Link>
 
             {/* Services Dropdown */}
@@ -198,36 +184,36 @@ export default function Navbar() {
             >
               <button className={getDropdownClass()}>
                 Services
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className="w-3.5 h-3.5 text-slate-400 group-hover:text-white" />
               </button>
 
               <AnimatePresence>
                 {dropdownOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 15 }}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 15 }}
+                    exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute left-1/2 -translate-x-1/2 mt-2 w-96 rounded-xl bg-white border border-slate-200 p-4 shadow-xl"
+                    className="absolute left-1/2 -translate-x-1/2 mt-2 w-[440px] rounded-2xl bg-[#06142D] border border-white/10 p-4 shadow-xl z-50 backdrop-blur-md"
                   >
-                    <div className="grid gap-2">
-                      <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 mb-2">Our Capabilities</p>
+                    <div className="grid grid-cols-2 gap-2">
+                      <p className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest col-span-2 px-2.5 mb-1 select-none">Our Capabilities</p>
                       {services.map((item) => {
                         const IconComponent = item.icon;
                         return (
                           <Link
                             key={item.name}
                             href={item.href}
-                            className="flex items-start gap-4 p-3 rounded-lg hover:bg-slate-50 transition-colors group"
+                            className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/[0.04] transition-colors group"
                           >
-                            <div className={`p-2 rounded-lg bg-slate-50 ${item.color} group-hover:bg-primary/10 transition-colors`}>
-                              <IconComponent className="w-5 h-5" />
+                            <div className={`p-2 rounded-lg ${item.bg} ${item.color} shrink-0`}>
+                              <IconComponent className="w-4.5 h-4.5" />
                             </div>
-                            <div>
-                              <h4 className="text-sm font-bold text-slate-800 group-hover:text-primary transition-colors">
+                            <div className="text-left">
+                              <h4 className="text-[12px] font-bold text-white group-hover:text-accent-blue transition-colors leading-tight">
                                 {item.name}
                               </h4>
-                              <p className="text-xs text-slate-500 mt-0.5">{item.description}</p>
+                              <p className="text-[10px] text-slate-400 mt-1 leading-normal">{item.description}</p>
                             </div>
                           </Link>
                         );
@@ -238,34 +224,26 @@ export default function Navbar() {
               </AnimatePresence>
             </div>
 
-            <Link
-              href="/contact"
-              className={getLinkClass("/contact")}
-            >
+            <Link href="/contact" className={getLinkClass("/contact")}>
               Contact
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-accent-blue transition-all duration-300 ${pathname === "/contact" ? "w-full" : "w-0 group-hover:w-full"}`} />
             </Link>
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
-            <Link
-              href="/contact"
-              className="px-5 py-2.5 rounded-lg font-bold text-sm shadow-md transition-all bg-orange-brand text-white hover:bg-orange-brand-hover"
+          <div className="hidden md:block shrink-0">
+            <button
+              onClick={openBooking}
+              className="cursor-pointer px-5 py-2.5 rounded-full font-bold text-xs shadow-md transition-all duration-300 bg-cta-blue text-white hover:bg-hover-blue hover:scale-[1.02] active:scale-[0.98] shadow-cta-blue/20"
             >
-              Get Consultation
-            </Link>
+              Book Consultation
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden p-2 rounded-lg border transition-all duration-200 ${
-              (isScrolled || isOpen)
-                ? "border-slate-200 text-slate-700 hover:bg-slate-50" 
-                : isDarkHeroPage 
-                  ? "border-white/20 text-white hover:bg-white/10" 
-                  : "border-slate-200 text-slate-700 hover:bg-slate-50"
-            }`}
+            className="md:hidden p-2 rounded-lg border border-white/10 text-slate-300 hover:text-white transition-colors"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -279,14 +257,14 @@ export default function Navbar() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
+              className="md:hidden bg-[#06142D] border-b border-white/5 overflow-hidden"
             >
-              <div className="px-6 py-8 flex flex-col gap-6">
+              <div className="px-6 py-6 flex flex-col gap-5 text-left">
                 <Link
                   href="/"
                   onClick={() => setIsOpen(false)}
                   className={`text-base font-bold transition-colors ${
-                    pathname === "/" ? "text-primary" : "text-slate-800"
+                    pathname === "/" ? "text-accent-blue" : "text-slate-200 hover:text-white"
                   }`}
                 >
                   Home
@@ -295,16 +273,16 @@ export default function Navbar() {
                   href="/about"
                   onClick={() => setIsOpen(false)}
                   className={`text-base font-bold transition-colors ${
-                    pathname === "/about" ? "text-primary" : "text-slate-800"
+                    pathname === "/about" ? "text-accent-blue" : "text-slate-200 hover:text-white"
                   }`}
                 >
                   About
                 </Link>
 
                 {/* Mobile Services List */}
-                <div className="flex flex-col gap-3">
-                  <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Services</span>
-                  <div className="pl-4 border-l border-slate-200 flex flex-col gap-4">
+                <div className="flex flex-col gap-2">
+                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest select-none">Services</span>
+                  <div className="pl-3 border-l border-white/10 flex flex-col gap-3">
                     {services.map((item) => {
                       const IconComponent = item.icon;
                       return (
@@ -312,7 +290,7 @@ export default function Navbar() {
                           key={item.name}
                           href={item.href}
                           onClick={() => setIsOpen(false)}
-                          className="flex items-center gap-3 text-sm font-semibold text-slate-600 hover:text-primary transition-colors"
+                          className="flex items-center gap-2.5 text-sm font-semibold text-slate-300 hover:text-white transition-colors"
                         >
                           <IconComponent className={`w-4 h-4 ${item.color}`} />
                           {item.name}
@@ -326,20 +304,22 @@ export default function Navbar() {
                   href="/contact"
                   onClick={() => setIsOpen(false)}
                   className={`text-base font-bold transition-colors ${
-                    pathname === "/contact" ? "text-primary" : "text-slate-800"
+                    pathname === "/contact" ? "text-accent-blue" : "text-slate-200 hover:text-white"
                   }`}
                 >
                   Contact
                 </Link>
 
-                <Link
-                  href="/contact"
-                  onClick={() => setIsOpen(false)}
-                  className="w-full text-center py-3 rounded-lg bg-orange-brand text-white font-bold flex items-center justify-center gap-2 shadow-md hover:bg-orange-brand-hover"
+                <button
+                  onClick={() => {
+                    setIsOpen(false);
+                    openBooking();
+                  }}
+                  className="w-full text-center py-3 rounded-xl bg-cta-blue text-white font-bold flex items-center justify-center gap-2 shadow-md hover:bg-hover-blue transition-colors cursor-pointer"
                 >
-                  Get Started
+                  Book Consultation
                   <ArrowRight className="w-4 h-4" />
-                </Link>
+                </button>
               </div>
             </motion.div>
           )}

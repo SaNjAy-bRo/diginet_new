@@ -1,32 +1,74 @@
 "use client";
 
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { ChevronDown, ChevronUp, MapPin, Phone, Mail } from "lucide-react";
+
+interface FooterLink {
+  label: string;
+  href: string;
+}
+
+interface FooterCategory {
+  title: string;
+  links: FooterLink[];
+}
+
+const categories: FooterCategory[] = [
+  {
+    title: "Useful Links",
+    links: [
+      { label: "Home", href: "/" },
+      { label: "About Us", href: "/about" },
+      { label: "Contact Us", href: "/contact" },
+      { label: "Privacy Policy", href: "/privacy" },
+    ],
+  },
+  {
+    title: "Our Services",
+    links: [
+      { label: "Digital Marketing", href: "/services/digital-marketing" },
+      { label: "Social Media Management", href: "/services/social-media-management" },
+      { label: "Mobile Development", href: "/services/mobile-development" },
+      { label: "Application Development", href: "/services/application-development" },
+      { label: "Website Designing", href: "/services/website-designing" },
+      { label: "Cybersecurity", href: "/services/cybersecurity" },
+    ],
+  },
+];
 
 export default function Footer() {
+  const [expandedSection, setExpandedSection] = useState<number | null>(null);
   const currentYear = new Date().getFullYear();
 
+  const toggleSection = (index: number) => {
+    setExpandedSection(expandedSection === index ? null : index);
+  };
+
   return (
-    <footer className="bg-slate-900 border-t border-slate-800 text-slate-400 relative overflow-hidden z-10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-16 pb-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Logo & Description */}
-          <div className="flex flex-col gap-6">
-            <Link href="/" className="flex items-center group">
+    <footer className="relative w-full bg-[#06142D] border-t border-slate-800 text-slate-350 pt-12 pb-8 overflow-hidden z-10">
+      <div className="w-full max-w-[1280px] mx-auto px-6 md:px-8">
+        
+        {/* Main Content Area */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-10 border-b border-slate-800">
+          
+          {/* Brand Column */}
+          <div className="lg:col-span-4 flex flex-col items-start text-left">
+            <Link href="/" className="flex items-center group mb-5">
               <Image
                 src="/images/diginetnewlogo.png"
                 alt="DIGINET Logo"
                 width={130}
                 height={36}
-                className="h-9 w-auto object-contain"
+                className="h-8.5 w-auto object-contain"
               />
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-5 max-w-sm">
               Delivering high-end corporate IT solutions, software engineering, and cybersecurity audits tailored for global organizations and enterprise leaders.
             </p>
             {/* Social Icons */}
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               {[
                 { 
                   name: "Facebook",
@@ -68,120 +110,106 @@ export default function Footer() {
                     </svg>
                   )
                 },
-              ].map((social, index) => {
-                return (
-                  <a
-                    key={index}
-                    href={social.href}
-                    aria-label={social.name}
-                    className="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-primary hover:border-primary/50 transition-all duration-300"
-                  >
-                    {social.svg}
-                  </a>
-                );
-              })}
+              ].map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  aria-label={social.name}
+                  className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-accent-blue hover:border-accent-blue/45 transition-all duration-350"
+                >
+                  {social.svg}
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-slate-100 font-bold mb-6 tracking-wide text-sm">Useful Links</h4>
-            <ul className="flex flex-col gap-4">
-              <li>
-                <Link href="/" className="text-slate-400 text-sm hover:text-primary transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-slate-400 text-sm hover:text-primary transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-slate-400 text-sm hover:text-primary transition-colors">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="text-slate-400 text-sm hover:text-primary transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-            </ul>
+          {/* Links Directories (Desktop: Grid, Mobile: Accordion handled below) */}
+          <div className="hidden lg:grid lg:col-span-5 grid-cols-2 gap-8 text-left">
+            {categories.map((cat) => (
+              <div key={cat.title} className="flex flex-col">
+                <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-5 font-poppins">
+                  {cat.title}
+                </h4>
+                <div className="flex flex-col gap-3.5">
+                  {cat.links.map((link) => (
+                    <Link
+                      key={link.label}
+                      href={link.href}
+                      className="text-xs sm:text-sm text-slate-400 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
 
-          {/* Services Quick Links */}
-          <div>
-            <h4 className="text-slate-100 font-bold mb-6 tracking-wide text-sm">Our Services</h4>
-            <ul className="flex flex-col gap-4">
-              <li>
-                <Link href="/services/digital-marketing" className="text-slate-400 text-sm hover:text-primary transition-colors">
-                  Digital Marketing
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/social-media-management" className="text-slate-400 text-sm hover:text-primary transition-colors">
-                  Social Media Management
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/mobile-development" className="text-slate-400 text-sm hover:text-primary transition-colors">
-                  Mobile Development
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/application-development" className="text-slate-400 text-sm hover:text-primary transition-colors">
-                  Application Development
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/website-designing" className="text-slate-400 text-sm hover:text-primary transition-colors">
-                  Website Designing
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/cybersecurity" className="text-slate-400 text-sm hover:text-primary transition-colors">
-                  Cybersecurity
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Details */}
-          <div className="flex flex-col gap-6">
-            <h4 className="text-slate-100 font-bold tracking-wide text-sm">Contact Details</h4>
-            <ul className="flex flex-col gap-4">
-              <li className="flex items-start gap-3 text-slate-400 text-sm leading-relaxed">
-                <MapPin className="w-5 h-5 text-primary shrink-0" />
+          {/* Contact Details Column */}
+          <div className="lg:col-span-3 flex flex-col text-left">
+            <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-5 font-poppins">
+              Contact Details
+            </h4>
+            <div className="flex flex-col gap-4 text-xs sm:text-sm text-slate-400">
+              <div className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-accent-blue shrink-0" />
                 <span>123 Tech Avenue, Corporate Suite 500, Silicon Valley, CA</span>
-              </li>
-              <li className="flex items-center gap-3 text-slate-400 text-sm">
-                <Phone className="w-5 h-5 text-primary shrink-0" />
-                <a href="tel:+15550199" className="hover:text-primary transition-colors">+1 (555) 0199</a>
-              </li>
-              <li className="flex items-center gap-3 text-slate-400 text-sm">
-                <Mail className="w-5 h-5 text-primary shrink-0" />
-                <a href="mailto:info@diginet.com" className="hover:text-primary transition-colors">info@diginet.com</a>
-              </li>
-            </ul>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-accent-blue shrink-0" />
+                <a href="tel:+15550199" className="hover:text-white transition-colors">+1 (555) 0199</a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="h-5 w-5 text-accent-blue shrink-0" />
+                <a href="mailto:info@diginet.com" className="hover:text-white transition-colors">
+                  info@diginet.com
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Mobile Accordion block */}
+        <div className="lg:hidden flex flex-col gap-4 border-b border-slate-800 pb-6 mb-6">
+          {categories.map((cat, idx) => {
+            const isExpanded = expandedSection === idx;
+            return (
+              <div key={cat.title} className="border-b border-slate-800/60 pb-3 text-left">
+                <button
+                  onClick={() => toggleSection(idx)}
+                  className="w-full flex items-center justify-between text-xs font-bold text-white uppercase tracking-wider font-poppins py-1"
+                >
+                  <span>{cat.title}</span>
+                  {isExpanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                </button>
+                {isExpanded && (
+                  <div className="flex flex-col gap-3 mt-3 pl-1">
+                    {cat.links.map((link) => (
+                      <Link
+                        key={link.label}
+                        href={link.href}
+                        className="text-xs sm:text-sm text-slate-400 hover:text-white transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom copyright */}
+        <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center text-xs text-slate-500 font-medium">
+          <p>&copy; {currentYear} DIGINET. All rights reserved. Designed for elite corporate growth.</p>
+          <div className="flex gap-6">
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
           </div>
         </div>
 
-        <hr className="border-slate-800 my-8" />
-
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center">
-          <p className="text-slate-500 text-xs">
-            © {currentYear} DIGINET. All rights reserved. Designed for elite corporate growth.
-          </p>
-          <div className="flex gap-6 text-xs text-slate-500">
-            <Link href="/privacy" className="hover:text-primary transition-colors">
-              Privacy Policy
-            </Link>
-            <a href="#" className="hover:text-primary transition-colors">
-              Terms & Conditions
-            </a>
-          </div>
-        </div>
       </div>
     </footer>
   );
