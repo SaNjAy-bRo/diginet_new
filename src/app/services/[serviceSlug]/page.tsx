@@ -133,7 +133,7 @@ const serviceDetails: Record<string, {
 const serviceImages: Record<string, string> = {
   "cybersecurity": "/images/service_cyber.png",
   "website-designing": "/images/service_design.png",
-  "mobile-development": "/images/service_mobile.png",
+  "mobile-development": "/images/service_mobile_mockup.png",
   "application-development": "/images/service_appdev.png",
   "digital-marketing": "/images/service_marketing.png",
   "social-media-management": "/images/service_social.png",

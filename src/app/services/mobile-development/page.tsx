@@ -173,7 +173,7 @@ export default function MobileDevelopmentPage() {
                 </button>
                 <a
                   href="#process"
-                  className="inline-flex items-center justify-center px-7 py-3 rounded-xl text-sm font-semibold text-slate-350 border border-slate-700 bg-white/[0.04] hover:bg-white/[0.08] hover:text-white transition-all duration-300"
+                  className="inline-flex items-center justify-center px-7 py-3 rounded-xl text-sm font-semibold text-slate-300 border border-slate-700 bg-white/[0.04] hover:bg-white/[0.08] hover:text-white transition-all duration-300"
                 >
                   Explore Process
                 </a>
@@ -190,7 +190,7 @@ export default function MobileDevelopmentPage() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <motion.img 
-                  src="/images/service_mobile.png" 
+                  src="/images/service_mobile_mockup.png" 
                   alt="Mobile Applications Built for Growth" 
                   className="w-full h-full object-contain select-none relative z-0"
                   animate={{ y: [0, -6, 0] }}
