@@ -171,7 +171,7 @@ export default function DigitalMarketingPage() {
             <span className="text-sky-400">Digital Marketing</span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             
             {/* Left Hero Content */}
             <div className="lg:col-span-5 flex flex-col text-left items-start">
@@ -211,7 +211,7 @@ export default function DigitalMarketingPage() {
             </div>
 
             {/* Right Hero Graphic: Live Interactive Dashboard Layout */}
-            <div className="lg:col-span-7 relative flex justify-center lg:justify-end items-center py-6">
+            <div className="lg:col-span-7 relative flex justify-center lg:justify-end items-center py-2 md:py-6">
               
               {/* Outer container holding Dashboard and Ad Cards side-by-side */}
               <div className="relative w-full max-w-[720px] grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
@@ -342,9 +342,9 @@ export default function DigitalMarketingPage() {
                   </div>
 
                   {/* Platforms Overlapping Pill - floated at bottom of Dashboard */}
-                  <div className="absolute left-[6%] md:left-[10%] bottom-[-22px] z-30 flex items-center gap-4 bg-white border border-slate-100/90 py-2 px-5 rounded-full shadow-2xl">
-                    <span className="text-[8.5px] font-extrabold uppercase text-slate-400 tracking-wider pr-1">Platforms</span>
-                    <div className="flex gap-2.5 items-center">
+                  <div className="relative md:absolute md:left-[10%] md:bottom-[-22px] left-0 bottom-0 mt-4 md:mt-0 mx-auto md:mx-0 z-30 flex items-center gap-3 md:gap-4 bg-white border border-slate-100/90 py-2 px-4 md:px-5 rounded-full shadow-2xl w-fit">
+                    <span className="text-[8.5px] font-extrabold uppercase text-slate-400 tracking-wider pr-0.5 md:pr-1">Platforms</span>
+                    <div className="flex gap-1.5 md:gap-2.5 items-center">
                       {/* Google */}
                       <span className="h-7 w-7 rounded-full bg-slate-50 flex items-center justify-center border border-slate-150/80 shadow-sm">
                         <svg className="h-4 w-4" viewBox="0 0 24 24">
@@ -486,7 +486,7 @@ export default function DigitalMarketingPage() {
           </div>
 
           {/* Underneath: 4 Value Pillars at the bottom of the section */}
-          <div className="mt-16 pt-8 border-t border-slate-800/40 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-[1100px]">
+          <div className="mt-8 md:mt-16 pt-8 border-t border-slate-800/40 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-[1100px]">
             {[
               { title: "ROI-Focused", desc: "Every strategy aligned to your bottom line.", icon: <TrendingUp className="h-4 w-4 text-sky-400 stroke-[2.5px]" /> },
               { title: "Data-Driven", desc: "Decisions powered by real-time insights.", icon: <BarChart3 className="h-4 w-4 text-sky-400 stroke-[2.5px]" /> },
@@ -765,63 +765,56 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* ========================================================
-          5. PROVEN PROCESS SECTION (Redesigned Container Card)
+          5. PROVEN PROCESS SECTION (Full-Width)
           ======================================================== */}
-      <section id="process" className="relative w-full pt-4 pb-4 md:pt-6 md:pb-6 bg-white">
-        <div className="w-full max-w-[1360px] mx-auto px-4 md:px-6 relative z-10">
+      <section id="process" className="relative w-full py-12 md:py-16 bg-[#06142D] border-y border-slate-800/60 bg-gradient-to-br from-[#06142D] via-[#081733] to-[#0b2046] overflow-hidden shadow-xl">
+        
+        {/* Background ambient grids/effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-[-10%] right-[-10%] h-[550px] w-[550px] rounded-full bg-sky-500/10 blur-[130px]" />
+          <div className="absolute bottom-[-10%] left-[-10%] h-[500px] w-[500px] rounded-full bg-blue-600/5 blur-[120px]" />
+        </div>
+
+        <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12 relative z-10 flex flex-col">
           
-          <div className="relative w-full bg-[#06142D] border border-slate-800/60 rounded-[32px] p-6 md:p-10 md:py-12 overflow-hidden shadow-2xl bg-gradient-to-br from-[#06142D] via-[#081733] to-[#0b2046]">
-            
-            {/* Background ambient grids/effects inside card */}
-            <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-[-10%] right-[-10%] h-[350px] w-[350px] rounded-full bg-sky-500/10 blur-[90px]" />
-              <div className="absolute bottom-[-10%] left-[-10%] h-[300px] w-[300px] rounded-full bg-blue-600/5 blur-[80px]" />
-            </div>
+          <div className="text-center mb-14 flex flex-col items-center">
+            <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-sky-400 mb-2.5">
+              Our Proven Process
+            </span>
+            <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight leading-tight font-poppins">
+              A collaborative approach that delivers consistent, measurable growth.
+            </h2>
+          </div>
 
-            <div className="relative z-10 flex flex-col">
-              
-              <div className="text-center mb-14 flex flex-col items-center">
-                <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-sky-400 mb-2.5">
-                  Our Proven Process
-                </span>
-                <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight leading-tight font-poppins">
-                  A collaborative approach that delivers consistent, measurable growth.
-                </h2>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
-                {[
-                  { title: "Discover & Research", desc: "We understand your business, audience, goals and current performance." },
-                  { title: "Strategy & Planning", desc: "We create a data-driven strategy with the right channels and campaign roadmap." },
-                  { title: "Execute & Optimize", desc: "We launch, monitor and optimize campaigns for maximum performance." },
-                  { title: "Measure & Scale", desc: "We analyze results, share insights and scale what works for sustainable growth." }
-                ].map((proc, idx) => (
-                  <div key={idx} className="relative flex flex-col items-start text-left group z-10">
-                    
-                    {/* Connecting Dotted Arrow - desktop only */}
-                    {idx < 3 && (
-                      <div className="hidden lg:block absolute top-[15px] left-10 w-[calc(100%-16px)] h-0.5 z-0">
-                        <div className="w-full h-full border-t border-dashed border-slate-600/50 flex items-center justify-end relative">
-                          <svg className="absolute right-[-4px] top-[-4px] h-2.5 w-2.5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                          </svg>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Step Number Circle */}
-                    <div className="h-8 w-8 rounded-full bg-white flex items-center justify-center mb-5 text-slate-900 font-bold text-xs tracking-wide z-10 shadow-md">
-                      {idx + 1}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+            {[
+              { title: "Discover & Research", desc: "We understand your business, audience, goals and current performance." },
+              { title: "Strategy & Planning", desc: "We create a data-driven strategy with the right channels and campaign roadmap." },
+              { title: "Execute & Optimize", desc: "We launch, monitor and optimize campaigns for maximum performance." },
+              { title: "Measure & Scale", desc: "We analyze results, share insights and scale what works for sustainable growth." }
+            ].map((proc, idx) => (
+              <div key={idx} className="relative flex flex-col items-start text-left group z-10">
+                
+                {/* Connecting Dotted Arrow - desktop only */}
+                {idx < 3 && (
+                  <div className="hidden lg:block absolute top-[15px] left-10 w-[calc(100%-16px)] h-0.5 z-0">
+                    <div className="w-full h-full border-t border-dashed border-slate-600/50 flex items-center justify-end relative">
+                      <svg className="absolute right-[-4px] top-[-4px] h-2.5 w-2.5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
                     </div>
-
-                    <h3 className="text-[14px] md:text-[15px] font-bold text-white font-poppins mb-2">{proc.title}</h3>
-                    <p className="text-[11px] md:text-xs text-slate-400 leading-relaxed font-normal">{proc.desc}</p>
                   </div>
-                ))}
+                )}
+
+                {/* Step Number Circle */}
+                <div className="h-8 w-8 rounded-full bg-white flex items-center justify-center mb-5 text-slate-900 font-bold text-xs tracking-wide z-10 shadow-md">
+                  {idx + 1}
+                </div>
+
+                <h3 className="text-[14px] md:text-[15px] font-bold text-white font-poppins mb-2">{proc.title}</h3>
+                <p className="text-[11px] md:text-xs text-slate-400 leading-relaxed font-normal">{proc.desc}</p>
               </div>
-
-            </div>
-
+            ))}
           </div>
 
         </div>
@@ -971,7 +964,7 @@ export default function DigitalMarketingPage() {
       {/* ========================================================
           7. REAL RESULTS (Case Studies) SECTION
           ======================================================== */}
-      <section className="relative w-full pt-6 pb-16 md:pt-8 md:pb-20 bg-slate-50/50 border-t border-slate-100">
+      <section className="relative w-full pt-6 pb-10 md:pt-8 md:pb-12 bg-slate-50/50 border-t border-slate-100">
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12">
           
           <div className="text-left mb-12 flex flex-col items-start">
@@ -1084,119 +1077,111 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* ========================================================
-          8. TESTIMONIALS SECTION (Dark banner inside light bg)
+          8. TESTIMONIALS SECTION (Full-Width)
           ======================================================== */}
-      <section className="relative w-full pt-16 pb-4 md:pt-20 md:pb-6 bg-white overflow-hidden">
-        <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
+      <section className="relative w-full py-12 md:py-16 bg-[#06142D] border-y border-slate-800/40 bg-gradient-to-br from-[#06142D] via-[#081733] to-[#0b2046] overflow-hidden shadow-xl">
+        
+        {/* Background ambient spots inside the banner */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <div className="absolute top-[-30%] right-[-10%] h-[550px] w-[550px] rounded-full bg-sky-500/10 blur-[130px]" />
+          <div className="absolute bottom-[-30%] left-[-10%] h-[500px] w-[500px] rounded-full bg-blue-600/5 blur-[120px]" />
+        </div>
+
+        <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12 relative z-10 flex flex-col">
           
-          {/* Dark Banner Container */}
-          <div className="relative w-full bg-[#06142D] border border-slate-800/40 rounded-[32px] py-8 px-5 md:py-10 md:px-10 overflow-hidden shadow-2xl">
+          <div className="text-center mb-6 flex flex-col items-center">
+            <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-tight font-poppins">
+              What Our Clients Say
+            </h2>
+          </div>
+
+          {/* Slider Outer Container */}
+          <div className="relative w-full overflow-hidden px-0 py-2">
             
-            {/* Background ambient spots inside the banner */}
-            <div className="absolute inset-0 pointer-events-none z-0">
-              <div className="absolute top-[-30%] right-[-10%] h-[350px] w-[350px] rounded-full bg-sky-500/10 blur-[100px]" />
-              <div className="absolute bottom-[-30%] left-[-10%] h-[350px] w-[350px] rounded-full bg-blue-600/5 blur-[100px]" />
-            </div>
+            {/* Navigation Arrows */}
+            <button
+              onClick={() => {
+                const maxIdx = testimonials.length - visibleCards;
+                setActiveTestimonial((prev) => (prev === 0 ? maxIdx : prev - 1));
+              }}
+              className="absolute left-[-12px] md:left-[-24px] top-1/2 -translate-y-1/2 h-10 w-10 rounded-full border border-slate-800 bg-slate-900/60 hover:bg-slate-800 text-white flex items-center justify-center transition-all z-20"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
 
-            {/* Content wrapper to float above background */}
-            <div className="relative z-10">
-              
-              <div className="text-center mb-6 flex flex-col items-center">
-                <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-tight font-poppins">
-                  What Our Clients Say
-                </h2>
-              </div>
+            <button
+              onClick={() => {
+                const maxIdx = testimonials.length - visibleCards;
+                setActiveTestimonial((prev) => (prev >= maxIdx ? 0 : prev + 1));
+              }}
+              className="absolute right-[-12px] md:right-[-24px] top-1/2 -translate-y-1/2 h-10 w-10 rounded-full border border-slate-800 bg-slate-900/60 hover:bg-slate-800 text-white flex items-center justify-center transition-all z-20"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
 
-              {/* Slider Outer Container */}
-              <div className="relative w-full overflow-hidden px-0 py-2">
-                
-                {/* Navigation Arrows */}
-                <button
-                  onClick={() => {
-                    const maxIdx = testimonials.length - visibleCards;
-                    setActiveTestimonial((prev) => (prev === 0 ? maxIdx : prev - 1));
-                  }}
-                  className="absolute left-[-12px] md:left-[-24px] top-1/2 -translate-y-1/2 h-10 w-10 rounded-full border border-slate-800 bg-slate-900/60 hover:bg-slate-800 text-white flex items-center justify-center transition-all z-20"
-                  aria-label="Previous slide"
-                >
-                  <ChevronLeft className="h-5 w-5" />
-                </button>
-
-                <button
-                  onClick={() => {
-                    const maxIdx = testimonials.length - visibleCards;
-                    setActiveTestimonial((prev) => (prev >= maxIdx ? 0 : prev + 1));
-                  }}
-                  className="absolute right-[-12px] md:right-[-24px] top-1/2 -translate-y-1/2 h-10 w-10 rounded-full border border-slate-800 bg-slate-900/60 hover:bg-slate-800 text-white flex items-center justify-center transition-all z-20"
-                  aria-label="Next slide"
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </button>
-
-                {/* Slider Track */}
-                <div className="w-full overflow-hidden">
-                  <motion.div 
-                    className="flex"
-                    style={{ width: `${(testimonials.length / visibleCards) * 100}%` }}
-                    animate={{ x: `-${activeTestimonial * (100 / testimonials.length)}%` }}
-                    transition={{ type: "spring", stiffness: 180, damping: 25 }}
+            {/* Slider Track */}
+            <div className="w-full overflow-hidden">
+              <motion.div 
+                className="flex"
+                style={{ width: `${(testimonials.length / visibleCards) * 100}%` }}
+                animate={{ x: `-${activeTestimonial * (100 / testimonials.length)}%` }}
+                transition={{ type: "spring", stiffness: 180, damping: 25 }}
+              >
+                {testimonials.map((t) => (
+                  <div 
+                    key={t.id} 
+                    className="px-3 shrink-0 flex flex-col" 
+                    style={{ width: `${100 / testimonials.length}%` }}
                   >
-                    {testimonials.map((t) => (
-                      <div 
-                        key={t.id} 
-                        className="px-3 shrink-0 flex flex-col" 
-                        style={{ width: `${100 / testimonials.length}%` }}
-                      >
-                        <div className="bg-[#0a1628]/85 border border-slate-800/40 p-5 md:p-6 rounded-2xl flex flex-col justify-between shadow-2xl relative min-h-[160px] md:min-h-[180px] h-full">
-                          <div>
-                            {/* Quote Mark */}
-                            <span className="text-4xl font-serif text-sky-500 font-black leading-none block mb-1">
-                              “
-                            </span>
-                            <p className="text-slate-300 text-xs md:text-sm leading-relaxed mb-4 font-normal">
-                              {t.text}
-                            </p>
-                          </div>
+                    <div className="bg-[#0a1628]/85 border border-slate-800/40 p-5 md:p-6 rounded-2xl flex flex-col justify-between shadow-2xl relative min-h-[160px] md:min-h-[180px] h-full">
+                      <div>
+                        {/* Quote Mark */}
+                        <span className="text-4xl font-serif text-sky-500 font-black leading-none block mb-1">
+                          “
+                        </span>
+                        <p className="text-slate-300 text-xs md:text-sm leading-relaxed mb-4 font-normal">
+                          {t.text}
+                        </p>
+                      </div>
 
-                          <div className="flex items-center gap-3 pt-4 border-t border-slate-800/60">
-                            {/* User Info */}
-                            <img 
-                              src={t.avatarUrl} 
-                              alt={t.name} 
-                              className="h-10 w-10 rounded-full object-cover shrink-0 bg-slate-900 border border-slate-800" 
-                            />
-                            <div className="flex flex-col">
-                              <h4 className="font-bold text-white text-xs md:text-sm font-poppins leading-tight">
-                                {t.name}
-                              </h4>
-                              <p className="text-[10px] text-slate-400 leading-normal mt-0.5">
-                                {t.role}, {t.company}
-                              </p>
-                            </div>
-                          </div>
+                      <div className="flex items-center gap-3 pt-4 border-t border-slate-800/60">
+                        {/* User Info */}
+                        <img 
+                          src={t.avatarUrl} 
+                          alt={t.name} 
+                          className="h-10 w-10 rounded-full object-cover shrink-0 bg-slate-900 border border-slate-800" 
+                        />
+                        <div className="flex flex-col">
+                          <h4 className="font-bold text-white text-xs md:text-sm font-poppins leading-tight">
+                            {t.name}
+                          </h4>
+                          <p className="text-[10px] text-slate-400 leading-normal mt-0.5">
+                            {t.role}, {t.company}
+                          </p>
                         </div>
                       </div>
-                    ))}
-                  </motion.div>
-                </div>
-
-                {/* Slider Dots */}
-                <div className="flex gap-2 justify-center mt-8 relative z-20">
-                  {Array.from({ length: testimonials.length - visibleCards + 1 }).map((_, dIdx) => (
-                    <button
-                      key={dIdx}
-                      onClick={() => setActiveTestimonial(dIdx)}
-                      className={`h-2 rounded-full transition-all duration-300 ${
-                        activeTestimonial === dIdx ? "w-5 bg-sky-500" : "w-2 bg-slate-700"
-                      }`}
-                      aria-label={`Go to slide ${dIdx + 1}`}
-                    />
-                  ))}
-                </div>
-
-              </div>
-
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
             </div>
+
+            {/* Slider Dots */}
+            <div className="flex gap-2 justify-center mt-8 relative z-20">
+              {Array.from({ length: testimonials.length - visibleCards + 1 }).map((_, dIdx) => (
+                <button
+                  key={dIdx}
+                  onClick={() => setActiveTestimonial(dIdx)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    activeTestimonial === dIdx ? "w-5 bg-sky-500" : "w-2 bg-slate-700"
+                  }`}
+                  aria-label={`Go to slide ${dIdx + 1}`}
+                />
+              ))}
+            </div>
+
           </div>
 
         </div>
@@ -1205,7 +1190,7 @@ export default function DigitalMarketingPage() {
       {/* ========================================================
           9. FAQS & CTA BANNER (Split layout)
           ======================================================= */}
-      <section className="relative w-full pt-4 pb-4 md:pt-6 md:pb-6 bg-white">
+      <section className="relative w-full pt-10 pb-4 md:pt-12 md:pb-6 bg-white">
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
