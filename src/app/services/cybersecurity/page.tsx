@@ -497,27 +497,27 @@ export default function CybersecurityPage() {
       <section className="relative w-full py-6 md:py-8 bg-slate-50/40 border-t border-slate-100">
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch">
             
             {/* Left Column: Proven Results */}
-            <div className="lg:col-span-3 flex flex-col justify-start bg-white border border-slate-200/50 p-6 md:p-8 rounded-[32px] shadow-sm hover:shadow-md transition-all duration-300 gap-5">
+            <div className="w-full lg:w-[28%] flex flex-col justify-start bg-white border border-slate-200/50 p-6 md:p-7 rounded-[32px] shadow-sm hover:shadow-md transition-all duration-300 gap-4">
               <div>
                 <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-cyan-500 mb-4 block">
                   PROVEN RESULTS. REAL IMPACT.
                 </span>
 
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-4">
                   {[
                     { val: "72%", label: "Reduction in security incidents by our managed security clients.", icon: <Activity className="h-5 w-5 text-blue-600" /> },
                     { val: "99.9%", label: "Uptime achieved with 24/7 monitoring and threat management.", icon: <ShieldCheck className="h-5 w-5 text-blue-600" /> },
                     { val: "Faster Recovery", label: "Reduced mean time to detect and respond by up to 60%.", icon: <TrendingUp className="h-5 w-5 text-blue-600" /> }
                   ].map((item, idx) => (
-                    <div key={idx} className="flex flex-row items-center gap-4 border-t border-slate-100 pt-4 first:border-0 first:pt-0">
-                      <div className="h-11 w-11 rounded-xl bg-blue-50 border border-blue-100/50 flex items-center justify-center shrink-0">
+                    <div key={idx} className="flex flex-row items-start gap-3 border-t border-slate-100 pt-3.5 first:border-0 first:pt-0">
+                      <div className="h-10 w-10 rounded-xl bg-blue-50 border border-blue-100/50 flex items-center justify-center shrink-0">
                         {item.icon}
                       </div>
                       <div className="flex flex-col text-left">
-                        <span className="text-xl md:text-2xl font-black text-blue-600 leading-none mb-1">
+                        <span className="text-lg md:text-xl font-bold text-blue-600 leading-none mb-1">
                           {item.val}
                         </span>
                         <span className="text-[11px] md:text-xs text-slate-500 leading-normal">
@@ -541,7 +541,7 @@ export default function CybersecurityPage() {
             </div>
 
             {/* Middle Column: Static Stacked Testimonials */}
-            <div className="lg:col-span-4 flex flex-col justify-start bg-white border border-slate-200/50 p-6 md:p-8 rounded-[32px] shadow-sm hover:shadow-md transition-all duration-300 gap-5">
+            <div className="w-full lg:w-[36%] flex flex-col justify-start bg-white border border-slate-200/50 p-6 md:p-7 rounded-[32px] shadow-sm hover:shadow-md transition-all duration-300 gap-4">
               <div className="flex flex-col">
                 <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-cyan-500 mb-4 block">
                   WHAT OUR CLIENTS SAY
@@ -578,9 +578,9 @@ export default function CybersecurityPage() {
             </div>
 
             {/* Right Column: CTA Banner Card with horizontal split */}
-            <div className="lg:col-span-5 w-full">
+            <div className="w-full lg:w-[36%]">
               <div 
-                className="w-full bg-[#06142D] rounded-[32px] border border-slate-800/40 shadow-xl p-8 relative overflow-hidden flex flex-col sm:flex-row items-center gap-6 h-full min-h-[380px]"
+                className="w-full bg-[#06142D] rounded-[32px] border border-slate-800/40 shadow-xl p-6 md:p-7 relative overflow-hidden flex flex-col sm:flex-row items-center gap-6 h-full min-h-[300px] lg:min-h-[320px]"
                 style={{ 
                   backgroundImage: "url('/images/cta_vibrant_bg.png')", 
                   backgroundSize: "cover", 
@@ -592,15 +592,15 @@ export default function CybersecurityPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-[#06142D]/95 via-[#071633]/85 to-transparent pointer-events-none z-0" />
 
                 <div className="relative z-20 flex-1 flex flex-col items-start text-left">
-                  <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-cyan-300 mb-3 block">
+                  <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-cyan-300 mb-2 block">
                     READY TO STRENGTHEN YOUR SECURITY?
                   </span>
                   
-                  <h3 className="text-lg md:text-xl font-black text-white leading-tight font-poppins mb-4">
+                  <h3 className="text-base md:text-lg font-black text-white leading-tight font-poppins mb-3">
                     Let&apos;s Build a Security Strategy That Protects What Matters
                   </h3>
 
-                  <p className="text-[11px] md:text-xs text-slate-355 leading-relaxed mb-6 font-normal">
+                  <p className="text-[11px] md:text-xs text-slate-400 leading-relaxed mb-4 font-normal">
                     Talk to our experts today and take the first step toward a more resilient digital future.
                   </p>
 
