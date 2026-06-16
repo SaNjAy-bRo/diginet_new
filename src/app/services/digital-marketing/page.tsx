@@ -1086,7 +1086,7 @@ export default function DigitalMarketingPage() {
       {/* ========================================================
           8. TESTIMONIALS SECTION (Dark banner inside light bg)
           ======================================================== */}
-      <section className="relative w-full py-16 md:py-20 bg-white overflow-hidden">
+      <section className="relative w-full pt-16 pb-4 md:pt-20 md:pb-6 bg-white overflow-hidden">
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
           
           {/* Dark Banner Container */}
@@ -1205,7 +1205,7 @@ export default function DigitalMarketingPage() {
       {/* ========================================================
           9. FAQS & CTA BANNER (Split layout)
           ======================================================= */}
-      <section className="relative w-full py-16 md:py-20 bg-white">
+      <section className="relative w-full pt-4 pb-4 md:pt-6 md:pb-6 bg-white">
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
