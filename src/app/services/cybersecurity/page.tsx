@@ -105,7 +105,7 @@ export default function CybersecurityPage() {
       {/* ========================================================
           1. HERO SECTION (Dark background)
           ======================================================== */}
-      <section className="relative w-full bg-[#06142D] pt-[130px] pb-24 md:pb-32 overflow-hidden">
+      <section className="relative w-full bg-[#06142D] pt-[95px] sm:pt-[100px] md:pt-[105px] pb-10 md:pb-14 overflow-hidden">
         
         {/* Background ambient grids/effects */}
         <div className="absolute inset-0 pointer-events-none">
@@ -117,7 +117,7 @@ export default function CybersecurityPage() {
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
           
           {/* Breadcrumbs */}
-          <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 mb-6 sm:mb-8 select-none">
+          <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 sm:mb-4 select-none">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span className="text-slate-600">/</span>
             <span className="text-slate-600">Services</span>
@@ -139,7 +139,7 @@ export default function CybersecurityPage() {
                 Protects Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Business</span>
               </h1>
 
-              <p className="text-[14px] md:text-[15px] text-slate-400 leading-relaxed mb-8 max-w-[500px]">
+              <p className="text-[14px] md:text-[15px] text-slate-400 leading-relaxed mb-4 max-w-[500px]">
                 We secure your infrastructure, users, cloud environments, and data with end-to-end cybersecurity services—so you can run with confidence and focus on growth.
               </p>
 
@@ -401,7 +401,7 @@ export default function CybersecurityPage() {
           </div>
 
           {/* Underneath: 4 Value Pillars at the bottom of the section */}
-          <div className="mt-12 md:mt-20 pt-8 border-t border-slate-800/40 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-[1100px]">
+          <div className="mt-6 md:mt-10 pt-6 border-t border-slate-800/40 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-[1100px]">
             {[
               { title: "24/7 Threat Monitoring", desc: "Constant vigil over active infrastructure.", icon: <Eye className="h-4.5 w-4.5 text-cyan-400 stroke-[2.5px]" /> },
               { title: "Reduce Risk & Minimize Impact", desc: "Isolate vulnerabilities before escalation.", icon: <ShieldAlert className="h-4.5 w-4.5 text-cyan-400 stroke-[2.5px]" /> },
