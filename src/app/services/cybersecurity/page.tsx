@@ -529,18 +529,18 @@ export default function CybersecurityPage() {
             
             {/* Left Column: Proven Results */}
             <div className="w-full lg:w-[26%] flex flex-col justify-between bg-white border border-slate-200/50 p-6 md:p-7 rounded-[32px] shadow-sm hover:shadow-md transition-all duration-300">
-              <div className="flex flex-col gap-6 flex-grow">
-                <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-cyan-500 mb-2 block">
+              <div className="flex flex-col gap-5 flex-grow">
+                <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-cyan-500 mb-1 block">
                   PROVEN RESULTS. REAL IMPACT.
                 </span>
 
-                <div className="flex flex-col flex-grow justify-between gap-6 py-2">
+                <div className="flex flex-col gap-4 py-1">
                   {[
                     { val: "72%", label: "Reduction in security incidents by our managed security clients.", icon: <Activity className="h-5 w-5 text-blue-600" /> },
                     { val: "99.9%", label: "Uptime achieved with 24/7 monitoring and threat management.", icon: <ShieldCheck className="h-5 w-5 text-blue-600" /> },
                     { val: "Faster Recovery", label: "Reduced mean time to detect and respond by up to 60%.", icon: <TrendingUp className="h-5 w-5 text-blue-600" /> }
                   ].map((item, idx) => (
-                    <div key={idx} className="flex flex-row items-start gap-3 border-t border-slate-100 pt-3.5 first:border-0 first:pt-0">
+                    <div key={idx} className="flex flex-row items-start gap-3 border-t border-slate-100 pt-3 first:border-0 first:pt-0">
                       <div className="h-10 w-10 rounded-xl bg-blue-50 border border-blue-100/50 flex items-center justify-center shrink-0">
                         {item.icon}
                       </div>
@@ -557,7 +557,7 @@ export default function CybersecurityPage() {
                 </div>
               </div>
 
-              <div className="pt-4 mt-6 border-t border-slate-100/60">
+              <div className="pt-4 mt-auto border-t border-slate-100/60">
                 <button
                   onClick={openBooking}
                   className="inline-flex items-center text-xs font-bold text-blue-600 hover:text-blue-700 transition-colors group/link"
@@ -569,7 +569,7 @@ export default function CybersecurityPage() {
             </div>
 
             {/* Middle Column: Testimonials (Seamless column, no outer card wrapper) */}
-            <div className="w-full lg:w-[32%] flex flex-col justify-start relative h-[420px] lg:h-auto overflow-hidden">
+            <div className="w-full lg:w-[32%] flex flex-col justify-start relative h-[450px] overflow-hidden">
               <div className="flex flex-col mb-4 shrink-0">
                 <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-cyan-500 mb-2 block">
                   WHAT OUR CLIENTS SAY
@@ -577,7 +577,7 @@ export default function CybersecurityPage() {
               </div>
 
               {/* Infinite Scrolling Container */}
-              <div className="relative w-full flex-1 overflow-hidden h-[360px] lg:h-[380px]">
+              <div className="relative w-full flex-1 overflow-hidden h-[380px]">
                 {/* Fade overlays for smooth vertical transitions */}
                 <div className="absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-[#f8fafc] via-[#f8fafc]/70 to-transparent z-10 pointer-events-none" />
                 <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-[#f8fafc] via-[#f8fafc]/70 to-transparent z-10 pointer-events-none" />
