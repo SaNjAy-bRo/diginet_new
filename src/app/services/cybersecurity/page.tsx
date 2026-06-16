@@ -125,7 +125,7 @@ export default function CybersecurityPage() {
             <span className="text-cyan-400">Cybersecurity</span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
             {/* Left Hero Content */}
             <div className="lg:col-span-6 flex flex-col text-left items-start">
@@ -144,7 +144,7 @@ export default function CybersecurityPage() {
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3.5 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row gap-3.5 w-full sm:w-auto mb-8">
                 <button
                   onClick={openBooking}
                   className="cursor-pointer inline-flex items-center justify-center px-7 py-3 rounded-xl text-sm font-semibold text-white bg-cta-blue hover:bg-hover-blue transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-cta-blue/20"
@@ -154,10 +154,30 @@ export default function CybersecurityPage() {
                 </button>
               </div>
 
+              {/* 4 Value Pillars inside the left column */}
+              <div className="grid grid-cols-2 gap-4 mt-2 max-w-[500px] w-full border-t border-slate-800/40 pt-6">
+                {[
+                  { title: "24/7 Threat Monitoring", desc: "Constant vigil over active infrastructure.", icon: <Eye className="h-4.5 w-4.5 text-cyan-400 stroke-[2.5px]" /> },
+                  { title: "Reduce Risk & Minimize Impact", desc: "Isolate vulnerabilities before escalation.", icon: <ShieldAlert className="h-4.5 w-4.5 text-cyan-400 stroke-[2.5px]" /> },
+                  { title: "Rapid Incident Response", desc: "Immediate containment and system recovery.", icon: <Zap className="h-4.5 w-4.5 text-cyan-400 stroke-[2.5px]" /> },
+                  { title: "Compliance & Governance", desc: "Enforce SOC2, ISO, and data protocols.", icon: <FileSpreadsheet className="h-4.5 w-4.5 text-cyan-400 stroke-[2.5px]" /> }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex gap-2.5 items-start">
+                    <div className="h-8.5 w-8.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0">
+                      {item.icon}
+                    </div>
+                    <div className="flex flex-col leading-tight pt-0.5">
+                      <span className="text-[11px] md:text-xs font-bold text-white tracking-wide">{item.title}</span>
+                      <span className="text-[10px] text-slate-400 mt-1 leading-normal">{item.desc}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
             </div>
 
             {/* Right Hero Graphic: High-fidelity animated SVG cyber shield & World Map */}
-            <div className="lg:col-span-6 relative flex justify-center lg:justify-end items-center py-6">
+            <div className="lg:col-span-6 relative flex justify-center lg:justify-end items-start py-0">
               <div className="relative w-full max-w-[500px] aspect-square flex items-center justify-center">
                 
                 {/* SVG background grid & world map with active threat nodes */}
@@ -398,26 +418,6 @@ export default function CybersecurityPage() {
               </div>
             </div>
 
-          </div>
-
-          {/* Underneath: 4 Value Pillars at the bottom of the section */}
-          <div className="mt-6 md:mt-10 pt-6 border-t border-slate-800/40 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-[1100px]">
-            {[
-              { title: "24/7 Threat Monitoring", desc: "Constant vigil over active infrastructure.", icon: <Eye className="h-4.5 w-4.5 text-cyan-400 stroke-[2.5px]" /> },
-              { title: "Reduce Risk & Minimize Impact", desc: "Isolate vulnerabilities before escalation.", icon: <ShieldAlert className="h-4.5 w-4.5 text-cyan-400 stroke-[2.5px]" /> },
-              { title: "Rapid Incident Response", desc: "Immediate containment and system recovery.", icon: <Zap className="h-4.5 w-4.5 text-cyan-400 stroke-[2.5px]" /> },
-              { title: "Compliance & Governance", desc: "Enforce SOC2, ISO, and data protocols.", icon: <FileSpreadsheet className="h-4.5 w-4.5 text-cyan-400 stroke-[2.5px]" /> }
-            ].map((item, idx) => (
-              <div key={idx} className="flex gap-3.5 items-start">
-                <div className="h-9.5 w-9.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0">
-                  {item.icon}
-                </div>
-                <div className="flex flex-col leading-tight pt-0.5">
-                  <span className="text-xs md:text-sm font-bold text-white tracking-wide">{item.title}</span>
-                  <span className="text-[11px] md:text-xs text-slate-400 mt-1.5 leading-normal">{item.desc}</span>
-                </div>
-              </div>
-            ))}
           </div>
 
         </div>
