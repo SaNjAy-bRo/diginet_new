@@ -159,7 +159,7 @@ export default function CybersecurityPage() {
             {/* Right Hero Graphic: High-fidelity landscape image with neon glowing effects */}
             <div className="lg:col-span-6 relative flex justify-center lg:justify-end items-center py-0 w-full">
               <motion.div 
-                className="relative w-full max-w-[640px] aspect-[16/10] flex items-center justify-center rounded-2xl overflow-hidden border-2 border-cyan-500/30 shadow-[0_0_25px_rgba(6,182,212,0.25)] bg-[#040d1e]"
+                className="relative w-full max-w-[640px] aspect-[16/10] flex items-center justify-center overflow-hidden bg-transparent"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
