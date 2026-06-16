@@ -718,10 +718,10 @@ export default function CybersecurityPage() {
         </div>
 
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
             
             {/* Left side Accordion */}
-            <div className="lg:col-span-7 flex flex-col justify-start lg:border-r lg:border-slate-800/60 lg:pr-12">
+            <div className="lg:col-span-7 flex flex-col justify-between h-full lg:border-r lg:border-slate-800/60 lg:pr-12">
               <div>
                 <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-cyan-400 mb-4 block">
                   FREQUENTLY ASKED QUESTIONS
@@ -770,7 +770,7 @@ export default function CybersecurityPage() {
             </div>
 
             {/* Right side help info (Seamless, border-less vertical split) */}
-            <div className="lg:col-span-5 flex flex-col justify-center lg:pl-12">
+            <div className="lg:col-span-5 flex flex-col justify-between h-full lg:pl-12 lg:py-1">
               
               {/* Headset and Question Block */}
               <div className="flex items-start gap-4 mb-6">
@@ -788,17 +788,21 @@ export default function CybersecurityPage() {
               </div>
 
               {/* Inline single-row contact info */}
-              <div className="text-left text-xs md:text-sm text-slate-450 mt-6 pt-6 border-t border-slate-800/60 flex flex-row items-center flex-wrap gap-x-2 gap-y-1">
-                <span>Call us:</span>
-                <a href="tel:+15554322023" className="font-bold text-blue-500 hover:text-blue-400 transition-colors">
-                  +1 (555) 432-2023
-                </a>
-                <span className="text-slate-700 mx-2">|</span>
-                <a href="mailto:hello@diginetsolutions.com" className="font-bold text-blue-500 hover:text-blue-400 transition-colors">
-                  hello@diginetsolutions.com
-                </a>
+              <div className="text-left text-xs md:text-sm text-slate-450 mt-6 pt-6 border-t border-slate-800/60 flex flex-col sm:flex-row sm:items-center gap-y-2 gap-x-4">
+                <div className="flex items-center gap-2">
+                  <span>Call us:</span>
+                  <a href="tel:+15554322023" className="font-bold text-blue-500 hover:text-blue-400 transition-colors">
+                    +1 (555) 432-2023
+                  </a>
+                </div>
+                <span className="hidden sm:inline text-slate-700">|</span>
+                <div className="flex items-center gap-2">
+                  <span>Email:</span>
+                  <a href="mailto:hello@diginetsolutions.com" className="font-bold text-blue-500 hover:text-blue-400 transition-colors">
+                    hello@diginetsolutions.com
+                  </a>
+                </div>
               </div>
-
             </div>
 
           </div>
