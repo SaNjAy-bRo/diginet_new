@@ -119,7 +119,7 @@ export default function DigitalMarketingPage() {
             <span className="text-sky-400">Digital Marketing</span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             
             {/* Left Hero Content */}
             <div className="lg:col-span-5 flex flex-col text-left items-start">
@@ -131,7 +131,7 @@ export default function DigitalMarketingPage() {
               <h1 className="text-3xl sm:text-[44px] lg:text-[48px] xl:text-[52px] font-black tracking-tight text-white leading-[1.08] mb-5 font-poppins">
                 Digital Marketing <br />
                 That Drives Real <br />
-                Business <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-accent-blue">Growth</span>
+                Business <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-500">Growth</span>
               </h1>
 
               <p className="text-[14px] md:text-[15px] text-slate-400 leading-relaxed mb-8 max-w-[460px]">
@@ -139,7 +139,7 @@ export default function DigitalMarketingPage() {
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3.5 w-full sm:w-auto mb-12">
+              <div className="flex flex-col sm:flex-row gap-3.5 w-full sm:w-auto">
                 <button
                   onClick={openBooking}
                   className="cursor-pointer inline-flex items-center justify-center px-7 py-3 rounded-full text-sm font-semibold text-white bg-cta-blue hover:bg-hover-blue transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-cta-blue/20"
@@ -156,81 +156,67 @@ export default function DigitalMarketingPage() {
                 </a>
               </div>
 
-              {/* Small Trust Pillars */}
-              <div className="grid grid-cols-2 gap-x-6 gap-y-4 pt-6 border-t border-slate-800/60 w-full max-w-[460px]">
-                {[
-                  { title: "ROI-Focused", desc: "Every strategy aligned to your bottom line." },
-                  { title: "Data-Driven", desc: "Decisions powered by real-time insights." },
-                  { title: "Transparent", desc: "Clear reporting and complete visibility." },
-                  { title: "Scalable", desc: "Built to grow with your business." }
-                ].map((item, idx) => (
-                  <div key={idx} className="flex gap-2">
-                    <div className="h-5 w-5 rounded-full bg-sky-500/10 border border-sky-500/20 flex items-center justify-center shrink-0 text-sky-400">
-                      <Check className="h-3 w-3 stroke-[2.5px]" />
-                    </div>
-                    <div className="flex flex-col leading-tight">
-                      <span className="text-[11px] font-bold text-white">{item.title}</span>
-                      <span className="text-[9px] text-slate-450 mt-0.5 leading-normal">{item.desc}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
             </div>
 
             {/* Right Hero Graphic: Live Interactive Dashboard Layout */}
             <div className="lg:col-span-7 relative flex justify-center lg:justify-end items-center py-6">
               
-              {/* Outer container */}
-              <div className="relative w-full max-w-[480px] md:max-w-[540px]">
+              {/* Outer container holding Dashboard and Ad Cards side-by-side */}
+              <div className="relative w-full max-w-[620px] grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
                 
-                {/* Curve loop background graphic */}
-                <svg className="absolute -inset-10 w-[calc(100%+80px)] h-[calc(100%+80px)] pointer-events-none z-0 overflow-visible" viewBox="0 0 500 400" fill="none">
-                  <ellipse
-                    cx="250"
-                    cy="200"
-                    rx="240"
-                    ry="145"
-                    transform="rotate(-5, 250, 200)"
-                    stroke="rgba(56, 189, 248, 0.14)"
-                    strokeWidth="1.5"
-                    strokeDasharray="4 8"
-                    fill="none"
-                  />
-                  <ellipse
-                    cx="250"
-                    cy="200"
-                    rx="220"
-                    ry="125"
-                    transform="rotate(-5, 250, 200)"
-                    stroke="rgba(14, 165, 233, 0.08)"
-                    strokeWidth="1"
-                    fill="none"
-                  />
-                </svg>
+                {/* SVG Connecting lines in the background - Desktop only */}
+                <div className="hidden md:block absolute inset-0 pointer-events-none z-0">
+                  <svg className="w-full h-full" viewBox="0 0 620 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    {/* Top dotted line from Campaign Overview to Google Ads card */}
+                    <path 
+                      d="M 320,80 C 370,40 400,20 440,30" 
+                      stroke="rgba(56, 189, 248, 0.25)" 
+                      strokeWidth="1.5" 
+                      strokeDasharray="4 4" 
+                      fill="none" 
+                    />
+                    {/* Animated glowing dot along top path */}
+                    <circle r="3" fill="#38bdf8">
+                      <animateMotion dur="6s" repeatCount="indefinite" path="M 320,80 C 370,40 400,20 440,30" />
+                    </circle>
 
-                {/* Central Dashboard Panel (Google & Meta Campaign Stats) */}
-                <div className="relative z-10 w-[84%] mr-auto rounded-2xl border border-slate-700/40 bg-[#071020]/95 shadow-2xl p-4 md:p-5 flex flex-col gap-4">
+                    {/* Bottom dotted line from Campaign Overview to Meta Ads card */}
+                    <path 
+                      d="M 320,320 C 370,360 400,380 440,370" 
+                      stroke="rgba(56, 189, 248, 0.25)" 
+                      strokeWidth="1.5" 
+                      strokeDasharray="4 4" 
+                      fill="none" 
+                    />
+                    {/* Animated glowing dot along bottom path */}
+                    <circle r="3" fill="#38bdf8">
+                      <animateMotion dur="6s" repeatCount="indefinite" path="M 320,320 C 370,360 400,380 440,370" />
+                    </circle>
+                  </svg>
+                </div>
+
+                {/* Left Side: Campaign Overview Dashboard (md:col-span-8) */}
+                <div className="md:col-span-8 relative z-10 rounded-[28px] border border-slate-700/40 bg-[#071125]/95 shadow-2xl p-4 md:p-5 flex flex-col gap-4">
                   
                   {/* Title Bar */}
-                  <div className="flex items-center justify-between pb-3 border-b border-slate-800/80">
+                  <div className="flex items-center justify-between pb-2 border-b border-slate-800/80">
                     <h3 className="text-xs font-bold text-white tracking-wide">Campaign Overview</h3>
                     <TrendingUp className="h-4 w-4 text-sky-400" />
                   </div>
 
-                  {/* 4 Stats Grid */}
-                  <div className="grid grid-cols-4 gap-2.5">
+                  {/* 4 Stats Grid - horizontal row */}
+                  <div className="grid grid-cols-4 gap-2">
                     {[
-                      { label: "Clicks", val: "12,540", pct: "+18.7%", pos: true },
-                      { label: "Conversions", val: "1,246", pct: "+25.4%", pos: true },
-                      { label: "Cost / Conv", val: "$18.45", pct: "-12.3%", pos: true },
-                      { label: "Conv. Rate", val: "4.6%", pct: "+31.2%", pos: true }
+                      { label: "Clicks", val: "12,540", pct: "+18.7%" },
+                      { label: "Conversions", val: "1,246", pct: "+25.4%" },
+                      { label: "Cost / Conv.", val: "$18.45", pct: "+12.3%" },
+                      { label: "ROAS", val: "4.6x", pct: "+31.2%" }
                     ].map((stat, idx) => (
-                      <div key={idx} className="bg-slate-900/60 border border-slate-800/50 p-2 rounded-xl flex flex-col justify-between min-h-[64px]">
-                        <span className="text-[7.5px] text-slate-500 font-semibold uppercase tracking-wider leading-none">{stat.label}</span>
-                        <div className="mt-1.5">
-                          <span className="text-[12px] font-black text-white leading-none block">{stat.val}</span>
-                          <span className={`text-[7px] font-bold mt-1 leading-none inline-block ${stat.pos ? "text-emerald-400" : "text-rose-400"}`}>
+                      <div key={idx} className="bg-slate-900/60 border border-slate-850 p-2 rounded-xl flex flex-col justify-between min-h-[64px]">
+                        <span className="text-[7.5px] text-slate-500 font-bold uppercase tracking-wider leading-none block truncate">{stat.label}</span>
+                        <div className="mt-1">
+                          <span className="text-[11px] font-black text-white leading-none block">{stat.val}</span>
+                          <span className="text-[7px] font-bold text-emerald-455 mt-1 leading-none inline-block">
                             {stat.pct}
                           </span>
                         </div>
@@ -244,21 +230,35 @@ export default function DigitalMarketingPage() {
                     {/* Top Channels */}
                     <div className="flex flex-col gap-2">
                       <span className="text-[8px] font-bold uppercase tracking-wider text-slate-500">Top Channels</span>
-                      <div className="flex flex-col gap-1.5">
+                      <div className="flex flex-col gap-2">
                         {[
-                          { name: "Google Ads", val: "48%", color: "bg-amber-400" },
-                          { name: "Meta Ads", val: "34%", color: "bg-sky-500" },
-                          { name: "LinkedIn Ads", val: "12%", color: "bg-blue-600" },
-                          { name: "Organic Search", val: "6%", color: "bg-emerald-500" }
+                          { name: "Google Ads", logo: (
+                            <svg className="h-3.5 w-3.5" viewBox="0 0 24 24">
+                              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.9h6.6c-.28 1.5-.1.3-1.14 2.22l2.76 2.14c1.62-1.5 2.52-3.7 2.52-6.19z"/>
+                              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-2.76-2.14c-1.05.7-2.38 1.14-3.8 1.14-2.92 0-5.4-1.98-6.28-4.64L4.25 18.25C6.26 21.69 9.87 24 12 24z"/>
+                              <path fill="#FBBC05" d="M5.72 15.45c-.23-.7-.36-1.45-.36-2.23s.13-1.53.36-2.23L4.25 8.79C3.42 10.39 3 12.16 3 14s.42 3.61 1.25 5.21l2.47-1.92-.04-.04c-.06-.12-.32-.82-.04-1.8z"/>
+                              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 9.87 0 6.26 2.31 4.25 5.75l2.47 1.92c.88-2.66 3.36-4.64 6.28-4.64z"/>
+                            </svg>
+                          ) },
+                          { name: "Meta Ads", logo: (
+                            <svg className="h-3.5 w-3.5 fill-[#1877F2]" viewBox="0 0 24 24">
+                              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                          ) },
+                          { name: "LinkedIn Ads", logo: (
+                            <svg className="h-3.5 w-3.5 fill-[#0A66C2]" viewBox="0 0 24 24">
+                              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                          ) },
+                          { name: "Organic Search", logo: (
+                            <Search className="h-3.5 w-3.5 text-sky-400" />
+                          ) }
                         ].map((c, idx) => (
-                          <div key={idx} className="flex flex-col gap-1">
-                            <div className="flex justify-between items-center text-[7.5px]">
-                              <span className="text-slate-400 font-medium">{c.name}</span>
-                              <span className="text-white font-bold">{c.val}</span>
+                          <div key={idx} className="flex items-center gap-2 text-[9px] text-slate-300">
+                            <div className="h-6 w-6 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0">
+                              {c.logo}
                             </div>
-                            <div className="w-full h-1 bg-slate-800 rounded-full overflow-hidden">
-                              <div className={`h-full ${c.color}`} style={{ width: c.val }} />
-                            </div>
+                            <span className="font-semibold">{c.name}</span>
                           </div>
                         ))}
                       </div>
@@ -269,108 +269,181 @@ export default function DigitalMarketingPage() {
                       <span className="text-[8px] font-bold uppercase tracking-wider text-slate-500">Recent Campaigns</span>
                       <div className="flex flex-col gap-1.5">
                         {[
-                          { name: "Summer Sale - Google Ads", status: "Active", col: "text-emerald-400" },
-                          { name: "Lead Gen - Meta Ads", status: "Active", col: "text-emerald-400" },
-                          { name: "Brand Awareness - LinkedIn", status: "Active", col: "text-emerald-400" }
+                          { name: "Summer Sale - Google Ads", status: "Active" },
+                          { name: "Lead Gen - Meta Ads", status: "Active" },
+                          { name: "Brand Awareness - LinkedIn", status: "Active" }
                         ].map((camp, idx) => (
-                          <div key={idx} className="bg-slate-900/40 border border-slate-800/40 p-1.5 rounded-lg flex items-center justify-between text-[7.5px]">
+                          <div key={idx} className="bg-slate-900/40 border border-slate-800/40 p-1.5 rounded-lg flex items-center justify-between text-[8px]">
                             <span className="text-slate-300 truncate pr-2 font-medium max-w-[85px]">{camp.name}</span>
-                            <span className={`font-bold ${camp.col}`}>{camp.status}</span>
+                            <span className="font-bold text-emerald-450 flex items-center gap-1">
+                              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                              {camp.status}
+                            </span>
                           </div>
                         ))}
                       </div>
-                      <button className="w-full mt-1.5 py-1.5 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-400 font-bold text-[8px] hover:bg-sky-500/20 transition-all">
+                      <button className="w-full mt-1.5 py-2 rounded-lg bg-[#1877F2] text-white font-bold text-[8.5px] hover:bg-[#1877F2]/90 transition-all shadow-md">
                         View All Campaigns
                       </button>
                     </div>
 
                   </div>
 
+                  {/* Platforms Overlapping Pill - floated at bottom of Dashboard */}
+                  <div className="absolute left-[8%] md:left-[12%] bottom-[-18px] z-30 flex items-center gap-3 bg-white border border-slate-100 py-1.5 px-4 rounded-full shadow-xl">
+                    <span className="text-[6.5px] font-extrabold uppercase text-slate-400 tracking-wider pr-1">Platforms</span>
+                    <div className="flex gap-2 items-center">
+                      {/* Google */}
+                      <span className="h-4.5 w-4.5 rounded-full bg-slate-50 flex items-center justify-center border border-slate-150">
+                        <svg className="h-2.5 w-2.5" viewBox="0 0 24 24">
+                          <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.9h6.6c-.28 1.5-.1.3-1.14 2.22l2.76 2.14c1.62-1.5 2.52-3.7 2.52-6.19z"/>
+                          <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-2.76-2.14c-1.05.7-2.38 1.14-3.8 1.14-2.92 0-5.4-1.98-6.28-4.64L4.25 18.25C6.26 21.69 9.87 24 12 24z"/>
+                          <path fill="#FBBC05" d="M5.72 15.45c-.23-.7-.36-1.45-.36-2.23s.13-1.53.36-2.23L4.25 8.79C3.42 10.39 3 12.16 3 14s.42 3.61 1.25 5.21l2.47-1.92-.04-.04c-.06-.12-.32-.82-.04-1.8z"/>
+                          <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 9.87 0 6.26 2.31 4.25 5.75l2.47 1.92c.88-2.66 3.36-4.64 6.28-4.64z"/>
+                        </svg>
+                      </span>
+                      {/* Meta */}
+                      <span className="h-4.5 w-4.5 rounded-full bg-slate-50 flex items-center justify-center border border-slate-150">
+                        <svg className="h-2.5 w-2.5 fill-[#1877F2]" viewBox="0 0 24 24">
+                          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                      </span>
+                      {/* LinkedIn */}
+                      <span className="h-4.5 w-4.5 rounded-full bg-slate-50 flex items-center justify-center border border-slate-150">
+                        <svg className="h-2.5 w-2.5 fill-[#0A66C2]" viewBox="0 0 24 24">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                      </span>
+                      {/* YouTube */}
+                      <span className="h-4.5 w-4.5 rounded-full bg-slate-50 flex items-center justify-center border border-slate-150">
+                        <svg className="h-2.5 w-2.5 fill-[#FF0000]" viewBox="0 0 24 24">
+                          <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11C4.483 20.455 12 20.455 12 20.455s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                      </span>
+                      {/* TikTok */}
+                      <span className="h-4.5 w-4.5 rounded-full bg-slate-50 flex items-center justify-center border border-slate-150">
+                        <svg className="h-2.5 w-2.5 fill-black" viewBox="0 0 24 24">
+                          <path d="M12.53.086c.3-.08.62-.086.92-.086 1.48 0 2.91.44 4.12 1.25.13-.96.53-1.85 1.13-2.6-.07.35-.1.71-.1 1.07 0 2.05 1.13 3.86 2.8 4.84v3.16c-1.37-.1-2.65-.67-3.64-1.63v6.78c0 4.96-4.04 9-9 9s-9-4.04-9-9 4.04-9 9-9c.32 0 .63.02.94.05v3.23c-.31-.05-.62-.08-.94-.08-3.18 0-5.77 2.59-5.77 5.77s2.59 5.77 5.77 5.77 5.77-2.59 5.77-5.77V.086z"/>
+                        </svg>
+                      </span>
+                      {/* Plus button */}
+                      <span className="h-4.5 w-4.5 rounded-full bg-slate-100 flex items-center justify-center border border-slate-200 text-slate-500 text-[10px] font-bold cursor-pointer hover:bg-slate-200 transition-colors">
+                        +
+                      </span>
+                    </div>
+                  </div>
+
                 </div>
 
-                {/* Floating Card 1: Google Ad mockup (top-right) */}
-                <motion.div
-                  className="absolute right-0 top-[5%] z-20 w-[145px] rounded-xl border border-white/[0.08] shadow-2xl p-2.5 bg-[#0a1424]/90 backdrop-blur-md flex flex-col gap-2"
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <div className="flex justify-between items-center text-[7px] text-slate-500">
-                    <span className="flex items-center gap-1 font-bold">
-                      <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
-                      Google Ad
-                    </span>
-                    <span>Sponsored</span>
-                  </div>
-                  {/* Mock Ad Creative visual representation */}
-                  <div className="h-14 w-full rounded-lg bg-gradient-to-br from-amber-400/20 to-orange-500/20 flex items-center justify-center border border-amber-400/10 relative overflow-hidden shrink-0">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#0a1424_100%)] opacity-40" />
-                    {/* Visual shoe silhouette using styled divs */}
-                    <div className="relative w-12 h-6 flex items-center justify-center text-amber-300">
-                      <svg className="w-10 h-10 fill-current opacity-80" viewBox="0 0 24 24">
-                        <path d="M21 13c0-1.66-1.34-3-3-3h-1V9c0-1.66-1.34-3-3-3h-2c-1.66 0-3 1.34-3 3v1H8c-1.66 0-3 1.34-3 3v2c0 1.66 1.34 3 3 3h10c1.66 0 3-1.34 3-3v-2z" />
-                      </svg>
+                {/* Right Side: Stacked Ad Mockups (md:col-span-4) */}
+                <div className="md:col-span-4 flex flex-col gap-4 relative z-10 w-full md:-ml-8">
+                  
+                  {/* Google Ads sneaker card (top) */}
+                  <motion.div
+                    className="w-full rounded-2xl border border-slate-200/80 shadow-xl p-3 bg-white flex flex-col gap-2 relative overflow-hidden"
+                    animate={{ y: [0, -5, 0] }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <div className="flex justify-between items-center text-[7px] text-slate-550 font-extrabold uppercase tracking-wider">
+                      <span className="flex items-center gap-1">
+                        <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
+                        Google Ads
+                      </span>
+                      <span>Sponsored</span>
                     </div>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="text-[9px] font-black text-white leading-tight">Step Ahead. Stay Ahead.</span>
-                    <div className="flex justify-between items-center mt-1">
-                      <span className="text-[7px] text-slate-400">Shop Premium Sneakers</span>
-                      <button className="px-2 py-0.5 rounded bg-sky-500 text-white font-bold text-[6.5px]">Shop Now</button>
-                    </div>
-                  </div>
-                </motion.div>
 
-                {/* Floating Card 2: Meta Ad mockup (bottom-right) */}
-                <motion.div
-                  className="absolute right-[-16px] bottom-[5%] z-20 w-[145px] rounded-xl border border-white/[0.08] shadow-2xl p-2.5 bg-[#0a1424]/90 backdrop-blur-md flex flex-col gap-2"
-                  animate={{ y: [0, -5, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                >
-                  <div className="flex justify-between items-center text-[7px] text-slate-500">
-                    <span className="flex items-center gap-1 font-bold">
-                      <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
-                      Meta Ad
-                    </span>
-                    <span>Sponsored</span>
-                  </div>
-                  {/* Mock Ad Creative visual representation */}
-                  <div className="h-14 w-full rounded-lg bg-gradient-to-br from-sky-400/20 to-purple-500/20 flex items-center justify-center border border-sky-400/10 relative overflow-hidden shrink-0">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#0a1424_100%)] opacity-40" />
-                    {/* Visual silhouette using styled divs */}
-                    <div className="w-6 h-6 rounded-full bg-slate-800/80 border border-slate-700 flex items-center justify-center">
-                      <Users className="w-3.5 h-3.5 text-sky-300" />
+                    {/* Sneaker Image asset */}
+                    <div className="h-20 w-full rounded-xl overflow-hidden bg-slate-50 border border-slate-100 relative">
+                      <img 
+                        src="/images/google_shoe_ad.png" 
+                        alt="Sneaker Product Ad"
+                        className="h-full w-full object-cover object-center"
+                      />
                     </div>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="text-[9px] font-black text-white leading-tight">Elevate Your Everyday Style.</span>
-                    <div className="flex justify-between items-center mt-1">
-                      <span className="text-[7px] text-slate-400">New Collections Available</span>
-                      <button className="px-2 py-0.5 rounded bg-sky-500 text-white font-bold text-[6.5px]">Shop Now</button>
-                    </div>
-                  </div>
-                </motion.div>
 
-                {/* Floating Pill (bottom-center) */}
-                <motion.div
-                  className="absolute left-[20%] bottom-[-16px] z-30 flex items-center gap-3 bg-white border border-slate-100 py-1.5 px-3.5 rounded-full shadow-lg"
-                  animate={{ y: [0, -4, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-                >
-                  <span className="text-[6.5px] font-extrabold uppercase text-slate-400 tracking-wider pr-1">Platforms</span>
-                  {/* Platform Icons represented by clean circles with letters/shapes */}
-                  <div className="flex gap-1.5 items-center">
-                    <span className="h-4 w-4 rounded-full bg-[#1877F2]/10 border border-[#1877F2]/20 flex items-center justify-center text-[#1877F2] font-black text-[9px]">f</span>
-                    <span className="h-4 w-4 rounded-full bg-[#0A66C2]/10 border border-[#0A66C2]/20 flex items-center justify-center text-[#0A66C2] font-black text-[9px]">in</span>
-                    <span className="h-4 w-4 rounded-full bg-[#FF0000]/10 border border-[#FF0000]/20 flex items-center justify-center text-[#FF0000] font-black text-[8px]">▶</span>
-                    <span className="h-4 w-4 rounded-full bg-black/10 border border-black/20 flex items-center justify-center text-black font-black text-[8px] font-sans">d</span>
-                    <span className="h-4 w-4 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-500 text-[8px] font-bold">+</span>
-                  </div>
-                </motion.div>
+                    <div className="flex flex-col gap-1">
+                      <span className="text-[10px] font-black text-slate-900 leading-tight">Step Ahead. Stay Ahead.</span>
+                      <div className="flex justify-between items-center mt-1">
+                        <span className="text-[7.5px] text-slate-400 font-semibold truncate max-w-[80px]">Shop Premium Sneakers</span>
+                        <button className="px-2.5 py-1 rounded bg-black text-white font-extrabold text-[7px] hover:bg-slate-800 transition-colors uppercase tracking-wider">
+                          Shop Now
+                        </button>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Meta Ad Lifestyle Card (bottom) */}
+                  <motion.div
+                    className="w-full rounded-2xl border border-slate-200/80 shadow-xl p-3 bg-white flex flex-col gap-2 relative overflow-hidden"
+                    animate={{ y: [0, -5, 0] }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  >
+                    <div className="flex justify-between items-center text-[7px] text-slate-550 font-extrabold uppercase tracking-wider">
+                      <span className="flex items-center gap-1">
+                        <span className="h-1.5 w-1.5 rounded-full bg-sky-500" />
+                        Meta Ad
+                      </span>
+                      <span>Sponsored</span>
+                    </div>
+
+                    {/* Lifestyle Image asset */}
+                    <div className="h-20 w-full rounded-xl overflow-hidden bg-slate-50 border border-slate-100 relative">
+                      <img 
+                        src="/images/meta_person_ad.png" 
+                        alt="Lifestyle Apparel Ad" 
+                        className="h-full w-full object-cover object-center"
+                      />
+                    </div>
+
+                    <div className="flex flex-col gap-1">
+                      <span className="text-[10px] font-black text-slate-900 leading-tight">Elevate Your Everyday Style.</span>
+                      <div className="flex justify-between items-center mt-1 pb-1.5 border-b border-slate-100">
+                        <span className="text-[7.5px] text-slate-400 font-semibold truncate max-w-[80px]">New Collections</span>
+                        <button className="px-2.5 py-1 rounded bg-black text-white font-extrabold text-[7px] hover:bg-slate-800 transition-colors uppercase tracking-wider">
+                          Shop Now
+                        </button>
+                      </div>
+                      
+                      {/* Social Reaction footer */}
+                      <div className="flex justify-between items-center text-[7.5px] text-slate-400 font-semibold pt-0.5">
+                        <div className="flex items-center gap-1">
+                          <span className="flex items-center -space-x-1">
+                            <span className="h-3.5 w-3.5 rounded-full bg-blue-500 flex items-center justify-center text-white border border-white text-[6px]">👍</span>
+                            <span className="h-3.5 w-3.5 rounded-full bg-red-500 flex items-center justify-center text-white border border-white text-[6px]">❤️</span>
+                          </span>
+                          <span>123</span>
+                        </div>
+                        <span>23 Comments</span>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                </div>
 
               </div>
 
             </div>
 
+          </div>
+
+          {/* Underneath: 4 Value Pillars at the bottom of the section */}
+          <div className="mt-16 pt-8 border-t border-slate-800/40 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-[1100px]">
+            {[
+              { title: "ROI-Focused", desc: "Every strategy aligned to your bottom line.", icon: <TrendingUp className="h-4 w-4 text-sky-400 stroke-[2.5px]" /> },
+              { title: "Data-Driven", desc: "Decisions powered by real-time insights.", icon: <BarChart3 className="h-4 w-4 text-sky-400 stroke-[2.5px]" /> },
+              { title: "Transparent", desc: "Clear reporting and complete visibility.", icon: <CheckCircle className="h-4 w-4 text-sky-400 stroke-[2.5px]" /> },
+              { title: "Scalable", desc: "Built to grow with your business.", icon: <SlidersHorizontal className="h-4 w-4 text-sky-400 stroke-[2.5px]" /> }
+            ].map((item, idx) => (
+              <div key={idx} className="flex gap-3 items-start">
+                <div className="h-8 w-8 rounded-full bg-sky-500/10 border border-sky-500/20 flex items-center justify-center shrink-0">
+                  {item.icon}
+                </div>
+                <div className="flex flex-col leading-tight">
+                  <span className="text-sm font-bold text-white">{item.title}</span>
+                  <span className="text-xs text-slate-400 mt-1.5 leading-normal">{item.desc}</span>
+                </div>
+              </div>
+            ))}
           </div>
 
         </div>
