@@ -322,25 +322,25 @@ export default function CybersecurityPage() {
                 desc: "Stay compliant and reduce risk with frameworks, policies, and continuous audits."
               }
             ].map((srv, idx) => (
-              <div key={idx} className="group bg-white border border-slate-100 p-8 rounded-[24px] flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-cyan-100/80 transition-all duration-300">
-                <div>
-                  <div className="h-12 w-12 rounded-xl bg-blue-600 flex items-center justify-center mb-6 shadow-md transition-all duration-300 group-hover:scale-105">
-                    {srv.icon}
-                  </div>
-                  <h3 className="text-base md:text-lg font-bold text-slate-900 font-poppins mb-3 leading-tight min-h-[50px] flex items-center">
+              <div key={idx} className="group bg-white border border-slate-100/80 p-6 sm:p-8 rounded-[28px] flex flex-row gap-5 items-start shadow-[0_8px_30px_rgb(0,0,0,0.012)] hover:shadow-[0_20px_50px_rgba(6,182,212,0.06)] hover:border-cyan-500/20 hover:translate-y-[-2px] transition-all duration-300">
+                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center shrink-0 shadow-lg shadow-blue-500/10 transition-transform duration-300 group-hover:scale-105 group-hover:rotate-2">
+                  {srv.icon}
+                </div>
+                <div className="flex flex-col text-left">
+                  <h3 className="text-base md:text-lg font-bold text-slate-900 font-poppins mb-2 leading-tight">
                     {srv.title}
                   </h3>
-                  <p className="text-xs md:text-sm text-slate-500 leading-relaxed font-normal mb-8">
+                  <p className="text-xs md:text-sm text-slate-500 leading-relaxed font-normal mb-4">
                     {srv.desc}
                   </p>
+                  <button
+                    onClick={openBooking}
+                    className="inline-flex items-center text-xs md:text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors group/link w-fit"
+                  >
+                    Learn more
+                    <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
+                  </button>
                 </div>
-                <button
-                  onClick={openBooking}
-                  className="inline-flex items-center text-xs md:text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors group/link mt-auto w-fit"
-                >
-                  Learn more
-                  <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
-                </button>
               </div>
             ))}
           </div>
