@@ -184,7 +184,7 @@ export default function MobileDevelopmentPage() {
             {/* Right Hero Graphic: High-fidelity landscape mockup image */}
             <div className="lg:col-span-6 relative flex justify-center lg:justify-end items-center py-0 w-full select-none">
               <motion.div 
-                className="relative w-full max-w-[640px] aspect-[16/10] flex items-center justify-center overflow-hidden bg-transparent"
+                className="relative w-full max-w-[640px] aspect-[16/10] flex items-center justify-center overflow-visible bg-transparent"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
