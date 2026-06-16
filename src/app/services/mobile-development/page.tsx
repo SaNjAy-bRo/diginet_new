@@ -138,10 +138,10 @@ export default function MobileDevelopmentPage() {
           {/* Breadcrumbs */}
           <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 sm:mb-4 select-none">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span className="text-slate-600">/</span>
-            <span className="text-slate-600">Services</span>
-            <span className="text-slate-600">/</span>
-            <span className="text-indigo-400">Mobile Development</span>
+            <span className="text-slate-600">&gt;</span>
+            <span className="text-slate-500">Services</span>
+            <span className="text-slate-600">&gt;</span>
+            <span className="text-indigo-400">Mobile Application Development</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -155,7 +155,7 @@ export default function MobileDevelopmentPage() {
 
               <h1 className="text-3xl sm:text-[44px] lg:text-[48px] xl:text-[52px] font-black tracking-tight text-white leading-[1.08] mb-5 font-poppins">
                 Mobile Applications <br />
-                Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400 font-black">Growth.</span>
+                Built for <span className="text-[#2F6BFF] font-black">Growth.</span>
               </h1>
 
               <p className="text-[14px] md:text-[15px] text-slate-400 leading-relaxed mb-4 max-w-[500px]">
@@ -181,136 +181,21 @@ export default function MobileDevelopmentPage() {
 
             </div>
 
-            {/* Right Hero Graphic: Phone Mockup & Floating Badges */}
-            <div className="lg:col-span-6 relative flex justify-center lg:justify-end items-center py-2 w-full select-none">
-              
-              {/* Background Glow */}
-              <div className="absolute top-1/2 left-1/2 lg:left-3/4 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-indigo-500/10 blur-3xl pointer-events-none z-0" />
-
-              {/* Floating Android Circle */}
+            {/* Right Hero Graphic: High-fidelity landscape mockup image */}
+            <div className="lg:col-span-6 relative flex justify-center lg:justify-end items-center py-0 w-full select-none">
               <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute left-[10%] top-[20%] h-12 w-12 rounded-full bg-indigo-500/15 border border-indigo-400/30 flex items-center justify-center text-indigo-400 shadow-xl backdrop-blur-md z-20"
+                className="relative w-full max-w-[640px] aspect-[16/10] flex items-center justify-center overflow-hidden bg-transparent"
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5.67 1.5 1.5 1.5 1.5-.67 1.5-1.5zm-1.5-4c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1s1.45 1 1 1v3.5c0 .55-.45 1-1 1z" className="hidden" />
-                  {/* Real Android SVG Path */}
-                  <path d="M6 18c0 .55.45 1 1 1h1v3c0 .55.45 1 1 1s1-.45 1-1v-3h2v3c0 .55.45 1 1 1s1-.45 1-1v-3h1c.55 0 1-.45 1-1V8H6v10zM19 8h-1.07c-.45-1.92-1.76-3.46-3.52-4.14l.79-.79c.39-.39.39-1.02 0-1.41a.995.995 0 0 0-1.41 0l-1.16 1.16C12.43 2.74 12.22 2.72 12 2.72c-.22 0-.43.02-.63.06L10.21 1.62c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l.79.79c-1.76.68-3.07 2.22-3.52 4.14H5c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1s1-.45 1-1V9h12v7c0 .55.45 1 1 1s1-.45 1-1V9c0-.55-.45-1-1-1z" />
-                </svg>
-              </motion.div>
-
-              {/* Floating Apple Circle */}
-              <motion.div 
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute right-[5%] top-[55%] h-12 w-12 rounded-full bg-indigo-500/15 border border-indigo-400/30 flex items-center justify-center text-indigo-400 shadow-xl backdrop-blur-md z-20"
-              >
-                <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.82M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.2.67-2.92 1.51-.63.73-1.18 1.87-1.03 2.98 1.11.09 2.26-.59 2.96-1.43z" />
-                </svg>
-              </motion.div>
-
-              {/* Floating Code Circle */}
-              <motion.div 
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute left-[20%] bottom-[15%] h-12 w-12 rounded-full bg-indigo-500/15 border border-indigo-400/30 flex items-center justify-center text-indigo-400 shadow-xl backdrop-blur-md z-20"
-              >
-                <Code className="w-5.5 h-5.5" />
-              </motion.div>
-
-              {/* Phone Mockup Frame */}
-              <motion.div 
-                initial={{ scale: 0.95, opacity: 0 }} 
-                animate={{ scale: 1, opacity: 1 }} 
-                className="relative w-[230px] sm:w-[255px] aspect-[9/18.5] rounded-[38px] border-[6px] border-slate-800 bg-slate-950 p-1.5 shadow-2xl z-10"
-              >
-                {/* Notch */}
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-3.5 bg-slate-800 rounded-full z-30" />
-                
-                {/* Screen Content - Interactive Dashboard mockup */}
-                <div className="relative w-full h-full rounded-[30px] overflow-hidden border border-slate-900 bg-[#081325] text-white flex flex-col font-sans p-4 relative overflow-hidden select-none">
-                  {/* Phone Header Status Bar */}
-                  <div className="flex justify-between items-center text-[8px] text-slate-400 font-bold mb-3 mt-1.5 px-1">
-                    <span>9:41</span>
-                    <div className="flex items-center gap-1">
-                      <div className="w-2.5 h-1 bg-slate-400 rounded-2xs" />
-                      <div className="w-3.5 h-1 bg-slate-400 rounded-2xs" />
-                      <div className="w-4 h-1.5 border border-slate-400 rounded-xs p-0.5 flex items-center">
-                        <div className="w-2 h-full bg-slate-400 rounded-3xs" />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* User Profile */}
-                  <div className="flex items-center justify-between mb-3 px-1">
-                    <div className="flex flex-col text-left">
-                      <span className="text-[7.5px] text-slate-400 font-semibold leading-none mb-0.5">Welcome back,</span>
-                      <span className="text-[10px] font-bold text-white leading-none">Alex Johnson</span>
-                    </div>
-                    <div className="h-6 w-6 rounded-full bg-slate-800 border border-slate-700 overflow-hidden flex items-center justify-center text-[8.5px] font-bold">
-                      AJ
-                    </div>
-                  </div>
-
-                  {/* Balance Widget Card */}
-                  <div className="w-full rounded-xl bg-gradient-to-br from-indigo-600 via-blue-600 to-indigo-700 p-2.5 shadow-md mb-3 text-left relative overflow-hidden">
-                    <div className="absolute top-[-20%] right-[-10%] w-16 h-16 bg-white/10 rounded-full blur-xl" />
-                    <span className="text-[7.5px] text-indigo-100 font-semibold uppercase tracking-wider block leading-none">Total Balance</span>
-                    <span className="text-sm font-black text-white mt-1 block leading-none">$24,850.50</span>
-                    <div className="flex justify-between items-center mt-2.5 pt-1.5 border-t border-white/10 text-[7.5px] text-indigo-100">
-                      <span>**** 4820</span>
-                      <span className="bg-white/20 px-1 py-0.2 rounded font-bold">DEBIT</span>
-                    </div>
-                  </div>
-
-                  {/* Grid: Analytics & Performance */}
-                  <div className="grid grid-cols-2 gap-2.5 mb-3 text-left">
-                    <div className="bg-slate-900/90 border border-slate-800 p-2 rounded-lg flex flex-col justify-between min-h-[65px]">
-                      <span className="text-[7.5px] text-slate-400 font-semibold uppercase tracking-wider block leading-none">Analytics</span>
-                      <div className="h-5 w-full flex items-end gap-0.5 mt-2">
-                        <div className="w-full bg-indigo-500/20 h-[30%] rounded-xs animate-pulse" />
-                        <div className="w-full bg-indigo-500/40 h-[55%] rounded-xs" />
-                        <div className="w-full bg-indigo-500/60 h-[40%] rounded-xs" />
-                        <div className="w-full bg-indigo-500 h-[80%] rounded-xs" />
-                      </div>
-                    </div>
-                    
-                    <div className="bg-slate-900/90 border border-slate-800 p-2 rounded-lg flex flex-col justify-between min-h-[65px]">
-                      <span className="text-[7.5px] text-slate-400 font-semibold uppercase tracking-wider block leading-none">Performance</span>
-                      <div className="flex items-center gap-1.5 mt-1.5">
-                        <div className="h-6 w-6 rounded-full border-[2.5px] border-slate-800 border-t-indigo-500 flex items-center justify-center shrink-0">
-                          <span className="text-[6.5px] font-black">75%</span>
-                        </div>
-                        <span className="text-[7px] text-slate-400 leading-tight">Excellent Rating</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Recent Transactions List */}
-                  <div className="flex flex-col text-left flex-1">
-                    <span className="text-[8px] font-semibold uppercase tracking-wider text-slate-500 mb-1.5 block">Recent Transactions</span>
-                    <div className="flex flex-col gap-1.5 overflow-y-auto max-h-[85px] pr-0.5">
-                      {[
-                        { label: "Shopping", val: "-$89.50", desc: "Amazon Store" },
-                        { label: "Travel", val: "-$45.20", desc: "Uber Trip" },
-                        { label: "Subscription", val: "-$12.00", desc: "Spotify Premium" }
-                      ].map((t, idx) => (
-                        <div key={idx} className="bg-slate-900/40 border border-slate-850 p-1.5 rounded-lg flex items-center justify-between text-[8px] leading-tight">
-                          <div className="flex flex-col">
-                            <span className="text-white font-bold">{t.label}</span>
-                            <span className="text-[6.5px] text-slate-500 mt-0.5">{t.desc}</span>
-                          </div>
-                          <div className="flex flex-col items-end">
-                            <span className="text-red-400 font-extrabold">{t.val}</span>
-                            <span className="text-[6.5px] text-slate-500 mt-0.5">Success</span>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                <motion.img 
+                  src="/images/service_mobile.png" 
+                  alt="Mobile Applications Built for Growth" 
+                  className="w-full h-full object-contain select-none relative z-0"
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                />
               </motion.div>
             </div>
 
