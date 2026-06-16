@@ -529,12 +529,12 @@ export default function CybersecurityPage() {
             
             {/* Left Column: Proven Results */}
             <div className="w-full lg:w-[26%] flex flex-col justify-between bg-white border border-slate-200/50 p-6 md:p-7 rounded-[32px] shadow-sm hover:shadow-md transition-all duration-300">
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-6 flex-grow">
                 <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-cyan-500 mb-2 block">
                   PROVEN RESULTS. REAL IMPACT.
                 </span>
 
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col flex-grow justify-between gap-6 py-2">
                   {[
                     { val: "72%", label: "Reduction in security incidents by our managed security clients.", icon: <Activity className="h-5 w-5 text-blue-600" /> },
                     { val: "99.9%", label: "Uptime achieved with 24/7 monitoring and threat management.", icon: <ShieldCheck className="h-5 w-5 text-blue-600" /> },
@@ -640,10 +640,10 @@ export default function CybersecurityPage() {
               </div>
             </div>
 
-            {/* Right Column: CTA Banner Card with horizontal split */}
-            <div className="w-full lg:w-[42%]">
+            {/* Right Column: CTA Banner Card with vertical layout */}
+            <div className="w-full lg:w-[42%] flex flex-col">
               <div 
-                className="w-full bg-[#06142D] rounded-[32px] border border-slate-800/40 shadow-xl p-6 md:p-7 relative overflow-hidden flex flex-col sm:flex-row items-center gap-6 h-full min-h-[300px] lg:min-h-[320px]"
+                className="w-full bg-[#06142D] rounded-[32px] border border-slate-800/40 shadow-xl p-6 md:p-8 relative overflow-hidden flex flex-col justify-between h-full min-h-[420px]"
                 style={{ 
                   backgroundImage: "url('/images/cta_vibrant_bg.png')", 
                   backgroundSize: "cover", 
@@ -652,9 +652,9 @@ export default function CybersecurityPage() {
                 }}
               >
                 {/* Gradient overlay for readability */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#06142D]/95 via-[#071633]/85 to-transparent pointer-events-none z-0" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#06142D]/90 via-[#071633]/70 to-[#06142D]/95 pointer-events-none z-0" />
 
-                <div className="relative z-20 flex-1 flex flex-col items-start text-left">
+                <div className="relative z-20 flex flex-col items-start text-left w-full">
                   <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-cyan-300 mb-2 block">
                     READY TO STRENGTHEN YOUR SECURITY?
                   </span>
@@ -676,13 +676,15 @@ export default function CybersecurityPage() {
                   </button>
                 </div>
 
-                {/* Smaller Hologram Projector on the right */}
-                <div className="relative z-20 w-[35%] aspect-square flex items-center justify-center shrink-0 pointer-events-none">
-                  <img 
-                    src="/images/security_cta_graphic.png" 
-                    alt="Cyber Security Hologram" 
-                    className="w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(6,182,212,0.15)] mix-blend-screen border-none outline-none bg-transparent"
-                  />
+                {/* Smaller Hologram Projector at the bottom center */}
+                <div className="relative z-20 w-full flex items-center justify-center pointer-events-none mt-auto pt-4">
+                  <div className="w-[120px] h-[120px] md:w-[130px] md:h-[130px] relative">
+                    <img 
+                      src="/images/security_cta_clean_hologram.png" 
+                      alt="Cyber Security Hologram" 
+                      className="w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(6,182,212,0.2)] mix-blend-screen border-none outline-none bg-transparent"
+                    />
+                  </div>
                 </div>
 
               </div>
