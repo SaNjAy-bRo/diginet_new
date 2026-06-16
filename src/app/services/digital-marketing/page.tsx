@@ -9,7 +9,8 @@ import {
   Mail, Settings2, SlidersHorizontal, Layers, Award,
   Sparkles, ShieldCheck, HelpCircle, ChevronLeft, ChevronRight,
   TrendingUp, CircleDollarSign, ArrowUpRight, CheckCircle,
-  Building2, Heart, DollarSign, Home, GraduationCap, Cloud, Settings, Briefcase
+  Building2, Heart, DollarSign, Home, GraduationCap, Cloud, Settings, Briefcase,
+  Target, ThumbsUp, Pen, Monitor
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useBooking } from "@/context/BookingContext";
@@ -545,38 +546,57 @@ export default function DigitalMarketingPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {[
               {
-                icon: <Megaphone className="h-6 w-6 text-sky-500" />,
+                icon: (
+                  <svg className="h-8 w-8 text-[#1877F2]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
+                    <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2" />
+                    <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M18.5 5.5H21.5M20 4V7" strokeWidth="1.5" />
+                  </svg>
+                ),
                 title: "Performance Marketing",
                 desc: "High-impact paid campaigns across Google, Meta, LinkedIn & more to generate qualified leads and sales."
               },
               {
-                icon: <Search className="h-6 w-6 text-sky-500" />,
+                icon: (
+                  <svg className="h-8 w-8 text-[#1877F2]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <circle cx="11" cy="11" r="6" stroke="currentColor" strokeWidth="2" />
+                    <line x1="16" y1="16" x2="21" y2="21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    <path d="M7 12L11 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                    <circle cx="7" cy="8" r="0.75" fill="currentColor" />
+                    <circle cx="11" cy="12" r="0.75" fill="currentColor" />
+                  </svg>
+                ),
                 title: "SEO & Organic Growth",
                 desc: "Improve search rankings, drive organic traffic and build long-term authority for sustainable growth."
               },
               {
-                icon: <Share2 className="h-6 w-6 text-sky-500" />,
+                icon: (
+                  <svg className="h-8 w-8 text-[#1877F2]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 12H8.01M12 12H12.01M16 12H16.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                ),
                 title: "Social Media & Content",
                 desc: "Engage your audience with compelling content and social strategies that build brand loyalty."
               }
             ].map((srv, idx) => (
-              <div key={idx} className="group bg-white border border-slate-200/60 p-8 rounded-2xl flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-sky-200 transition-all duration-300">
+              <div key={idx} className="group bg-white border border-slate-100 p-8 md:p-10 rounded-[24px] flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-blue-100/80 transition-all duration-300">
                 <div>
-                  <div className="h-12 w-12 rounded-xl bg-sky-500/10 flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110">
+                  <div className="h-16 w-16 rounded-2xl bg-blue-50/50 flex items-center justify-center mb-8 border border-blue-100/50 transition-all duration-300 group-hover:scale-105">
                     {srv.icon}
                   </div>
-                  <h3 className="text-lg font-bold text-slate-950 font-poppins mb-3">{srv.title}</h3>
-                  <p className="text-xs md:text-sm text-slate-650 leading-relaxed font-normal mb-6">{srv.desc}</p>
+                  <h3 className="text-xl font-bold text-slate-900 font-poppins mb-4">{srv.title}</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed font-normal mb-8">{srv.desc}</p>
                 </div>
                 <button
                   onClick={openBooking}
-                  className="inline-flex items-center text-xs font-bold text-sky-500 hover:text-sky-600 transition-colors group/link mt-auto"
+                  className="inline-flex items-center text-sm font-bold text-[#1877F2] hover:text-blue-700 transition-colors group/link mt-auto w-fit"
                 >
                   Learn more
-                  <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover/link:translate-x-1" />
+                  <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
                 </button>
               </div>
             ))}
@@ -603,48 +623,57 @@ export default function DigitalMarketingPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                icon: <span className="text-[10px] font-black text-sky-500">G</span>,
+                icon: (
+                  <svg viewBox="0 0 24 24" className="h-5 w-5">
+                    <path fill="#4285F4" d="M16 2.5l-9.5 16.5 4.5 2.5 9.5-16.5z" />
+                    <path fill="#FBBC05" d="M2 19l4.5-8 9.5 8z" />
+                  </svg>
+                ),
                 title: "Google Ads",
                 desc: "Search, Display, Shopping & Performance Max campaigns that deliver measurable results."
               },
               {
-                icon: <span className="text-[10px] font-black text-sky-500">∞</span>,
+                icon: (
+                  <svg viewBox="0 0 24 24" className="h-5 w-5 fill-[#1877F2]">
+                    <path d="M16.55 6C15.34 6 14.18 6.44 13.25 7.23C12.3 8.04 11.45 9.07 10.75 10.27C9.37 7.72 7.85 6 5.45 6C2.55 6 0 8.36 0 12C0 15.64 2.55 18 5.45 18C6.66 18 7.82 17.56 8.75 16.77C9.7 15.96 10.55 14.93 11.25 13.73C12.63 16.28 14.15 18 16.55 18C19.45 18 22 15.64 22 12C22 8.36 19.45 6 16.55 6ZM5.45 15.82C3.59 15.82 2.18 14.2 2.18 12C2.18 9.8 3.59 8.18 5.45 8.18C6.82 8.18 7.91 9.38 9.03 11.27C8.12 14.15 6.94 15.82 5.45 15.82ZM16.55 15.82C15.18 15.82 14.09 14.62 12.97 12.73C13.88 9.85 15.06 8.18 16.55 8.18C18.41 8.18 19.82 9.8 19.82 12C19.82 14.2 18.41 15.82 16.55 15.82Z"/>
+                  </svg>
+                ),
                 title: "Meta Ads",
                 desc: "Targeted Facebook & Instagram campaigns that drive leads, sales and brand awareness."
               },
               {
-                icon: <Search className="h-3.5 w-3.5 text-sky-500" />,
+                icon: <Search className="h-5 w-5 text-[#1877F2]" />,
                 title: "SEO",
                 desc: "Technical SEO, on-page, off-page and local SEO to rank higher and drive organic traffic."
               },
               {
-                icon: <Users className="h-3.5 w-3.5 text-sky-500" />,
+                icon: <ThumbsUp className="h-5 w-5 text-[#1877F2]" />,
                 title: "Social Media Management",
                 desc: "Strategy, content, posting and community management across all major platforms."
               },
               {
-                icon: <Sparkles className="h-3.5 w-3.5 text-sky-500" />,
+                icon: <Pen className="h-5 w-5 text-[#1877F2]" />,
                 title: "Content Marketing",
                 desc: "Blogs, guides, videos and more to attract, educate and convert your audience."
               },
               {
-                icon: <Layers className="h-3.5 w-3.5 text-sky-500" />,
+                icon: <Monitor className="h-5 w-5 text-[#1877F2]" />,
                 title: "Landing Pages & CRO",
                 desc: "High-converting landing pages and CRO to turn visitors into customers."
               },
               {
-                icon: <Mail className="h-3.5 w-3.5 text-sky-500" />,
+                icon: <Mail className="h-5 w-5 text-[#1877F2]" />,
                 title: "Email Marketing",
                 desc: "Nurture leads and boost retention with targeted email campaigns that convert."
               },
               {
-                icon: <BarChart3 className="h-3.5 w-3.5 text-sky-500" />,
+                icon: <BarChart3 className="h-5 w-5 text-[#1877F2]" />,
                 title: "Analytics & Reporting",
                 desc: "Real-time dashboards and actionable insights to track performance and ROI."
               }
             ].map((cap, idx) => (
-              <div key={idx} className="bg-white border border-slate-200/50 p-6 rounded-xl shadow-sm flex items-start gap-4">
-                <div className="h-8 w-8 rounded-full bg-sky-500/10 flex items-center justify-center shrink-0">
+              <div key={idx} className="bg-white/70 border border-slate-100 p-5 rounded-2xl shadow-sm flex items-start gap-4 hover:shadow-md hover:border-blue-50/50 transition-all duration-300">
+                <div className="h-12 w-12 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center shrink-0">
                   {cap.icon}
                 </div>
                 <div className="flex flex-col">
