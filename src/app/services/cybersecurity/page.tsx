@@ -718,10 +718,10 @@ export default function CybersecurityPage() {
         </div>
 
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left side Accordion */}
-            <div className="lg:col-span-7 flex flex-col justify-between h-full lg:border-r lg:border-slate-800/60 lg:pr-12">
+            <div className="lg:col-span-7 flex flex-col justify-start lg:border-r lg:border-slate-800/60 lg:pr-12">
               <div>
                 <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-cyan-400 mb-4 block">
                   FREQUENTLY ASKED QUESTIONS
@@ -770,7 +770,7 @@ export default function CybersecurityPage() {
             </div>
 
             {/* Right side help info (Seamless, border-less vertical split) */}
-            <div className="lg:col-span-5 flex flex-col justify-between h-full lg:pl-12 lg:py-1">
+            <div className="lg:col-span-5 flex flex-col justify-start lg:pl-12">
               
               {/* Headset and Question Block */}
               <div className="flex items-start gap-4 mb-6">
@@ -778,7 +778,7 @@ export default function CybersecurityPage() {
                   <Headphones className="h-6 w-6 text-cyan-400" />
                 </div>
                 <div className="flex flex-col text-left">
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-cyan-400 mb-1">
+                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-cyan-400 mb-1.5">
                     HAVE QUESTIONS?
                   </span>
                   <p className="text-sm md:text-base font-bold text-white font-poppins leading-relaxed">
@@ -787,18 +787,19 @@ export default function CybersecurityPage() {
                 </div>
               </div>
 
-              {/* Inline single-row contact info */}
-              <div className="text-left text-xs md:text-sm text-slate-450 mt-6 pt-6 border-t border-slate-800/60 flex flex-col sm:flex-row sm:items-center gap-y-2 gap-x-4">
-                <div className="flex items-center gap-2">
-                  <span>Call us:</span>
-                  <a href="tel:+15554322023" className="font-bold text-blue-500 hover:text-blue-400 transition-colors">
+              {/* Vertical Stack Contact Details */}
+              <div className="text-left mt-6 pt-6 border-t border-slate-800/60 flex flex-col gap-3.5">
+                <div className="flex items-center gap-3 text-xs md:text-sm">
+                  <Phone className="h-4 w-4 text-cyan-400 shrink-0" />
+                  <span className="text-slate-300">Call us:</span>
+                  <a href="tel:+15554322023" className="font-bold text-white hover:text-cyan-400 transition-colors">
                     +1 (555) 432-2023
                   </a>
                 </div>
-                <span className="hidden sm:inline text-slate-700">|</span>
-                <div className="flex items-center gap-2">
-                  <span>Email:</span>
-                  <a href="mailto:hello@diginetsolutions.com" className="font-bold text-blue-500 hover:text-blue-400 transition-colors">
+                <div className="flex items-center gap-3 text-xs md:text-sm">
+                  <Mail className="h-4 w-4 text-cyan-400 shrink-0" />
+                  <span className="text-slate-300">Email:</span>
+                  <a href="mailto:hello@diginetsolutions.com" className="font-bold text-white hover:text-cyan-400 transition-colors">
                     hello@diginetsolutions.com
                   </a>
                 </div>
