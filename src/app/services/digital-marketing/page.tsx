@@ -779,18 +779,15 @@ export default function DigitalMarketingPage() {
       {/* ========================================================
           6. WHY CHOOSE & INDUSTRIES (Split layout)
           ======================================================== */}
-      <section className="relative w-full py-16 md:py-20 bg-white">
+      <section className="relative w-full py-16 md:py-20 bg-slate-50/30">
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             
             {/* Left Column: Why Choose Us */}
             <div className="lg:col-span-5 flex flex-col items-start text-left">
-              <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-accent-blue mb-2.5">
+              <h2 className="text-2xl md:text-3xl font-black text-[#06142D] tracking-tight leading-tight font-poppins mb-8">
                 Why Choose Diginet Solutions?
-              </span>
-              <h2 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight leading-tight font-poppins mb-8">
-                Results-focused marketing backed by data.
               </h2>
 
               <div className="flex flex-col gap-6 w-full">
@@ -801,11 +798,11 @@ export default function DigitalMarketingPage() {
                   { title: "Scalable & Flexible", desc: "Solutions that grow with your business needs." }
                 ].map((item, idx) => (
                   <div key={idx} className="flex gap-4 items-start">
-                    <div className="h-6 w-6 rounded-full bg-sky-500/10 border border-sky-500/20 flex items-center justify-center shrink-0 text-sky-500 mt-0.5">
-                      <Check className="h-3.5 w-3.5 stroke-[2.5px]" />
+                    <div className="h-5 w-5 rounded-full bg-blue-600 flex items-center justify-center shrink-0 text-white mt-1">
+                      <Check className="h-3 w-3 stroke-[3px]" />
                     </div>
                     <div className="flex flex-col">
-                      <h3 className="text-[14px] md:text-[15px] font-bold text-slate-950 font-poppins leading-tight">{item.title}</h3>
+                      <h3 className="text-[14px] md:text-[15px] font-bold text-[#06142D] font-poppins leading-tight">{item.title}</h3>
                       <p className="text-xs md:text-sm text-slate-500 leading-normal mt-1">{item.desc}</p>
                     </div>
                   </div>
@@ -814,28 +811,102 @@ export default function DigitalMarketingPage() {
             </div>
 
             {/* Right Column: Industries We Serve */}
-            <div className="lg:col-span-7 flex flex-col items-start text-left">
-              <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-accent-blue mb-2.5">
+            <div className="lg:col-span-7 flex flex-col items-start text-left w-full">
+              <h2 className="text-2xl md:text-3xl font-black text-[#06142D] tracking-tight leading-tight font-poppins mb-1.5">
                 Industries We Serve
-              </span>
-              <h2 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight leading-tight font-poppins mb-8">
-                Tailored marketing solutions for every industry.
               </h2>
+              <p className="text-xs md:text-sm text-slate-500 leading-normal mb-8">
+                Tailored marketing solutions for every industry.
+              </p>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full">
                 {[
-                  { icon: <CircleDollarSign className="w-5 h-5" />, label: "E-commerce" },
-                  { icon: <Heart className="w-5 h-5" />, label: "Healthcare" },
-                  { icon: <DollarSign className="w-5 h-5" />, label: "Finance" },
-                  { icon: <Home className="w-5 h-5" />, label: "Real Estate" },
-                  { icon: <GraduationCap className="w-5 h-5" />, label: "Education" },
-                  { icon: <Cloud className="w-5 h-5" />, label: "SaaS & Tech" },
-                  { icon: <Settings className="w-5 h-5" />, label: "Manufacturing" },
-                  { icon: <Briefcase className="w-5 h-5" />, label: "Professional Services" }
+                  {
+                    icon: (
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-[#06142D]">
+                        <circle cx="8" cy="21" r="1" />
+                        <circle cx="19" cy="21" r="1" />
+                        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                      </svg>
+                    ),
+                    label: "E-commerce"
+                  },
+                  {
+                    icon: (
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-[#06142D]">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                        <path d="M12 9v6m-3-3h6" />
+                      </svg>
+                    ),
+                    label: "Healthcare"
+                  },
+                  {
+                    icon: (
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-[#06142D]">
+                        <path d="M3 22h18" />
+                        <path d="M6 18V11" />
+                        <path d="M10 18V11" />
+                        <path d="M14 18V11" />
+                        <path d="M18 18V11" />
+                        <path d="M4 11h16" />
+                        <path d="M12 2 2 7h20Z" />
+                      </svg>
+                    ),
+                    label: "Finance"
+                  },
+                  {
+                    icon: (
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-[#06142D]">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
+                        <polyline points="9 22 9 12 15 12 15 22" />
+                      </svg>
+                    ),
+                    label: "Real Estate"
+                  },
+                  {
+                    icon: (
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-[#06142D]">
+                        <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                        <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
+                        <path d="M21.5 12v6" />
+                      </svg>
+                    ),
+                    label: "Education"
+                  },
+                  {
+                    icon: (
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-[#06142D]">
+                        <path d="M17.5 19A5.5 5.5 0 0 0 22 13.5a5.5 5.5 0 0 0-5.5-5.5H16a7.5 7.5 0 0 0-14 3.5c0 1 .2 2 .5 3A5.5 5.5 0 0 0 8 19Z" />
+                      </svg>
+                    ),
+                    label: "SaaS & Tech"
+                  },
+                  {
+                    icon: (
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-[#06142D]">
+                        <circle cx="12" cy="12" r="3" />
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                      </svg>
+                    ),
+                    label: "Manufacturing"
+                  },
+                  {
+                    icon: (
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-[#06142D]">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <circle cx="12" cy="11" r="3" />
+                        <path d="M8 17a4 4 0 0 1 8 0" />
+                      </svg>
+                    ),
+                    label: "Professional Services"
+                  }
                 ].map((ind, idx) => (
-                  <div key={idx} className="bg-slate-50 border border-slate-200/40 p-4 rounded-xl flex flex-col items-center justify-center text-center gap-3 hover:bg-sky-50/20 hover:border-sky-200/50 transition-all duration-300 min-h-[96px]">
-                    <div className="text-sky-500">{ind.icon}</div>
-                    <span className="text-[11px] font-bold text-slate-900 font-poppins leading-tight">{ind.label}</span>
+                  <div
+                    key={idx}
+                    className="bg-white border border-slate-200/60 p-5 rounded-2xl flex flex-col items-center justify-center text-center gap-3 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:border-slate-300 transition-all duration-300 min-h-[110px] md:min-h-[128px] w-full"
+                  >
+                    <div className="flex items-center justify-center mb-1">{ind.icon}</div>
+                    <span className="text-[11px] md:text-xs font-bold text-[#06142D] font-poppins leading-tight">{ind.label}</span>
                   </div>
                 ))}
               </div>
