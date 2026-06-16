@@ -162,14 +162,14 @@ export default function DigitalMarketingPage() {
             <div className="lg:col-span-7 relative flex justify-center lg:justify-end items-center py-6">
               
               {/* Outer container holding Dashboard and Ad Cards side-by-side */}
-              <div className="relative w-full max-w-[620px] grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+              <div className="relative w-full max-w-[660px] grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
                 
                 {/* SVG Connecting lines in the background - Desktop only */}
                 <div className="hidden md:block absolute inset-0 pointer-events-none z-0">
-                  <svg className="w-full h-full" viewBox="0 0 620 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="w-full h-full" viewBox="0 0 660 400" fill="none" xmlns="http://www.w3.org/2000/svg">
                     {/* Top dotted line from Campaign Overview to Google Ads card */}
                     <path 
-                      d="M 320,80 C 370,40 400,20 440,30" 
+                      d="M 320,80 C 360,30 400,20 430,30" 
                       stroke="rgba(56, 189, 248, 0.25)" 
                       strokeWidth="1.5" 
                       strokeDasharray="4 4" 
@@ -177,12 +177,12 @@ export default function DigitalMarketingPage() {
                     />
                     {/* Animated glowing dot along top path */}
                     <circle r="3" fill="#38bdf8">
-                      <animateMotion dur="6s" repeatCount="indefinite" path="M 320,80 C 370,40 400,20 440,30" />
+                      <animateMotion dur="6s" repeatCount="indefinite" path="M 320,80 C 360,30 400,20 430,30" />
                     </circle>
 
                     {/* Bottom dotted line from Campaign Overview to Meta Ads card */}
                     <path 
-                      d="M 320,320 C 370,360 400,380 440,370" 
+                      d="M 320,320 C 360,370 400,380 430,370" 
                       stroke="rgba(56, 189, 248, 0.25)" 
                       strokeWidth="1.5" 
                       strokeDasharray="4 4" 
@@ -190,13 +190,13 @@ export default function DigitalMarketingPage() {
                     />
                     {/* Animated glowing dot along bottom path */}
                     <circle r="3" fill="#38bdf8">
-                      <animateMotion dur="6s" repeatCount="indefinite" path="M 320,320 C 370,360 400,380 440,370" />
+                      <animateMotion dur="6s" repeatCount="indefinite" path="M 320,320 C 370,360 400,380 430,370" />
                     </circle>
                   </svg>
                 </div>
 
-                {/* Left Side: Campaign Overview Dashboard (md:col-span-8) */}
-                <div className="md:col-span-8 relative z-10 rounded-[28px] border border-slate-700/40 bg-[#071125]/95 shadow-2xl p-4 md:p-5 flex flex-col gap-4">
+                {/* Left Side: Campaign Overview Dashboard (md:col-span-7) */}
+                <div className="md:col-span-7 relative z-10 rounded-[28px] border border-slate-700/40 bg-[#071125]/95 shadow-2xl p-4 md:p-5 flex flex-col gap-4">
                   
                   {/* Title Bar */}
                   <div className="flex items-center justify-between pb-2 border-b border-slate-800/80">
@@ -275,7 +275,7 @@ export default function DigitalMarketingPage() {
                         ].map((camp, idx) => (
                           <div key={idx} className="bg-slate-900/40 border border-slate-800/40 p-1.5 rounded-lg flex items-center justify-between text-[8px]">
                             <span className="text-slate-300 truncate pr-2 font-medium max-w-[85px]">{camp.name}</span>
-                            <span className="font-bold text-emerald-450 flex items-center gap-1">
+                            <span className="font-bold text-emerald-455 flex items-center gap-1">
                               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                               {camp.status}
                             </span>
@@ -290,12 +290,12 @@ export default function DigitalMarketingPage() {
                   </div>
 
                   {/* Platforms Overlapping Pill - floated at bottom of Dashboard */}
-                  <div className="absolute left-[8%] md:left-[12%] bottom-[-18px] z-30 flex items-center gap-3 bg-white border border-slate-100 py-1.5 px-4 rounded-full shadow-xl">
-                    <span className="text-[6.5px] font-extrabold uppercase text-slate-400 tracking-wider pr-1">Platforms</span>
-                    <div className="flex gap-2 items-center">
+                  <div className="absolute left-[6%] md:left-[10%] bottom-[-22px] z-30 flex items-center gap-4 bg-white border border-slate-100/90 py-2 px-5 rounded-full shadow-2xl">
+                    <span className="text-[7.5px] font-extrabold uppercase text-slate-400 tracking-wider pr-1">Platforms</span>
+                    <div className="flex gap-2.5 items-center">
                       {/* Google */}
-                      <span className="h-4.5 w-4.5 rounded-full bg-slate-50 flex items-center justify-center border border-slate-150">
-                        <svg className="h-2.5 w-2.5" viewBox="0 0 24 24">
+                      <span className="h-6.5 w-6.5 rounded-full bg-slate-50 flex items-center justify-center border border-slate-150/80 shadow-sm">
+                        <svg className="h-3.5 w-3.5" viewBox="0 0 24 24">
                           <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.9h6.6c-.28 1.5-.1.3-1.14 2.22l2.76 2.14c1.62-1.5 2.52-3.7 2.52-6.19z"/>
                           <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-2.76-2.14c-1.05.7-2.38 1.14-3.8 1.14-2.92 0-5.4-1.98-6.28-4.64L4.25 18.25C6.26 21.69 9.87 24 12 24z"/>
                           <path fill="#FBBC05" d="M5.72 15.45c-.23-.7-.36-1.45-.36-2.23s.13-1.53.36-2.23L4.25 8.79C3.42 10.39 3 12.16 3 14s.42 3.61 1.25 5.21l2.47-1.92-.04-.04c-.06-.12-.32-.82-.04-1.8z"/>
@@ -303,31 +303,31 @@ export default function DigitalMarketingPage() {
                         </svg>
                       </span>
                       {/* Meta */}
-                      <span className="h-4.5 w-4.5 rounded-full bg-slate-50 flex items-center justify-center border border-slate-150">
-                        <svg className="h-2.5 w-2.5 fill-[#1877F2]" viewBox="0 0 24 24">
+                      <span className="h-6.5 w-6.5 rounded-full bg-slate-50 flex items-center justify-center border border-slate-150/80 shadow-sm">
+                        <svg className="h-3.5 w-3.5 fill-[#1877F2]" viewBox="0 0 24 24">
                           <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                         </svg>
                       </span>
                       {/* LinkedIn */}
-                      <span className="h-4.5 w-4.5 rounded-full bg-slate-50 flex items-center justify-center border border-slate-150">
-                        <svg className="h-2.5 w-2.5 fill-[#0A66C2]" viewBox="0 0 24 24">
+                      <span className="h-6.5 w-6.5 rounded-full bg-slate-50 flex items-center justify-center border border-slate-150/80 shadow-sm">
+                        <svg className="h-3.5 w-3.5 fill-[#0A66C2]" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </span>
                       {/* YouTube */}
-                      <span className="h-4.5 w-4.5 rounded-full bg-slate-50 flex items-center justify-center border border-slate-150">
-                        <svg className="h-2.5 w-2.5 fill-[#FF0000]" viewBox="0 0 24 24">
+                      <span className="h-6.5 w-6.5 rounded-full bg-slate-50 flex items-center justify-center border border-slate-150/80 shadow-sm">
+                        <svg className="h-3.5 w-3.5 fill-[#FF0000]" viewBox="0 0 24 24">
                           <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11C4.483 20.455 12 20.455 12 20.455s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                         </svg>
                       </span>
                       {/* TikTok */}
-                      <span className="h-4.5 w-4.5 rounded-full bg-slate-50 flex items-center justify-center border border-slate-150">
-                        <svg className="h-2.5 w-2.5 fill-black" viewBox="0 0 24 24">
+                      <span className="h-6.5 w-6.5 rounded-full bg-slate-50 flex items-center justify-center border border-slate-150/80 shadow-sm">
+                        <svg className="h-3 w-3 fill-black" viewBox="0 0 24 24">
                           <path d="M12.53.086c.3-.08.62-.086.92-.086 1.48 0 2.91.44 4.12 1.25.13-.96.53-1.85 1.13-2.6-.07.35-.1.71-.1 1.07 0 2.05 1.13 3.86 2.8 4.84v3.16c-1.37-.1-2.65-.67-3.64-1.63v6.78c0 4.96-4.04 9-9 9s-9-4.04-9-9 4.04-9 9-9c.32 0 .63.02.94.05v3.23c-.31-.05-.62-.08-.94-.08-3.18 0-5.77 2.59-5.77 5.77s2.59 5.77 5.77 5.77 5.77-2.59 5.77-5.77V.086z"/>
                         </svg>
                       </span>
                       {/* Plus button */}
-                      <span className="h-4.5 w-4.5 rounded-full bg-slate-100 flex items-center justify-center border border-slate-200 text-slate-500 text-[10px] font-bold cursor-pointer hover:bg-slate-200 transition-colors">
+                      <span className="h-6.5 w-6.5 rounded-full bg-slate-100 flex items-center justify-center border border-slate-200 text-slate-500 text-[11px] font-bold cursor-pointer hover:bg-slate-200 transition-colors shadow-sm">
                         +
                       </span>
                     </div>
@@ -335,8 +335,8 @@ export default function DigitalMarketingPage() {
 
                 </div>
 
-                {/* Right Side: Stacked Ad Mockups (md:col-span-4) */}
-                <div className="md:col-span-4 flex flex-col gap-4 relative z-10 w-full md:-ml-8">
+                {/* Right Side: Stacked Ad Mockups (md:col-span-5) */}
+                <div className="md:col-span-5 flex flex-col gap-4 relative z-10 w-full md:-ml-4">
                   
                   {/* Google Ads sneaker card (top) */}
                   <motion.div
