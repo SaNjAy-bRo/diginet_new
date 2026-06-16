@@ -659,7 +659,7 @@ export default function DigitalMarketingPage() {
       {/* ========================================================
           4. DIGITAL MARKETING CAPABILITIES SECTION
           ======================================================== */}
-      <section className="relative w-full pt-8 md:pt-10 pb-16 md:pb-20 bg-slate-50/50 border-t border-slate-100">
+      <section className="relative w-full pt-8 md:pt-10 pb-6 md:pb-8 bg-slate-50/50 border-t border-slate-100">
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12">
           
           <div className="text-center mb-12 flex flex-col items-center">
@@ -767,10 +767,10 @@ export default function DigitalMarketingPage() {
       {/* ========================================================
           5. PROVEN PROCESS SECTION (Redesigned Container Card)
           ======================================================== */}
-      <section id="process" className="relative w-full py-16 md:py-20 bg-white">
-        <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
+      <section id="process" className="relative w-full pt-4 pb-4 md:pt-6 md:pb-6 bg-white">
+        <div className="w-full max-w-[1360px] mx-auto px-4 md:px-6 relative z-10">
           
-          <div className="relative w-full bg-[#06142D] border border-slate-800/60 rounded-[32px] p-8 md:p-12 md:py-16 overflow-hidden shadow-2xl bg-gradient-to-br from-[#06142D] via-[#081733] to-[#0b2046]">
+          <div className="relative w-full bg-[#06142D] border border-slate-800/60 rounded-[32px] p-6 md:p-10 md:py-12 overflow-hidden shadow-2xl bg-gradient-to-br from-[#06142D] via-[#081733] to-[#0b2046]">
             
             {/* Background ambient grids/effects inside card */}
             <div className="absolute inset-0 pointer-events-none">
@@ -830,7 +830,7 @@ export default function DigitalMarketingPage() {
       {/* ========================================================
           6. WHY CHOOSE & INDUSTRIES (Split layout)
           ======================================================== */}
-      <section className="relative w-full pt-16 pb-6 md:pt-20 md:pb-8 bg-slate-50/30">
+      <section className="relative w-full pt-6 pb-6 md:pt-8 md:pb-8 bg-slate-50/30">
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
