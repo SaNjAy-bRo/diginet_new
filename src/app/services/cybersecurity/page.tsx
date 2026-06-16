@@ -156,104 +156,232 @@ export default function CybersecurityPage() {
 
             </div>
 
-            {/* Right Hero Graphic: High-fidelity animated SVG cyber shield */}
+            {/* Right Hero Graphic: High-fidelity animated SVG cyber shield & World Map */}
             <div className="lg:col-span-6 relative flex justify-center lg:justify-end items-center py-6">
               <div className="relative w-full max-w-[500px] aspect-square flex items-center justify-center">
                 
-                {/* SVG background grid/world map concept */}
-                <div className="absolute inset-0 opacity-[0.25] pointer-events-none">
-                  <svg className="w-full h-full" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="250" cy="250" r="210" stroke="#00d8ff" strokeWidth="1" strokeDasharray="3 6" />
-                    <circle cx="250" cy="250" r="170" stroke="#0055ff" strokeWidth="1.5" />
-                    <circle cx="250" cy="250" r="130" stroke="#00d8ff" strokeWidth="1" strokeDasharray="8 4" />
+                {/* SVG background grid & world map with active threat nodes */}
+                <div className="absolute inset-0 opacity-[0.4] pointer-events-none">
+                  <svg className="w-full h-full" viewBox="0 0 500 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="mapGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stopColor="#00ffff" stopOpacity="0.1" />
+                        <stop offset="100%" stopColor="#000000" stopOpacity="0" />
+                      </radialGradient>
+                      <linearGradient id="mapPathGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#0a1f47" />
+                        <stop offset="100%" stopColor="#0f172a" />
+                      </linearGradient>
+                    </defs>
+
+                    {/* Concentric grid lines */}
+                    <circle cx="250" cy="220" r="200" stroke="rgba(0, 216, 255, 0.08)" strokeWidth="1" strokeDasharray="4 8" />
+                    <circle cx="250" cy="220" r="160" stroke="rgba(0, 85, 255, 0.12)" strokeWidth="1" />
+                    <circle cx="250" cy="220" r="120" stroke="rgba(0, 216, 255, 0.08)" strokeWidth="1" strokeDasharray="12 6" />
+
+                    {/* Ambient Glow behind map */}
+                    <circle cx="250" cy="220" r="180" fill="url(#mapGlow)" />
+
+                    {/* Vector World Map Paths */}
+                    <g transform="translate(10, 40) scale(1.15)">
+                      {/* North America */}
+                      <path 
+                        d="M40,60 L55,55 L70,52 L85,55 L95,50 L105,55 L118,52 L128,55 L138,50 L148,50 L153,55 L155,62 L148,70 L143,78 L136,82 L130,88 L126,95 L120,102 L113,110 L108,118 L106,125 L100,132 L96,138 L93,142 L88,145 L83,140 L86,132 L90,125 L93,118 L96,110 L93,102 L88,95 L80,92 L73,88 L68,82 L63,78 L58,70 L63,65 Z" 
+                        fill="url(#mapPathGrad)" 
+                        stroke="rgba(0, 85, 255, 0.25)" 
+                        strokeWidth="1.2" 
+                      />
+                      {/* South America */}
+                      <path 
+                        d="M102,150 L108,145 L115,148 L122,158 L128,168 L135,182 L138,198 L135,212 L128,228 L122,242 L118,258 L112,272 L108,282 L105,288 L100,285 L102,272 L105,258 L108,242 L102,228 L98,212 L92,198 L88,182 L85,168 L88,158 L95,152 Z" 
+                        fill="url(#mapPathGrad)" 
+                        stroke="rgba(0, 85, 255, 0.25)" 
+                        strokeWidth="1.2" 
+                      />
+                      {/* Africa */}
+                      <path 
+                        d="M180,140 L190,132 L200,128 L215,125 L225,128 L235,132 L240,142 L242,152 L238,168 L232,182 L228,198 L225,212 L222,228 L218,242 L212,258 L208,268 L205,262 L208,252 L210,242 L208,228 L202,212 L198,198 L192,182 L188,168 L180,152 L178,145 Z" 
+                        fill="url(#mapPathGrad)" 
+                        stroke="rgba(0, 85, 255, 0.25)" 
+                        strokeWidth="1.2" 
+                      />
+                      {/* Eurasia */}
+                      <path 
+                        d="M175,70 L190,65 L205,62 L220,60 L235,62 L250,65 L265,62 L280,60 L295,65 L310,60 L325,62 L340,65 L355,60 L370,62 L380,68 L385,75 L388,85 L382,95 L375,105 L368,112 L362,120 L358,130 L362,140 L370,150 L380,160 L388,170 L385,180 L375,185 L365,182 L355,175 L345,168 L335,160 L328,152 L322,145 L315,138 L308,132 L300,128 L292,122 L285,118 L278,115 L270,118 L262,122 L255,125 L248,120 L242,112 L235,108 L228,105 L220,110 L212,115 L205,112 L198,105 L192,98 L185,92 L178,85 Z" 
+                        fill="url(#mapPathGrad)" 
+                        stroke="rgba(0, 85, 255, 0.25)" 
+                        strokeWidth="1.2" 
+                      />
+                      {/* India */}
+                      <path 
+                        d="M265,122 L273,128 L280,138 L285,148 L277,158 L270,145 L263,135 Z" 
+                        fill="url(#mapPathGrad)" 
+                        stroke="rgba(0, 85, 255, 0.25)" 
+                        strokeWidth="1.2" 
+                      />
+                      {/* Southeast Asia */}
+                      <path 
+                        d="M305,140 L312,145 L319,155 L325,165 L317,172 L309,165 L302,155 Z" 
+                        fill="url(#mapPathGrad)" 
+                        stroke="rgba(0, 85, 255, 0.25)" 
+                        strokeWidth="1.2" 
+                      />
+                      {/* Australia */}
+                      <path 
+                        d="M320,205 L335,200 L350,202 L360,208 L365,218 L360,230 L350,238 L335,240 L322,235 L315,222 L318,212 Z" 
+                        fill="url(#mapPathGrad)" 
+                        stroke="rgba(0, 85, 255, 0.25)" 
+                        strokeWidth="1.2" 
+                      />
+                    </g>
+
+                    {/* Active Blinking Threat Nodes (Red Glowing Points) & Network Lines */}
+                    {/* Node 1: North America */}
+                    <circle cx="110" cy="115" r="4" fill="#ef4444" className="animate-pulse" />
+                    <circle cx="110" cy="115" r="10" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "3s" }} opacity="0.45" fill="none" />
                     
-                    {/* Blinking node indicators */}
-                    <circle cx="120" cy="180" r="4" fill="#00ffff" className="animate-pulse" />
-                    <circle cx="380" cy="140" r="5" fill="#3b82f6" />
-                    <circle cx="280" cy="80" r="3" fill="#10b981" />
-                    <circle cx="160" cy="340" r="4" fill="#00ffff" />
-                    <circle cx="340" cy="360" r="4.5" fill="#3b82f6" className="animate-pulse" />
-                    
-                    {/* Connecting node lines */}
-                    <line x1="120" y1="180" x2="160" y2="340" stroke="rgba(0, 216, 255, 0.15)" strokeWidth="1" />
-                    <line x1="280" y1="80" x2="380" y2="140" stroke="rgba(0, 85, 255, 0.2)" strokeWidth="1" />
-                    <line x1="380" y1="140" x2="340" y2="360" stroke="rgba(0, 216, 255, 0.15)" strokeWidth="1" />
+                    {/* Node 2: Europe */}
+                    <circle cx="215" cy="120" r="4" fill="#ef4444" className="animate-pulse" />
+                    <circle cx="215" cy="120" r="10" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "2.5s" }} opacity="0.45" fill="none" />
+
+                    {/* Node 3: India */}
+                    <circle cx="310" cy="200" r="4" fill="#ef4444" className="animate-pulse" />
+                    <circle cx="310" cy="200" r="10" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "4s" }} opacity="0.45" fill="none" />
+
+                    {/* Node 4: Japan */}
+                    <circle cx="440" cy="130" r="4.5" fill="#ef4444" className="animate-pulse" />
+                    <circle cx="440" cy="130" r="12" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "3.2s" }} opacity="0.45" fill="none" />
+
+                    {/* Node 5: South America */}
+                    <circle cx="160" cy="270" r="4" fill="#ef4444" className="animate-pulse" />
+                    <circle cx="160" cy="270" r="10" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "3.8s" }} opacity="0.45" fill="none" />
+
+                    {/* Node 6: South Africa */}
+                    <circle cx="265" cy="340" r="4" fill="#ef4444" className="animate-pulse" />
+                    <circle cx="265" cy="340" r="10" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "4.2s" }} opacity="0.45" fill="none" />
+
+                    {/* Node 7: Australia */}
+                    <circle cx="410" cy="310" r="4" fill="#ef4444" className="animate-pulse" />
+                    <circle cx="410" cy="310" r="10" stroke="#ef4444" strokeWidth="1.5" className="animate-ping" style={{ animationDuration: "2.8s" }} opacity="0.45" fill="none" />
+
+                    {/* Circuit Board / Glowing Cyber Connection Lines */}
+                    <path d="M110,115 L215,120 L310,200 L440,130" stroke="rgba(0, 216, 255, 0.2)" strokeWidth="1" fill="none" />
+                    <path d="M160,270 L215,120" stroke="rgba(0, 216, 255, 0.15)" strokeWidth="0.8" strokeDasharray="3 3" fill="none" />
+                    <path d="M265,340 L310,200 L410,310" stroke="rgba(0, 216, 255, 0.2)" strokeWidth="1" fill="none" />
                   </svg>
                 </div>
 
-                {/* Rotating SVG concentric radar/coordinate rings */}
+                {/* Rotating SVG concentric coordinate/scanner rings */}
                 <motion.div 
-                  className="absolute w-[84%] h-[84%] opacity-50"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
+                  className="absolute w-[86%] h-[86%] opacity-40"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
                 >
                   <svg className="w-full h-full" viewBox="0 0 400 400" fill="none">
-                    <circle cx="200" cy="200" r="150" stroke="url(#cyanGrad)" strokeWidth="1.5" strokeDasharray="40 100 20 40" />
-                    <circle cx="200" cy="200" r="180" stroke="url(#blueGrad)" strokeWidth="1" strokeDasharray="100 80 40 60" />
+                    <circle cx="200" cy="200" r="140" stroke="url(#cyanRadarGrad)" strokeWidth="1.5" strokeDasharray="10 30 50 20" />
+                    <circle cx="200" cy="200" r="170" stroke="url(#blueRadarGrad)" strokeWidth="1" strokeDasharray="80 60 120 40" />
                     <defs>
-                      <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#00f0ff" stopOpacity="0.8" />
-                        <stop offset="100%" stopColor="#0055ff" stopOpacity="0.1" />
+                      <linearGradient id="cyanRadarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#00f0ff" stopOpacity="0.7" />
+                        <stop offset="100%" stopColor="#0055ff" stopOpacity="0.05" />
                       </linearGradient>
-                      <linearGradient id="blueGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#0055ff" stopOpacity="0.8" />
-                        <stop offset="100%" stopColor="#00f0ff" stopOpacity="0.1" />
+                      <linearGradient id="blueRadarGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#0055ff" stopOpacity="0.7" />
+                        <stop offset="100%" stopColor="#00f0ff" stopOpacity="0.05" />
                       </linearGradient>
                     </defs>
                   </svg>
                 </motion.div>
 
-                {/* Pedestal base glow */}
-                <div className="absolute bottom-16 h-8 w-[220px] rounded-full bg-cyan-500/20 blur-xl z-0" />
+                {/* High-Tech Glowing Pedestal Platform */}
+                <div className="absolute bottom-8 w-full flex justify-center pointer-events-none">
+                  <svg width="320" height="80" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="pedestalGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stopColor="#00ffff" stopOpacity="0.5" />
+                        <stop offset="70%" stopColor="#0055ff" stopOpacity="0.15" />
+                        <stop offset="100%" stopColor="#06142d" stopOpacity="0" />
+                      </radialGradient>
+                    </defs>
+                    
+                    {/* Platform Glow reflection */}
+                    <ellipse cx="160" cy="40" rx="120" ry="32" fill="url(#pedestalGlow)" />
+                    
+                    {/* Outer Ring 1 */}
+                    <ellipse cx="160" cy="40" rx="140" ry="35" stroke="#00ffff" strokeWidth="2" opacity="0.85" />
+                    
+                    {/* Concentric Ring 2 */}
+                    <ellipse cx="160" cy="40" rx="120" ry="30" stroke="#0055ff" strokeWidth="1.2" strokeDasharray="15 8" opacity="0.7" />
+                    
+                    {/* Concentric Ring 3 */}
+                    <ellipse cx="160" cy="40" rx="95" ry="24" stroke="#00ffff" strokeWidth="1" strokeDasharray="40 10 20 10" opacity="0.6" />
 
-                {/* Core Shield & Padlock Container with hover float */}
+                    {/* Radial grid ticks for the 3D disk scanner look */}
+                    <line x1="20" y1="40" x2="40" y2="40" stroke="#00ffff" strokeWidth="1.5" opacity="0.8" />
+                    <line x1="280" y1="40" x2="300" y2="40" stroke="#00ffff" strokeWidth="1.5" opacity="0.8" />
+                    <line x1="160" y1="5" x2="160" y2="15" stroke="#00ffff" strokeWidth="1" opacity="0.6" />
+                    <line x1="160" y1="65" x2="160" y2="75" stroke="#00ffff" strokeWidth="1" opacity="0.6" />
+                    <line x1="60" y1="20" x2="75" y2="25" stroke="#00ffff" strokeWidth="1" opacity="0.6" />
+                    <line x1="260" y1="20" x2="245" y2="25" stroke="#00ffff" strokeWidth="1" opacity="0.6" />
+                    <line x1="60" y1="60" x2="75" y2="55" stroke="#00ffff" strokeWidth="1" opacity="0.6" />
+                    <line x1="260" y1="60" x2="245" y2="55" stroke="#00ffff" strokeWidth="1" opacity="0.6" />
+                  </svg>
+                </div>
+
+                {/* Core Shield & Padlock Container with floating animation */}
                 <motion.div
-                  className="relative z-10 flex flex-col items-center"
+                  className="relative z-10 flex flex-col items-center bottom-12"
                   animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
                 >
                   {/* Glowing Shield + Lock SVG */}
-                  <svg className="w-[180px] h-[220px] filter drop-shadow-[0_0_25px_rgba(6,182,212,0.4)]" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="w-[185px] h-[225px] filter drop-shadow-[0_0_30px_rgba(6,182,212,0.45)]" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
-                      <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#00ffff" />
-                        <stop offset="50%" stopColor="#0066ff" />
-                        <stop offset="100%" stopColor="#06142d" />
+                      <linearGradient id="shieldFillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#00ffff" stopOpacity="0.25" />
+                        <stop offset="50%" stopColor="#0055ff" stopOpacity="0.1" />
+                        <stop offset="100%" stopColor="#06142d" stopOpacity="0.75" />
                       </linearGradient>
-                      <linearGradient id="lockGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <linearGradient id="shieldBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#00ffff" />
+                        <stop offset="100%" stopColor="#0055ff" />
+                      </linearGradient>
+                      <linearGradient id="shackleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" stopColor="#ffffff" />
-                        <stop offset="100%" stopColor="#a5f3fc" />
+                        <stop offset="100%" stopColor="#00ffff" />
                       </linearGradient>
                     </defs>
-                    {/* Outer Shield Border */}
+                    
+                    {/* Outer Shield Path */}
                     <path 
                       d="M50 5 L90 22 V55 C90 85 73 108 50 115 C27 108 10 85 10 55 V22 L50 5 Z" 
-                      fill="url(#shieldGrad)" 
-                      fillOpacity="0.25" 
-                      stroke="#00ffff" 
+                      fill="url(#shieldFillGrad)" 
+                      stroke="url(#shieldBorderGrad)" 
                       strokeWidth="2.5" 
                     />
+                    
                     {/* Inner Shield Gridlines */}
                     <path 
                       d="M50 12 V110 M20 30 H80 M15 50 H85 M15 70 C 30 85, 70 85, 85 70" 
-                      stroke="rgba(0, 255, 255, 0.15)" 
+                      stroke="rgba(0, 255, 255, 0.18)" 
                       strokeWidth="1" 
                     />
-                    {/* Central Glowing Lock */}
+
+                    {/* Central Glowing Padlock */}
                     <g transform="translate(32, 40)">
                       {/* Lock Shackle */}
                       <path 
                         d="M10 18 V10 C10 4.5 14.5 0 20 0 C25.5 0 30 4.5 30 10 V18" 
-                        stroke="url(#lockGrad)" 
-                        strokeWidth="3.5" 
+                        stroke="url(#shackleGrad)" 
+                        strokeWidth="3.8" 
                         strokeLinecap="round" 
                         fill="none" 
                       />
                       {/* Lock Body */}
                       <rect 
-                        x="4" 
+                        x="3" 
                         y="15" 
-                        width="32" 
+                        width="34" 
                         height="26" 
                         rx="6" 
                         fill="#0055ff" 
@@ -261,7 +389,7 @@ export default function CybersecurityPage() {
                         strokeWidth="2" 
                       />
                       {/* Keyhole */}
-                      <circle cx="20" cy="25" r="3" fill="#ffffff" />
+                      <circle cx="20" cy="25" r="3.2" fill="#ffffff" />
                       <path d="M20 28 L20 34" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" />
                     </g>
                   </svg>
