@@ -500,13 +500,13 @@ export default function CybersecurityPage() {
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch">
             
             {/* Left Column: Proven Results */}
-            <div className="w-full lg:w-[28%] flex flex-col justify-start bg-white border border-slate-200/50 p-6 md:p-7 rounded-[32px] shadow-sm hover:shadow-md transition-all duration-300 gap-4">
-              <div>
-                <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-cyan-500 mb-4 block">
+            <div className="w-full lg:w-[26%] flex flex-col justify-between bg-white border border-slate-200/50 p-6 md:p-7 rounded-[32px] shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="flex flex-col gap-6">
+                <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-cyan-500 mb-2 block">
                   PROVEN RESULTS. REAL IMPACT.
                 </span>
 
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-5">
                   {[
                     { val: "72%", label: "Reduction in security incidents by our managed security clients.", icon: <Activity className="h-5 w-5 text-blue-600" /> },
                     { val: "99.9%", label: "Uptime achieved with 24/7 monitoring and threat management.", icon: <ShieldCheck className="h-5 w-5 text-blue-600" /> },
@@ -529,7 +529,7 @@ export default function CybersecurityPage() {
                 </div>
               </div>
 
-              <div className="pt-4 mt-auto border-t border-slate-100/60">
+              <div className="pt-4 mt-6 border-t border-slate-100/60">
                 <button
                   onClick={openBooking}
                   className="inline-flex items-center text-xs font-bold text-blue-600 hover:text-blue-700 transition-colors group/link"
@@ -540,10 +540,10 @@ export default function CybersecurityPage() {
               </div>
             </div>
 
-            {/* Middle Column: Static Stacked Testimonials */}
-            <div className="w-full lg:w-[36%] flex flex-col justify-start bg-white border border-slate-200/50 p-6 md:p-7 rounded-[32px] shadow-sm hover:shadow-md transition-all duration-300 gap-4">
+            {/* Middle Column: Testimonials (Seamless column, no outer card wrapper) */}
+            <div className="w-full lg:w-[32%] flex flex-col justify-start gap-4 pt-1">
               <div className="flex flex-col">
-                <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-cyan-500 mb-4 block">
+                <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-cyan-500 mb-2 block">
                   WHAT OUR CLIENTS SAY
                 </span>
               </div>
@@ -578,7 +578,7 @@ export default function CybersecurityPage() {
             </div>
 
             {/* Right Column: CTA Banner Card with horizontal split */}
-            <div className="w-full lg:w-[36%]">
+            <div className="w-full lg:w-[42%]">
               <div 
                 className="w-full bg-[#06142D] rounded-[32px] border border-slate-800/40 shadow-xl p-6 md:p-7 relative overflow-hidden flex flex-col sm:flex-row items-center gap-6 h-full min-h-[300px] lg:min-h-[320px]"
                 style={{ 
@@ -616,7 +616,7 @@ export default function CybersecurityPage() {
                 {/* Smaller Hologram Projector on the right */}
                 <div className="relative z-20 w-[35%] aspect-square flex items-center justify-center shrink-0 pointer-events-none">
                   <img 
-                    src="/images/cybersecurity_hero.png" 
+                    src="/images/security_cta_graphic.png" 
                     alt="Cyber Security Hologram" 
                     className="w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(6,182,212,0.15)] mix-blend-screen border-none outline-none bg-transparent"
                   />
@@ -624,9 +624,7 @@ export default function CybersecurityPage() {
 
               </div>
             </div>
-
           </div>
-
         </div>
       </section>
 
