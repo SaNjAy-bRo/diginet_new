@@ -54,6 +54,22 @@ const testimonials: Testimonial[] = [
     role: "SecOps Lead",
     company: "CloudWave Solutions",
     avatarUrl: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&h=120&q=80"
+  },
+  {
+    id: 4,
+    text: "Diginet's continuous vulnerability scanning has saved us from multiple zero-day exploits. Their responsiveness is incredible.",
+    name: "Marcus Thorne",
+    role: "Director of Security",
+    company: "CyberVigil",
+    avatarUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&h=120&q=80"
+  },
+  {
+    id: 5,
+    text: "Passionate team with deep expertise in regulatory compliance. They helped us secure our GDPR and ISO27001 certifications in record time.",
+    name: "Sophia Alistair",
+    role: "Chief Compliance Officer",
+    company: "FinGuard Corp",
+    avatarUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&h=120&q=80"
   }
 ];
 
@@ -213,6 +229,18 @@ export default function CybersecurityPage() {
             display: flex;
             width: max-content;
             animation: cyberMarquee 25s linear infinite;
+          }
+          @keyframes verticalMarquee {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+          }
+          .animate-vertical-marquee {
+            display: flex;
+            flex-direction: column;
+            animation: verticalMarquee 32s linear infinite;
+          }
+          .animate-vertical-marquee:hover {
+            animation-play-state: paused;
           }
         `}} />
         
@@ -541,39 +569,74 @@ export default function CybersecurityPage() {
             </div>
 
             {/* Middle Column: Testimonials (Seamless column, no outer card wrapper) */}
-            <div className="w-full lg:w-[32%] flex flex-col justify-start gap-4 pt-1">
-              <div className="flex flex-col">
+            <div className="w-full lg:w-[32%] flex flex-col justify-start relative h-[420px] lg:h-auto overflow-hidden">
+              <div className="flex flex-col mb-4 shrink-0">
                 <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-cyan-500 mb-2 block">
                   WHAT OUR CLIENTS SAY
                 </span>
               </div>
 
-              <div className="flex flex-col gap-4">
-                {testimonials.slice(0, 2).map((testi) => (
-                  <div key={testi.id} className="bg-white border border-slate-100/80 p-5 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.01)] flex flex-col gap-4 text-left">
-                    <div className="flex items-start gap-2.5">
-                      <span className="text-xl font-serif text-blue-500 font-black leading-none shrink-0">“</span>
-                      <p className="text-[11px] md:text-xs text-slate-600 leading-relaxed font-normal">
-                        {testi.text}
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-3 pt-3 border-t border-slate-100">
-                      <img 
-                        src={testi.avatarUrl} 
-                        alt={testi.name} 
-                        className="h-9 w-9 rounded-full object-cover shrink-0 border border-slate-200" 
-                      />
-                      <div className="flex flex-col">
-                        <h4 className="font-bold text-slate-900 text-xs font-poppins leading-none mb-1">
-                          {testi.name}
-                        </h4>
-                        <p className="text-[9px] text-slate-400 leading-none">
-                          {testi.role}, {testi.company}
+              {/* Infinite Scrolling Container */}
+              <div className="relative w-full flex-1 overflow-hidden h-[360px] lg:h-[380px]">
+                {/* Fade overlays for smooth vertical transitions */}
+                <div className="absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-[#f8fafc] via-[#f8fafc]/70 to-transparent z-10 pointer-events-none" />
+                <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-[#f8fafc] via-[#f8fafc]/70 to-transparent z-10 pointer-events-none" />
+
+                <div className="flex flex-col gap-4 py-2 animate-vertical-marquee">
+                  {/* Testimonials Set 1 */}
+                  {testimonials.map((testi, idx) => (
+                    <div key={`t1-${idx}`} className="bg-white border border-slate-100/80 p-5 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.01)] flex flex-col gap-4 text-left">
+                      <div className="flex items-start gap-2.5">
+                        <span className="text-xl font-serif text-blue-500 font-black leading-none shrink-0">“</span>
+                        <p className="text-[11px] md:text-xs text-slate-600 leading-relaxed font-normal">
+                          {testi.text}
                         </p>
                       </div>
+                      <div className="flex items-center gap-3 pt-3 border-t border-slate-100">
+                        <img 
+                          src={testi.avatarUrl} 
+                          alt={testi.name} 
+                          className="h-9 w-9 rounded-full object-cover shrink-0 border border-slate-200" 
+                        />
+                        <div className="flex flex-col">
+                          <h4 className="font-bold text-slate-900 text-xs font-poppins leading-none mb-1">
+                            {testi.name}
+                          </h4>
+                          <p className="text-[9px] text-slate-400 leading-none">
+                            {testi.role}, {testi.company}
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                  
+                  {/* Testimonials Set 2 (Duplicated for infinite scroll loop) */}
+                  {testimonials.map((testi, idx) => (
+                    <div key={`t2-${idx}`} className="bg-white border border-slate-100/80 p-5 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.01)] flex flex-col gap-4 text-left">
+                      <div className="flex items-start gap-2.5">
+                        <span className="text-xl font-serif text-blue-500 font-black leading-none shrink-0">“</span>
+                        <p className="text-[11px] md:text-xs text-slate-600 leading-relaxed font-normal">
+                          {testi.text}
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-3 pt-3 border-t border-slate-100">
+                        <img 
+                          src={testi.avatarUrl} 
+                          alt={testi.name} 
+                          className="h-9 w-9 rounded-full object-cover shrink-0 border border-slate-200" 
+                        />
+                        <div className="flex flex-col">
+                          <h4 className="font-bold text-slate-900 text-xs font-poppins leading-none mb-1">
+                            {testi.name}
+                          </h4>
+                          <p className="text-[9px] text-slate-400 leading-none">
+                            {testi.role}, {testi.company}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
