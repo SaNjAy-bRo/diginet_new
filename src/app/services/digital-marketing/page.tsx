@@ -534,7 +534,7 @@ export default function DigitalMarketingPage() {
       {/* ========================================================
           3. OUR SERVICES SECTION
           ======================================================== */}
-      <section className="relative w-full py-16 md:py-20 bg-white">
+      <section className="relative w-full pt-16 md:pt-20 pb-8 md:pb-10 bg-white">
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12">
           
           <div className="text-center mb-12 flex flex-col items-center">
@@ -608,7 +608,7 @@ export default function DigitalMarketingPage() {
       {/* ========================================================
           4. DIGITAL MARKETING CAPABILITIES SECTION
           ======================================================== */}
-      <section className="relative w-full py-16 md:py-20 bg-slate-50/50 border-t border-slate-100">
+      <section className="relative w-full pt-8 md:pt-10 pb-16 md:pb-20 bg-slate-50/50 border-t border-slate-100">
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12">
           
           <div className="text-center mb-12 flex flex-col items-center">
@@ -624,9 +624,21 @@ export default function DigitalMarketingPage() {
             {[
               {
                 icon: (
-                  <svg viewBox="0 0 24 24" className="h-5 w-5">
-                    <path fill="#4285F4" d="M16 2.5l-9.5 16.5 4.5 2.5 9.5-16.5z" />
-                    <path fill="#FBBC05" d="M2 19l4.5-8 9.5 8z" />
+                  <svg className="h-5.5 w-5.5" viewBox="0 0 248.31 226.88" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                      <path 
+                        fill="#4285F4" 
+                        d="M84.5,28.57c2.4-6.3,5.7-12.1,10.6-16.8c19.6-19.1,52-14.3,65.3,9.7c10,18.2,20.6,36,30.9,54 c17.2,29.9,34.6,59.8,51.6,89.8c14.3,25.1-1.2,56.8-29.6,61.1c-17.4,2.6-33.7-5.4-42.7-21c-15.1-26.3-30.3-52.6-45.4-78.8 c-0.3-0.6-0.7-1.1-1.1-1.6c-1.6-1.3-2.3-3.2-3.3-4.9c-6.7-11.8-13.6-23.5-20.3-35.2c-4.3-7.6-8.8-15.1-13.1-22.7 c-3.9-6.8-5.7-14.2-5.5-22C82.2,36.17,82.7,32.17,84.5,28.57"
+                      />
+                      <path 
+                        fill="#FBBC05" 
+                        d="M84.5,28.57c-0.9,3.6-1.7,7.2-1.9,11c-0.3,8.4,1.8,16.2,6,23.5c11,18.9,22,37.9,32.9,56.9c1,1.7,1.8,3.4,2.8,5 c-6,10.4-12,20.7-18.1,31.1c-8.4,14.5-16.8,29.1-25.3,43.6c-0.4,0-0.5-0.2-0.6-0.5c-0.1-0.8,0.2-1.5,0.4-2.3 c4.1-15,0.7-28.3-9.6-39.7c-6.3-6.9-14.3-10.8-23.5-12.1c-12-1.7-22.6,1.4-32.1,8.9c-1.7,1.3-2.8,3.2-4.8,4.2 c-0.4,0-0.6-0.2-0.7-0.5c4.8-8.3,9.5-16.6,14.3-24.9c19.8-34.4,39.6-68.8,59.5-103.1C84,29.27,84.3,28.97,84.5,28.57"
+                      />
+                      <path 
+                        fill="#34A853" 
+                        d="M10.4,157.97c1.9-1.7,3.7-3.5,5.7-5.1c24.3-19.2,60.8-5.3,66.1,25.1c1.3,7.3,0.6,14.3-1.6,21.3 c-0.1,0.6-0.2,1.1-0.4,1.7c-0.9,1.6-1.7,3.3-2.7,4.9c-8.9,14.7-22,22-39.2,20.9c-19.7-1.4-35.2-16.2-37.9-35.8 c-1.3-9.5,0.6-18.4,5.5-26.6c1-1.8,2.2-3.4,3.3-5.2C9.7,158.77,9.5,157.97,10.4,157.97"
+                      />
+                    </g>
                   </svg>
                 ),
                 title: "Google Ads",
@@ -634,8 +646,8 @@ export default function DigitalMarketingPage() {
               },
               {
                 icon: (
-                  <svg viewBox="0 0 24 24" className="h-5 w-5 fill-[#1877F2]">
-                    <path d="M16.55 6C15.34 6 14.18 6.44 13.25 7.23C12.3 8.04 11.45 9.07 10.75 10.27C9.37 7.72 7.85 6 5.45 6C2.55 6 0 8.36 0 12C0 15.64 2.55 18 5.45 18C6.66 18 7.82 17.56 8.75 16.77C9.7 15.96 10.55 14.93 11.25 13.73C12.63 16.28 14.15 18 16.55 18C19.45 18 22 15.64 22 12C22 8.36 19.45 6 16.55 6ZM5.45 15.82C3.59 15.82 2.18 14.2 2.18 12C2.18 9.8 3.59 8.18 5.45 8.18C6.82 8.18 7.91 9.38 9.03 11.27C8.12 14.15 6.94 15.82 5.45 15.82ZM16.55 15.82C15.18 15.82 14.09 14.62 12.97 12.73C13.88 9.85 15.06 8.18 16.55 8.18C18.41 8.18 19.82 9.8 19.82 12C19.82 14.2 18.41 15.82 16.55 15.82Z"/>
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/>
                   </svg>
                 ),
                 title: "Meta Ads",
@@ -657,7 +669,15 @@ export default function DigitalMarketingPage() {
                 desc: "Blogs, guides, videos and more to attract, educate and convert your audience."
               },
               {
-                icon: <Monitor className="h-5 w-5 text-[#1877F2]" />,
+                icon: (
+                  <svg className="h-5.5 w-5.5 text-[#1877F2]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <rect x="3" y="4" width="18" height="16" rx="2" strokeWidth="2" />
+                    <line x1="3" y1="9" x2="21" y2="9" strokeWidth="1.5" />
+                    <circle cx="6" cy="6.5" r="0.5" fill="currentColor" />
+                    <circle cx="8" cy="6.5" r="0.5" fill="currentColor" />
+                    <circle cx="10" cy="6.5" r="0.5" fill="currentColor" />
+                  </svg>
+                ),
                 title: "Landing Pages & CRO",
                 desc: "High-converting landing pages and CRO to turn visitors into customers."
               },
@@ -667,7 +687,13 @@ export default function DigitalMarketingPage() {
                 desc: "Nurture leads and boost retention with targeted email campaigns that convert."
               },
               {
-                icon: <BarChart3 className="h-5 w-5 text-[#1877F2]" />,
+                icon: (
+                  <svg className="h-5.5 w-5.5 text-[#1877F2]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 20V10M12 20V4M6 20V14" />
+                    <path d="M3 17L9 11L13 14L21 6" strokeWidth="2" />
+                    <polyline points="17 6 21 6 21 10" strokeWidth="2" />
+                  </svg>
+                ),
                 title: "Analytics & Reporting",
                 desc: "Real-time dashboards and actionable insights to track performance and ROI."
               }
