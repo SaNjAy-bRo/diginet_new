@@ -14,7 +14,7 @@ type Message = {
 };
 
 type ChatMode = "chat" | "lead_gen";
-type LeadStep = "name" | "company" | "email" | "phone" | "interest" | "serviceDetail" | "budget" | "timeline" | "message" | "done";
+type LeadStep = "interest" | "serviceDetail" | "timeline" | "budget" | "message" | "company" | "name" | "email" | "phone" | "done";
 
 // Services definitions for DIGINET
 const services = {
@@ -328,7 +328,7 @@ export default function Chatbot() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [mode, setMode] = useState<ChatMode>("chat");
-  const [currentStep, setCurrentStep] = useState<LeadStep>("name");
+  const [currentStep, setCurrentStep] = useState<LeadStep>("interest");
   const [isTyping, setIsTyping] = useState(false);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
 
@@ -443,7 +443,7 @@ export default function Chatbot() {
   const validateCompany = (comp: string) => comp.trim().length >= 2;
   const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const validatePhone = (phone: string) => {
-    const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,10}$/im;
+    const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,12}$/im;
     return phoneRegex.test(phone.trim());
   };
 
@@ -464,6 +464,29 @@ export default function Chatbot() {
         sender: "bot",
         text: "Hello! How can I assist you with DIGINET systems and digital growth today?",
         options: ["Cybersecurity", "App Eng", "Web Design", "Marketing", "Consultation"],
+      });
+      return;
+    }
+
+    // Company Identity & "About Company" Synonyms
+    if (
+      lowerText.includes("about your company") || 
+      lowerText.includes("about the company") || 
+      lowerText.includes("tell about your company") || 
+      lowerText.includes("about company") || 
+      lowerText.includes("who are you") || 
+      lowerText.includes("what is diginet") || 
+      lowerText.includes("about diginet") || 
+      lowerText.includes("what do you do") || 
+      lowerText.includes("company details") || 
+      lowerText.includes("company info") || 
+      lowerText.includes("what company") || 
+      lowerText.includes("tell me about company")
+    ) {
+      addMessage({
+        sender: "bot",
+        text: "DIGINET is a premier global technology consulting and digital growth agency. Established in Singapore, we deliver elite corporate capabilities in zero-trust cybersecurity, custom application development, performance web architectures, and PPC growth marketing.\n\nWe operate from our Global HQ in Singapore and our key regional branch in Udupi, India. Shall we discuss how we can secure or scale your systems?",
+        options: ["See Services", "Request Consultation", "Main Menu"],
       });
       return;
     }
@@ -500,7 +523,7 @@ export default function Chatbot() {
     ) {
       addMessage({
         sender: "bot",
-        text: "We provide comprehensive, tier-based Support contracts and Service Level Agreements (SLAs):\n\n• **Standard SLA**: 99.9% application/hosting uptime guarantees.\n• **Continuous Patching**: Bi-weekly dependency and security audits.\n• **Incident Management**: 24/7 critical vulnerability response paths.\n\nShall we discuss support requirements for your platform?",
+        text: "We provide comprehensive, tier-based Support contracts and Service Level Agreements (SLAs):\n\n• **Standard SLA**: 99.9% uptime guarantees for managed systems.\n• **Continuous Patching**: Bi-weekly dependency and security audits.\n• **Incident Management**: 24/7 response paths for critical vulnerabilities.\n\nShall we discuss support requirements for your platform?",
         options: ["Support Inquiry", "Main Menu"],
       });
       return;
@@ -594,7 +617,7 @@ export default function Chatbot() {
     ) {
       addMessage({
         sender: "bot",
-        text: "We are always seeking exceptional software developers, security analysts, and digital account managers.\n\nYou can explore active openings and submit your application on our dedicated Careers page.",
+        text: "We are always seeking exceptional software developers, security analysts, and digital growth specialists.\n\nYou can explore active openings and submit your application on our dedicated Careers page.",
         options: ["See Careers", "Main Menu"],
       });
       return;
@@ -633,8 +656,12 @@ export default function Chatbot() {
       lowerText === "support inquiry"
     ) {
       setMode("lead_gen");
-      setCurrentStep("name");
-      addMessage({ sender: "bot", text: "Excellent. Let's capture your project requirements. What is your full name?" });
+      setCurrentStep("interest");
+      addMessage({ 
+        sender: "bot", 
+        text: "Excellent. Let's capture your project requirements first.\n\nWhich of our key capabilities is the primary focus of this project inquiry?",
+        options: ["Cybersecurity", "App/Software Engineering", "Website Designing", "Growth Marketing"] 
+      });
       return;
     }
 
@@ -723,36 +750,7 @@ export default function Chatbot() {
 
   const processLeadGen = async (val: string) => {
     switch (currentStep) {
-      case "name":
-        if (!validateName(val)) { addMessage({ sender: "bot", text: "Please enter a valid name (at least 2 characters)." }); return; }
-        setUserData((prev) => ({ ...prev, name: val }));
-        setCurrentStep("company");
-        addMessage({ sender: "bot", text: `Pleasure meeting you, ${val}. Which organization or company are you representing?` });
-        break;
-      case "company":
-        if (!validateCompany(val)) { addMessage({ sender: "bot", text: "Please enter a valid company name." }); return; }
-        setUserData((prev) => ({ ...prev, company: val }));
-        setCurrentStep("email");
-        addMessage({ sender: "bot", text: "Thanks! What is your corporate email address?" });
-        break;
-      case "email":
-        if (!validateEmail(val)) { addMessage({ sender: "bot", text: "Please enter a valid corporate email format." }); return; }
-        setUserData((prev) => ({ ...prev, email: val }));
-        setCurrentStep("phone");
-        addMessage({ sender: "bot", text: "Understood. What phone number (including country code) should our engineering desk use to contact you?" });
-        break;
-      case "phone":
-        if (!validatePhone(val)) { addMessage({ sender: "bot", text: "Please enter a valid telephone format." }); return; }
-        setUserData((prev) => ({ ...prev, phone: val }));
-        setCurrentStep("interest");
-        addMessage({ 
-          sender: "bot", 
-          text: "Which of our key capabilities is the primary focus of this project inquiry?",
-          options: ["Cybersecurity", "App/Software Engineering", "Website Designing", "Growth Marketing"]
-        });
-        break;
       case "interest":
-        const cleanInterest = val.replace("App/Software Engineering", "App Eng").replace("Website Designing", "Web Design").replace("Growth Marketing", "Marketing");
         setUserData((prev) => ({ ...prev, interest: val }));
         setCurrentStep("serviceDetail");
         
@@ -785,15 +783,6 @@ export default function Chatbot() {
         break;
       case "serviceDetail":
         setUserData((prev) => ({ ...prev, serviceDetail: val }));
-        setCurrentStep("budget");
-        addMessage({ 
-          sender: "bot", 
-          text: "Understood. What is your estimated project budget?",
-          options: ["< $10,000", "$10,000 - $50,000", "$50,000 - $100,000", "$100,000+"]
-        });
-        break;
-      case "budget":
-        setUserData((prev) => ({ ...prev, budget: val }));
         setCurrentStep("timeline");
         addMessage({ 
           sender: "bot", 
@@ -803,11 +792,44 @@ export default function Chatbot() {
         break;
       case "timeline":
         setUserData((prev) => ({ ...prev, timeline: val }));
+        setCurrentStep("budget");
+        addMessage({ 
+          sender: "bot", 
+          text: "Understood. What is your estimated project budget?",
+          options: ["< $10,000", "$10,000 - $50,000", "$50,000 - $100,000", "$100,000+"]
+        });
+        break;
+      case "budget":
+        setUserData((prev) => ({ ...prev, budget: val }));
         setCurrentStep("message");
-        addMessage({ sender: "bot", text: "Lastly, please write a brief description of your key challenges or technical goals:" });
+        addMessage({ sender: "bot", text: "Please write a brief description of your key challenges or technical goals:" });
         break;
       case "message":
-        const finalData = { ...userData, message: val };
+        setUserData((prev) => ({ ...prev, message: val }));
+        setCurrentStep("company");
+        addMessage({ sender: "bot", text: "Great! Let's get your details so our solutions desk can contact you. What company or organization are you representing?" });
+        break;
+      case "company":
+        if (!validateCompany(val)) { addMessage({ sender: "bot", text: "Please enter a valid company name." }); return; }
+        setUserData((prev) => ({ ...prev, company: val }));
+        setCurrentStep("name");
+        addMessage({ sender: "bot", text: "Understood. What is your full name?" });
+        break;
+      case "name":
+        if (!validateName(val)) { addMessage({ sender: "bot", text: "Please enter a valid name (at least 2 characters)." }); return; }
+        setUserData((prev) => ({ ...prev, name: val }));
+        setCurrentStep("email");
+        addMessage({ sender: "bot", text: `Nice to meet you, ${val}! What is your corporate email address?` });
+        break;
+      case "email":
+        if (!validateEmail(val)) { addMessage({ sender: "bot", text: "Please enter a valid corporate email format." }); return; }
+        setUserData((prev) => ({ ...prev, email: val }));
+        setCurrentStep("phone");
+        addMessage({ sender: "bot", text: "Perfect. And what is the best phone number (including country code) to reach you?" });
+        break;
+      case "phone":
+        if (!validatePhone(val)) { addMessage({ sender: "bot", text: "Please enter a valid telephone format." }); return; }
+        const finalData = { ...userData, phone: val };
         setUserData(finalData);
         setIsTyping(true);
         
@@ -823,7 +845,7 @@ export default function Chatbot() {
           setCurrentStep("done");
           addMessage({ 
             sender: "bot", 
-            text: `Thank you, ${userData.name}.\n\nYour inquiry has been logged successfully under ${userData.company}.\n\nInterest: ${userData.interest}\nFocus Area: ${userData.serviceDetail}\nBudget: ${userData.budget}\nTimeline: ${userData.timeline}\n\nA Senior Solutions Architect will coordinate with you via ${userData.email} or call you at ${userData.phone} within 2 business hours.`,
+            text: `Thank you, ${finalData.name}.\n\nYour inquiry has been logged successfully under ${finalData.company}.\n\n• **Interest**: ${finalData.interest}\n• **Focus Area**: ${finalData.serviceDetail}\n• **Timeline**: ${finalData.timeline}\n• **Budget**: ${finalData.budget}\n\nA Senior Solutions Architect will coordinate with you via ${finalData.email} or call you at ${finalData.phone} within 2 business hours.`,
             options: ["Start New Session"]
           });
         } else {
@@ -833,7 +855,7 @@ export default function Chatbot() {
       case "done":
         if (val.toLowerCase().includes("session") || val.toLowerCase().includes("start") || val.toLowerCase().includes("new")) {
           setMode("chat");
-          setCurrentStep("name");
+          setCurrentStep("interest");
           setSelectedServices([]);
           setMessages([{
             id: "1",
