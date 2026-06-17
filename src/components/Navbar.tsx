@@ -91,8 +91,18 @@ export default function Navbar() {
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const pathname = usePathname();
   const { openBooking } = useBooking();
+
+  // Reset mobile dropdown states when drawer closes
+  useEffect(() => {
+    if (!isOpen) {
+      setMobileServicesOpen(false);
+      setMobileAboutOpen(false);
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -125,7 +135,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       {/* Top Bar (Contacts & Socials) */}
-      <div className="bg-[#040d1e] text-slate-450 text-[10px] sm:text-xs py-2 px-6 sm:px-8 md:px-12 flex justify-between items-center border-b border-white/5 select-none">
+      <div className="hidden md:flex bg-[#040d1e] text-slate-450 text-[10px] sm:text-xs py-2 px-6 sm:px-8 md:px-12 justify-between items-center border-b border-white/5 select-none">
         <div className="flex gap-4 sm:gap-6 items-center">
           <a href="tel:+6564604000" className="flex items-center gap-1.5 hover:text-white text-slate-400 transition-colors">
             <Phone className="w-3 h-3 text-white" />
@@ -356,44 +366,86 @@ export default function Navbar() {
 
                 {/* Mobile About List */}
                 <div className="flex flex-col gap-2">
-                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest select-none">About Us</span>
-                  <div className="pl-3 border-l border-white/10 flex flex-col gap-3">
-                    {aboutLinks.map((item) => {
-                      const IconComponent = item.icon;
-                      return (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          onClick={() => setIsOpen(false)}
-                          className="flex items-center gap-2.5 text-sm font-semibold text-slate-300 hover:text-white transition-colors"
-                        >
-                          <IconComponent className={`w-4 h-4 ${item.color}`} />
-                          {item.name}
-                        </Link>
-                      );
-                    })}
-                  </div>
+                  <button 
+                    onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                    className="flex items-center justify-between w-full text-xs font-semibold text-slate-500 uppercase tracking-widest select-none cursor-pointer"
+                  >
+                    <span>About Us</span>
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${mobileAboutOpen ? "rotate-180 text-white" : "text-slate-500"}`} />
+                  </button>
+                  
+                  <AnimatePresence initial={false}>
+                    {mobileAboutOpen && (
+                      <motion.div 
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-3 border-l border-white/10 flex flex-col gap-3.5 pt-1.5 pb-1">
+                          {aboutLinks.map((item) => {
+                            const IconComponent = item.icon;
+                            return (
+                              <Link
+                                key={item.name}
+                                href={item.href}
+                                onClick={() => setIsOpen(false)}
+                                className="flex items-center gap-2.5 text-sm font-semibold text-slate-300 hover:text-white transition-colors"
+                              >
+                                <div className={`p-1.5 rounded bg-white/[0.04] ${item.color} shrink-0`}>
+                                  <IconComponent className="w-3.5 h-3.5" />
+                                </div>
+                                {item.name}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
 
                 {/* Mobile Services List */}
                 <div className="flex flex-col gap-2">
-                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest select-none">Services</span>
-                  <div className="pl-3 border-l border-white/10 flex flex-col gap-3">
-                    {services.map((item) => {
-                      const IconComponent = item.icon;
-                      return (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          onClick={() => setIsOpen(false)}
-                          className="flex items-center gap-2.5 text-sm font-semibold text-slate-300 hover:text-white transition-colors"
-                        >
-                          <IconComponent className={`w-4 h-4 ${item.color}`} />
-                          {item.name}
-                        </Link>
-                      );
-                    })}
-                  </div>
+                  <button 
+                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                    className="flex items-center justify-between w-full text-xs font-semibold text-slate-500 uppercase tracking-widest select-none cursor-pointer"
+                  >
+                    <span>Services</span>
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${mobileServicesOpen ? "rotate-180 text-white" : "text-slate-500"}`} />
+                  </button>
+                  
+                  <AnimatePresence initial={false}>
+                    {mobileServicesOpen && (
+                      <motion.div 
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-3 border-l border-white/10 flex flex-col gap-3.5 pt-1.5 pb-1">
+                          {services.map((item) => {
+                            const IconComponent = item.icon;
+                            return (
+                              <Link
+                                key={item.name}
+                                href={item.href}
+                                onClick={() => setIsOpen(false)}
+                                className="flex items-center gap-2.5 text-sm font-semibold text-slate-300 hover:text-white transition-colors"
+                              >
+                                <div className={`p-1.5 rounded bg-white/[0.04] ${item.color} shrink-0`}>
+                                  <IconComponent className="w-3.5 h-3.5" />
+                                </div>
+                                {item.name}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
 
                 <Link

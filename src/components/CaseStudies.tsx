@@ -84,7 +84,7 @@ export default function CaseStudies() {
                   {c.title}
                 </h3>
                 
-                <p className="text-[10px] sm:text-xs text-slate-500 leading-relaxed mb-3">
+                <p className="hidden sm:block text-[10px] sm:text-xs text-slate-500 leading-relaxed mb-3">
                   {c.description}
                 </p>
 

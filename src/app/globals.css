@@ -96,3 +96,8 @@ body {
 .hover-translate-y:hover {
   transform: translateY(-8px);
 }
+
+/* Prevent orphans (single words on the last line of paragraphs) */
+p {
+  text-wrap: pretty;
+}

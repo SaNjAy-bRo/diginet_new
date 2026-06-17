@@ -150,7 +150,7 @@ export default function WebDevelopmentPage() {
                 Built for <span className="text-[#00F0FF] font-black">Scale.</span>
               </h1>
 
-              <p className="text-[13px] md:text-[14px] text-slate-400 leading-relaxed mb-5 max-w-[480px]">
+              <p className="text-[15px] md:text-[16px] text-slate-400 leading-relaxed mb-5 max-w-[480px]">
                 We design and develop custom web applications, SaaS platforms, and enterprise portals that are secure, lightning-fast, and built to drive your organization's digital growth.
               </p>
 
@@ -533,7 +533,7 @@ export default function WebDevelopmentPage() {
                   <h3 className="text-sm md:text-[15px] font-bold text-slate-900 font-poppins mb-1 leading-tight">
                     {srv.title}
                   </h3>
-                  <p className="text-[11px] md:text-xs text-slate-500 leading-relaxed font-normal line-clamp-2">
+                  <p className="text-xs md:text-sm text-slate-500 leading-relaxed font-normal line-clamp-2">
                     {srv.desc}
                   </p>
                 </div>
@@ -573,7 +573,7 @@ export default function WebDevelopmentPage() {
                 <h2 className="text-2xl md:text-[32px] font-medium text-white tracking-tight leading-none font-poppins mb-4">
                   From Strategy to Production
                 </h2>
-                <p className="text-xs md:text-sm text-slate-400 leading-relaxed mb-6 max-w-[340px]">
+                <p className="text-sm md:text-base text-slate-400 leading-relaxed mb-6 max-w-[340px]">
                   We follow a proven, agile methodology to construct scalable web solutions with total transparent execution.
                 </p>
                 <button
@@ -662,7 +662,7 @@ export default function WebDevelopmentPage() {
                   >
                     <div className="flex flex-col text-right justify-center">
                       <h4 className="text-[13px] font-extrabold text-white leading-tight font-poppins">Web Architecture & Strategy</h4>
-                      <p className="text-[11px] text-slate-400 mt-1 leading-normal max-w-[200px] font-normal">Define secure DB structures, API contracts, and server frameworks.</p>
+                      <p className="text-[13px] text-slate-400 mt-1 leading-normal max-w-[200px] font-normal">Define secure DB structures, API contracts, and server frameworks.</p>
                     </div>
                     <div className="w-[54px] h-[54px] rounded-2xl bg-[#0a1835] border border-slate-700/40 flex items-center justify-center shrink-0 shadow-md">
                       <Target className="w-[26px] h-[26px] text-white" />
@@ -677,7 +677,7 @@ export default function WebDevelopmentPage() {
                   >
                     <div className="flex flex-col text-right justify-center">
                       <h4 className="text-[13px] font-extrabold text-white leading-tight font-poppins">Next.js & React Engineering</h4>
-                      <p className="text-[11px] text-slate-400 mt-1 leading-normal max-w-[200px] font-normal">Build optimized frontends with clean, reusable React architectures.</p>
+                      <p className="text-[13px] text-slate-400 mt-1 leading-normal max-w-[200px] font-normal">Build optimized frontends with clean, reusable React architectures.</p>
                     </div>
                     <div className="w-[54px] h-[54px] rounded-2xl bg-[#0a1835] border border-slate-700/40 flex items-center justify-center shrink-0 shadow-md">
                       <Code className="w-[26px] h-[26px] text-white" />
@@ -695,7 +695,7 @@ export default function WebDevelopmentPage() {
                     </div>
                     <div className="flex flex-col text-left justify-center">
                       <h4 className="text-[13px] font-extrabold text-white leading-tight font-poppins">Responsive Web Design</h4>
-                      <p className="text-[11px] text-slate-400 mt-1 leading-normal max-w-[200px] font-normal">Construct beautiful viewport-fluid Figma layouts and interactive tokens.</p>
+                      <p className="text-[13px] text-slate-400 mt-1 leading-normal max-w-[200px] font-normal">Construct beautiful viewport-fluid Figma layouts and interactive tokens.</p>
                     </div>
                   </motion.div>
 
@@ -710,7 +710,7 @@ export default function WebDevelopmentPage() {
                     </div>
                     <div className="flex flex-col text-left justify-center">
                       <h4 className="text-[13px] font-extrabold text-white leading-tight font-poppins">CI/CD & Edge Deployment</h4>
-                      <p className="text-[11px] text-slate-400 mt-1 leading-normal max-w-[200px] font-normal">Automate testing, preview checks, and global edge cache deployment.</p>
+                      <p className="text-[13px] text-slate-400 mt-1 leading-normal max-w-[200px] font-normal">Automate testing, preview checks, and global edge cache deployment.</p>
                     </div>
                   </motion.div>
 
@@ -746,7 +746,7 @@ export default function WebDevelopmentPage() {
                       </div>
                       <div>
                         <h4 className="text-sm font-bold text-white font-poppins">{item.title}</h4>
-                        <p className="text-xs text-slate-400 mt-1.5 leading-relaxed font-poppins">{item.desc}</p>
+                        <p className="text-sm text-slate-400 mt-1.5 leading-relaxed font-poppins">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -807,7 +807,7 @@ export default function WebDevelopmentPage() {
                     <h3 className="text-sm font-extrabold text-slate-900 font-poppins mb-1 leading-tight">
                       {step.title}
                     </h3>
-                    <p className="text-xs text-slate-500 leading-relaxed max-w-[170px] font-normal">
+                    <p className="text-sm text-slate-500 leading-relaxed max-w-[170px] font-normal">
                       {step.desc}
                     </p>
                   </div>
@@ -876,7 +876,7 @@ export default function WebDevelopmentPage() {
                   {ind.icon}
                 </div>
                 <h3 className="text-xs sm:text-sm font-extrabold text-slate-900 font-poppins mb-2 leading-tight">{ind.title}</h3>
-                <p className="text-[10px] sm:text-xs text-slate-500 leading-relaxed font-normal">{ind.desc}</p>
+                <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal">{ind.desc}</p>
               </div>
             ))}
           </div>
@@ -930,7 +930,7 @@ export default function WebDevelopmentPage() {
                 </div>
                 <div className="flex flex-col">
                   <h3 className="text-[13px] font-extrabold text-slate-900 font-poppins mb-1 leading-tight">{choose.title}</h3>
-                  <p className="text-[11px] text-slate-500 leading-normal font-normal max-w-[160px]">{choose.desc}</p>
+                  <p className="text-xs text-slate-500 leading-normal font-normal max-w-[160px]">{choose.desc}</p>
                 </div>
               </div>
             ))}
@@ -956,7 +956,7 @@ export default function WebDevelopmentPage() {
               <div key={idx} className="bg-white border border-slate-200/50 p-6 md:p-8 rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.02)] flex flex-col gap-6 text-left relative hover:shadow-md transition-all duration-300">
                 <span className="text-[72px] font-serif text-[#0072FF] leading-none absolute top-4 left-4 select-none opacity-10">“</span>
                 <div className="flex items-start gap-2.5 relative z-10">
-                  <p className="text-xs md:text-sm text-slate-650 leading-relaxed font-normal font-sans">
+                  <p className="text-sm md:text-base text-slate-650 leading-relaxed font-normal font-sans">
                     {testi.text}
                   </p>
                 </div>
@@ -1137,7 +1137,7 @@ export default function WebDevelopmentPage() {
                   <h3 className="text-sm font-extrabold text-slate-900 font-poppins mb-1.5 leading-tight">
                     {work.title}
                   </h3>
-                  <p className="text-[11px] text-slate-500 leading-relaxed font-normal mb-3 max-w-[180px]">
+                  <p className="text-xs text-slate-500 leading-relaxed font-normal mb-3 max-w-[180px]">
                     {work.desc}
                   </p>
                   <span className="text-2xl font-black text-[#0072FF] leading-none mb-1">
@@ -1189,7 +1189,7 @@ export default function WebDevelopmentPage() {
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.2 }}
                         >
-                          <p className="pt-3 text-[11px] md:text-xs text-slate-500 leading-relaxed font-normal border-t border-slate-100 mt-3">
+                          <p className="pt-3 text-xs md:text-sm text-slate-500 leading-relaxed font-normal border-t border-slate-100 mt-3">
                             {faq.answer}
                           </p>
                         </motion.div>
@@ -1222,7 +1222,7 @@ export default function WebDevelopmentPage() {
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.2 }}
                         >
-                          <p className="pt-3 text-[11px] md:text-xs text-slate-500 leading-relaxed font-normal border-t border-slate-100 mt-3">
+                          <p className="pt-3 text-xs md:text-sm text-slate-500 leading-relaxed font-normal border-t border-slate-100 mt-3">
                             {faq.answer}
                           </p>
                         </motion.div>
@@ -1255,7 +1255,7 @@ export default function WebDevelopmentPage() {
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.2 }}
                         >
-                          <p className="pt-3 text-[11px] md:text-xs text-slate-500 leading-relaxed font-normal border-t border-slate-100 mt-3">
+                          <p className="pt-3 text-xs md:text-sm text-slate-500 leading-relaxed font-normal border-t border-slate-100 mt-3">
                             {faq.answer}
                           </p>
                         </motion.div>
@@ -1312,7 +1312,7 @@ export default function WebDevelopmentPage() {
               <h3 className="text-lg md:text-xl font-bold text-white font-poppins mb-1 leading-tight tracking-tight">
                 Ready to Build Your Web Platform?
               </h3>
-              <p className="text-[10px] md:text-xs text-blue-100/80 mb-3.5 font-normal max-w-[420px] leading-relaxed">
+              <p className="text-xs md:text-sm text-blue-100/80 mb-3.5 font-normal max-w-[420px] leading-relaxed">
                 Let&apos;s turn your idea into a custom enterprise solution that drives business growth.
               </p>
               <button
