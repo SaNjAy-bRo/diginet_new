@@ -838,7 +838,7 @@ export default function DigitalMarketingPage() {
                     </div>
                     <div className="flex flex-col">
                       <h3 className="text-[14px] md:text-[15px] font-bold text-[#06142D] font-poppins leading-tight">{item.title}</h3>
-                      <p className="text-xs md:text-sm text-slate-500 leading-normal mt-1">{item.desc}</p>
+                      <p className="text-sm text-slate-500 leading-normal mt-1">{item.desc}</p>
                     </div>
                   </div>
                 ))}
