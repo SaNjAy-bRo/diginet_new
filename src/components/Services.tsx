@@ -91,15 +91,15 @@ export default function Services() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div>
-                {/* Icon block */}
-                <div className={`inline-flex items-center justify-center p-3 rounded-xl mb-6 ${service.colorClass}`}>
-                  {service.icon}
+                {/* Icon and Title Row */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className={`inline-flex items-center justify-center p-3 rounded-xl shrink-0 ${service.colorClass}`}>
+                    {service.icon}
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold tracking-tight text-slate-900 font-poppins">
+                    {service.title}
+                  </h3>
                 </div>
-
-                {/* Card Title */}
-                <h3 className="text-xl md:text-2xl font-bold tracking-tight text-slate-900 mb-4 font-poppins">
-                  {service.title}
-                </h3>
 
                 {/* Card Description */}
                 <p className="text-sm md:text-base text-slate-500 leading-relaxed mb-6">
