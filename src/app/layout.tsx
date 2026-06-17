@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BookingProvider } from "@/context/BookingContext";
+import ClientChatbot from "@/components/ClientChatbot";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -40,6 +41,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <ClientChatbot />
         </BookingProvider>
       </body>
     </html>
