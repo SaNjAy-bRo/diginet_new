@@ -876,7 +876,7 @@ export default function WebDevelopmentPage() {
                   {ind.icon}
                 </div>
                 <h3 className="text-xs sm:text-sm font-extrabold text-slate-900 font-poppins mb-2 leading-tight">{ind.title}</h3>
-                <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal">{ind.desc}</p>
+                <p className="hidden md:block text-xs sm:text-sm text-slate-500 leading-relaxed font-normal">{ind.desc}</p>
               </div>
             ))}
           </div>
