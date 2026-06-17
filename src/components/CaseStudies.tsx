@@ -48,7 +48,7 @@ export default function CaseStudies() {
             <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3">
               Case Studies
             </p>
-            <h2 className="text-2xl md:text-3xl font-black tracking-tight text-slate-900 leading-tight font-poppins">
+            <h2 className="text-2xl md:text-3xl font-medium tracking-tight text-slate-900 leading-tight font-poppins">
               Real results. Real impact.
             </h2>
           </div>

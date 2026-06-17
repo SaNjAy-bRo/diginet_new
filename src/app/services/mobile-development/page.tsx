@@ -457,7 +457,7 @@ export default function MobileDevelopmentPage() {
             <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-indigo-500 mb-2.5">
               CORE SERVICES
             </span>
-            <h2 className="text-2xl md:text-[32px] font-black text-slate-900 tracking-tight leading-tight font-poppins">
+            <h2 className="text-2xl md:text-[32px] font-medium text-slate-900 tracking-tight leading-tight font-poppins">
               End-to-end Mobile App Development Services
             </h2>
           </div>
@@ -555,7 +555,7 @@ export default function MobileDevelopmentPage() {
                 <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#0072FF] mb-3">
                   HOW DIGINET BUILDS APPS
                 </span>
-                <h2 className="text-2xl md:text-[32px] font-black text-white tracking-tight leading-none font-poppins mb-4">
+                <h2 className="text-2xl md:text-[32px] font-medium text-white tracking-tight leading-none font-poppins mb-4">
                   From Idea to Launch
                 </h2>
                 <p className="text-xs md:text-sm text-slate-400 leading-relaxed mb-6 max-w-[340px]">
@@ -754,7 +754,7 @@ export default function MobileDevelopmentPage() {
             <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#0072FF] mb-2.5">
               OUR PROCESS
             </span>
-            <h2 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight leading-tight font-poppins">
+            <h2 className="text-2xl md:text-3xl font-medium text-slate-900 tracking-tight leading-tight font-poppins">
               A Simple 4-Step Journey
             </h2>
           </div>

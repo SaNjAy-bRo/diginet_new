@@ -218,7 +218,7 @@ export default function MissionVisionPage() {
             transition={{ duration: 0.5 }}
             className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-12 items-start"
           >
-            <h2 className="text-xl md:text-2xl font-black text-slate-900 md:col-span-1 font-poppins text-left">
+            <h2 className="text-xl md:text-2xl font-medium text-slate-900 md:col-span-1 font-poppins text-left">
               Our Mission
             </h2>
             <div className="md:col-span-3 text-left">
@@ -238,7 +238,7 @@ export default function MissionVisionPage() {
             transition={{ duration: 0.5 }}
             className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-12 items-start"
           >
-            <h2 className="text-xl md:text-2xl font-black text-slate-900 md:col-span-1 font-poppins text-left">
+            <h2 className="text-xl md:text-2xl font-medium text-slate-900 md:col-span-1 font-poppins text-left">
               Our Vision
             </h2>
             <div className="md:col-span-3 text-left space-y-6">
@@ -264,7 +264,7 @@ export default function MissionVisionPage() {
             transition={{ duration: 0.5 }}
             className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-12 items-start"
           >
-            <h2 className="text-xl md:text-2xl font-black text-slate-900 md:col-span-1 font-poppins text-left">
+            <h2 className="text-xl md:text-2xl font-medium text-slate-900 md:col-span-1 font-poppins text-left">
               Our Values
             </h2>
             <div className="md:col-span-3 text-left space-y-4">
@@ -331,7 +331,7 @@ export default function MissionVisionPage() {
           <span className="text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.2em] text-cyan-400 mb-3 block">
             Let&apos;s Get Started
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6 font-poppins">
+          <h2 className="text-3xl sm:text-4xl font-medium text-white mb-6 font-poppins">
             Are you ready for a better, <br className="hidden sm:inline"/>
             more productive business?
           </h2>

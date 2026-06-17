@@ -120,7 +120,7 @@ export default function TermsAndConditionsPage() {
           <span className="text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.2em] text-cyan-400 mb-3 block">
             Let&apos;s Get Started
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6 font-poppins">
+          <h2 className="text-3xl sm:text-4xl font-medium text-white mb-6 font-poppins">
             Are you ready for a better, <br className="hidden sm:inline"/>
             more productive business?
           </h2>

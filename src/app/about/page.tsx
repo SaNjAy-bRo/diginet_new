@@ -118,7 +118,7 @@ export default function About() {
             <span className="text-[10px] font-extrabold uppercase tracking-widest text-cyan-600 mb-3 block">
               Core Expertise
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-extrabold text-slate-900 mb-6 font-poppins leading-[1.15]">
+            <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-medium text-slate-900 mb-6 font-poppins leading-[1.15]">
               Resolving Technical Complexities with High Standards
             </h2>
             <p className="text-sm md:text-base text-slate-655 leading-relaxed mb-6 font-medium">
@@ -294,7 +294,7 @@ export default function About() {
         <div className="max-w-[1000px] mx-auto relative z-10">
           <div className="text-center mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3 block">Our Journey</span>
-            <h2 className="text-3xl font-extrabold text-white">Our History</h2>
+            <h2 className="text-3xl font-medium text-white">Our History</h2>
             <div className="h-1 w-20 bg-cyan-500 mt-4 mx-auto rounded-full"></div>
           </div>
 
@@ -339,7 +339,7 @@ export default function About() {
         <div className="max-w-[1280px] mx-auto mt-32 border-t border-slate-800 pt-20">
           <div className="text-center mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3 block">Performance Indices</span>
-            <h2 className="text-3xl font-extrabold text-white">Outreach by the Numbers</h2>
+            <h2 className="text-3xl font-medium text-white">Outreach by the Numbers</h2>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8">
@@ -375,7 +375,7 @@ export default function About() {
         <div className="max-w-[1280px] mx-auto">
           <div className="text-center mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-500 mb-3 block">Corporate News</span>
-            <h2 className="text-3xl font-extrabold text-slate-900 font-poppins">What&apos;s going on at DigiNet Solutions?</h2>
+            <h2 className="text-3xl font-medium text-slate-900 font-poppins">What&apos;s going on at DigiNet Solutions?</h2>
             <div className="h-1 w-20 bg-cyan-500 mt-4 mx-auto rounded-full"></div>
           </div>
 
@@ -443,7 +443,7 @@ export default function About() {
           <span className="text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.2em] text-cyan-400 mb-3 block">
             Let&apos;s Get Started
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6 font-poppins">
+          <h2 className="text-3xl sm:text-4xl font-medium text-white mb-6 font-poppins">
             Are you ready for a better, <br className="hidden sm:inline"/>
             more productive business?
           </h2>

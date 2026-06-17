@@ -725,7 +725,7 @@ export default function ServiceDetailClient({
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
                   
-                  <h2 className="text-3xl font-extrabold text-slate-900 mb-6">
+                  <h2 className="text-3xl font-medium text-slate-900 mb-6">
                     Continuous Threat Hunting & SOC Management
                   </h2>
                   <p className="text-slate-605 text-sm leading-relaxed mb-6">
@@ -757,7 +757,7 @@ export default function ServiceDetailClient({
             <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                  <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Enterprise Compliance & Auditing Systems</h2>
+                  <h2 className="text-3xl font-medium text-slate-900 mb-4">Enterprise Compliance & Auditing Systems</h2>
                   <p className="text-slate-600 text-sm">We configure and align your server storage arrays, database logic, and logging schemas to survive strict regulatory security assessments.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -787,7 +787,7 @@ export default function ServiceDetailClient({
                   <div className="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center shadow-sm border border-red-100 mb-4 mx-auto">
                     <ShieldAlert className="w-5 h-5" />
                   </div>
-                  <h2 className="text-3xl font-extrabold text-slate-900">Incident Mitigation Timeline (SLA)</h2>
+                  <h2 className="text-3xl font-medium text-slate-900">Incident Mitigation Timeline (SLA)</h2>
                   <p className="text-slate-600 text-sm mt-3">How our automated zero-trust shields react to potential threat vectors in real-time.</p>
                 </div>
                 <div className="flex flex-col gap-8 relative">
@@ -817,7 +817,7 @@ export default function ServiceDetailClient({
             <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-909 text-white relative z-10 border-b border-slate-950">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                  <h2 className="text-3xl font-black text-white mb-4">Complete Audit Package Scope</h2>
+                  <h2 className="text-3xl font-medium text-white mb-4">Complete Audit Package Scope</h2>
                   <p className="text-slate-400 text-sm">Every enterprise penetration audit compiles comprehensive, action-oriented security materials.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -843,7 +843,7 @@ export default function ServiceDetailClient({
                   <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">
                     OUR ROADMAP
                   </span>
-                  <h2 className="text-3xl font-extrabold text-slate-900 mt-4">
+                  <h2 className="text-3xl font-medium text-slate-900 mt-4">
                     Security Deployment Lifecycle
                   </h2>
                   <p className="text-slate-600 text-sm mt-3">
@@ -920,7 +920,7 @@ export default function ServiceDetailClient({
                   </div>
                 </div>
                 <div className="order-1 lg:order-2">
-                  <h2 className="text-3xl font-extrabold text-slate-900 mb-6">
+                  <h2 className="text-3xl font-medium text-slate-900 mb-6">
                     Harmonized UI Component Libraries
                   </h2>
                   <p className="text-slate-600 text-sm leading-relaxed mb-6">
@@ -947,7 +947,7 @@ export default function ServiceDetailClient({
             <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                  <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Core Web Vitals Performance Targets</h2>
+                  <h2 className="text-3xl font-medium text-slate-900 mb-4">Core Web Vitals Performance Targets</h2>
                   <p className="text-slate-600 text-sm">We optimize site script bundles, compress image assets, and use static site generation to guarantee fast site rendering speeds.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -976,7 +976,7 @@ export default function ServiceDetailClient({
                   <div className="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center shadow-sm border border-cyan-100 mb-4 mx-auto">
                     <Activity className="w-5 h-5" />
                   </div>
-                  <h2 className="text-3xl font-extrabold text-slate-900">Sprint Workflow Pipeline</h2>
+                  <h2 className="text-3xl font-medium text-slate-900">Sprint Workflow Pipeline</h2>
                   <p className="text-slate-600 text-sm mt-3">From wireframe prototypes to high-performance Next.js container deployments.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -1000,7 +1000,7 @@ export default function ServiceDetailClient({
             <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-900 text-white relative z-10 border-b border-slate-950">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                  <h2 className="text-3xl font-black text-white mb-4">Conversion Rate Optimization Features</h2>
+                  <h2 className="text-3xl font-medium text-white mb-4">Conversion Rate Optimization Features</h2>
                   <p className="text-slate-400 text-sm">We implement frontend features built to simplify paths and increase lead actions.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -1026,7 +1026,7 @@ export default function ServiceDetailClient({
                   <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-cyan-500/10 text-cyan-600 border border-cyan-500/20">
                     OUR ROADMAP
                   </span>
-                  <h2 className="text-3xl font-extrabold text-slate-900 mt-4">
+                  <h2 className="text-3xl font-medium text-slate-900 mt-4">
                     From Concept to Production CDN
                   </h2>
                   <p className="text-slate-600 text-sm mt-3">
@@ -1099,7 +1099,7 @@ export default function ServiceDetailClient({
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
                   
-                  <h2 className="text-3xl font-extrabold text-slate-900 mb-6">
+                  <h2 className="text-3xl font-medium text-slate-900 mb-6">
                     Robust Offline-First Data Sync Engines
                   </h2>
                   <p className="text-slate-600 text-sm leading-relaxed mb-6">
@@ -1131,7 +1131,7 @@ export default function ServiceDetailClient({
             <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                  <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Multi-Platform Device Verification</h2>
+                  <h2 className="text-3xl font-medium text-slate-900 mb-4">Multi-Platform Device Verification</h2>
                   <p className="text-slate-600 text-sm">We test build compilation, layout scaling, and hardware sensors across dozens of testing configurations.</p>
                 </div>
                 <div className="border border-slate-200 bg-white rounded-2xl shadow-sm overflow-x-auto">
@@ -1170,7 +1170,7 @@ export default function ServiceDetailClient({
                   <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shadow-sm border border-indigo-100 mb-4 mx-auto">
                     <SmartphoneCharging className="w-5 h-5" />
                   </div>
-                  <h2 className="text-3xl font-extrabold text-slate-900">ASO & Launch Services</h2>
+                  <h2 className="text-3xl font-medium text-slate-900">ASO & Launch Services</h2>
                   <p className="text-slate-600 text-sm mt-3">We handle the complete setup to publish your application and attract organic store searches.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1192,7 +1192,7 @@ export default function ServiceDetailClient({
             <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-900 text-white relative z-10 border-b border-slate-950">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                  <h2 className="text-3xl font-black text-white mb-4">Device Security Integrity</h2>
+                  <h2 className="text-3xl font-medium text-white mb-4">Device Security Integrity</h2>
                   <p className="text-slate-400 text-sm">We construct client-side layers to isolate active session tokens and encrypt local data.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -1218,7 +1218,7 @@ export default function ServiceDetailClient({
                   <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-indigo-500/10 text-indigo-600 border border-indigo-500/20">
                     OUR ROADMAP
                   </span>
-                  <h2 className="text-3xl font-extrabold text-slate-900 mt-4">
+                  <h2 className="text-3xl font-medium text-slate-900 mt-4">
                     End-to-End Mobile App Lifecycle
                   </h2>
                   <p className="text-slate-600 text-sm mt-3">
@@ -1295,7 +1295,7 @@ export default function ServiceDetailClient({
                   </div>
                 </div>
                 <div className="order-1 lg:order-2">
-                  <h2 className="text-3xl font-extrabold text-slate-900 mb-6">
+                  <h2 className="text-3xl font-medium text-slate-900 mb-6">
                     High-Availability Cloud Containerization
                   </h2>
                   <p className="text-slate-605 text-sm leading-relaxed mb-6">
@@ -1322,7 +1322,7 @@ export default function ServiceDetailClient({
             <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                  <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Core API Scaling Parameters</h2>
+                  <h2 className="text-3xl font-medium text-slate-900 mb-4">Core API Scaling Parameters</h2>
                   <p className="text-slate-600 text-sm">We audit REST and GraphQL response schemas to maintain high availability and sub-millisecond latencies.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -1356,7 +1356,7 @@ export default function ServiceDetailClient({
                   <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shadow-sm border border-purple-100 mb-4 mx-auto">
                     <Database className="w-5 h-5" />
                   </div>
-                  <h2 className="text-3xl font-extrabold text-slate-900">Database Replication Schemes</h2>
+                  <h2 className="text-3xl font-medium text-slate-900">Database Replication Schemes</h2>
                   <p className="text-slate-600 text-sm mt-3">Ensuring zero data loss and automated backups for business continuity.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1378,7 +1378,7 @@ export default function ServiceDetailClient({
             <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-900 text-white relative z-10 border-b border-slate-950">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                  <h2 className="text-3xl font-black text-white mb-4">CI/CD Deployment Automation</h2>
+                  <h2 className="text-3xl font-medium text-white mb-4">CI/CD Deployment Automation</h2>
                   <p className="text-slate-400 text-sm">Every push runs tests, packages builds, and updates cloud servers without site downtime.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -1406,7 +1406,7 @@ export default function ServiceDetailClient({
                   <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-purple-500/10 text-purple-600 border border-purple-500/20">
                     OUR ROADMAP
                   </span>
-                  <h2 className="text-3xl font-extrabold text-slate-900 mt-4">
+                  <h2 className="text-3xl font-medium text-slate-900 mt-4">
                     Robust Enterprise System Development
                   </h2>
                   <p className="text-slate-600 text-sm mt-3">
@@ -1478,7 +1478,7 @@ export default function ServiceDetailClient({
             <section className="pt-8 md:pt-12 pb-14 md:pb-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                  <h2 className="text-3xl font-extrabold text-slate-900 mb-6">
+                  <h2 className="text-3xl font-medium text-slate-900 mb-6">
                     High-Intent Acquisition Funnel Audits
                   </h2>
                   <p className="text-slate-600 text-sm leading-relaxed mb-6">
@@ -1510,7 +1510,7 @@ export default function ServiceDetailClient({
             <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                  <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Ad Channel Acquisition Parameters</h2>
+                  <h2 className="text-3xl font-medium text-slate-900 mb-4">Ad Channel Acquisition Parameters</h2>
                   <p className="text-slate-600 text-sm">We structure advertising metrics to maintain positive returns on investment across primary search networks.</p>
                 </div>
                 <div className="border border-slate-200 bg-white rounded-2xl overflow-hidden shadow-sm">
@@ -1549,7 +1549,7 @@ export default function ServiceDetailClient({
                   <div className="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shadow-sm border border-sky-100 mb-4 mx-auto">
                     <Activity className="w-5 h-5" />
                   </div>
-                  <h2 className="text-3xl font-extrabold text-slate-900">CRO Framework Strategy</h2>
+                  <h2 className="text-3xl font-medium text-slate-900">CRO Framework Strategy</h2>
                   <p className="text-slate-600 text-sm mt-3">How we refine page interactions to simplify signup steps and increase conversions.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1571,7 +1571,7 @@ export default function ServiceDetailClient({
             <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-900 text-white relative z-10 border-b border-slate-950">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                  <h2 className="text-3xl font-black text-white mb-4">Organic Lead Generation Optimization</h2>
+                  <h2 className="text-3xl font-medium text-white mb-4">Organic Lead Generation Optimization</h2>
                   <p className="text-slate-400 text-sm">We structure metadata markup to guarantee long-term search engine authority.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -1597,7 +1597,7 @@ export default function ServiceDetailClient({
                   <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-sky-500/10 text-sky-600 border border-sky-500/20">
                     OUR ROADMAP
                   </span>
-                  <h2 className="text-3xl font-extrabold text-slate-900 mt-4">
+                  <h2 className="text-3xl font-medium text-slate-900 mt-4">
                     Data-Driven Conversion Engine
                   </h2>
                   <p className="text-slate-605 text-sm mt-3">
@@ -1693,7 +1693,7 @@ export default function ServiceDetailClient({
             <span className={`px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest ${theme.accentBg} ${theme.accentText} border ${theme.pillBorder}`}>
               QUESTIONS & ANSWERS
             </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mt-4 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-medium text-slate-900 mt-4 tracking-tight">
               Frequently Asked <span className={theme.accentText}>Questions</span>
             </h2>
             <p className="text-slate-500 text-sm mt-3 max-w-xl mx-auto">
@@ -1810,7 +1810,7 @@ export default function ServiceDetailClient({
           <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl ${theme.accentBg} flex items-center justify-center ${theme.accentText} border ${theme.pillBorder} shadow-lg`}>
             <Zap className="w-5 h-5 fill-current" />
           </div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-white tracking-tight">
             Request {service.name} Briefing
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-xl mx-auto px-4 sm:px-0">

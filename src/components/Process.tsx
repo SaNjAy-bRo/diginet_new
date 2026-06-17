@@ -48,7 +48,7 @@ export default function Process() {
           <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3">
             Our Process
           </p>
-          <h2 className="text-3xl md:text-[40px] font-black tracking-tight text-slate-900 leading-tight font-poppins">
+          <h2 className="text-3xl md:text-[40px] font-medium tracking-tight text-slate-900 leading-tight font-poppins">
             A proven path to your success
           </h2>
         </div>

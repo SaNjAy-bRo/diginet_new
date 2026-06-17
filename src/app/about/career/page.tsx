@@ -138,7 +138,7 @@ export default function CareerPage() {
             <span className="text-[10px] font-extrabold uppercase tracking-widest text-cyan-600 mb-3 block">
               Our Culture
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-extrabold text-slate-900 mb-6 font-poppins leading-[1.15]">
+            <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-medium text-slate-900 mb-6 font-poppins leading-[1.15]">
               Nice to Meet You
             </h2>
             <p className="text-sm md:text-base text-slate-655 leading-relaxed mb-4 font-medium">
@@ -270,7 +270,7 @@ export default function CareerPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3 block">Open Roles</span>
-            <h2 className="text-3xl font-extrabold text-white font-poppins">Current Openings</h2>
+            <h2 className="text-3xl font-medium text-white font-poppins">Current Openings</h2>
             <p className="text-xs text-slate-400 mt-2">Play a vital role. Help us shape the future.</p>
             <div className="h-1 w-16 bg-cyan-400 mt-4 mx-auto rounded-full"></div>
           </div>
@@ -334,7 +334,7 @@ export default function CareerPage() {
       <section className="py-20 px-6 md:px-12 bg-slate-50 border-b border-slate-200/50">
         <div className="max-w-[1280px] mx-auto text-center">
           <span className="text-xs font-bold uppercase tracking-widest text-cyan-500 mb-3 block">Perks</span>
-          <h2 className="text-3xl font-extrabold text-slate-900 mb-4 font-poppins">Benefits</h2>
+          <h2 className="text-3xl font-medium text-slate-900 mb-4 font-poppins">Benefits</h2>
           <p className="text-xs text-slate-500 mb-16 font-semibold">Here are just some of the perks you&apos;ll get as a member of Diginet.</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -378,7 +378,7 @@ export default function CareerPage() {
           <span className="text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.2em] text-cyan-400 mb-3 block">
             Let&apos;s Get Started
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6 font-poppins">
+          <h2 className="text-3xl sm:text-4xl font-medium text-white mb-6 font-poppins">
             Are you ready for a better, <br className="hidden sm:inline"/>
             more productive business?
           </h2>

@@ -66,7 +66,7 @@ export default function Testimonials() {
             <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3">
               What Our Clients Say
             </p>
-            <h2 className="text-2xl md:text-3xl font-black tracking-tight text-slate-900 leading-tight font-poppins">
+            <h2 className="text-2xl md:text-3xl font-medium tracking-tight text-slate-900 leading-tight font-poppins">
               Trusted by businesses that scale
             </h2>
           </div>

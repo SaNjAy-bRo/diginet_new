@@ -70,7 +70,7 @@ export default function WhyChooseUs() {
                 <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-2.5">
                   Why Choose Diginet
                 </p>
-                <h2 className="text-2xl md:text-3xl font-black tracking-tight text-slate-900 leading-tight mb-4 font-poppins">
+                <h2 className="text-2xl md:text-3xl font-medium tracking-tight text-slate-900 leading-tight mb-4 font-poppins">
                   Your growth is our mission
                 </h2>
                 <p className="text-xs md:text-sm text-slate-500 leading-relaxed">

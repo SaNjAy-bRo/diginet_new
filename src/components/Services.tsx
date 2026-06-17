@@ -71,7 +71,7 @@ export default function Services() {
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-blue mb-3">
             OUR SERVICES
           </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight mb-4 font-poppins">
+          <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-slate-900 leading-tight mb-4 font-poppins">
             End-to-end solutions that drive real results
           </h2>
           <p className="text-sm md:text-base text-slate-500 leading-relaxed">

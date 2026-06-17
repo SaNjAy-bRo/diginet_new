@@ -34,7 +34,7 @@ export default function CtaBanner() {
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
             {/* Text column */}
             <div className="max-w-2xl text-center lg:text-left flex flex-col">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-white mb-4 font-poppins">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-white mb-4 font-poppins">
                 Ready to build, scale, and grow together?
               </h2>
               <p className="text-xs sm:text-sm md:text-base text-sky-100 leading-relaxed font-medium">

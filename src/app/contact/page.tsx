@@ -101,7 +101,7 @@ export default function Contact() {
             <div className="lg:col-span-5">
               <div className="p-8 rounded-3xl border border-slate-200 bg-slate-50 shadow-xl relative overflow-hidden">
                 <div className="mb-6">
-                  <h2 className="text-xl font-extrabold text-slate-900 font-poppins">Send a Query</h2>
+                  <h2 className="text-xl font-medium text-slate-900 font-poppins">Send a Query</h2>
                   <p className="text-xs text-slate-500 mt-1 font-semibold">Our system operations leads will reach back shortly.</p>
                 </div>
 
@@ -331,7 +331,7 @@ export default function Contact() {
           <span className="text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.2em] text-cyan-400 mb-3 block">
             Partner with us
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6 font-poppins">
+          <h2 className="text-3xl sm:text-4xl font-medium text-white mb-6 font-poppins">
             Ready to secure and accelerate <br className="hidden sm:inline"/>
             your business operations?
           </h2>

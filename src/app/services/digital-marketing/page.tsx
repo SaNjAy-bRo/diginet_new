@@ -583,7 +583,7 @@ export default function DigitalMarketingPage() {
             <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-accent-blue mb-2.5">
               Our Digital Marketing Services
             </span>
-            <h2 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight leading-tight font-poppins">
+            <h2 className="text-2xl md:text-3xl font-medium text-slate-900 tracking-tight leading-tight font-poppins">
               Integrated strategies across channels to attract, engage and convert.
             </h2>
           </div>
@@ -657,7 +657,7 @@ export default function DigitalMarketingPage() {
             <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-accent-blue mb-2.5">
               Our Digital Marketing Capabilities
             </span>
-            <h2 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight leading-tight font-poppins">
+            <h2 className="text-2xl md:text-3xl font-medium text-slate-900 tracking-tight leading-tight font-poppins">
               End-to-end solutions to grow your brand across the digital landscape.
             </h2>
           </div>
@@ -772,7 +772,7 @@ export default function DigitalMarketingPage() {
             <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-sky-400 mb-2.5">
               Our Proven Process
             </span>
-            <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight leading-tight font-poppins">
+            <h2 className="text-2xl md:text-3xl font-medium text-white tracking-tight leading-tight font-poppins">
               A collaborative approach that delivers consistent, measurable growth.
             </h2>
           </div>
@@ -821,7 +821,7 @@ export default function DigitalMarketingPage() {
             
             {/* Left Column: Why Choose Us */}
             <div className="lg:col-span-5 flex flex-col items-start text-left">
-              <h2 className="text-2xl md:text-3xl font-black text-[#06142D] tracking-tight leading-tight font-poppins mb-8">
+              <h2 className="text-2xl md:text-3xl font-medium text-[#06142D] tracking-tight leading-tight font-poppins mb-8">
                 Why Choose Diginet Solutions?
               </h2>
 
@@ -847,7 +847,7 @@ export default function DigitalMarketingPage() {
 
             {/* Right Column: Industries We Serve */}
             <div className="lg:col-span-7 flex flex-col items-start text-left w-full">
-              <h2 className="text-2xl md:text-3xl font-black text-[#06142D] tracking-tight leading-tight font-poppins mb-1.5">
+              <h2 className="text-2xl md:text-3xl font-medium text-[#06142D] tracking-tight leading-tight font-poppins mb-1.5">
                 Industries We Serve
               </h2>
               <p className="text-xs md:text-sm text-slate-500 leading-normal mb-8">
@@ -959,7 +959,7 @@ export default function DigitalMarketingPage() {
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12">
           
           <div className="text-left mb-12 flex flex-col items-start">
-            <h2 className="text-2xl md:text-3xl font-black text-[#06142D] tracking-tight leading-tight font-poppins mb-1.5">
+            <h2 className="text-2xl md:text-3xl font-medium text-[#06142D] tracking-tight leading-tight font-poppins mb-1.5">
               Real Results. Real Impact.
             </h2>
             <p className="text-xs md:text-sm text-slate-500 leading-normal">
@@ -1191,7 +1191,7 @@ export default function DigitalMarketingPage() {
               <div className="bg-white border border-slate-200/60 rounded-[32px] p-6 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 h-full">
                 
                 <div>
-                  <h2 className="text-xl md:text-2xl font-black text-[#06142D] tracking-tight leading-tight font-poppins mb-6">
+                  <h2 className="text-xl md:text-2xl font-medium text-[#06142D] tracking-tight leading-tight font-poppins mb-6">
                     Frequently Asked Questions
                   </h2>
 

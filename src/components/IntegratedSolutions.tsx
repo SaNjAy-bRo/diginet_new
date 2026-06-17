@@ -67,7 +67,7 @@ export default function IntegratedSolutions() {
             <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-sky-400 mb-4">
               INTEGRATED. CONNECTED. RESULTS.
             </span>
-            <h2 className="text-3xl md:text-[42px] font-black tracking-tight text-white leading-tight mb-3 font-poppins">
+            <h2 className="text-3xl md:text-[42px] font-medium tracking-tight text-white leading-tight mb-3 font-poppins">
               How Diginet Works
             </h2>
             <p className="text-xs md:text-sm text-slate-400 leading-relaxed max-w-md mb-5">
