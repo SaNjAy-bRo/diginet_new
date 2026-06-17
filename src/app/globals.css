@@ -15,6 +15,12 @@
   --font-sans: var(--font-inter);
   --font-poppins: var(--font-poppins);
   --font-display: var(--font-poppins);
+
+  --font-size-xs: 0.8125rem; /* 13px */
+  --font-size-sm: 0.9375rem; /* 15px */
+  --font-size-base: 1.0625rem; /* 17px */
+  --font-size-lg: 1.1875rem; /* 19px */
+  --font-size-xl: 1.3125rem; /* 21px */
 }
 
 :root {
@@ -33,6 +39,7 @@ body {
   color: #111827;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  font-size: 1.0625rem; /* 17px */
 }
 
 /* Custom scrollbar */
