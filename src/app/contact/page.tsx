@@ -157,8 +157,8 @@ export default function Contact() {
                             className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-800 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 text-xs font-semibold appearance-none cursor-pointer transition-all shadow-sm"
                           >
                             <option value="cybersecurity">Cybersecurity Solutions</option>
-                            <option value="website-designing">Website Designing</option>
-                            <option value="application-development">Application Development</option>
+                            <option value="web-development">Web Development</option>
+                            <option value="mobile-development">Mobile Development</option>
                             <option value="digital-marketing">Digital Marketing</option>
                           </select>
                           <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />

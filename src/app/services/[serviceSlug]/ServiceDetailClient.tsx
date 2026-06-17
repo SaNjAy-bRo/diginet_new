@@ -16,16 +16,14 @@ import { motion } from "framer-motion";
 const serviceIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   "digital-marketing": Megaphone,
   "mobile-development": Smartphone,
-  "application-development": AppWindow,
   "cybersecurity": Shield,
-  "website-designing": Monitor,
+  "web-development": Monitor,
 };
 
 const ctaBgImages: Record<string, string> = {
   "cybersecurity": "/images/cta_cyber.png",
-  "website-designing": "/images/cta_webdesign.png",
+  "web-development": "/images/cta_webdesign.png",
   "mobile-development": "/images/cta_mobile.png",
-  "application-development": "/images/cta_appdev.png",
   "digital-marketing": "/images/cta_marketing.png",
 };
 
@@ -48,7 +46,7 @@ const serviceFaqs: Record<string, { q: string; a: string }[]> = {
       a: "We configure end-to-end telemetry audits, configure zero-knowledge encryption models for storage layers, restrict IAM privileges based on role-based access control (RBAC), and compile the complete compliance report required by auditors."
     }
   ],
-  "website-designing": [
+  "web-development": [
     {
       q: "Do you provide the Figma source files and UI design token libraries?",
       a: "Yes, we deliver fully organized, multi-viewport Figma files including complete design system tokens (colors, font variants, spacing grids) and reusable components for your in-house teams."
@@ -62,8 +60,8 @@ const serviceFaqs: Record<string, { q: string; a: string }[]> = {
       a: "We structure optimized Next.js scripts, compile static assets to edge CDNs, enforce WebP/AVIF image formats with auto-scaling boundaries, and defer non-critical analytics tracking to ensure 95+ performance scores."
     },
     {
-      q: "What is your typical design and development timeline?",
-      a: "A custom high-conversion website design project takes between 4 to 6 weeks. This includes wireframe exploration, UI mockups alignment, custom Next.js frontend code development, SEO schema indexing, and final launch checks."
+      q: "What database and API frameworks do you utilize for full-stack web applications?",
+      a: "We deploy TypeScript and Node.js backends using Prisma ORM with PostgreSQL, MySQL, or Redis databases. For API architectures, we build secure, self-documenting REST and GraphQL schemas built to handle high concurrency under load balancers."
     }
   ],
   "mobile-development": [
@@ -82,24 +80,6 @@ const serviceFaqs: Record<string, { q: string; a: string }[]> = {
     {
       q: "How do you ensure our mobile app is secure against reverse engineering?",
       a: "We enforce code obfuscation pipelines, establish strict SSL certificate pinning for backend communications, leverage biometric checks (FaceID/Fingerprint), and store sensitive credentials inside device Keystore/Keychain layers."
-    }
-  ],
-  "application-development": [
-    {
-      q: "What technology stack do you recommend for high-concurrency cloud systems?",
-      a: "We specialize in TypeScript (Node.js/NestJS), Go, or Python backends, coupled with PostgreSQL, MongoDB, or Redis. Frontends are structured with Next.js/React, and infrastructure runs on Docker/Kubernetes setups."
-    },
-    {
-      q: "How do you structure database replication to prevent data loss?",
-      a: "We configure primary-replica database routing splits, write replication loops, and automate database snapshots. Point-in-time recovery (PITR) logs are securely backed up hourly to isolated cloud storage buckets."
-    },
-    {
-      q: "Do you containerize applications and deploy them to Kubernetes clusters?",
-      a: "Yes, we build secure, multi-stage production Docker images and construct automated Kubernetes scaling groups (AWS EKS or GCP GKE) to handle variable user traffic spikes without service interruptions."
-    },
-    {
-      q: "How is code deployment handled when we need to launch updates?",
-      a: "We configure automated CI/CD pipelines (GitHub Actions/GitLab CI) that validate typescript syntax, run automated unit tests, and roll out updates with zero site downtime."
     }
   ],
   "digital-marketing": [
@@ -450,7 +430,7 @@ export default function ServiceDetailClient({
           </section>
         );
 
-      case "website-designing":
+      case "web-development":
         return (
           <section className={`relative z-10 -mt-20 sm:-mt-[108px] pt-28 sm:pt-32 md:pt-36 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-br from-cyan-950 via-slate-950 to-slate-900 text-white border-b border-slate-900 overflow-hidden`}>
             <MeshGrid />
@@ -464,23 +444,23 @@ export default function ServiceDetailClient({
                   </div>
                 </motion.div>
               </div>
-              <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col gap-5">
+              <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col gap-5 text-left items-start">
                 <div className="flex items-center gap-3">
                   <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-                    AESTHETIC SPEED ENGINEERING
+                    FULL-STACK WEB ENGINEERING
                   </span>
                   <div className="h-0.5 w-8 bg-slate-800 rounded-full"></div>
                 </div>
                 <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.2] text-white">
-                  High-Conversion <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-indigo-400">Web Architectures</span>
+                  Custom Full-Stack <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-indigo-400">Web Development</span>
                 </h1>
                 <p className="text-base md:text-lg font-bold tracking-wide text-white">
-                  Custom wireframes, immersive layouts, and Core Web Vitals optimizations.
+                  High-performance Next.js servers, headless CMS content sync, and edge caching.
                 </p>
-                <p className="text-slate-350 text-sm leading-relaxed max-w-xl hidden md:block">
-                  We craft bespoke corporate web systems combining fluid Framer Motion micro-animations, clean type layouts, and optimized script execution. We deliver 99/100 Google PageSpeed scores that increase customer trust and lead conversion ratios.
+                <p className="text-slate-355 text-sm leading-relaxed max-w-xl hidden md:block">
+                  We engineer premium web platforms and custom SaaS applications built with Next.js and React. We focus on sub-second Core Web Vitals, secure REST/GraphQL APIs, Prisma database integrations, and automated preview deployments.
                 </p>
-                <div className="grid grid-cols-3 gap-4 border-y border-slate-800/60 py-4 max-w-xl">
+                <div className="grid grid-cols-3 gap-4 border-y border-slate-800/60 py-4 w-full max-w-xl">
                   {service.metrics.map((metric, idx) => (
                     <div key={idx} className="flex flex-col gap-1">
                       <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{metric.label}</span>
@@ -490,7 +470,7 @@ export default function ServiceDetailClient({
                 </div>
                 <div className="flex flex-wrap gap-4 mt-2">
                   <Link href="/contact" className="px-6 py-3 rounded-xl bg-orange-brand hover:bg-orange-brand-hover text-white font-bold text-sm shadow-lg shadow-orange-brand/20 transition-all flex items-center gap-2">
-                    Build Custom Website <ArrowRight className="w-4 h-4" />
+                    Start Web Project <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>
@@ -591,69 +571,7 @@ export default function ServiceDetailClient({
           </section>
         );
 
-      case "application-development":
-        return (
-          <section className={`relative z-10 -mt-20 sm:-mt-[108px] pt-28 sm:pt-32 md:pt-36 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-r from-slate-950 via-purple-950 to-slate-900 text-white border-b border-slate-900 overflow-hidden`}>
-            <MeshGrid />
-            <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-15 blur-3xl pointer-events-none z-0" style={{ background: `radial-gradient(circle, ${theme.glowColor} 0%, transparent 70%)` }} />
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">
-              <div className="lg:col-span-7 flex flex-col gap-5">
-                <div className="flex items-center gap-3">
-                  <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-purple-500/10 text-purple-400 border border-purple-500/20">
-                    HIGH-PERFORMANCE CORE SYSTEMS
-                  </span>
-                  <div className="h-0.5 w-8 bg-slate-800 rounded-full"></div>
-                </div>
-                <h1 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-[1.2]">
-                  Custom Enterprise Software & <span className="text-purple-400">Cloud Portals</span>
-                </h1>
-                <p className="text-base md:text-lg font-semibold tracking-wide text-white">
-                  Cloud-native server architectures, high-concurrency databases, and custom API layers.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start mt-2">
-                  <div className="md:col-span-7 text-slate-355 text-sm leading-relaxed hidden md:block">
-                    We architect customized web systems, SaaS platforms, and distributed software databases built to handle high concurrent user traffic. Our developers prioritize TypeScript codebases, Docker containerization, and automated CI/CD configurations.
-                  </div>
-                  <div className="md:col-span-5 flex flex-col gap-3.5 bg-slate-900/40 p-4 rounded-xl border border-slate-808/85 backdrop-blur-sm">
-                    {service.metrics.map((metric, idx) => (
-                      <div key={idx} className="flex justify-between items-center border-b border-slate-850 pb-2 last:border-0 last:pb-0">
-                        <span className="text-[9px] text-slate-455 font-bold uppercase tracking-wider">{metric.label}</span>
-                        <span className="text-sm font-extrabold text-purple-400">{metric.value}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
 
-                <div className="flex flex-wrap gap-4 mt-2">
-                  <Link href="/contact" className="px-6 py-3 rounded-xl bg-orange-brand hover:bg-orange-brand-hover text-white font-bold text-sm shadow-lg shadow-orange-brand/20 transition-all flex items-center gap-2">
-                    Request Architecture Review <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="lg:col-span-5 relative w-full max-w-lg lg:max-w-none mx-auto">
-                <motion.div initial={{ x: 30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} className="border border-slate-800 rounded-2xl bg-slate-950/95 overflow-hidden shadow-2xl flex flex-col">
-                  <div className="bg-slate-900 px-4 py-3 border-b border-slate-855 flex items-center justify-between">
-                    <div className="flex gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                      <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                      <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                    </div>
-                    <span className="text-[10px] text-slate-500 font-mono flex items-center gap-1.5">
-                      <Terminal className="w-3.5 h-3.5" /> app_dev_architecture.ts
-                    </span>
-                    <div className="w-12" />
-                  </div>
-                  <div className="p-1.5 aspect-[4/3] relative w-full overflow-hidden bg-slate-900/40">
-                    <div className="relative w-full h-full rounded-lg overflow-hidden border border-slate-850">
-                      <Image src={serviceImg} alt={service.name} fill className="object-cover object-center" priority />
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-          </section>
-        );
 
       case "digital-marketing":
         return (
@@ -908,30 +826,30 @@ export default function ServiceDetailClient({
           </>
         );
 
-      case "website-designing":
+      case "web-development":
         return (
           <>
-            {/* Custom Section 1: Figma System Showcase */}
+            {/* Custom Section 1: Web Architecture Topology */}
             <section className="pt-8 md:pt-12 pb-14 md:pb-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="order-2 lg:order-1 relative rounded-2xl border border-slate-200 shadow-xl overflow-hidden bg-slate-950 p-2">
                   <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-slate-900">
-                    <Image src="/images/design_figma.png" alt="Figma Design Token System" fill className="object-cover" />
+                    <Image src="/images/web_topology.png" alt="High-Performance Full-Stack Web Architecture" fill className="object-cover" />
                   </div>
                 </div>
                 <div className="order-1 lg:order-2">
                   <h2 className="text-3xl font-medium text-slate-900 mb-6">
-                    Harmonized UI Component Libraries
+                    Modern Full-Stack Web Architectures & SSR Systems
                   </h2>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                    Visual consistency builds brand equity. We mock up every viewport design in Figma using scalable layout design grids, clear typographic variables (sans, mono, display), and consistent spacing rules before writing a single line of React code.
+                  <p className="text-slate-605 text-sm leading-relaxed mb-6">
+                    Custom web platforms require optimized rendering schemas. We structure Next.js full-stack applications with Server-Side Rendering (SSR) and Incremental Static Regeneration (ISR) to deliver rapid load speeds, dynamic edge routing, and seamless CMS content sync.
                   </p>
                   <ul className="flex flex-col gap-4">
                     {[
-                      "Custom wireframing and interactive UI flows",
-                      "Scalable visual component libraries and styles",
-                      "Harmonious custom color palettes matching brand guidelines",
-                      "Responsive grid systems mapped from 320px to 1920px width"
+                      "Next.js Server-Side Rendering (SSR) & Static Generation",
+                      "Headless CMS integration (Sanity, Strapi, Contentful)",
+                      "Edge Middleware authentication and localized routing",
+                      "API Gateway caching and serverless function scaling"
                     ].map((item, idx) => (
                       <li key={idx} className="flex gap-3 items-center text-sm font-semibold text-slate-700">
                         <CheckCircle className="w-4 h-4 text-cyan-500" />
@@ -943,83 +861,88 @@ export default function ServiceDetailClient({
               </div>
             </section>
 
-            {/* Custom Section 2: Core Web Vitals targets */}
+            {/* Custom Section 2: Technical Performance metrics */}
             <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                  <h2 className="text-3xl font-medium text-slate-900 mb-4">Core Web Vitals Performance Targets</h2>
-                  <p className="text-slate-600 text-sm">We optimize site script bundles, compress image assets, and use static site generation to guarantee fast site rendering speeds.</p>
+                  <h2 className="text-3xl font-medium text-slate-900 mb-4">Core Web Vitals & Performance Metrics</h2>
+                  <p className="text-slate-600 text-sm">We audit frontend telemetry, compress assets, and configure static caching to guarantee sub-second load times.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {[
-                    { metric: "LCP", title: "Largest Contentful Paint", target: "< 1.2s", desc: "Main visual page elements render immediately, reducing bounce rates and boosting SEO search ranks." },
-                    { metric: "FID", title: "First Input Delay", target: "< 10ms", desc: "Interactive inputs, links, and forms react instantly to click events without processing lag." },
-                    { metric: "CLS", title: "Cumulative Layout Shift", target: "0.0", desc: "Fixed fonts, spacing templates, and media constraints prevent page layout shifts during asset loads." }
-                  ].map((vit, idx) => (
-                    <div key={idx} className="p-8 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col gap-4">
-                      <div className="flex justify-between items-center">
-                        <span className="text-xs font-black text-cyan-500 bg-cyan-50 px-2.5 py-1 rounded-md border border-cyan-100">{vit.metric}</span>
-                        <span className="text-lg font-black text-slate-800">{vit.target}</span>
+                    { title: "Lighthouse Performance", val: "98% Score", icon: Cpu, desc: "Fast asset compression, deferred non-critical scripts, and auto-scaled images ensure elite performance scores." },
+                    { title: "Edge Cache Hit Ratio", val: "95.4% Hit", icon: Database, desc: "Vercel and Cloudflare CDN caching configurations offloading primary servers and loading pages instantly." },
+                    { title: "Core Web Vitals (LCP)", val: "< 1.2s LCP", desc: "Fluid layouts and server pre-rendering prevent layouts shifting, maximizing SEO search engine ranks." }
+                  ].map((param, idx) => {
+                    const ParamIcon = param.icon || Monitor;
+                    return (
+                      <div key={idx} className="p-8 bg-white border border-slate-200 rounded-2xl shadow-sm flex flex-col gap-4">
+                        <div className="flex justify-between items-center">
+                          <div className="w-10 h-10 rounded-lg bg-cyan-50 text-cyan-600 flex items-center justify-center border border-cyan-100">
+                            <ParamIcon className="w-5 h-5" />
+                          </div>
+                          <span className="text-base font-black text-slate-808">{param.val}</span>
+                        </div>
+                        <h3 className="font-extrabold text-slate-900 text-base">{param.title}</h3>
+                        <p className="text-xs text-slate-655 leading-relaxed">{param.desc}</p>
                       </div>
-                      <h3 className="font-extrabold text-slate-900 text-base">{vit.title}</h3>
-                      <p className="text-xs text-slate-605 leading-relaxed">{vit.desc}</p>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </section>
 
-            {/* Custom Section 3: High-Fidelity Design Sprint Workflow */}
+            {/* Custom Section 3: CMS & Content Sync */}
             <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
               <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-16">
                   <div className="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center shadow-sm border border-cyan-100 mb-4 mx-auto">
-                    <Activity className="w-5 h-5" />
+                    <Database className="w-5 h-5" />
                   </div>
-                  <h2 className="text-3xl font-medium text-slate-900">Sprint Workflow Pipeline</h2>
-                  <p className="text-slate-600 text-sm mt-3">From wireframe prototypes to high-performance Next.js container deployments.</p>
+                  <h2 className="text-3xl font-medium text-slate-900">Content Management & Integration</h2>
+                  <p className="text-slate-600 text-sm mt-3">Empowering marketing teams with headless CMS platforms while maintaining frontend speed.</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {[
-                    { phase: "Phase 01", title: "Wireframes", desc: "UX blueprints mapping conversion paths and structural grids." },
-                    { phase: "Phase 02", title: "Style Tokens", desc: "Defining UI palettes, font pairings, and responsive variables." },
-                    { phase: "Phase 03", title: "Interactive Mockups", desc: "Figma prototype reviews to lock layouts before coding starts." },
-                    { phase: "Phase 04", title: "React Deploy", desc: "High-performance React deployment on static edge CDNs." }
-                  ].map((sprint, idx) => (
+                    { title: "Headless CMS Pipelines", desc: "Direct API integration updating visual layout copy, blogs, and media without engineering commits." },
+                    { title: "Web Database Routing", desc: "Setting up Prisma ORM and PostgreSQL databases to scale secure transactions and user data profiles." },
+                    { title: "Edge Middleware Checking", desc: "Executing redirects, cookie sessions, and geolocated translations directly on edge servers." }
+                  ].map((rep, idx) => (
                     <div key={idx} className="p-6 bg-slate-50 border border-slate-200 rounded-xl flex flex-col gap-3">
-                      <span className="text-[10px] font-black text-cyan-600 uppercase tracking-widest">{sprint.phase}</span>
-                      <h4 className="text-sm font-bold text-slate-900">{sprint.title}</h4>
-                      <p className="text-xs text-slate-600 leading-relaxed">{sprint.desc}</p>
+                      <h4 className="text-sm font-bold text-slate-900">{rep.title}</h4>
+                      <p className="text-xs text-slate-600 leading-relaxed">{rep.desc}</p>
                     </div>
                   ))}
                 </div>
               </div>
             </section>
 
-            {/* Custom Section 4: Dynamic Conversion CRO Utilities */}
+            {/* Custom Section 4: Web CI/CD Pipelines */}
             <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-900 text-white relative z-10 border-b border-slate-950">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                  <h2 className="text-3xl font-medium text-white mb-4">Conversion Rate Optimization Features</h2>
-                  <p className="text-slate-400 text-sm">We implement frontend features built to simplify paths and increase lead actions.</p>
+                  <h2 className="text-3xl font-medium text-white mb-4">Modern Web CI/CD & Edge Deployments</h2>
+                  <p className="text-slate-400 text-sm">Every push runs tests, compiles visual previews, and deploys to global edge servers without site downtime.</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                   {[
-                    { title: "Sticky Action CTAs", details: "Conversion buttons that remain accessible at the screen edge during scroll actions." },
-                    { title: "Auto-fill Form Loops", details: "Smart autocomplete configurations reducing keystrokes and simplifying inputs." },
-                    { title: "Edge Prefetched Routes", details: "Next.js routing prefetching links to load pages instantly." }
-                  ].map((cro, idx) => (
-                    <div key={idx} className="p-8 bg-slate-900 border border-slate-800 rounded-2xl flex flex-col gap-4">
-                      <Zap className="w-8 h-8 text-cyan-400" />
-                      <h3 className="font-extrabold text-base text-white">{cro.title}</h3>
-                      <p className="text-xs text-slate-400 leading-relaxed">{cro.details}</p>
+                    { step: "Step 01", title: "Git Push Trigger", desc: "Developers merge clean React and TypeScript code, activating the automated deployment pipeline." },
+                    { step: "Step 02", title: "Preview Compilation", desc: "Building isolated staging previews to verify styles and functionality before merging." },
+                    { step: "Step 03", title: "Lighthouse Audits", desc: "Running headless scripts testing performance, SEO, accessibility, and clean markup guidelines." },
+                    { step: "Step 04", title: "Edge Production Promote", desc: "Promoting the clean build to the live Vercel/Cloudflare CDN edge in milliseconds." }
+                  ].map((cicd, idx) => (
+                    <div key={idx} className="p-6 bg-slate-900 border border-slate-800 rounded-xl flex flex-col gap-3">
+                      <GitBranch className="w-5 h-5 text-cyan-400" />
+                      <span className="text-[10px] font-black text-cyan-400 uppercase tracking-widest leading-none mt-1">{cicd.step}</span>
+                      <h4 className="text-sm font-bold text-white leading-none">{cicd.title}</h4>
+                      <p className="text-xs text-slate-400 leading-relaxed">{cicd.desc}</p>
                     </div>
                   ))}
                 </div>
               </div>
             </section>
 
-            {/* Custom Section 5: Implementation Process Roadmap */}
+            {/* Custom Section 5: Web Engineering Lifecycle Roadmap */}
             <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-16">
@@ -1027,7 +950,7 @@ export default function ServiceDetailClient({
                     OUR ROADMAP
                   </span>
                   <h2 className="text-3xl font-medium text-slate-900 mt-4">
-                    From Concept to Production CDN
+                    High-End Web Engineering Lifecycle
                   </h2>
                   <p className="text-slate-600 text-sm mt-3">
                     Our creative and engineering journey from low-fidelity wireframes to rapid edge-delivered pages.
@@ -1037,26 +960,26 @@ export default function ServiceDetailClient({
                   {[
                     {
                       step: "01",
-                      title: "UX & Interface Flow",
-                      desc: "Interactive user flow mockups and site maps focusing on optimal navigation paths.",
-                      icon: Compass
+                      title: "UX & Content Schema",
+                      desc: "Designing Figma interactive flows and structuring content relation blueprints for headless APIs.",
+                      icon: Database
                     },
                     {
                       step: "02",
-                      title: "Design Token Figma System",
-                      desc: "Establishing visual styling systems, custom colors, typography tokens, and wireframes.",
-                      icon: Layers
+                      title: "Full-Stack System Setup",
+                      desc: "Configuring Next.js API structures, secure database ORMs, and authorization boundaries.",
+                      icon: Server
                     },
                     {
                       step: "03",
-                      title: "React & Next.js Coding",
-                      desc: "Writing clean React component structures with fluid, responsive Framer Motion animations.",
+                      title: "Frontend Development",
+                      desc: "Writing component layouts integrated with clean responsive grids and smooth Framer Motion accents.",
                       icon: Code
                     },
                     {
                       step: "04",
-                      title: "SEO & Edge Deploy",
-                      desc: "Optimizing script load metrics, adding metadata schemas, and deploying to global hosting CDNs.",
+                      title: "Edge Launch & SEO",
+                      desc: "Verifying metadata structures, compiling assets to CDNs, and activating production edge routing.",
                       icon: Globe
                     }
                   ].map((proc, idx) => {
@@ -1283,193 +1206,7 @@ export default function ServiceDetailClient({
           </>
         );
 
-      case "application-development":
-        return (
-          <>
-            {/* Custom Section 1: Kubernetes Cluster Scaling */}
-            <section className="pt-8 md:pt-12 pb-14 md:pb-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
-              <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div className="order-2 lg:order-1 relative rounded-2xl border border-slate-200 shadow-xl overflow-hidden bg-slate-950 p-2">
-                  <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-slate-900">
-                    <Image src="/images/app_topology.png" alt="Kubernetes Infrastructure Node Scaling" fill className="object-cover" />
-                  </div>
-                </div>
-                <div className="order-1 lg:order-2">
-                  <h2 className="text-3xl font-medium text-slate-900 mb-6">
-                    High-Availability Cloud Containerization
-                  </h2>
-                  <p className="text-slate-605 text-sm leading-relaxed mb-6">
-                    Distributed web software requires robust scaling rules. We containerize code logic into separate microservices using Docker, orchestrating resource pools inside Kubernetes clusters across AWS and Google Cloud systems.
-                  </p>
-                  <ul className="flex flex-col gap-4">
-                    {[
-                      "Docker container isolation for microservices",
-                      "Kubernetes automated autoscaling configurations",
-                      "Nginx and Cloudflare API load balancing pipelines",
-                      "Multi-region database master-replica failovers"
-                    ].map((item, idx) => (
-                      <li key={idx} className="flex gap-3 items-center text-sm font-semibold text-slate-700">
-                        <CheckCircle className="w-4 h-4 text-purple-500" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </section>
 
-            {/* Custom Section 2: Technical API Telemetry Schema */}
-            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
-              <div className="max-w-7xl mx-auto">
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                  <h2 className="text-3xl font-medium text-slate-900 mb-4">Core API Scaling Parameters</h2>
-                  <p className="text-slate-600 text-sm">We audit REST and GraphQL response schemas to maintain high availability and sub-millisecond latencies.</p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {[
-                    { title: "Query Latency", val: "8.4ms Avg", icon: Cpu, desc: "Fast SQL queries structured with indexes, read-replicas, and optimized table join procedures." },
-                    { title: "Cache Hit Ratio", val: "94.2% Hit", icon: Database, desc: "Redis caching configurations capturing high-frequency reads and offloading primary databases." },
-                    { title: "API Availability", val: "99.99% Uptime", icon: Globe, desc: "API container failovers across multiple availability zones under load balancers." }
-                  ].map((param, idx) => {
-                    const ParamIcon = param.icon;
-                    return (
-                      <div key={idx} className="p-8 bg-white border border-slate-200 rounded-2xl shadow-sm flex flex-col gap-4">
-                        <div className="flex justify-between items-center">
-                          <div className="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center border border-purple-100">
-                            <ParamIcon className="w-5 h-5" />
-                          </div>
-                          <span className="text-base font-black text-slate-808">{param.val}</span>
-                        </div>
-                        <h3 className="font-extrabold text-slate-900 text-base">{param.title}</h3>
-                        <p className="text-xs text-slate-655 leading-relaxed">{param.desc}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </section>
-
-            {/* Custom Section 3: Automated Database Replication & Backup Scheduling */}
-            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
-              <div className="max-w-4xl mx-auto">
-                <div className="text-center mb-16">
-                  <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shadow-sm border border-purple-100 mb-4 mx-auto">
-                    <Database className="w-5 h-5" />
-                  </div>
-                  <h2 className="text-3xl font-medium text-slate-900">Database Replication Schemes</h2>
-                  <p className="text-slate-600 text-sm mt-3">Ensuring zero data loss and automated backups for business continuity.</p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {[
-                    { title: "Master-Replica Routing", desc: "Directing heavy read operations to replica nodes to prevent write transaction blockages." },
-                    { title: "Point-in-Time Recovery", desc: "Automating snapshotting arrays saving database state increments to secure AWS S3 buckets." },
-                    { title: "Failover Orchestrations", desc: "Automatic system redirection to backup database replicas when primary nodes drop." }
-                  ].map((rep, idx) => (
-                    <div key={idx} className="p-6 bg-slate-50 border border-slate-200 rounded-xl flex flex-col gap-3">
-                      <h4 className="text-sm font-bold text-slate-900">{rep.title}</h4>
-                      <p className="text-xs text-slate-600 leading-relaxed">{rep.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* Custom Section 4: CI/CD GitHub Action Pipelines */}
-            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-900 text-white relative z-10 border-b border-slate-950">
-              <div className="max-w-7xl mx-auto">
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                  <h2 className="text-3xl font-medium text-white mb-4">CI/CD Deployment Automation</h2>
-                  <p className="text-slate-400 text-sm">Every push runs tests, packages builds, and updates cloud servers without site downtime.</p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                  {[
-                    { step: "Step 01", title: "Git Push Trigger", desc: "Developers merge clean TypeScript code, activating the automated GitHub Action runner." },
-                    { step: "Step 02", title: "Test & Lint Suite", desc: "Running unit test checks and code formatting verification scripts to prevent bugs." },
-                    { step: "Step 03", title: "Docker Container Push", desc: "Compiling the code build, packaging it as a docker image, and pushing to secure registries." },
-                    { step: "Step 04", title: "ECS Rolling Deploy", desc: "Updating the active containers on AWS with zero request downtime." }
-                  ].map((cicd, idx) => (
-                    <div key={idx} className="p-6 bg-slate-900 border border-slate-800 rounded-xl flex flex-col gap-3">
-                      <GitBranch className="w-5 h-5 text-purple-400" />
-                      <span className="text-[10px] font-black text-purple-400 uppercase tracking-widest leading-none mt-1">{cicd.step}</span>
-                      <h4 className="text-sm font-bold text-white leading-none">{cicd.title}</h4>
-                      <p className="text-xs text-slate-400 leading-relaxed">{cicd.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* Custom Section 5: Implementation Process Roadmap */}
-            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
-              <div className="max-w-7xl mx-auto">
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                  <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-purple-500/10 text-purple-600 border border-purple-500/20">
-                    OUR ROADMAP
-                  </span>
-                  <h2 className="text-3xl font-medium text-slate-900 mt-4">
-                    Robust Enterprise System Development
-                  </h2>
-                  <p className="text-slate-600 text-sm mt-3">
-                    Architecting distributed servers, clustered databases, and CI/CD pipelines under auto-scaling guidelines.
-                  </p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                  {[
-                    {
-                      step: "01",
-                      title: "Database & API Design",
-                      desc: "Designing SQL relations, indexes, and schema plans alongside GraphQL endpoints.",
-                      icon: Database
-                    },
-                    {
-                      step: "02",
-                      title: "Containerized Coding",
-                      desc: "Structuring server APIs inside Docker containers integrated with Redis caches.",
-                      icon: Server
-                    },
-                    {
-                      step: "03",
-                      title: "Kubernetes Scaling",
-                      desc: "Configuring horizontal pod scaling templates inside isolated cloud server clusters.",
-                      icon: Cpu
-                    },
-                    {
-                      step: "04",
-                      title: "CI/CD Action Pipelines",
-                      desc: "Enforcing automated syntaxes, running unit tests, and executing rolling app updates.",
-                      icon: GitBranch
-                    }
-                  ].map((proc, idx) => {
-                    const ProcIcon = proc.icon;
-                    return (
-                      <div 
-                        key={idx} 
-                        className="group p-8 bg-white border border-slate-200 rounded-2xl shadow-xs hover:border-purple-500/30 hover:shadow-md transition-all duration-300 flex flex-col justify-between"
-                      >
-                        <div>
-                          <div className="flex justify-between items-start mb-6">
-                            <div className="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center border border-purple-100/50 group-hover:bg-purple-500 group-hover:text-white transition-all duration-300">
-                              <ProcIcon className="w-5 h-5" />
-                            </div>
-                            <span className="text-xs font-black text-slate-355 group-hover:text-purple-500 transition-colors duration-300">
-                              STEP {proc.step}
-                            </span>
-                          </div>
-                          <h3 className="font-extrabold text-slate-800 text-base mb-2 group-hover:text-slate-900">
-                            {proc.title}
-                          </h3>
-                          <p className="text-xs text-slate-500 leading-relaxed">
-                            {proc.desc}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </section>
-          </>
-        );
 
       case "digital-marketing":
         return (

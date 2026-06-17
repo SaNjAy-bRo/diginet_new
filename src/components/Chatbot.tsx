@@ -23,20 +23,15 @@ const services = {
     title: "Cybersecurity & Zero-Trust Engineering",
     heroSubtitle: "Enterprise Zero-Trust networks, cloud firewall configurations, micro-segmentation, active threat isolation, and rigorous penetration audits aligning with GDPR/DPDPA standards."
   },
-  "website-designing": {
-    slug: "website-designing",
-    title: "Web Architecture & Conversions",
-    heroSubtitle: "High-conversion web platforms featuring fluid Framer Motion micro-animations, Tailwind custom styling layouts, optimized script execution, and guaranteed 95+ PageSpeed scores."
+  "web-development": {
+    slug: "web-development",
+    title: "Web Development & Conversions",
+    heroSubtitle: "High-conversion web platforms featuring Server-Side Rendering (SSR), Headless CMS API connections, edge performance optimizations, and guaranteed 95+ PageSpeed scores."
   },
   "mobile-development": {
     slug: "mobile-development",
     title: "Native & Hybrid Mobile Apps",
     heroSubtitle: "Custom iOS & Android mobile applications engineered using Swift/Kotlin or high-performance cross-platform SDKs (React Native, Flutter) with native biometrics and offline sync."
-  },
-  "application-development": {
-    slug: "application-development",
-    title: "Enterprise Software & Cloud Systems",
-    heroSubtitle: "Scalable backend services, custom SaaS development, high-concurrency database setups, APIs integration, and cloud migrations (AWS, GCP, Azure)."
   },
   "digital-marketing": {
     slug: "digital-marketing",
@@ -660,7 +655,7 @@ export default function Chatbot() {
       addMessage({ 
         sender: "bot", 
         text: "Excellent. Let's capture your project requirements first.\n\nWhich of our key capabilities is the primary focus of this project inquiry?",
-        options: ["Cybersecurity", "App/Software Engineering", "Website Designing", "Growth Marketing"] 
+        options: ["Cybersecurity", "Web Development", "Mobile Development", "Growth Marketing"] 
       });
       return;
     }
@@ -670,7 +665,7 @@ export default function Chatbot() {
       addMessage({
         sender: "bot",
         text: "What domain of DIGINET solutions would you like to review?",
-        options: ["Cybersecurity", "App Eng", "Web Design", "Marketing", "Consultation"],
+        options: ["Cybersecurity", "Web Dev", "Mobile Dev", "Marketing", "Consultation"],
       });
       return;
     }
@@ -701,12 +696,12 @@ export default function Chatbot() {
     }
 
     // --- BROAD CATEGORY CHECKS ---
-    if (lowerText.includes("web") || lowerText.includes("site") || lowerText.includes("design")) {
-      setSelectedServices(prev => Array.from(new Set([...prev, "Website Designing"])));
+    if (lowerText.includes("web") || lowerText.includes("site") || lowerText.includes("design") || lowerText.includes("development") || lowerText.includes("dev")) {
+      setSelectedServices(prev => Array.from(new Set([...prev, "Web Development"])));
       addMessage({
         sender: "bot",
-        text: "We design and deploy premium corporate web layouts with optimized Core Web Vitals (Framer Motion, Tailwind, 95+ PageSpeed scores). Do you need a design build or site audit?",
-        options: ["Website Designing", "Consultation"],
+        text: "We engineer premium, high-conversion full-stack web platforms with optimized rendering speeds and headless CMS integration. Do you need a web build or site audit?",
+        options: ["Web Development", "Consultation"],
       });
       return;
     }
@@ -731,20 +726,20 @@ export default function Chatbot() {
       return;
     }
 
-    if (lowerText.includes("app") || lowerText.includes("software") || lowerText.includes("dev") || lowerText.includes("code") || lowerText.includes("mobile") || lowerText.includes("android") || lowerText.includes("ios") || lowerText.includes("backend")) {
-      setSelectedServices(prev => Array.from(new Set([...prev, "Application Development"])));
+    if (lowerText.includes("app") || lowerText.includes("mobile") || lowerText.includes("android") || lowerText.includes("ios")) {
+      setSelectedServices(prev => Array.from(new Set([...prev, "Mobile Development"])));
       addMessage({
         sender: "bot",
-        text: "We build native/hybrid mobile apps (React Native, Flutter) and enterprise backend software with distributed database configurations. What are your architectural requirements?",
-        options: ["Application Development", "Mobile Development", "Consultation"],
+        text: "We build premium native and hybrid mobile applications (Swift, Kotlin, React Native, Flutter) with native biometrics and offline synchronization. What are your mobile requirements?",
+        options: ["Mobile Development", "Consultation"],
       });
       return;
     }
 
     addMessage({
       sender: "bot",
-      text: "I am trained to support queries on Pricing, Support/SLAs, Tech Stack, Cybersecurity, App Engineering, Custom Web Architectures, and B2B PPC Marketing. How can I assist you?",
-      options: ["Cybersecurity", "App Eng", "Web Design", "Marketing", "Consultation"],
+      text: "I am trained to support queries on Pricing, Support/SLAs, Tech Stack, Cybersecurity, Web Development, Mobile Development, and B2B PPC Growth Marketing. How can I assist you?",
+      options: ["Cybersecurity", "Web Dev", "Mobile Dev", "Marketing", "Consultation"],
     });
   };
 
@@ -761,17 +756,17 @@ export default function Chatbot() {
             text: "Understood. Are there specific compliance frameworks or audits required for your systems?",
             options: ["GDPR / PDPA / DPDPA Compliance", "SOC 2 / ISO 27001", "HIPAA Compliance", "General Infrastructure Audit"]
           });
-        } else if (val.includes("Engineering") || val.includes("App")) {
+        } else if (val.includes("Mobile") || val.includes("App")) {
           addMessage({
             sender: "bot",
-            text: "Excellent. What is the target platform for your software product?",
-            options: ["Mobile App (iOS/Android)", "SaaS Web Platform", "Enterprise System / Cloud Migration", "Custom API / Database Setup"]
+            text: "Excellent. What is the target platform for your mobile application?",
+            options: ["Native iOS App (Swift)", "Native Android App (Kotlin)", "Cross-Platform App (React Native/Flutter)", "Hybrid Application Audit"]
           });
-        } else if (val.includes("Designing") || val.includes("Web")) {
+        } else if (val.includes("Development") || val.includes("Web")) {
           addMessage({
             sender: "bot",
-            text: "Got it. Are we designing a brand-new corporate site, or performing an optimization audit?",
-            options: ["Brand-New Corporate Website", "Full Web Redesign", "Page Speed & CLS Audit", "E-commerce Build"]
+            text: "Got it. Are we building a brand-new full-stack platform, or performing a speed optimization audit?",
+            options: ["Brand-New Full-Stack Site", "Full Web Redesign", "Page Speed & Core Web Vitals Audit", "Headless CMS / E-commerce Build"]
           });
         } else {
           addMessage({

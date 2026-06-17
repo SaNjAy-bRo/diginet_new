@@ -53,25 +53,6 @@ const serviceDetails: Record<string, {
       { label: "Active Store Downloads", value: "2.4M+" }
     ]
   },
-  "application-development": {
-    name: "Application Development",
-    tagline: "High-Performance Cloud-Native Software & Distributed Mobile Apps",
-    icon: AppWindow,
-    description: "We engineer custom software, web platforms, and mobile apps built to survive high concurrent loads. We focus on clean REST/GraphQL APIs, zero-latency server states, and database safety.",
-    features: [
-      { title: "Custom Web Applications", desc: "Scalable corporate portals and SaaS structures using React, Next.js, and TypeScript." },
-      { title: "Mobile Engineering", desc: "High-performance native apps for iOS (Swift) and Android (Kotlin) or cross-platform framework arrays." },
-      { title: "Database Architecture", desc: "Optimized SQL/NoSQL schemas with high concurrency capability and automated backups." },
-      { title: "Cloud Integration", desc: "Automated scaling policies, secure IAM configs, and load balancing on AWS/GCP." }
-    ],
-    techStack: ["TypeScript / Node.js", "React / Next.js", "PostgreSQL / Redis", "Amazon Web Services (AWS)", "Docker & Kubernetes", "GitHub Actions CI/CD", "GraphQL API Schema"],
-    workflow: ["Requirement Specification", "Architecture Mockups", "Agile Coding & Iterations", "CI/CD Pipeline Deployment"],
-    metrics: [
-      { label: "Database Response Rate", value: "8.4ms" },
-      { label: "Build Delivery Time", value: "-40%" },
-      { label: "Concurrent User Capability", value: "50K+" }
-    ]
-  },
   "cybersecurity": {
     name: "Cybersecurity Solutions",
     tagline: "Zero-Trust Infrastructure Protection & Vulnerability Isolation",
@@ -91,34 +72,32 @@ const serviceDetails: Record<string, {
       { label: "Data Leak Ratio", value: "0.0%" }
     ]
   },
-  "website-designing": {
-    name: "Website Designing",
-    tagline: "Elite UI/UX Design Meeting High-End Engineering Standards",
+  "web-development": {
+    name: "Web Development",
+    tagline: "Elite Web Architectures & Custom Full-Stack Solutions",
     icon: Monitor,
-    description: "Your corporate website is your brand's digital headquarters. We design bespoke, fast websites that combine interactive micro-animations with excellent readability and accessibility (WCAG).",
+    description: "We engineer custom web platforms, scalable SaaS architectures, and high-performance frontends. We focus on clean code, optimized Core Web Vitals, headless CMS, and secure APIs.",
     features: [
-      { title: "UI/UX Prototyping", desc: "Sleek wireframes and interactive mockups constructed in Figma before a single line of code is written." },
-      { title: "Responsive Layouts", desc: "Fluid animations and content grid adjustments across desktop, tablet, and mobile displays." },
-      { title: "Speed Engineering", desc: "Optimized core web vitals, compressed assets delivery, and server-side static rendering." },
-      { title: "Interactive Mechanics", desc: "Modern micro-animations, glassmorphic accents, and seamless view-transitions." }
+      { title: "Full-Stack Development", desc: "Robust and scalable web platforms built with React, Next.js, and modern backend frameworks." },
+      { title: "Headless CMS Integration", desc: "Flexible content schemas using Sanity, Strapi, or Contentful to empower marketing teams." },
+      { title: "Speed & Performance", desc: "Optimizing Core Web Vitals, edge CDN caching, and server-side rendering for instant loads." },
+      { title: "API & System Integration", desc: "Secure REST/GraphQL API connections syncing web actions to your database and CRM." }
     ],
-    techStack: ["Figma Design", "Framer Motion", "Tailwind CSS", "Next.js Framework", "Vercel Edge Network", "Lottie Animations", "A11y Compliance Engine"],
-    workflow: ["UX Strategy & Wireframing", "UI System Designing", "Front-end Development", "Performance Optimization"],
+    techStack: ["Next.js Framework", "React / TypeScript", "Tailwind CSS", "Node.js / Express", "Headless CMS (Sanity/Strapi)", "Vercel Edge Network", "PostgreSQL / Prisma"],
+    workflow: ["UX Strategy & Wireframing", "System & API Architecture", "Frontend & Full-Stack Coding", "SEO & Launch Optimization"],
     metrics: [
-      { label: "Google PageSpeed Core Score", value: "99/100" },
-      { label: "Bounce Rate Reduce", value: "-25%" },
-      { label: "Mobile Conversion Rate", value: "+38%" }
+      { label: "Google PageSpeed Score", value: "99/100" },
+      { label: "Bounce Rate Reduction", value: "-30%" },
+      { label: "Average Load Time", value: "0.8s" }
     ]
   }
 };
 
 const serviceImages: Record<string, string> = {
   "cybersecurity": "/images/service_cyber.png",
-  "website-designing": "/images/service_design.png",
+  "web-development": "/images/service_design.png",
   "mobile-development": "/images/service_mobile_mockup.png",
-  "application-development": "/images/service_appdev.png",
   "digital-marketing": "/images/service_marketing.png",
-
 };
 
 // Vibe mapping according to service slug
@@ -138,7 +117,7 @@ const serviceThemes: Record<string, {
     pillBorder: "border-emerald-500/20 hover:border-emerald-400/50",
     glowColor: "#10b981"
   },
-  "website-designing": {
+  "web-development": {
     accentText: "text-cyan-400",
     accentBg: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
     gradientHero: "from-cyan-950 via-slate-900 to-slate-950",
@@ -154,14 +133,6 @@ const serviceThemes: Record<string, {
     pillBorder: "border-indigo-500/20 hover:border-indigo-400/50",
     glowColor: "#6366f1"
   },
-  "application-development": {
-    accentText: "text-purple-400",
-    accentBg: "bg-purple-500/10 text-purple-400 border-purple-500/20",
-    gradientHero: "from-purple-950 via-slate-900 to-slate-950",
-    themeColor: "purple",
-    pillBorder: "border-purple-500/20 hover:border-purple-400/50",
-    glowColor: "#a855f7"
-  },
   "digital-marketing": {
     accentText: "text-sky-400",
     accentBg: "bg-sky-500/10 text-sky-400 border-sky-500/20",
@@ -170,7 +141,6 @@ const serviceThemes: Record<string, {
     pillBorder: "border-sky-500/20 hover:border-sky-400/50",
     glowColor: "#0ea5e9"
   },
-
 };
 
 export default async function ServiceDetail({

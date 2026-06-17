@@ -20,8 +20,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "DIGINET | Corporate IT Solutions & Digital Services",
-  description: "DIGINET is a premier IT consulting and digital marketing agency offering high-end cybersecurity, custom application development, and website designing.",
-  keywords: ["IT Solutions", "Digital Marketing", "Cybersecurity", "Web Design", "App Development"],
+  description: "DIGINET is a premier IT consulting and digital marketing agency offering high-end cybersecurity, custom web development, and mobile app engineering.",
+  keywords: ["IT Solutions", "Digital Marketing", "Cybersecurity", "Web Development", "Mobile App Development"],
 };
 
 export default function RootLayout({
