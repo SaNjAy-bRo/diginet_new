@@ -4,7 +4,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { 
   Briefcase, MapPin, Clock, ArrowRight, Heart, Calendar, 
-  Coffee, Gamepad2, Activity, ShieldCheck, Users2, Building2 
+  Coffee, Gamepad2, Activity, ShieldCheck, Users2, Building2,
+  Sparkles, TrendingUp, Target 
 } from "lucide-react";
 import { useBooking } from "@/context/BookingContext";
 import Image from "next/image";
@@ -129,135 +130,83 @@ export default function CareerPage() {
       </section>
 
       {/* ==========================================
-          2. NICE TO MEET YOU (Bento Collage Grid)
+          2. CULTURE & VALUES SECTION (Modern Grid)
           ========================================== */}
-      <section className="py-16 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
-        <div className="max-w-[1280px] mx-auto text-center">
+      <section className="py-20 md:py-28 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100 overflow-hidden">
+        {/* Decorative background gradients */}
+        <div className="absolute top-1/4 left-[10%] w-[300px] h-[300px] rounded-full bg-cyan-100/30 blur-[80px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-[10%] w-[300px] h-[300px] rounded-full bg-blue-100/20 blur-[80px] pointer-events-none" />
+
+        <div className="max-w-[1280px] mx-auto">
           
-          <div className="max-w-3xl mx-auto mb-12">
-            <span className="text-[10px] font-extrabold uppercase tracking-widest text-cyan-600 mb-3 block">
-              Our Culture
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <span className="text-[10px] font-extrabold uppercase tracking-widest text-cyan-600 mb-3 block font-poppins">
+              Life at Diginet
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-medium text-slate-900 mb-6 font-poppins leading-[1.15]">
-              Nice to Meet You
+            <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-medium text-slate-900 mb-6 font-poppins leading-[1.15] tracking-tight">
+              Our Core Pillars & Culture
             </h2>
-            <p className="text-sm md:text-base text-slate-655 leading-relaxed mb-4 font-medium">
-              There are many IT companies in Singapore, but none quite like Diginet. We&apos;ve been around for many years, but you wouldn&apos;t guess it from the energy in the office. Along the way, we have globalized, built trust from all of our customers, and assembled a team of thinkers, developers, and support specialists.
+            <p className="text-sm md:text-base text-slate-500 leading-relaxed font-normal max-w-2xl mx-auto">
+              We&apos;re building the next generation of IT solutions. Our culture is defined by collaboration, curiosity, and a relentless pursuit of excellence. Join us and shape the future of enterprise technology.
             </p>
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 px-6 py-2.5 rounded-full font-bold text-xs shadow-md transition-all duration-300 bg-slate-900 text-white hover:bg-slate-800 hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2"
-            >
-              Follow us on LinkedIn
-              <ArrowRight className="w-4 h-4" />
-            </a>
           </div>
 
-          {/* Bento Grid Collage */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            
-            {/* 1. Collaboration (spans 2 cols, Row 1) */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="col-span-2 relative p-1.5 rounded-2xl border border-slate-200 bg-slate-50 shadow-sm overflow-hidden group hover:shadow-lg hover:border-cyan-400/30 transition-all duration-300 h-48 md:h-64"
-            >
-              <div className="relative w-full h-full rounded-xl overflow-hidden">
-                <Image
-                  src="/images/career_team_collaboration.png"
-                  alt="DIGINET Collaboration"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                  sizes="(max-w-768px) 100vw, 500px"
-                />
-                <div className="absolute inset-0 bg-slate-950/15 z-10 transition-opacity duration-300 group-hover:opacity-0" />
-              </div>
-            </motion.div>
-
-            {/* 2. Glass Office Building Facade (spans 1 col, Rows 1-2) */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="row-span-2 relative p-1.5 rounded-2xl border border-slate-200 bg-slate-50 shadow-sm overflow-hidden group hover:shadow-lg hover:border-cyan-400/30 transition-all duration-300 h-full min-h-[400px] md:min-h-[544px]"
-            >
-              <div className="relative w-full h-full rounded-xl overflow-hidden">
-                <Image
-                  src="/images/career_building.png"
-                  alt="DIGINET Corporate HQ Building"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                  sizes="250px"
-                />
-                <div className="absolute inset-0 bg-slate-950/15 z-10 transition-opacity duration-300 group-hover:opacity-0" />
-              </div>
-            </motion.div>
-
-            {/* 3. Whiteboard Meeting (spans 1 col, Row 1) */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="col-span-1 relative p-1.5 rounded-2xl border border-slate-200 bg-slate-50 shadow-sm overflow-hidden group hover:shadow-lg hover:border-cyan-400/30 transition-all duration-300 h-48 md:h-64"
-            >
-              <div className="relative w-full h-full rounded-xl overflow-hidden">
-                <Image
-                  src="/images/career_meeting.png"
-                  alt="Whiteboard Team Meeting"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                  sizes="250px"
-                />
-                <div className="absolute inset-0 bg-slate-950/15 z-10 transition-opacity duration-300 group-hover:opacity-0" />
-              </div>
-            </motion.div>
-
-            {/* 4. Team Portrait (spans 2 cols, Row 2) */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.25 }}
-              className="col-span-2 relative p-1.5 rounded-2xl border border-slate-200 bg-slate-50 shadow-sm overflow-hidden group hover:shadow-lg hover:border-cyan-400/30 transition-all duration-300 h-48 md:h-64"
-            >
-              <div className="relative w-full h-full rounded-xl overflow-hidden">
-                <Image
-                  src="/images/why_choose_us_team.png"
-                  alt="DIGINET Team Group Portrait"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                  sizes="(max-w-768px) 100vw, 500px"
-                />
-                <div className="absolute inset-0 bg-slate-950/15 z-10 transition-opacity duration-300 group-hover:opacity-0" />
-              </div>
-            </motion.div>
-
-            {/* 5. Corporate Handshake (spans 1 col, Row 2) */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-              className="col-span-1 relative p-1.5 rounded-2xl border border-slate-200 bg-slate-50 shadow-sm overflow-hidden group hover:shadow-lg hover:border-cyan-400/30 transition-all duration-300 h-48 md:h-64"
-            >
-              <div className="relative w-full h-full rounded-xl overflow-hidden">
-                <Image
-                  src="/images/career_handshake.png"
-                  alt="Trust and Partnership Handshake"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                  sizes="250px"
-                />
-                <div className="absolute inset-0 bg-slate-950/15 z-10 transition-opacity duration-300 group-hover:opacity-0" />
-              </div>
-            </motion.div>
-
+          {/* Pillars Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                title: "Continuous Innovation",
+                desc: "We push boundaries and explore modern frameworks, AI integrations, and cloud architectures to build solutions that set new industry standards.",
+                icon: Sparkles,
+                color: "text-cyan-500",
+                border: "hover:border-cyan-400/50",
+                glow: "hover:shadow-[0_15px_30px_-5px_rgba(6,182,212,0.1)]"
+              },
+              {
+                title: "Growth & Mentorship",
+                desc: "Your learning path matters to us. We sponsor certifications, conduct regular workshops, and run technical peer reviews to level up your career.",
+                icon: TrendingUp,
+                color: "text-blue-500",
+                border: "hover:border-blue-400/50",
+                glow: "hover:shadow-[0_15px_30px_-5px_rgba(59,130,246,0.1)]"
+              },
+              {
+                title: "Collaborative Spirit",
+                desc: "We believe in cross-functional synergy, open feedback loops, and zero bureaucracy. We share ownership, build trust, and win together.",
+                icon: Users2,
+                color: "text-indigo-500",
+                border: "hover:border-indigo-400/50",
+                glow: "hover:shadow-[0_15px_30px_-5px_rgba(99,102,241,0.1)]"
+              },
+              {
+                title: "Customer Impact",
+                desc: "The platforms we engineer support critical services. Every feature and line of code you write directly empowers businesses across Southeast Asia.",
+                icon: Target,
+                color: "text-emerald-500",
+                border: "hover:border-emerald-400/50",
+                glow: "hover:shadow-[0_15px_30px_-5px_rgba(16,185,129,0.1)]"
+              }
+            ].map((pillar, idx) => {
+              const IconComp = pillar.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  className={`p-8 rounded-[24px] border border-slate-200/60 bg-white text-left transition-all duration-300 ${pillar.border} ${pillar.glow} group hover:-translate-y-1`}
+                >
+                  <div className={`w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300`}>
+                    <IconComp className={`w-6 h-6 ${pillar.color}`} />
+                  </div>
+                  <h3 className="text-base font-bold text-slate-900 mb-3 font-poppins">{pillar.title}</h3>
+                  <p className="text-xs md:text-sm text-slate-500 leading-relaxed font-normal">
+                    {pillar.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
 
         </div>
