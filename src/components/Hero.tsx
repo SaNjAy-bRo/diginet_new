@@ -33,12 +33,11 @@ export default function Hero() {
           {/* ===== LEFT: Text Content ===== */}
           <div className="flex flex-col text-center lg:text-left items-center lg:items-start relative z-10 lg:max-w-[540px]">
 
-            {/* Tagline — no background */}
             <motion.span
-              className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-sky-400 mb-4"
+              className="text-xs md:text-[13px] font-bold uppercase tracking-[0.2em] text-sky-400 mb-4"
               custom={0} variants={fadeUp} initial="hidden" animate="visible"
             >
-              Software • IT Solutions • Digital Marketing
+              AI • IT Service • Digital Marketing
             </motion.span>
 
             {/* Main Heading — exactly 2 lines on desktop */}
