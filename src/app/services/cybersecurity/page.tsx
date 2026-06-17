@@ -303,7 +303,7 @@ export default function CybersecurityPage() {
             <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-cyan-500 mb-2.5">
               Our Core Cyber Security Services
             </span>
-            <h2 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight leading-tight font-poppins">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight font-poppins">
               Comprehensive Protection Across Every Layer
             </h2>
           </div>
@@ -386,7 +386,7 @@ export default function CybersecurityPage() {
               <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-cyan-400 mb-2">
                 ALWAYS ON. ALWAYS PROTECTING.
               </span>
-              <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight leading-tight font-poppins mb-4">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-tight font-poppins mb-4">
                 24/7 Security Operations Center
               </h2>
               <p className="text-xs md:text-sm text-slate-400 leading-relaxed mb-6 max-w-[340px]">
@@ -453,9 +453,9 @@ export default function CybersecurityPage() {
             <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-cyan-500 mb-2.5">
               OUR SECURITY CAPABILITIES
             </span>
-            <h2 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight leading-tight font-poppins">
-              A Proven Framework for Cyber Resilience
-            </h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight font-poppins">
+                A Proven Framework for Cyber Resilience
+              </h2>
           </div>
 
           {/* Workflow Timeline */}
