@@ -131,15 +131,6 @@ export default function CybersecurityPage() {
         </div>
 
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
-          
-          {/* Breadcrumbs */}
-          <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 sm:mb-4 select-none">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span className="text-slate-600">/</span>
-            <span className="text-slate-600">Services</span>
-            <span className="text-slate-600">/</span>
-            <span className="text-cyan-400">Cybersecurity</span>
-          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             

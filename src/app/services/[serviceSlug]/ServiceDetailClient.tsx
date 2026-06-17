@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { 
-  Shield, Monitor, AppWindow, Share2, Megaphone, CheckCircle, 
+  Shield, Monitor, AppWindow, Megaphone, CheckCircle, 
   ArrowRight, Layers, Compass, Check, Smartphone,
   Terminal, Code, Sparkles, TrendingUp, Heart, MessageSquare, Star, Zap,
   Server, Cpu, Database, RefreshCw, BarChart2, Eye, Lock, Globe, HardDrive,
@@ -15,7 +15,6 @@ import { motion } from "framer-motion";
 
 const serviceIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   "digital-marketing": Megaphone,
-  "social-media-management": Share2,
   "mobile-development": Smartphone,
   "application-development": AppWindow,
   "cybersecurity": Shield,
@@ -28,7 +27,6 @@ const ctaBgImages: Record<string, string> = {
   "mobile-development": "/images/cta_mobile.png",
   "application-development": "/images/cta_appdev.png",
   "digital-marketing": "/images/cta_marketing.png",
-  "social-media-management": "/images/cta_social.png",
 };
 
 const serviceFaqs: Record<string, { q: string; a: string }[]> = {
@@ -120,24 +118,6 @@ const serviceFaqs: Record<string, { q: string; a: string }[]> = {
     {
       q: "What monthly reporting and analytics data do you provide?",
       a: "You receive access to a live Looker Studio dashboard detailing impressions, organic ranks, conversion rates, and acquisition costs, updated in real time."
-    }
-  ],
-  "social-media-management": [
-    {
-      q: "How do you maintain our corporate brand voice across different networks?",
-      a: "We begin by compiling a comprehensive Brand Identity Kit mapping your target tone, key industry terms, visual styles, and posting rules to guide all copy."
-    },
-    {
-      q: "What is the process for reviewing and approving scheduled posts?",
-      a: "We deliver a monthly editorial calendar preview sheet 2 weeks in advance. Your team can review, comment on, and approve all copy and graphics before they go live."
-    },
-    {
-      q: "Do you write specialized content for C-suite executive profiles?",
-      a: "Yes, we offer executive thought leadership ghostwriting on LinkedIn, creating high-value newsletters, trends summaries, and posts to establish authority."
-    },
-    {
-      q: "Can you help set up lookalike audiences and retargeting pixel campaigns?",
-      a: "Yes, we configure social pixels to track landing page visits and build custom retargeting ad campaigns to convert interested visitors into leads."
     }
   ]
 };
@@ -727,83 +707,7 @@ export default function ServiceDetailClient({
           </section>
         );
 
-      case "social-media-management":
-        return (
-          <section className={`relative z-10 -mt-20 sm:-mt-[108px] pt-28 sm:pt-32 md:pt-36 pb-8 sm:pb-10 md:pb-12 px-6 md:px-12 bg-gradient-to-b from-violet-950 via-slate-900 to-slate-950 text-white border-b border-slate-900 overflow-hidden`}>
-            <MeshGrid />
-            <div className="absolute top-1/3 left-2/3 -translate-x-1/2 w-[550px] h-[550px] rounded-full opacity-15 blur-3xl pointer-events-none z-0" style={{ background: `radial-gradient(circle, ${theme.glowColor} 0%, transparent 70%)` }} />
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">
-              <div className="lg:col-span-7 flex flex-col gap-5">
-                <div className="flex items-center gap-3">
-                  <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-violet-500/10 text-violet-400 border border-violet-500/20">
-                    B2B Thought Leadership & Brand Equity
-                  </span>
-                  <div className="h-0.5 w-8 bg-slate-800 rounded-full"></div>
-                </div>
-                <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.2] text-white">
-                  Organic Acquisition & <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-pink-400 to-orange-400">Social Moderation</span>
-                </h1>
-                <p className="text-base md:text-lg font-bold text-white">
-                  Thematic calendars, influencer integrations, and real-time social content pipelines.
-                </p>
-                <p className="text-slate-350 text-sm leading-relaxed max-w-xl hidden md:block">
-                  We construct brand kits, draft editorial post plans, and manage profile engagement curves across LinkedIn, X, Meta, and video portals. We connect social traffic vectors to target lead acquisition pipelines.
-                </p>
-                <div className="flex flex-wrap gap-4 mt-2">
-                  <Link href="/contact" className="px-6 py-3 rounded-xl bg-orange-brand hover:bg-orange-brand-hover text-white font-bold text-sm shadow-lg shadow-orange-brand/20 transition-all flex items-center gap-2">
-                    Deploy Social Strategy <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
 
-              <div className="lg:col-span-5 relative w-full mt-4 lg:mt-0 max-w-md lg:max-w-none mx-auto flex items-center justify-center p-2 lg:p-8">
-                <div className="absolute -inset-1.5 rounded-full opacity-10 blur-2xl z-0" style={{ background: theme.glowColor }} />
-                <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="relative w-[280px] sm:w-[320px] aspect-square rounded-full border border-violet-500/30 p-2.5 bg-slate-900/35 backdrop-blur-sm shadow-2xl z-10 flex items-center justify-center overflow-visible">
-                  <div className="relative w-full h-full rounded-full overflow-hidden border border-slate-800">
-                    <Image src={serviceImg} alt={service.name} fill className="object-cover object-center" priority />
-                    <div className="absolute inset-0 bg-gradient-to-tr from-violet-950/40 via-transparent to-transparent pointer-events-none" />
-                  </div>
-
-                  {service.metrics[0] && (
-                    <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.1 }} className="absolute -top-6 -left-12 bg-slate-900/90 border border-slate-808 p-3 rounded-2xl shadow-xl backdrop-blur-md flex items-center gap-2 max-w-[150px]">
-                      <div className="w-6 h-6 rounded-full bg-violet-500/10 text-violet-400 flex items-center justify-center shrink-0">
-                        <Heart className="w-3.5 h-3.5 fill-current" />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-[7px] text-slate-555 uppercase font-bold tracking-widest leading-none mb-0.5">{service.metrics[0].label}</span>
-                        <span className="text-xs font-black text-violet-400 leading-none">{service.metrics[0].value}</span>
-                      </div>
-                    </motion.div>
-                  )}
-
-                  {service.metrics[1] && (
-                    <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="absolute -bottom-6 -right-12 bg-slate-900/90 border border-slate-808 p-3 rounded-2xl shadow-xl backdrop-blur-md flex items-center gap-2 max-w-[150px]">
-                      <div className="w-6 h-6 rounded-full bg-pink-500/10 text-pink-400 flex items-center justify-center shrink-0">
-                        <MessageSquare className="w-3.5 h-3.5 fill-current" />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-[7px] text-slate-555 uppercase font-bold tracking-widest leading-none mb-0.5">{service.metrics[1].label}</span>
-                        <span className="text-xs font-black text-pink-455 leading-none">{service.metrics[1].value}</span>
-                      </div>
-                    </motion.div>
-                  )}
-
-                  {service.metrics[2] && (
-                    <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 0.3 }} className="absolute bottom-1/2 -left-10 translate-y-1/2 bg-slate-900/90 border border-slate-808 p-2.5 rounded-xl shadow-xl backdrop-blur-md flex items-center gap-2">
-                      <div className="w-5 h-5 rounded-full bg-orange-500/10 text-orange-400 flex items-center justify-center shrink-0">
-                        <Zap className="w-3 h-3 fill-current" />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-[7px] text-slate-555 font-bold leading-none">{service.metrics[2].label}</span>
-                        <span className="text-xs font-black text-orange-400 leading-none mt-0.5">{service.metrics[2].value}</span>
-                      </div>
-                    </motion.div>
-                  )}
-                </motion.div>
-              </div>
-            </div>
-          </section>
-        );
 
       default:
         return null;
@@ -1758,191 +1662,7 @@ export default function ServiceDetailClient({
           </>
         );
 
-      case "social-media-management":
-        return (
-          <>
-            {/* Custom Section 1: Thematic Calendar */}
-            <section className="pt-8 md:pt-12 pb-14 md:pb-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
-              <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div className="order-2 lg:order-1 relative rounded-2xl border border-slate-200 shadow-xl overflow-hidden bg-slate-950 p-2">
-                  <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-slate-900">
-                    <Image src="/images/social_calendar.png" alt="Social Media Content Planner Board" fill className="object-cover" />
-                  </div>
-                </div>
-                <div className="order-1 lg:order-2">
-                  <h2 className="text-3xl font-extrabold text-slate-900 mb-6">
-                    Structured Editorial Post Calendars
-                  </h2>
-                  <p className="text-slate-605 text-sm leading-relaxed mb-6">
-                    Building a digital community requires consistency. We map monthly content planners, draft high-engagement copy sequences, produce custom imagery templates, and configure automated social scheduling triggers to build long-term brand presence.
-                  </p>
-                  <ul className="flex flex-col gap-4">
-                    {[
-                      "Structured brand voice guides and copy kit rules",
-                      "Monthly thematic visual planners for social handles",
-                      "Custom video, infographic, and graphic layouts",
-                      "Automated profile scheduling and monitoring pipelines"
-                    ].map((item, idx) => (
-                      <li key={idx} className="flex gap-3 items-center text-sm font-semibold text-slate-700">
-                        <CheckCircle className="w-4 h-4 text-violet-500" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </section>
 
-            {/* Custom Section 2: Engagement Telemetry Parameters */}
-            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
-              <div className="max-w-7xl mx-auto">
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                  <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Audience Growth Telemetry Parameters</h2>
-                  <p className="text-slate-605 text-sm">We monitor social profile interactions and user feedback trends to maintain positive community engagement ratios.</p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {[
-                    { title: "Organic Reach", val: "12M+ Impressions", icon: Eye, desc: "Content optimization ensuring high algorithm visibility and organic impressions across professional social profiles." },
-                    { title: "Brand Advocacy", val: "3.2x Shares", icon: Star, desc: "High-value thought leadership posts encouraging shares and comments among executive decision-makers." },
-                    { title: "Community Response", val: "99.2% Positive", icon: MessageSquare, desc: "Moderation configurations, message responders, and custom community engagement guidelines." }
-                  ].map((param, idx) => {
-                    const ParamIcon = param.icon;
-                    return (
-                      <div key={idx} className="p-8 bg-white border border-slate-200 rounded-2xl shadow-sm flex flex-col gap-4">
-                        <div className="flex justify-between items-center">
-                          <div className="w-10 h-10 rounded-lg bg-violet-50 text-violet-600 flex items-center justify-center border border-violet-100">
-                            <ParamIcon className="w-5 h-5" />
-                          </div>
-                          <span className="text-base font-black text-slate-808">{param.val}</span>
-                        </div>
-                        <h3 className="font-extrabold text-slate-900 text-base">{param.title}</h3>
-                        <p className="text-xs text-slate-655 leading-relaxed">{param.desc}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </section>
-
-            {/* Custom Section 3: Executive Thought Leadership Ghostwriting */}
-            <section className="py-14 md:py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-100">
-              <div className="max-w-4xl mx-auto">
-                <div className="text-center mb-16">
-                  <div className="w-10 h-10 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center shadow-sm border border-violet-100 mb-4 mx-auto">
-                    <FileText className="w-5 h-5" />
-                  </div>
-                  <h2 className="text-3xl font-extrabold text-slate-900">Thought Leadership Campaign Pipeline</h2>
-                  <p className="text-slate-600 text-sm mt-3">We sequence content pipelines to establish credibility and trust among C-Suite executives.</p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {[
-                    { title: "LinkedIn Profile Refinement", desc: "Structuring bios, background graphics, and featured cards to optimize professional profiles." },
-                    { title: "Trend Report Ghostwriting", desc: "Drafting industry insights and data-focused updates that address executive pain points." },
-                    { title: "Newsletter Campaign Sequences", desc: "Setting up scheduled, value-oriented content distributions to build trust and brand value." }
-                  ].map((tl, idx) => (
-                    <div key={idx} className="p-6 bg-slate-50 border border-slate-200 rounded-xl flex flex-col gap-3">
-                      <h4 className="text-sm font-bold text-slate-900">{tl.title}</h4>
-                      <p className="text-xs text-slate-600 leading-relaxed">{tl.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* Custom Section 4: Paid Social Ads Funnel */}
-            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-900 text-white relative z-10 border-b border-slate-950">
-              <div className="max-w-7xl mx-auto">
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                  <h2 className="text-3xl font-black text-white mb-4">Paid Social Ad Lead Conversion</h2>
-                  <p className="text-slate-400 text-sm">We configure targeted paid campaigns built to find qualified leads and drive conversions.</p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {[
-                    { title: "Custom Lookalike Matching", details: "Importing customer lists to match demographics and locate high-intent audiences." },
-                    { title: "Pixel Conversion Telemetry", details: "Integrating tracking codes to trigger ad actions and log leads inside CRM systems." },
-                    { title: "Multi-Step Ad Sequences", details: "Sequencing awareness ads, customer testimonials, and retargeting hooks to convert cold audiences." }
-                  ].map((ad, idx) => (
-                    <div key={idx} className="p-8 bg-slate-900 border border-slate-800 rounded-2xl flex flex-col gap-4">
-                      <TrendingUp className="w-8 h-8 text-violet-400" />
-                      <h3 className="font-extrabold text-base text-white">{ad.title}</h3>
-                      <p className="text-xs text-slate-400 leading-relaxed">{ad.details}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* Custom Section 5: Implementation Process Roadmap */}
-            <section className="py-14 md:py-24 px-6 md:px-12 bg-slate-50 relative z-10 border-b border-slate-200">
-              <div className="max-w-7xl mx-auto">
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                  <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-widest bg-violet-500/10 text-violet-600 border border-violet-500/20">
-                    OUR ROADMAP
-                  </span>
-                  <h2 className="text-3xl font-extrabold text-slate-900 mt-4">
-                    Editorial Engagement & Growth Workflow
-                  </h2>
-                  <p className="text-slate-605 text-sm mt-3">
-                    Crafting custom visual guidelines, ghostwriting content planners, and optimizing paid audience retargeting.
-                  </p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                  {[
-                    {
-                      step: "01",
-                      title: "Brand Voice Guidelines",
-                      desc: "Establishing visual template grids, typography rules, and content tone guides.",
-                      icon: Sparkles
-                    },
-                    {
-                      step: "02",
-                      title: "Ghostwriting & Schedulers",
-                      desc: "Ghostwriting weekly posts, sequencing thought leadership, and calendar mapping.",
-                      icon: FileText
-                    },
-                    {
-                      step: "03",
-                      title: "Retargeting Ad Campaign",
-                      desc: "Building custom audiences matching profile interactions and driving ad loops.",
-                      icon: TrendingUp
-                    },
-                    {
-                      step: "04",
-                      title: "Interaction & Audits",
-                      desc: "Enforcing message templates, responding to inquiries, and delivering monthly reach reports.",
-                      icon: MessageSquare
-                    }
-                  ].map((proc, idx) => {
-                    const ProcIcon = proc.icon;
-                    return (
-                      <div 
-                        key={idx} 
-                        className="group p-8 bg-white border border-slate-200 rounded-2xl shadow-xs hover:border-violet-500/30 hover:shadow-md transition-all duration-300 flex flex-col justify-between"
-                      >
-                        <div>
-                          <div className="flex justify-between items-start mb-6">
-                            <div className="w-12 h-12 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center border border-violet-100/50 group-hover:bg-violet-500 group-hover:text-white transition-all duration-300">
-                              <ProcIcon className="w-5 h-5" />
-                            </div>
-                            <span className="text-xs font-black text-slate-350 group-hover:text-violet-500 transition-colors duration-300">
-                              STEP {proc.step}
-                            </span>
-                          </div>
-                          <h3 className="font-extrabold text-slate-800 text-base mb-2 group-hover:text-slate-900">
-                            {proc.title}
-                          </h3>
-                          <p className="text-xs text-slate-500 leading-relaxed">
-                            {proc.desc}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </section>
-          </>
-        );
 
       default:
         return null;

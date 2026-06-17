@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { Shield, Monitor, AppWindow, Share2, Megaphone, Smartphone } from "lucide-react";
+import { Shield, Monitor, AppWindow, Megaphone, Smartphone } from "lucide-react";
 import React from "react";
 import ServiceDetailClient from "./ServiceDetailClient";
 
@@ -33,25 +33,7 @@ const serviceDetails: Record<string, {
       { label: "Active Lead Pipelines", value: "850+" }
     ]
   },
-  "social-media-management": {
-    name: "Social Media Management",
-    tagline: "Build B2B/B2C Brand Equity and Deepen Community Engagement",
-    icon: Share2,
-    description: "Social media for corporate entities is about building thought leadership, community trust, and organic acquisition paths. We design corporate-level campaign assets and manage cross-channel profiles.",
-    features: [
-      { title: "Brand Identity Design", desc: "Consolidated media kits, tone-of-voice alignment, and high-end graphic assets." },
-      { title: "Content Sequencing", desc: "Pre-scheduled thematic sequences across LinkedIn, Twitter, and other corporate touchpoints." },
-      { title: "Community Moderation", desc: "Automated alert configurations and professional customer engagement vectors." },
-      { title: "Ad Campaign Design", desc: "Targeted B2B campaigns to capture decision-makers and C-suite executives." }
-    ],
-    techStack: ["Sprout Social", "Figma Design System", "Adobe Creative Suite", "Meta Business Suite", "LinkedIn Ads Manager", "Canva Enterprise", "Trello Boards"],
-    workflow: ["Brand Voice Alignment", "Content Calendar Architecture", "Asset Creation", "Engagement Tracking"],
-    metrics: [
-      { label: "Audience Engagement Rate", value: "+4.8%" },
-      { label: "B2B Lead Acquisition", value: "3.2x" },
-      { label: "Total Impressions Generated", value: "12M+" }
-    ]
-  },
+
   "mobile-development": {
     name: "Mobile Development",
     tagline: "Premium Native iOS & Android Apps & High-Fidelity Cross-Platform Solutions",
@@ -136,7 +118,7 @@ const serviceImages: Record<string, string> = {
   "mobile-development": "/images/service_mobile_mockup.png",
   "application-development": "/images/service_appdev.png",
   "digital-marketing": "/images/service_marketing.png",
-  "social-media-management": "/images/service_social.png",
+
 };
 
 // Vibe mapping according to service slug
@@ -188,14 +170,7 @@ const serviceThemes: Record<string, {
     pillBorder: "border-sky-500/20 hover:border-sky-400/50",
     glowColor: "#0ea5e9"
   },
-  "social-media-management": {
-    accentText: "text-violet-400",
-    accentBg: "bg-violet-500/10 text-violet-400 border-violet-500/20",
-    gradientHero: "from-violet-950 via-slate-900 to-slate-950",
-    themeColor: "violet",
-    pillBorder: "border-violet-500/20 hover:border-violet-400/50",
-    glowColor: "#8b5cf6"
-  }
+
 };
 
 export default async function ServiceDetail({

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Menu, X, ArrowRight, Monitor, Shield, AppWindow, Share2, Megaphone, Phone, Mail, Smartphone } from "lucide-react";
+import { ChevronDown, Menu, X, ArrowRight, Monitor, Shield, AppWindow, Megaphone, Phone, Mail, Smartphone, Target, HelpCircle, Briefcase, Info, Award } from "lucide-react";
 import { useBooking } from "@/context/BookingContext";
 
 const services = [
@@ -16,14 +16,6 @@ const services = [
     icon: Megaphone,
     color: "text-cyan-400",
     bg: "bg-cyan-500/10",
-  },
-  {
-    name: "Social Media Management",
-    href: "/services/social-media-management",
-    description: "Engage and build your digital community.",
-    icon: Share2,
-    color: "text-purple-400",
-    bg: "bg-purple-500/10",
   },
   {
     name: "Mobile Development",
@@ -59,9 +51,53 @@ const services = [
   },
 ];
 
+const aboutLinks = [
+  {
+    name: "Company Overview",
+    href: "/about",
+    description: "Learn about our journey, core principles, and team.",
+    icon: Info,
+    color: "text-cyan-400",
+    bg: "bg-cyan-500/10",
+  },
+  {
+    name: "Mission & Vision",
+    href: "/about/mission-and-vision",
+    description: "Explore our corporate vision and values.",
+    icon: Target,
+    color: "text-indigo-400",
+    bg: "bg-indigo-500/10",
+  },
+  {
+    name: "Why Choose Us",
+    href: "/about/why-choose-us",
+    description: "See what makes DIGINET a premier partner.",
+    icon: Award,
+    color: "text-pink-400",
+    bg: "bg-pink-500/10",
+  },
+  {
+    name: "FAQ",
+    href: "/about/faq",
+    description: "Got questions? We have answers.",
+    icon: HelpCircle,
+    color: "text-amber-400",
+    bg: "bg-amber-500/10",
+  },
+  {
+    name: "Careers",
+    href: "/about/career",
+    description: "Join our growing team of IT and growth professionals.",
+    icon: Briefcase,
+    color: "text-emerald-400",
+    bg: "bg-emerald-500/10",
+  },
+];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const { openBooking } = useBooking();
@@ -78,17 +114,23 @@ export default function Navbar() {
     const isActive = pathname === path;
     const base = "text-[13px] font-semibold transition-all duration-200 py-2 relative group";
     
-    if (isScrolled || isOpen) {
+    if (isScrolled && !isOpen) {
+      return `${base} hover:text-accent-blue ${isActive ? "text-accent-blue font-bold" : "text-slate-700"}`;
+    }
+    if (isOpen) {
       return `${base} hover:text-white ${isActive ? "text-white font-bold" : "text-slate-300"}`;
     }
     return `${base} hover:text-white ${isActive ? "text-white font-bold" : "text-white/80"}`;
   };
 
-  const getDropdownClass = () => {
-    const isActive = pathname.startsWith("/services");
-    const base = "flex items-center gap-1 text-[13px] font-semibold transition-all duration-200 cursor-pointer py-2";
+  const getDropdownClass = (prefix: string) => {
+    const isActive = pathname.startsWith(prefix);
+    const base = "flex items-center gap-1 text-[13px] font-semibold transition-all duration-200 cursor-pointer py-2 group";
     
-    if (isScrolled || isOpen) {
+    if (isScrolled && !isOpen) {
+      return `${base} hover:text-accent-blue ${isActive ? "text-accent-blue font-bold" : "text-slate-700"}`;
+    }
+    if (isOpen) {
       return `${base} hover:text-white ${isActive ? "text-white font-bold" : "text-slate-300"}`;
     }
     return `${base} hover:text-white ${isActive ? "text-white font-bold" : "text-white/80"}`;
@@ -99,13 +141,13 @@ export default function Navbar() {
       {/* Top Bar (Contacts & Socials) */}
       <div className="bg-[#040d1e] text-slate-450 text-[10px] sm:text-xs py-2 px-6 sm:px-8 md:px-12 flex justify-between items-center border-b border-white/5 select-none">
         <div className="flex gap-4 sm:gap-6 items-center">
-          <a href="tel:+15550199" className="flex items-center gap-1.5 hover:text-white text-slate-400 transition-colors">
+          <a href="tel:+6564604000" className="flex items-center gap-1.5 hover:text-white text-slate-400 transition-colors">
             <Phone className="w-3 h-3 text-accent-blue" />
-            <span>+1 (555) 0199</span>
+            <span>+65 6460 4000</span>
           </a>
-          <a href="mailto:info@diginet.com" className="flex items-center gap-1.5 hover:text-white text-slate-400 transition-colors">
+          <a href="mailto:info@diginet.sg" className="flex items-center gap-1.5 hover:text-white text-slate-400 transition-colors">
             <Mail className="w-3 h-3 text-accent-blue" />
-            <span>info@diginet.com</span>
+            <span>info@diginet.sg</span>
           </a>
         </div>
         
@@ -148,9 +190,11 @@ export default function Navbar() {
 
       {/* Main Navbar */}
       <div className={`transition-all duration-300 py-3.5 ${
-        (isScrolled || isOpen)
-          ? "bg-[#06142D]/95 backdrop-blur-md border-b border-white/5 shadow-md" 
-          : "bg-transparent border-b border-transparent"
+        isOpen
+          ? "bg-[#06142D] border-b border-white/5 shadow-md"
+          : isScrolled
+            ? "bg-white/95 backdrop-blur-md border-b border-slate-200/50 shadow-md"
+            : "bg-transparent border-b border-transparent"
       }`}>
         <div className="max-w-[1280px] mx-auto px-6 sm:px-8 md:px-12 flex items-center justify-between">
           {/* Logo */}
@@ -171,24 +215,76 @@ export default function Navbar() {
               Home
               <span className={`absolute bottom-0 left-0 h-0.5 bg-accent-blue transition-all duration-300 ${pathname === "/" ? "w-full" : "w-0 group-hover:w-full"}`} />
             </Link>
-            <Link href="/about" className={getLinkClass("/about")}>
-              About
-              <span className={`absolute bottom-0 left-0 h-0.5 bg-accent-blue transition-all duration-300 ${pathname === "/about" ? "w-full" : "w-0 group-hover:w-full"}`} />
-            </Link>
+
+            {/* About Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setAboutDropdownOpen(true)}
+              onMouseLeave={() => setAboutDropdownOpen(false)}
+            >
+              <button className={getDropdownClass("/about")}>
+                About
+                <ChevronDown className={`w-3.5 h-3.5 transition-colors ${
+                  (isScrolled && !isOpen)
+                    ? "text-slate-500 group-hover:text-accent-blue" 
+                    : "text-slate-400 group-hover:text-white"
+                }`} />
+              </button>
+
+              <AnimatePresence>
+                {aboutDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute left-1/2 -translate-x-1/2 mt-2 w-[440px] rounded-2xl bg-[#06142D] border border-white/10 p-4 shadow-xl z-50 backdrop-blur-md"
+                  >
+                    <div className="grid grid-cols-2 gap-2">
+                      <p className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest col-span-2 px-2.5 mb-1 select-none">About DIGINET</p>
+                      {aboutLinks.map((item) => {
+                        const IconComponent = item.icon;
+                        return (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/[0.04] transition-colors group"
+                          >
+                            <div className={`p-2 rounded-lg ${item.bg} ${item.color} shrink-0`}>
+                              <IconComponent className="w-4.5 h-4.5" />
+                            </div>
+                            <div className="text-left">
+                              <h4 className="text-[12px] font-bold text-white group-hover:text-accent-blue transition-colors leading-tight">
+                                {item.name}
+                              </h4>
+                              <p className="text-[10px] text-slate-400 mt-1 leading-normal">{item.description}</p>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
             {/* Services Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}
+              onMouseEnter={() => setServicesDropdownOpen(true)}
+              onMouseLeave={() => setServicesDropdownOpen(false)}
             >
-              <button className={getDropdownClass()}>
+              <button className={getDropdownClass("/services")}>
                 Services
-                <ChevronDown className="w-3.5 h-3.5 text-slate-400 group-hover:text-white" />
+                <ChevronDown className={`w-3.5 h-3.5 transition-colors ${
+                  (isScrolled && !isOpen)
+                    ? "text-slate-500 group-hover:text-accent-blue" 
+                    : "text-slate-400 group-hover:text-white"
+                }`} />
               </button>
 
               <AnimatePresence>
-                {dropdownOpen && (
+                {servicesDropdownOpen && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -243,7 +339,11 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg border border-white/10 text-slate-300 hover:text-white transition-colors"
+            className={`md:hidden p-2 rounded-lg border transition-colors ${
+              (isScrolled && !isOpen)
+                ? "border-slate-200 text-slate-700 hover:text-slate-900 hover:bg-slate-50"
+                : "border-white/10 text-slate-300 hover:text-white hover:bg-white/5"
+            }`}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -269,15 +369,27 @@ export default function Navbar() {
                 >
                   Home
                 </Link>
-                <Link
-                  href="/about"
-                  onClick={() => setIsOpen(false)}
-                  className={`text-base font-bold transition-colors ${
-                    pathname === "/about" ? "text-accent-blue" : "text-slate-200 hover:text-white"
-                  }`}
-                >
-                  About
-                </Link>
+
+                {/* Mobile About List */}
+                <div className="flex flex-col gap-2">
+                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest select-none">About Us</span>
+                  <div className="pl-3 border-l border-white/10 flex flex-col gap-3">
+                    {aboutLinks.map((item) => {
+                      const IconComponent = item.icon;
+                      return (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          onClick={() => setIsOpen(false)}
+                          className="flex items-center gap-2.5 text-sm font-semibold text-slate-300 hover:text-white transition-colors"
+                        >
+                          <IconComponent className={`w-4 h-4 ${item.color}`} />
+                          {item.name}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
 
                 {/* Mobile Services List */}
                 <div className="flex flex-col gap-2">

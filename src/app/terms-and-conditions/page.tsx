@@ -2,9 +2,9 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Shield, ArrowRight, Mail } from "lucide-react";
+import { FileText, ArrowRight, Mail } from "lucide-react";
 
-export default function PrivacyPage() {
+export default function TermsAndConditionsPage() {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -26,13 +26,13 @@ export default function PrivacyPage() {
             className="max-w-3xl mx-auto"
           >
             <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mx-auto mb-4">
-              <Shield className="w-5 h-5 animate-pulse" />
+              <FileText className="w-5 h-5 animate-pulse" />
             </div>
             <span className="text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.2em] text-cyan-400 mb-3 block">
-              Legal Compliance
+              Terms of Service
             </span>
             <h1 className="text-3xl sm:text-[44px] lg:text-[48px] font-black tracking-tight text-white leading-tight mb-4 font-poppins">
-              Privacy Policy
+              Terms & Conditions
             </h1>
             <p className="text-xs text-slate-400 font-mono">
               Last Updated: June 17, 2026
@@ -41,50 +41,66 @@ export default function PrivacyPage() {
         </div>
       </section>
 
-      {/* 2. POLICY DOCUMENT SECTION */}
+      {/* 2. TERMS DOCUMENT SECTION */}
       <section className="py-16 md:py-24 px-6 md:px-12 bg-white relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="p-8 md:p-12 rounded-3xl border border-slate-200 bg-slate-50/50 shadow-xl flex flex-col gap-10 text-left">
             
             <p className="text-sm md:text-base text-slate-700 leading-relaxed font-semibold border-b border-slate-200 pb-6">
-              DIGINET values your operational security and information integrity. This statement details our active logging procedures, data minimization, and endpoint telemetry protocols.
+              Please read these Terms & Conditions carefully before engaging with DIGINET services or utilising our technical deliverables. By commissioning project roadmaps, you agree to comply with these service guidelines.
             </p>
 
             <section className="flex flex-col gap-3">
-              <h3 className="text-lg font-black text-slate-900 font-poppins">1. Scope of Compliance</h3>
+              <h3 className="text-lg font-black text-slate-900 font-poppins">1. Engagement and Scope</h3>
               <p className="text-xs md:text-sm text-slate-655 leading-relaxed font-medium">
-                DIGINET operates under strict compliance regimes tailored for global corporate partnerships. Our protocols are designed to align with major regulatory frameworks, including the European General Data Protection Regulation (GDPR), the Singapore Personal Data Protection Act (PDPA), and the Indian Digital Personal Data Protection Act (DPDPA).
+                DIGINET provides enterprise-level software engineering, cybersecurity audits, cloud system configurations, and performance marketing services. Individual project deliverables, technical scope parameters, and client milestones will be detailed in separate Service Level Agreements (SLAs) or Statements of Work (SOWs) signed by authorized representatives of both parties.
               </p>
             </section>
 
             <section className="flex flex-col gap-3">
-              <h3 className="text-lg font-black text-slate-900 font-poppins">2. Data Logging and Telemetry</h3>
+              <h3 className="text-lg font-black text-slate-900 font-poppins">2. Service Provision and SLA</h3>
               <p className="text-xs md:text-sm text-slate-655 leading-relaxed font-medium">
-                When utilizing our secure customer portals or submitting brief forms, we compile minimal logs necessary to execute operational tasks and provide technical support:
+                We strive to deliver resilient software architectures and infrastructure. Where explicit SLA contracts are active, our systems support teams target a 99.9% operational uptime threshold for managed database clusters and secure API gateways. Temporary service interruptions scheduled for emergency maintenance or system patching will be communicated with prior notice whenever practicable.
               </p>
-              <ul className="list-disc pl-6 mt-2 flex flex-col gap-2 text-xs md:text-sm text-slate-655 font-semibold">
-                <li>Corporate identity credentials (organization name, authorized contact email, direct phone number).</li>
-                <li>System-level metrics for performance tuning and diagnostic evaluations.</li>
-                <li>Temporary cookies configuration strictly utilized for user state validation and security checks.</li>
-              </ul>
             </section>
 
             <section className="flex flex-col gap-3">
-              <h3 className="text-lg font-black text-slate-900 font-poppins">3. Security Defenses</h3>
+              <h3 className="text-lg font-black text-slate-900 font-poppins">3. Client Obligations</h3>
               <p className="text-xs md:text-sm text-slate-655 leading-relaxed font-medium">
-                We do not sell, rent, or lease corporate data aggregates to third parties. All stored database files are protected under industry-leading AES-256 encryption standards, and active transit paths utilize secure TLS 1.3 tunnels. Endpoint access to diagnostic logs is strictly controlled through multi-factor authentication (MFA) and zero-trust identity architectures.
+                To execute custom application builds or security audits successfully, client teams agree to provide necessary cooperation, temporary code access parameters, and clear diagnostic objectives. Client organizations remain responsible for maintaining the confidentiality of secure portal credentials and system keys provided by our engineering desks.
+              </p>
+            </section>
+
+            <section className="flex flex-col gap-3">
+              <h3 className="text-lg font-black text-slate-900 font-poppins">4. Intellectual Property</h3>
+              <p className="text-xs md:text-sm text-slate-655 leading-relaxed font-medium">
+                Unless explicitly outlined in a signed SOW, all proprietary frameworks, development templates, and custom code modules built by DIGINET prior to or independently of the client engagement remain the sole property of DIGINET. Upon full project payment, clients receive a perpetual, non-exclusive license to run and manage the final software deliverables built for their organization.
+              </p>
+            </section>
+
+            <section className="flex flex-col gap-3">
+              <h3 className="text-lg font-black text-slate-900 font-poppins">5. Limitation of Liability</h3>
+              <p className="text-xs md:text-sm text-slate-655 leading-relaxed font-medium">
+                DIGINET will not be liable for indirect, incidental, special, or consequential damages (including business loss, profit loss, or data corruption) arising out of system outages, third-party network bottlenecks, or configuration changes implemented by client teams without engineering authorization.
               </p>
             </section>
 
             <section className="flex flex-col gap-3 border-t border-slate-200 pt-8 mt-4">
-              <h3 className="text-lg font-black text-slate-900 font-poppins">4. System Contacts</h3>
+              <h3 className="text-lg font-black text-slate-900 font-poppins">6. Governing Law</h3>
               <p className="text-xs md:text-sm text-slate-655 leading-relaxed font-medium">
-                For compliance audits, questions regarding data residency, or inquiries concerning information purging, please coordinate with our Data Protection Officer at:
+                These terms will be governed by and construed in accordance with the laws of the Republic of Singapore. Any disputes arising out of project engagements or SOW agreements will be referred to and resolved by the exclusive jurisdiction of Singapore courts.
+              </p>
+            </section>
+
+            <section className="flex flex-col gap-3 border-t border-slate-200 pt-8 mt-4">
+              <h3 className="text-lg font-black text-slate-900 font-poppins">7. Legal Inquiries</h3>
+              <p className="text-xs md:text-sm text-slate-655 leading-relaxed font-medium">
+                For questions concerning these service terms, billing structures, or compliance audits, please coordinate with our corporate desk at:
               </p>
               <div className="flex items-center gap-3 mt-4 text-xs sm:text-sm text-cyan-600 bg-cyan-50 border border-cyan-100 py-3 px-6 rounded-2xl w-fit font-bold">
                 <Mail className="w-4.5 h-4.5 text-cyan-500 shrink-0" />
-                <a href="mailto:compliance@diginet.com" className="hover:text-cyan-700 transition-colors">
-                  compliance@diginet.com
+                <a href="mailto:enquiry@diginet.com" className="hover:text-cyan-700 transition-colors">
+                  enquiry@diginet.com
                 </a>
               </div>
             </section>

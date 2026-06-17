@@ -161,15 +161,6 @@ export default function DigitalMarketingPage() {
         </div>
 
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
-          
-          {/* Breadcrumbs */}
-          <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 mb-6 sm:mb-8 select-none">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span className="text-slate-600">/</span>
-            <span className="text-slate-600">Services</span>
-            <span className="text-slate-600">/</span>
-            <span className="text-sky-400">Digital Marketing</span>
-          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             

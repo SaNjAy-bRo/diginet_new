@@ -29,7 +29,7 @@ const categories: FooterCategory[] = [
     title: "Our Services",
     links: [
       { label: "Digital Marketing", href: "/services/digital-marketing" },
-      { label: "Social Media Management", href: "/services/social-media-management" },
+
       { label: "Mobile Development", href: "/services/mobile-development" },
       { label: "Application Development", href: "/services/application-development" },
       { label: "Website Designing", href: "/services/website-designing" },
@@ -54,7 +54,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-10 border-b border-slate-800">
           
           {/* Brand Column */}
-          <div className="lg:col-span-4 flex flex-col items-start text-left">
+          <div className="lg:col-span-3 flex flex-col items-start text-left">
             <Link href="/" className="flex items-center group mb-5">
               <Image
                 src="/images/diginetnewlogo.png"
@@ -124,7 +124,7 @@ export default function Footer() {
           </div>
 
           {/* Links Directories (Desktop: Grid, Mobile: Accordion handled below) */}
-          <div className="hidden lg:grid lg:col-span-5 grid-cols-2 gap-8 text-left">
+          <div className="hidden lg:grid lg:col-span-4 grid-cols-2 gap-8 text-left">
             {categories.map((cat) => (
               <div key={cat.title} className="flex flex-col">
                 <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-5 font-poppins">
@@ -146,25 +146,50 @@ export default function Footer() {
           </div>
 
           {/* Contact Details Column */}
-          <div className="lg:col-span-3 flex flex-col text-left">
+          <div className="lg:col-span-5 flex flex-col text-left">
             <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-5 font-poppins">
               Contact Details
             </h4>
-            <div className="flex flex-col gap-4 text-xs sm:text-sm text-slate-400">
-              <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-accent-blue shrink-0" />
-                <span>123 Tech Avenue, Corporate Suite 500, Silicon Valley, CA</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-slate-400">
+              
+              {/* Singapore HQ */}
+              <div className="flex flex-col gap-3.5">
+                <span className="text-[10px] font-extrabold text-white uppercase tracking-wider border-b border-slate-800 pb-1 w-fit pr-4">Singapore (HQ)</span>
+                <div className="flex items-start gap-2.5">
+                  <MapPin className="h-4.5 w-4.5 text-cyan-400 shrink-0 mt-0.5" />
+                  <span>7 Temasek Boulevard, #12-07, Suntec Tower 1, Singapore 038987</span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <Phone className="h-4.5 w-4.5 text-cyan-400 shrink-0" />
+                  <a href="tel:+6564604000" className="hover:text-white transition-colors">+65 6460 4000</a>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <Mail className="h-4.5 w-4.5 text-cyan-400 shrink-0" />
+                  <a href="mailto:info@diginet.sg" className="hover:text-white transition-colors">
+                    info@diginet.sg
+                  </a>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-accent-blue shrink-0" />
-                <a href="tel:+15550199" className="hover:text-white transition-colors">+1 (555) 0199</a>
+
+              {/* India Branch */}
+              <div className="flex flex-col gap-3.5">
+                <span className="text-[10px] font-extrabold text-white uppercase tracking-wider border-b border-slate-800 pb-1 w-fit pr-4">India Branch</span>
+                <div className="flex items-start gap-2.5">
+                  <MapPin className="h-4.5 w-4.5 text-cyan-400 shrink-0 mt-0.5" />
+                  <span>2nd Floor, Business Bay Centre, Udupi–Manipal Highway, Kunjibettu, Udupi, Karnataka 576102, India</span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <Phone className="h-4.5 w-4.5 text-cyan-400 shrink-0" />
+                  <a href="tel:+919986389444" className="hover:text-white transition-colors">+91 99863 89444</a>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <Mail className="h-4.5 w-4.5 text-cyan-400 shrink-0" />
+                  <a href="mailto:hello@clevercrow.in" className="hover:text-white transition-colors">
+                    hello@clevercrow.in
+                  </a>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-accent-blue shrink-0" />
-                <a href="mailto:info@diginet.com" className="hover:text-white transition-colors">
-                  info@diginet.com
-                </a>
-              </div>
+
             </div>
           </div>
 
@@ -206,7 +231,7 @@ export default function Footer() {
           <p>&copy; {currentYear} DIGINET. All rights reserved. Designed for elite corporate growth.</p>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
+            <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
           </div>
         </div>
 
