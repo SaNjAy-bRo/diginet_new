@@ -14,7 +14,7 @@ type Message = {
 };
 
 type ChatMode = "chat" | "lead_gen";
-type LeadStep = "name" | "company" | "email" | "phone" | "budget" | "timeline" | "message" | "done";
+type LeadStep = "name" | "company" | "email" | "phone" | "interest" | "serviceDetail" | "budget" | "timeline" | "message" | "done";
 
 // Services definitions for DIGINET
 const services = {
@@ -408,6 +408,8 @@ export default function Chatbot() {
     company: "",
     email: "",
     phone: "",
+    interest: "",
+    serviceDetail: "",
     budget: "",
     timeline: "",
     message: "",
@@ -457,11 +459,143 @@ export default function Chatbot() {
     const lowerText = text.toLowerCase();
     
     // Greetings
-    if (/^(hi|hello|hey|greetings)\b/.test(lowerText)) {
+    if (/^(hi|hello|hey|greetings|good morning|good afternoon|howdy|yo)\b/.test(lowerText)) {
       addMessage({
         sender: "bot",
-        text: "Hello! How can I assist you with DIGINET capabilities today?",
+        text: "Hello! How can I assist you with DIGINET systems and digital growth today?",
         options: ["Cybersecurity", "App Eng", "Web Design", "Marketing", "Consultation"],
+      });
+      return;
+    }
+
+    // Pricing & Costs Synonyms
+    if (
+      lowerText.includes("price") || 
+      lowerText.includes("pricing") || 
+      lowerText.includes("cost") || 
+      lowerText.includes("charge") || 
+      lowerText.includes("rate") || 
+      lowerText.includes("expensive") || 
+      lowerText.includes("fee") || 
+      lowerText.includes("package") || 
+      lowerText.includes("how much")
+    ) {
+      addMessage({
+        sender: "bot",
+        text: "At DIGINET, we design customized enterprise service packages. Because software architecture, network safety, and marketing budgets vary by scale, we don't apply static pricing.\n\nWe provide free, itemized quotations based on your specific tech scope. Would you like to check quote parameters?",
+        options: ["Inquire Pricing", "See Services", "Main Menu"],
+      });
+      return;
+    }
+
+    // Support, SLA, Maintenance
+    if (
+      lowerText.includes("support") || 
+      lowerText.includes("sla") || 
+      lowerText.includes("maintenance") || 
+      lowerText.includes("after launch") || 
+      lowerText.includes("uptime") || 
+      lowerText.includes("guarantee") || 
+      lowerText.includes("warranty")
+    ) {
+      addMessage({
+        sender: "bot",
+        text: "We provide comprehensive, tier-based Support contracts and Service Level Agreements (SLAs):\n\n• **Standard SLA**: 99.9% application/hosting uptime guarantees.\n• **Continuous Patching**: Bi-weekly dependency and security audits.\n• **Incident Management**: 24/7 critical vulnerability response paths.\n\nShall we discuss support requirements for your platform?",
+        options: ["Support Inquiry", "Main Menu"],
+      });
+      return;
+    }
+
+    // Portfolio, Case Studies, Experience
+    if (
+      lowerText.includes("portfolio") || 
+      lowerText.includes("work") || 
+      lowerText.includes("experience") || 
+      lowerText.includes("client") || 
+      lowerText.includes("case study") || 
+      lowerText.includes("example") || 
+      lowerText.includes("previous project") || 
+      lowerText.includes("demo")
+    ) {
+      addMessage({
+        sender: "bot",
+        text: "We have delivered solutions for over 150+ global brands and government agencies, including:\n\n• **FinTech**: Distributed high-concurrency ledger integrations.\n• **SaaS Platforms**: Modular React/Next architectures with Node microservices.\n• **Cybersecurity**: Threat isolations for medical records providers.\n\nWould you like to speak to a consultant to review case studies in your industry?",
+        options: ["Consultation", "Main Menu"],
+      });
+      return;
+    }
+
+    // Tech Stack & Technologies
+    if (
+      lowerText.includes("tech") || 
+      lowerText.includes("technology") || 
+      lowerText.includes("react") || 
+      lowerText.includes("next") || 
+      lowerText.includes("flutter") || 
+      lowerText.includes("swift") || 
+      lowerText.includes("kotlin") || 
+      lowerText.includes("node") || 
+      lowerText.includes("database") || 
+      lowerText.includes("stack")
+    ) {
+      addMessage({
+        sender: "bot",
+        text: "Our core engineering stacks consist of industry-leading technologies:\n\n• **Web & Frontend**: Next.js (SSR), React, TailwindCSS, Framer Motion.\n• **Backend & Serverless**: Go (Golang), Node.js, Python, PostgreSQL, Redis.\n• **Mobile Apps**: Swift (native iOS), Kotlin (native Android), React Native.\n• **DevOps & Cloud**: Docker, Kubernetes, AWS, GCP Cloud Services.\n\nDo you have specific tech stack restrictions for your build?",
+        options: ["App Eng", "Web Design", "Consultation"],
+      });
+      return;
+    }
+
+    // Process, Methodology, Project Management
+    if (
+      lowerText.includes("process") || 
+      lowerText.includes("method") || 
+      lowerText.includes("agile") || 
+      lowerText.includes("scrum") || 
+      lowerText.includes("manage") || 
+      lowerText.includes("step") || 
+      lowerText.includes("how do you work")
+    ) {
+      addMessage({
+        sender: "bot",
+        text: "We run projects using strict Agile methodologies:\n\n1. **Discovery & Wireframing**: Visualizing layout grids and mapping user flows.\n2. **Sprints & Testing**: Writing clean, TypeScript code with unit tests.\n3. **Quality Assurance**: Verifying Core Web Vitals and load testing.\n4. **CI/CD Deployment**: Deploying production builds to isolated environments.\n\nDo you want to run through a project timeline with us?",
+        options: ["Consultation", "Main Menu"],
+      });
+      return;
+    }
+
+    // Compliance & GDPR/PDPA/DPDPA
+    if (
+      lowerText.includes("compliance") || 
+      lowerText.includes("gdpr") || 
+      lowerText.includes("pdpa") || 
+      lowerText.includes("dpdpa") || 
+      lowerText.includes("iso") || 
+      lowerText.includes("hipaa") || 
+      lowerText.includes("security check")
+    ) {
+      addMessage({
+        sender: "bot",
+        text: "All custom database designs, server endpoints, and code structures we deploy are built to satisfy global compliance audits (GDPR, PDPA Singapore, DPDPA India, and HIPAA for health portals).\n\nShall we discuss details for your compliance requirements?",
+        options: ["Cybersecurity", "Consultation"],
+      });
+      return;
+    }
+
+    // Careers & Hiring
+    if (
+      lowerText.includes("career") || 
+      lowerText.includes("job") || 
+      lowerText.includes("hire") || 
+      lowerText.includes("hiring") || 
+      lowerText.includes("work with you") || 
+      lowerText.includes("join") || 
+      lowerText.includes("employment")
+    ) {
+      addMessage({
+        sender: "bot",
+        text: "We are always seeking exceptional software developers, security analysts, and digital account managers.\n\nYou can explore active openings and submit your application on our dedicated Careers page.",
+        options: ["See Careers", "Main Menu"],
       });
       return;
     }
@@ -486,7 +620,18 @@ export default function Chatbot() {
     }
 
     // Lead Gen Triggers
-    if (lowerText.includes("consultation") || lowerText.includes("connect") || lowerText.includes("schedule") || lowerText.includes("inquire") || lowerText === "yes, connect" || lowerText === "connect now") {
+    if (
+      lowerText.includes("consultation") || 
+      lowerText.includes("connect") || 
+      lowerText.includes("schedule") || 
+      lowerText.includes("inquire") || 
+      lowerText.includes("pricing") ||
+      lowerText.includes("quote") ||
+      lowerText === "yes, connect" || 
+      lowerText === "connect now" ||
+      lowerText === "inquire pricing" ||
+      lowerText === "support inquiry"
+    ) {
       setMode("lead_gen");
       setCurrentStep("name");
       addMessage({ sender: "bot", text: "Excellent. Let's capture your project requirements. What is your full name?" });
@@ -494,12 +639,21 @@ export default function Chatbot() {
     }
 
     // Reset / Main Menu
-    if (lowerText.includes("main menu") || lowerText.includes("other services") || lowerText.includes("start over")) {
+    if (lowerText.includes("main menu") || lowerText.includes("other services") || lowerText.includes("start over") || lowerText === "see services") {
       addMessage({
         sender: "bot",
         text: "What domain of DIGINET solutions would you like to review?",
         options: ["Cybersecurity", "App Eng", "Web Design", "Marketing", "Consultation"],
       });
+      return;
+    }
+
+    // Redirect to careers page
+    if (lowerText === "see careers") {
+      if (typeof window !== "undefined") {
+        window.location.href = "/about/career";
+      }
+      addMessage({ sender: "bot", text: "Redirecting you to our Career opportunities..." });
       return;
     }
 
@@ -562,7 +716,7 @@ export default function Chatbot() {
 
     addMessage({
       sender: "bot",
-      text: "I am trained to support queries on Cybersecurity, Enterprise App Engineering, Custom Web Architectures, and B2B PPC Marketing. How would you like to proceed?",
+      text: "I am trained to support queries on Pricing, Support/SLAs, Tech Stack, Cybersecurity, App Engineering, Custom Web Architectures, and B2B PPC Marketing. How can I assist you?",
       options: ["Cybersecurity", "App Eng", "Web Design", "Marketing", "Consultation"],
     });
   };
@@ -590,10 +744,51 @@ export default function Chatbot() {
       case "phone":
         if (!validatePhone(val)) { addMessage({ sender: "bot", text: "Please enter a valid telephone format." }); return; }
         setUserData((prev) => ({ ...prev, phone: val }));
+        setCurrentStep("interest");
+        addMessage({ 
+          sender: "bot", 
+          text: "Which of our key capabilities is the primary focus of this project inquiry?",
+          options: ["Cybersecurity", "App/Software Engineering", "Website Designing", "Growth Marketing"]
+        });
+        break;
+      case "interest":
+        const cleanInterest = val.replace("App/Software Engineering", "App Eng").replace("Website Designing", "Web Design").replace("Growth Marketing", "Marketing");
+        setUserData((prev) => ({ ...prev, interest: val }));
+        setCurrentStep("serviceDetail");
+        
+        // Formulate conditional follow-up question
+        if (val.includes("Cybersecurity")) {
+          addMessage({
+            sender: "bot",
+            text: "Understood. Are there specific compliance frameworks or audits required for your systems?",
+            options: ["GDPR / PDPA / DPDPA Compliance", "SOC 2 / ISO 27001", "HIPAA Compliance", "General Infrastructure Audit"]
+          });
+        } else if (val.includes("Engineering") || val.includes("App")) {
+          addMessage({
+            sender: "bot",
+            text: "Excellent. What is the target platform for your software product?",
+            options: ["Mobile App (iOS/Android)", "SaaS Web Platform", "Enterprise System / Cloud Migration", "Custom API / Database Setup"]
+          });
+        } else if (val.includes("Designing") || val.includes("Web")) {
+          addMessage({
+            sender: "bot",
+            text: "Got it. Are we designing a brand-new corporate site, or performing an optimization audit?",
+            options: ["Brand-New Corporate Website", "Full Web Redesign", "Page Speed & CLS Audit", "E-commerce Build"]
+          });
+        } else {
+          addMessage({
+            sender: "bot",
+            text: "Understood. What is the primary channel you wish to target for user acquisition?",
+            options: ["Google Search Ads", "Meta & LinkedIn Paid Ads", "Technical SEO Strategy", "Full Performance Marketing Audit"]
+          });
+        }
+        break;
+      case "serviceDetail":
+        setUserData((prev) => ({ ...prev, serviceDetail: val }));
         setCurrentStep("budget");
         addMessage({ 
           sender: "bot", 
-          text: "Perfect. What is your estimated project budget?",
+          text: "Understood. What is your estimated project budget?",
           options: ["< $10,000", "$10,000 - $50,000", "$50,000 - $100,000", "$100,000+"]
         });
         break;
@@ -628,7 +823,7 @@ export default function Chatbot() {
           setCurrentStep("done");
           addMessage({ 
             sender: "bot", 
-            text: `Thank you, ${userData.name}.\n\nYour inquiry has been logged successfully under ${userData.company}.\n\nBudget: ${userData.budget}\nTimeline: ${val}\n\nA Senior Solutions Architect will coordinate with you via ${userData.email} or call you at ${userData.phone} within 2 business hours.`,
+            text: `Thank you, ${userData.name}.\n\nYour inquiry has been logged successfully under ${userData.company}.\n\nInterest: ${userData.interest}\nFocus Area: ${userData.serviceDetail}\nBudget: ${userData.budget}\nTimeline: ${userData.timeline}\n\nA Senior Solutions Architect will coordinate with you via ${userData.email} or call you at ${userData.phone} within 2 business hours.`,
             options: ["Start New Session"]
           });
         } else {
@@ -761,7 +956,7 @@ export default function Chatbot() {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   disabled={isTyping}
-                  placeholder={mode === "lead_gen" ? "Enter details here..." : "Ask the Solutions Assistant..."}
+                  placeholder={mode === "lead_gen" ? "Select options above or enter..." : "Ask the Solutions Assistant..."}
                   className="w-full pl-4 pr-12 py-3 bg-slate-950 border border-slate-800 rounded-full text-xs sm:text-sm font-semibold focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500/20 text-slate-100 placeholder-slate-500 transition-all"
                 />
                 <button 
