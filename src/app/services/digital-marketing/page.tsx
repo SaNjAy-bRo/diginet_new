@@ -151,7 +151,7 @@ export default function DigitalMarketingPage() {
       {/* ========================================================
           1. HERO SECTION (Dark background)
           ======================================================== */}
-      <section className="relative w-full bg-[#06142D] pt-[130px] pb-16 md:pb-24 overflow-hidden">
+      <section className="relative w-full bg-[#06142D] pt-[120px] sm:pt-[130px] md:pt-[140px] pb-16 md:pb-24 overflow-hidden">
         
         {/* Background ambient grids/effects */}
         <div className="absolute inset-0 pointer-events-none">

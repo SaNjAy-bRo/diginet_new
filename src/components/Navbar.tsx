@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Menu, X, ArrowRight, Monitor, Shield, AppWindow, Megaphone, Phone, Mail, Smartphone, Target, HelpCircle, Briefcase, Info, Award } from "lucide-react";
+import { ChevronDown, Menu, X, ArrowRight, Monitor, Shield, AppWindow, Megaphone, Phone, Mail, Smartphone, Target, HelpCircle, Briefcase, Info, Award, Server } from "lucide-react";
 import { useBooking } from "@/context/BookingContext";
 
 const services = [
@@ -40,6 +40,22 @@ const services = [
     icon: Shield,
     color: "text-emerald-400",
     bg: "bg-emerald-500/10",
+  },
+  {
+    name: "IT Services",
+    href: "/services/it-services",
+    description: "Managed infrastructure, cloud migration, and SLA support.",
+    icon: Server,
+    color: "text-blue-400",
+    bg: "bg-blue-500/10",
+  },
+  {
+    name: "IT Consultancy",
+    href: "/services/it-consultancy",
+    description: "Strategic tech roadmaps, solution design, and audits.",
+    icon: Briefcase,
+    color: "text-purple-400",
+    bg: "bg-purple-500/10",
   },
 ];
 

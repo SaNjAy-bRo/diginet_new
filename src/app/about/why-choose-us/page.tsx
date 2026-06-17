@@ -93,7 +93,7 @@ export default function WhyChooseUsPage() {
           1. HERO SECTION (Skyscrapers Dusk background)
           ========================================== */}
       <section 
-        className="relative w-full bg-[#06142D] pt-[115px] pb-10 sm:pb-12 md:pb-14 overflow-hidden bg-cover bg-center"
+        className="relative w-full bg-[#06142D] pt-[120px] sm:pt-[130px] md:pt-[140px] pb-12 md:pb-16 overflow-hidden bg-cover bg-center"
         style={{ backgroundImage: `url('/images/why_choose_us_office_bg.png')` }}
       >
         {/* Dark gradient overlay */}

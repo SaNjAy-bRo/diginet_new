@@ -63,7 +63,7 @@ export default function MissionVisionPage() {
       {/* ==========================================
           1. HERO SECTION (Dark theme)
           ========================================== */}
-      <section className="relative w-full bg-[#06142D] pt-[95px] sm:pt-[100px] md:pt-[105px] pb-16 md:pb-24 overflow-hidden">
+      <section className="relative w-full bg-[#06142D] pt-[120px] sm:pt-[130px] md:pt-[140px] pb-16 md:pb-24 overflow-hidden">
         {/* Background ambient grids/effects */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-[-10%] right-[-10%] h-[550px] w-[550px] rounded-full bg-cyan-500/10 blur-[130px]" />

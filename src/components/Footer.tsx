@@ -32,6 +32,8 @@ const categories: FooterCategory[] = [
       { label: "Mobile Development", href: "/services/mobile-development" },
       { label: "Web Development", href: "/services/web-development" },
       { label: "Cybersecurity", href: "/services/cybersecurity" },
+      { label: "IT Services", href: "/services/it-services" },
+      { label: "IT Consultancy", href: "/services/it-consultancy" },
     ],
   },
 ];
@@ -152,7 +154,7 @@ export default function Footer() {
               
               {/* Singapore HQ */}
               <div className="flex flex-col gap-3.5">
-                <span className="text-[10px] font-extrabold text-white uppercase tracking-wider border-b border-slate-800 pb-1 w-fit pr-4">Singapore (HQ)</span>
+                <span className="text-[10px] font-extrabold text-white uppercase tracking-wider border-b border-slate-800 pb-1 w-fit pr-4">Singapore</span>
                 <div className="flex items-start gap-2.5">
                   <MapPin className="h-4.5 w-4.5 text-cyan-400 shrink-0 mt-0.5" />
                   <span>7 Temasek Boulevard, #12-07, Suntec Tower 1, Singapore 038987</span>
@@ -171,7 +173,7 @@ export default function Footer() {
 
               {/* India Branch */}
               <div className="flex flex-col gap-3.5">
-                <span className="text-[10px] font-extrabold text-white uppercase tracking-wider border-b border-slate-800 pb-1 w-fit pr-4">India Branch</span>
+                <span className="text-[10px] font-extrabold text-white uppercase tracking-wider border-b border-slate-800 pb-1 w-fit pr-4">India</span>
                 <div className="flex items-start gap-2.5">
                   <MapPin className="h-4.5 w-4.5 text-cyan-400 shrink-0 mt-0.5" />
                   <span>2nd Floor, Business Bay Centre, Udupi–Manipal Highway, Kunjibettu, Udupi, Karnataka 576102, India</span>

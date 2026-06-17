@@ -42,6 +42,16 @@ const services = {
     slug: "social-media-management",
     title: "Corporate Thought Leadership & Content",
     heroSubtitle: "Comprehensive B2B content strategies, executive thought leadership positioning, and professional social media management to maximize company market share."
+  },
+  "it-services": {
+    slug: "it-services",
+    title: "IT Services & Cloud Infrastructure",
+    heroSubtitle: "ITIL-aligned managed infrastructure, active directory set ups, SLA backups, cloud migrations, and proactive network desktop support desk operations."
+  },
+  "it-consultancy": {
+    slug: "it-consultancy",
+    title: "IT Consultancy & Tech Roadmaps",
+    heroSubtitle: "Strategic advisory, system architecture designs, microservices migrations, compliance audits, and custom software consulting roadmap layouts."
   }
 };
 
@@ -392,8 +402,8 @@ export default function Chatbot() {
     {
       id: "1",
       sender: "bot",
-      text: "Welcome to DIGINET Enterprise Portal. I am your Solutions Assistant.\n\nI can provide details on Cybersecurity, Web Architecture, App Engineering, PPC Growth Marketing, or connect you with our engineering desks.",
-      options: ["Cybersecurity", "App Eng", "Web Design", "Marketing", "Consultation"],
+      text: "Welcome to DIGINET Enterprise Portal. I am your Solutions Assistant.\n\nI can provide details on Cybersecurity, Web Architecture, App Engineering, PPC Growth Marketing, IT Services, IT Consultancy, or connect you with our engineering desks.",
+      options: ["Cybersecurity", "App Eng", "Web Design", "Marketing", "IT Services", "IT Consultancy", "Consultation"],
     },
   ]);
   
@@ -622,7 +632,7 @@ export default function Chatbot() {
     if (lowerText.includes("address") || lowerText.includes("location") || lowerText.includes("office") || lowerText.includes("where")) {
       addMessage({
         sender: "bot",
-        text: "Our physical locations are:\n\n🇸🇬 **Global HQ**: 7 Temasek Boulevard, #12-07, Suntec Tower 1, Singapore 038987\n\n🇮🇳 **India Branch**: 2nd Floor, Business Bay Centre, Udupi–Manipal Highway, Kunjibettu, Udupi, Karnataka 576102, India\n\nWould you like to schedule an engineering consultation?",
+        text: "Our physical locations are:\n\n🇸🇬 **Singapore**: 7 Temasek Boulevard, #12-07, Suntec Tower 1, Singapore 038987\n\n🇮🇳 **India**: 2nd Floor, Business Bay Centre, Udupi–Manipal Highway, Kunjibettu, Udupi, Karnataka 576102, India\n\nWould you like to schedule an engineering consultation?",
         options: ["Request Consultation", "Main Menu"],
       });
       return;
@@ -631,7 +641,7 @@ export default function Chatbot() {
     if (lowerText.includes("contact") || lowerText.includes("phone") || lowerText.includes("email") || lowerText.includes("number")) {
       addMessage({
         sender: "bot",
-        text: "Contact Channels:\n\n🇸🇬 **Singapore HQ Tel**: +65 6460 4000\n🇮🇳 **India Branch Tel**: +91 99863 89444\n📧 **Corporate Mail**: info@diginet.sg\n\nWould you like to initiate a structured inquiry?",
+        text: "Contact Channels:\n\n🇸🇬 **Singapore Tel**: +65 6460 4000\n🇮🇳 **India Tel**: +91 99863 89444\n📧 **Corporate Mail**: info@diginet.sg\n\nWould you like to initiate a structured inquiry?",
         options: ["Inquire Now", "Main Menu"],
       });
       return;
@@ -655,7 +665,7 @@ export default function Chatbot() {
       addMessage({ 
         sender: "bot", 
         text: "Excellent. Let's capture your project requirements first.\n\nWhich of our key capabilities is the primary focus of this project inquiry?",
-        options: ["Cybersecurity", "Web Development", "Mobile Development", "Growth Marketing"] 
+        options: ["Cybersecurity", "Web Development", "Mobile Development", "Growth Marketing", "IT Services", "IT Consultancy"] 
       });
       return;
     }
@@ -665,7 +675,7 @@ export default function Chatbot() {
       addMessage({
         sender: "bot",
         text: "What domain of DIGINET solutions would you like to review?",
-        options: ["Cybersecurity", "Web Dev", "Mobile Dev", "Marketing", "Consultation"],
+        options: ["Cybersecurity", "Web Dev", "Mobile Dev", "Marketing", "IT Services", "IT Consultancy", "Consultation"],
       });
       return;
     }
@@ -696,6 +706,26 @@ export default function Chatbot() {
     }
 
     // --- BROAD CATEGORY CHECKS ---
+    if (lowerText.includes("consultancy") || lowerText.includes("consulting") || lowerText.includes("advisor") || lowerText.includes("cto") || lowerText.includes("roadmap")) {
+      setSelectedServices(prev => Array.from(new Set([...prev, "IT Consultancy"])));
+      addMessage({
+        sender: "bot",
+        text: "We provide strategic virtual CTO advisory, solution architecture planning, and compliance/governance mapping. Shall we design a tech roadmap?",
+        options: ["IT Consultancy", "Consultation"],
+      });
+      return;
+    }
+
+    if (lowerText.includes("it services") || lowerText.includes("infrastructure") || lowerText.includes("server") || lowerText.includes("sla") || lowerText.includes("backup") || lowerText.includes("managed services")) {
+      setSelectedServices(prev => Array.from(new Set([...prev, "IT Services"])));
+      addMessage({
+        sender: "bot",
+        text: "We deliver ITIL-aligned managed infrastructure, SLA-guaranteed backups, cloud migrations, and desktop support desks. How can we support your IT operations?",
+        options: ["IT Services", "Consultation"],
+      });
+      return;
+    }
+
     if (lowerText.includes("web") || lowerText.includes("site") || lowerText.includes("design") || lowerText.includes("development") || lowerText.includes("dev")) {
       setSelectedServices(prev => Array.from(new Set([...prev, "Web Development"])));
       addMessage({
@@ -738,8 +768,8 @@ export default function Chatbot() {
 
     addMessage({
       sender: "bot",
-      text: "I am trained to support queries on Pricing, Support/SLAs, Tech Stack, Cybersecurity, Web Development, Mobile Development, and B2B PPC Growth Marketing. How can I assist you?",
-      options: ["Cybersecurity", "Web Dev", "Mobile Dev", "Marketing", "Consultation"],
+      text: "I am trained to support queries on Pricing, Support/SLAs, Tech Stack, Cybersecurity, Web Development, Mobile Development, IT Services, IT Consultancy, and B2B PPC Growth Marketing. How can I assist you?",
+      options: ["Cybersecurity", "Web Dev", "Mobile Dev", "Marketing", "IT Services", "IT Consultancy", "Consultation"],
     });
   };
 
@@ -755,6 +785,18 @@ export default function Chatbot() {
             sender: "bot",
             text: "Understood. Are there specific compliance frameworks or audits required for your systems?",
             options: ["GDPR / PDPA / DPDPA Compliance", "SOC 2 / ISO 27001", "HIPAA Compliance", "General Infrastructure Audit"]
+          });
+        } else if (val.includes("IT Services")) {
+          addMessage({
+            sender: "bot",
+            text: "Understood. What is the main objective for your enterprise IT environment?",
+            options: ["Infrastructure & Server SLA Management", "Cloud Migration / Hybrid Ops", "24/7 Help Desk & Desktop Operations", "Backups & Disaster Recovery Strategy"]
+          });
+        } else if (val.includes("IT Consultancy")) {
+          addMessage({
+            sender: "bot",
+            text: "Excellent choice. What strategic advisory support do you require?",
+            options: ["Virtual CTO / Technical Advisory", "Solution Architecture Design", "Digital Transformation & Audits", "Budget Optimization & Governance Strategy"]
           });
         } else if (val.includes("Mobile") || val.includes("App")) {
           addMessage({

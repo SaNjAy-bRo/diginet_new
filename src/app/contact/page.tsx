@@ -18,7 +18,7 @@ interface OfficeInfo {
 const offices: OfficeInfo[] = [
   {
     id: "singapore",
-    branchName: "Singapore (HQ)",
+    branchName: "Singapore",
     address: "7 Temasek Boulevard, #12-07, Suntec Tower 1, Singapore 038987",
     phone: "+6564604000",
     phoneDisplay: "+65 6460 4000",
@@ -28,7 +28,7 @@ const offices: OfficeInfo[] = [
   },
   {
     id: "india",
-    branchName: "India Branch",
+    branchName: "India",
     address: "2nd Floor, Business Bay Centre, Udupi–Manipal Highway, Kunjibettu, Udupi, Karnataka 576102, India",
     phone: "+919986389444",
     phoneDisplay: "+91 99863 89444",
@@ -160,6 +160,8 @@ export default function Contact() {
                             <option value="web-development">Web Development</option>
                             <option value="mobile-development">Mobile Development</option>
                             <option value="digital-marketing">Digital Marketing</option>
+                            <option value="it-services">IT Services</option>
+                            <option value="it-consultancy">IT Consultancy</option>
                           </select>
                           <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
                         </div>

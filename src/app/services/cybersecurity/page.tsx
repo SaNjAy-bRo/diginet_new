@@ -121,7 +121,7 @@ export default function CybersecurityPage() {
       {/* ========================================================
           1. HERO SECTION (Dark background)
           ======================================================== */}
-      <section className="relative w-full bg-[#06142D] pt-[95px] sm:pt-[100px] md:pt-[105px] pb-10 md:pb-14 overflow-hidden">
+      <section className="relative w-full bg-[#06142D] pt-[120px] sm:pt-[130px] md:pt-[140px] pb-10 md:pb-12 overflow-hidden">
         
         {/* Background ambient grids/effects */}
         <div className="absolute inset-0 pointer-events-none">

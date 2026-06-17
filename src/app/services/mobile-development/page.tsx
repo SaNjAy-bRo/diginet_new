@@ -125,7 +125,7 @@ export default function MobileDevelopmentPage() {
       {/* ========================================================
           1. HERO SECTION (Dark background)
           ======================================================== */}
-      <section className="relative w-full bg-[#06142D] pt-[90px] sm:pt-[96px] md:pt-[100px] pb-8 md:pb-10 overflow-hidden">
+      <section className="relative w-full bg-[#06142D] pt-[120px] sm:pt-[130px] md:pt-[140px] pb-10 md:pb-12 overflow-hidden">
         
         {/* Background ambient grids/effects */}
         <div className="absolute inset-0 pointer-events-none">
@@ -1261,7 +1261,7 @@ export default function MobileDevelopmentPage() {
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12">
           
           <div 
-            className="w-full rounded-[24px] shadow-2xl relative flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-6 md:py-0 h-auto md:h-[150px] gap-6 md:gap-0"
+            className="w-full rounded-[24px] shadow-2xl relative flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-8 md:py-8 h-auto md:h-[190px] gap-6 md:gap-0"
             style={{ 
               background: "linear-gradient(135deg, #011E62 0%, #003CB0 50%, #011A54 100%)",
               boxShadow: "0 20px 40px -15px rgba(0, 60, 176, 0.3)"
@@ -1323,7 +1323,7 @@ export default function MobileDevelopmentPage() {
 
               {/* Angled Phone Container (Floating and slightly taller than the banner itself) */}
               <motion.div 
-                className="absolute md:bottom-[-20px] md:top-[-20px] w-[88px] h-[175px] bg-slate-950 border-[3.5px] border-slate-900 rounded-[18px] shadow-2xl overflow-hidden flex flex-col p-1.5 items-center justify-center z-10"
+                className="w-[88px] h-[175px] bg-slate-950 border-[3.5px] border-slate-900 rounded-[18px] shadow-2xl overflow-hidden flex flex-col p-1.5 items-center justify-center z-10"
                 style={{
                   transform: "rotate(-12deg) skewX(2deg)",
                   boxShadow: "0 15px 35px -5px rgba(0, 0, 0, 0.4), 0 0 25px rgba(0, 114, 255, 0.15)"

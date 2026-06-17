@@ -98,7 +98,7 @@ export default function FAQPage() {
   return (
     <main className="w-full bg-slate-50 overflow-hidden min-h-screen">
       {/* 1. HERO SECTION (Dark gradient background) */}
-      <section className="relative w-full bg-[#06142D] pt-[115px] pb-12 overflow-hidden bg-cover bg-center">
+      <section className="relative w-full bg-[#06142D] pt-[120px] sm:pt-[130px] md:pt-[140px] pb-16 md:pb-24 overflow-hidden bg-cover bg-center">
         {/* Ambient grids & radial glows */}
         <div className="absolute inset-0 pointer-events-none z-0">
           <div className="absolute top-[-10%] right-[-10%] h-[550px] w-[550px] rounded-full bg-cyan-500/10 blur-[130px]" />
