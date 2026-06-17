@@ -876,7 +876,7 @@ export default function WebDevelopmentPage() {
                   {ind.icon}
                 </div>
                 <h3 className="text-xs sm:text-sm font-extrabold text-slate-900 font-poppins mb-2 leading-tight">{ind.title}</h3>
-                <p className="hidden md:block text-xs sm:text-sm text-slate-500 leading-relaxed font-normal md:text-justify">{ind.desc}</p>
+                <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal">{ind.desc}</p>
               </div>
             ))}
           </div>
@@ -924,13 +924,13 @@ export default function WebDevelopmentPage() {
                 desc: "24/7 technical monitoring, database backups, and regular feature updates."
               }
             ].map((choose, idx) => (
-              <div key={idx} className="flex flex-row items-start gap-4 text-left justify-start group">
-                <div className="h-16 w-16 rounded-full border border-slate-200/80 shadow-md shadow-slate-100/50 flex items-center justify-center bg-white shrink-0 transition-all duration-300 group-hover:scale-105 group-hover:border-[#0072FF]/40 relative mt-0.5">
+              <div key={idx} className="flex flex-row items-center gap-4 text-left justify-start group">
+                <div className="h-16 w-16 rounded-full border border-slate-200/80 shadow-md shadow-slate-100/50 flex items-center justify-center bg-white shrink-0 transition-all duration-300 group-hover:scale-105 group-hover:border-[#0072FF]/40 relative">
                   {choose.icon}
                 </div>
                 <div className="flex flex-col">
                   <h3 className="text-[13px] font-extrabold text-slate-900 font-poppins mb-1 leading-tight">{choose.title}</h3>
-                  <p className="text-sm md:text-xs text-slate-500 leading-normal font-normal max-w-none md:max-w-[160px] md:text-justify">{choose.desc}</p>
+                  <p className="text-xs text-slate-500 leading-normal font-normal max-w-[160px]">{choose.desc}</p>
                 </div>
               </div>
             ))}
