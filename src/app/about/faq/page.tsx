@@ -139,12 +139,12 @@ export default function FAQPage() {
             <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 mt-8 text-xs text-slate-350 bg-slate-900/40 backdrop-blur-md border border-white/5 py-3 px-6 rounded-full max-w-xl mx-auto">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-cyan-400" />
-                <span>Call us: <a href="tel:+6567880099" className="font-bold text-white hover:text-cyan-400 transition-colors">+65 6788-0099</a></span>
+                <span>Call us: <a href="tel:+6564604000" className="font-bold text-white hover:text-cyan-400 transition-colors">+65 6460 4000</a></span>
               </div>
               <div className="w-1.5 h-1.5 rounded-full bg-slate-700 hidden sm:block" />
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-cyan-400" />
-                <span>Email: <a href="mailto:enquiry@diginet.com" className="font-bold text-white hover:text-cyan-400 transition-colors">enquiry@diginet.com</a></span>
+                <span>Email: <a href="mailto:info@diginet.sg" className="font-bold text-white hover:text-cyan-400 transition-colors">info@diginet.sg</a></span>
               </div>
             </div>
           </motion.div>

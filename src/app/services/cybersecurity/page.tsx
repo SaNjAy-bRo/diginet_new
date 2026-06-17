@@ -800,15 +800,15 @@ export default function CybersecurityPage() {
                     <div className="flex items-center gap-3 text-xs md:text-sm">
                       <Phone className="h-4 w-4 text-cyan-400 shrink-0" />
                       <span className="text-slate-350">Call us:</span>
-                      <a href="tel:+15554322023" className="font-bold text-white hover:text-cyan-400 transition-colors">
-                        +1 (555) 432-2023
+                      <a href="tel:+6564604000" className="font-bold text-white hover:text-cyan-400 transition-colors">
+                        +65 6460 4000
                       </a>
                     </div>
                     <div className="flex items-center gap-3 text-xs md:text-sm">
                       <Mail className="h-4 w-4 text-cyan-400 shrink-0" />
                       <span className="text-slate-350">Email:</span>
-                      <a href="mailto:hello@diginetsolutions.com" className="font-bold text-white hover:text-cyan-400 transition-colors">
-                        hello@diginetsolutions.com
+                      <a href="mailto:info@diginet.sg" className="font-bold text-white hover:text-cyan-400 transition-colors">
+                        info@diginet.sg
                       </a>
                     </div>
                   </div>

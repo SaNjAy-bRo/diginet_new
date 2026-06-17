@@ -83,8 +83,8 @@ export default function PrivacyPage() {
               </p>
               <div className="flex items-center gap-3 mt-4 text-xs sm:text-sm text-cyan-600 bg-cyan-50 border border-cyan-100 py-3 px-6 rounded-2xl w-fit font-bold">
                 <Mail className="w-4.5 h-4.5 text-cyan-500 shrink-0" />
-                <a href="mailto:compliance@diginet.com" className="hover:text-cyan-700 transition-colors">
-                  compliance@diginet.com
+                <a href="mailto:compliance@diginet.sg" className="hover:text-cyan-700 transition-colors">
+                  compliance@diginet.sg
                 </a>
               </div>
             </section>
@@ -112,7 +112,7 @@ export default function PrivacyPage() {
             Stop worrying about technology problems. Focus completely on your core business goals. Let us provide the technical reliability and support you deserve.
           </p>
           <a
-            href="mailto:enquiry@diginet.com"
+            href="mailto:info@diginet.sg"
             className="cursor-pointer px-8 py-3.5 rounded-full font-extrabold text-xs sm:text-sm shadow-md transition-all duration-300 bg-cta-blue text-white hover:bg-hover-blue hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2 shadow-cyan-500/10"
           >
             Contact us Now

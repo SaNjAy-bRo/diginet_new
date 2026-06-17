@@ -339,7 +339,7 @@ export default function Contact() {
             Contact our engineering desks today. Let us build the resilient software platform your team deserves to maximize operational output.
           </p>
           <a
-            href="mailto:enquiry@diginet.com"
+            href="mailto:info@diginet.sg"
             className="cursor-pointer px-8 py-3.5 rounded-full font-extrabold text-xs sm:text-sm shadow-md transition-all duration-300 bg-cta-blue text-white hover:bg-hover-blue hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2 shadow-cyan-500/10"
           >
             Email Corporate Desk
