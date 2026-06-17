@@ -14,39 +14,39 @@ type Message = {
 };
 
 type ChatMode = "chat" | "lead_gen";
-type LeadStep = "name" | "email" | "phone" | "message" | "done";
+type LeadStep = "name" | "company" | "email" | "phone" | "budget" | "timeline" | "message" | "done";
 
 // Services definitions for DIGINET
 const services = {
   "cybersecurity": {
     slug: "cybersecurity",
-    title: "Cybersecurity",
-    heroSubtitle: "Zero-Trust Infrastructure Protection & Vulnerability Isolation including cloud VMs, networks, and database endpoints."
+    title: "Cybersecurity & Zero-Trust Engineering",
+    heroSubtitle: "Enterprise Zero-Trust networks, cloud firewall configurations, micro-segmentation, active threat isolation, and rigorous penetration audits aligning with GDPR/DPDPA standards."
   },
   "website-designing": {
     slug: "website-designing",
-    title: "Website Designing",
-    heroSubtitle: "High-conversion web architectures featuring fluid animations, clean typography, and optimized page speed."
+    title: "Web Architecture & Conversions",
+    heroSubtitle: "High-conversion web platforms featuring fluid Framer Motion micro-animations, Tailwind custom styling layouts, optimized script execution, and guaranteed 95+ PageSpeed scores."
   },
   "mobile-development": {
     slug: "mobile-development",
-    title: "Mobile Development",
-    heroSubtitle: "Custom mobile applications for iOS & Android built natively or using cross-platform frameworks."
+    title: "Native & Hybrid Mobile Apps",
+    heroSubtitle: "Custom iOS & Android mobile applications engineered using Swift/Kotlin or high-performance cross-platform SDKs (React Native, Flutter) with native biometrics and offline sync."
   },
   "application-development": {
     slug: "application-development",
-    title: "Application Development",
-    heroSubtitle: "High-performance enterprise software, scalable cloud systems, and distributed databases."
+    title: "Enterprise Software & Cloud Systems",
+    heroSubtitle: "Scalable backend services, custom SaaS development, high-concurrency database setups, APIs integration, and cloud migrations (AWS, GCP, Azure)."
   },
   "digital-marketing": {
     slug: "digital-marketing",
-    title: "Digital Marketing",
-    heroSubtitle: "Results-driven online growth using paid advertising campaigns (Google, Meta, LinkedIn) and technical SEO rankings."
+    title: "PPC Growth & Acquisition Marketing",
+    heroSubtitle: "Data-driven performance campaigns across Google, Meta, and LinkedIn with continuous A/B landing page optimization, telemetry analytics tracking, and advanced technical SEO campaigns."
   },
   "social-media-management": {
     slug: "social-media-management",
-    title: "Social Media Management",
-    heroSubtitle: "Corporate social media management with specialized content strategies and executive thought leadership posting."
+    title: "Corporate Thought Leadership & Content",
+    heroSubtitle: "Comprehensive B2B content strategies, executive thought leadership positioning, and professional social media management to maximize company market share."
   }
 };
 
@@ -354,9 +354,9 @@ export default function Chatbot() {
 
     const speakMessages = [
       { text: "Hi! 👋", expression: "excited" as const },
-      { text: "Need any help?", expression: "focused" as const },
-      { text: "Ask me anything!", expression: "happy" as const },
-      { text: "Let's connect!", expression: "excited" as const },
+      { text: "Need corporate IT help?", expression: "focused" as const },
+      { text: "Consult our engineering AI!", expression: "happy" as const },
+      { text: "Let's align your systems!", expression: "excited" as const },
     ];
 
     // Show initial bubble after 3 seconds
@@ -397,16 +397,19 @@ export default function Chatbot() {
     {
       id: "1",
       sender: "bot",
-      text: "Hi! I'm the DIGINET AI.\n\nAsk me about Cybersecurity, Software Development, Web Design, or Digital Marketing.",
-      options: ["Cybersecurity", "App Dev", "Web Design", "Marketing", "Connect"],
+      text: "Welcome to DIGINET Enterprise Portal. I am your Solutions Assistant.\n\nI can provide details on Cybersecurity, Web Architecture, App Engineering, PPC Growth Marketing, or connect you with our engineering desks.",
+      options: ["Cybersecurity", "App Eng", "Web Design", "Marketing", "Consultation"],
     },
   ]);
   
   const [inputValue, setInputValue] = useState("");
   const [userData, setUserData] = useState({
     name: "",
+    company: "",
     email: "",
     phone: "",
+    budget: "",
+    timeline: "",
     message: "",
   });
   
@@ -435,9 +438,10 @@ export default function Chatbot() {
   };
 
   const validateName = (name: string) => name.trim().length >= 2;
+  const validateCompany = (comp: string) => comp.trim().length >= 2;
   const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const validatePhone = (phone: string) => {
-    const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+    const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,10}$/im;
     return phoneRegex.test(phone.trim());
   };
 
@@ -446,18 +450,18 @@ export default function Chatbot() {
     addMessage({ sender: "user", text });
     setInputValue("");
     setIsTyping(true);
-    setTimeout(() => processInput(text), 1500 + Math.random() * 1000); 
+    setTimeout(() => processInput(text), 1000 + Math.random() * 800); 
   };
 
   const generateAIResponse = (text: string) => {
     const lowerText = text.toLowerCase();
     
     // Greetings
-    if (/^(hi|hello|hey)\b/.test(lowerText)) {
+    if (/^(hi|hello|hey|greetings)\b/.test(lowerText)) {
       addMessage({
         sender: "bot",
-        text: "Hello! How can I help you today?",
-        options: ["Cybersecurity", "App Dev", "Web Design", "Marketing", "Connect"],
+        text: "Hello! How can I assist you with DIGINET capabilities today?",
+        options: ["Cybersecurity", "App Eng", "Web Design", "Marketing", "Consultation"],
       });
       return;
     }
@@ -466,8 +470,8 @@ export default function Chatbot() {
     if (lowerText.includes("address") || lowerText.includes("location") || lowerText.includes("office") || lowerText.includes("where")) {
       addMessage({
         sender: "bot",
-        text: "Our Global HQ is located at:\n\n**7 Temasek Boulevard, #12-07, Suntec Tower 1, Singapore 038987**\n\nAnd our India branch is located at:\n\n**2nd Floor, Business Bay Centre, Udupi–Manipal Highway, Kunjibettu, Udupi, Karnataka 576102, India**\n\nWould you like to schedule a call or request consultation?",
-        options: ["Schedule Call", "Main Menu"],
+        text: "Our physical locations are:\n\n🇸🇬 **Global HQ**: 7 Temasek Boulevard, #12-07, Suntec Tower 1, Singapore 038987\n\n🇮🇳 **India Branch**: 2nd Floor, Business Bay Centre, Udupi–Manipal Highway, Kunjibettu, Udupi, Karnataka 576102, India\n\nWould you like to schedule an engineering consultation?",
+        options: ["Request Consultation", "Main Menu"],
       });
       return;
     }
@@ -475,17 +479,17 @@ export default function Chatbot() {
     if (lowerText.includes("contact") || lowerText.includes("phone") || lowerText.includes("email") || lowerText.includes("number")) {
       addMessage({
         sender: "bot",
-        text: "You can reach us at:\n\n📞 **+65 6460 4000** (Singapore HQ)\n📞 **+91 99863 89444** (India Branch)\n📧 **info@diginet.sg**\n\nOr I can collect your details and have our team call you?",
-        options: ["Connect Now", "Main Menu"],
+        text: "Contact Channels:\n\n🇸🇬 **Singapore HQ Tel**: +65 6460 4000\n🇮🇳 **India Branch Tel**: +91 99863 89444\n📧 **Corporate Mail**: info@diginet.sg\n\nWould you like to initiate a structured inquiry?",
+        options: ["Inquire Now", "Main Menu"],
       });
       return;
     }
 
     // Lead Gen Triggers
-    if (lowerText.includes("connect") || lowerText.includes("schedule") || lowerText === "yes, connect" || lowerText === "connect now" || lowerText === "schedule call") {
+    if (lowerText.includes("consultation") || lowerText.includes("connect") || lowerText.includes("schedule") || lowerText.includes("inquire") || lowerText === "yes, connect" || lowerText === "connect now") {
       setMode("lead_gen");
       setCurrentStep("name");
-      addMessage({ sender: "bot", text: "Great! Let's get some details. What's your name?" });
+      addMessage({ sender: "bot", text: "Excellent. Let's capture your project requirements. What is your full name?" });
       return;
     }
 
@@ -493,8 +497,8 @@ export default function Chatbot() {
     if (lowerText.includes("main menu") || lowerText.includes("other services") || lowerText.includes("start over")) {
       addMessage({
         sender: "bot",
-        text: "I'm here to help with IT, development, and marketing capabilities. What would you like to explore?",
-        options: ["Cybersecurity", "App Dev", "Web Design", "Marketing", "Connect"],
+        text: "What domain of DIGINET solutions would you like to review?",
+        options: ["Cybersecurity", "App Eng", "Web Design", "Marketing", "Consultation"],
       });
       return;
     }
@@ -509,19 +513,19 @@ export default function Chatbot() {
       setSelectedServices(prev => Array.from(new Set([...prev, matchedService.title])));
       addMessage({
         sender: "bot",
-        text: `${matchedService.title}: ${matchedService.heroSubtitle}\n\nShall we connect?`,
+        text: `**${matchedService.title}**\n\n${matchedService.heroSubtitle}\n\nWould you like to schedule a session with our solutions architects?`,
         options: ["Yes, connect", "Other services"],
       });
       return;
     }
 
     // --- BROAD CATEGORY CHECKS ---
-    if (lowerText.includes("web") || lowerText.includes("site")) {
+    if (lowerText.includes("web") || lowerText.includes("site") || lowerText.includes("design")) {
       setSelectedServices(prev => Array.from(new Set([...prev, "Website Designing"])));
       addMessage({
         sender: "bot",
-        text: "We design and build high-performance custom corporate websites. Interested in a build or audit?",
-        options: ["Website Designing", "Connect"],
+        text: "We design and deploy premium corporate web layouts with optimized Core Web Vitals (Framer Motion, Tailwind, 95+ PageSpeed scores). Do you need a design build or site audit?",
+        options: ["Website Designing", "Consultation"],
       });
       return;
     }
@@ -530,64 +534,93 @@ export default function Chatbot() {
       setSelectedServices(prev => Array.from(new Set([...prev, "Digital Marketing"])));
       addMessage({
         sender: "bot",
-        text: "We specialize in Google Ads, Meta campaigns, SEO rankings, and Social Media Management. Which do you need?",
-        options: ["Digital Marketing", "Social Media Management", "Connect"],
+        text: "Our marketing desks run campaigns across search and social channels, integrating full user heatmaps and structured SEO audits to increase lead generation. Which specific service fits your objective?",
+        options: ["Digital Marketing", "Social Media Management", "Consultation"],
       });
       return;
     }
 
-    if (lowerText.includes("security") || lowerText.includes("cyber") || lowerText.includes("compliance")) {
+    if (lowerText.includes("security") || lowerText.includes("cyber") || lowerText.includes("firewall") || lowerText.includes("compliance")) {
       setSelectedServices(prev => Array.from(new Set([...prev, "Cybersecurity"])));
       addMessage({
         sender: "bot",
-        text: "We provide Zero-Trust network engineering, security penetration audits, and active threat monitoring. Shall we discuss your security posture?",
-        options: ["Cybersecurity", "Connect"],
+        text: "We build zero-trust corporate environments, isolate cloud resources, and run automated intrusion tests. Would you like to review your organization's security posture?",
+        options: ["Cybersecurity", "Consultation"],
       });
       return;
     }
 
-    if (lowerText.includes("app") || lowerText.includes("software") || lowerText.includes("dev") || lowerText.includes("code") || lowerText.includes("mobile") || lowerText.includes("android") || lowerText.includes("ios")) {
+    if (lowerText.includes("app") || lowerText.includes("software") || lowerText.includes("dev") || lowerText.includes("code") || lowerText.includes("mobile") || lowerText.includes("android") || lowerText.includes("ios") || lowerText.includes("backend")) {
       setSelectedServices(prev => Array.from(new Set([...prev, "Application Development"])));
       addMessage({
         sender: "bot",
-        text: "We develop native mobile apps (iOS & Android) and high-concurrency enterprise software. What are you building?",
-        options: ["Application Development", "Mobile Development", "Connect"],
+        text: "We build native/hybrid mobile apps (React Native, Flutter) and enterprise backend software with distributed database configurations. What are your architectural requirements?",
+        options: ["Application Development", "Mobile Development", "Consultation"],
       });
       return;
     }
 
     addMessage({
       sender: "bot",
-      text: "I'm here to help with Cybersecurity, App Development, Web Design, and Marketing. What can I do for you?",
-      options: ["Cybersecurity", "App Dev", "Web Design", "Marketing", "Connect"],
+      text: "I am trained to support queries on Cybersecurity, Enterprise App Engineering, Custom Web Architectures, and B2B PPC Marketing. How would you like to proceed?",
+      options: ["Cybersecurity", "App Eng", "Web Design", "Marketing", "Consultation"],
     });
   };
 
   const processLeadGen = async (val: string) => {
     switch (currentStep) {
       case "name":
-        if (!validateName(val)) { addMessage({ sender: "bot", text: "Please enter a valid name." }); return; }
+        if (!validateName(val)) { addMessage({ sender: "bot", text: "Please enter a valid name (at least 2 characters)." }); return; }
         setUserData((prev) => ({ ...prev, name: val }));
+        setCurrentStep("company");
+        addMessage({ sender: "bot", text: `Pleasure meeting you, ${val}. Which organization or company are you representing?` });
+        break;
+      case "company":
+        if (!validateCompany(val)) { addMessage({ sender: "bot", text: "Please enter a valid company name." }); return; }
+        setUserData((prev) => ({ ...prev, company: val }));
         setCurrentStep("email");
-        addMessage({ sender: "bot", text: `Hi ${val}! What is your email address?` });
+        addMessage({ sender: "bot", text: "Thanks! What is your corporate email address?" });
         break;
       case "email":
-        if (!validateEmail(val)) { addMessage({ sender: "bot", text: "Please enter a valid email." }); return; }
+        if (!validateEmail(val)) { addMessage({ sender: "bot", text: "Please enter a valid corporate email format." }); return; }
         setUserData((prev) => ({ ...prev, email: val }));
         setCurrentStep("phone");
-        addMessage({ sender: "bot", text: "Great! And your phone number?" });
+        addMessage({ sender: "bot", text: "Understood. What phone number (including country code) should our engineering desk use to contact you?" });
         break;
       case "phone":
-        if (!validatePhone(val)) { addMessage({ sender: "bot", text: "Please enter a valid number." }); return; }
-        const finalData = { ...userData, phone: val, message: selectedServices.join(", ") || "General Interest" };
+        if (!validatePhone(val)) { addMessage({ sender: "bot", text: "Please enter a valid telephone format." }); return; }
+        setUserData((prev) => ({ ...prev, phone: val }));
+        setCurrentStep("budget");
+        addMessage({ 
+          sender: "bot", 
+          text: "Perfect. What is your estimated project budget?",
+          options: ["< $10,000", "$10,000 - $50,000", "$50,000 - $100,000", "$100,000+"]
+        });
+        break;
+      case "budget":
+        setUserData((prev) => ({ ...prev, budget: val }));
+        setCurrentStep("timeline");
+        addMessage({ 
+          sender: "bot", 
+          text: "Excellent. What is your target timeline for this project?",
+          options: ["Immediate (within 30 days)", "Short Term (1 - 3 months)", "Planning & Research"]
+        });
+        break;
+      case "timeline":
+        setUserData((prev) => ({ ...prev, timeline: val }));
+        setCurrentStep("message");
+        addMessage({ sender: "bot", text: "Lastly, please write a brief description of your key challenges or technical goals:" });
+        break;
+      case "message":
+        const finalData = { ...userData, message: val };
         setUserData(finalData);
         setIsTyping(true);
         
-        // Simulate lead submission client-side
+        // Simulate corporate lead submission API client-side
         const result = await new Promise<{ success: boolean }>((resolve) => {
           setTimeout(() => {
             resolve({ success: true });
-          }, 1500);
+          }, 1800);
         });
 
         setIsTyping(false);
@@ -595,26 +628,26 @@ export default function Chatbot() {
           setCurrentStep("done");
           addMessage({ 
             sender: "bot", 
-            text: "Thank you! Your inquiry has been sent to our team. We will connect you shortly.",
-            options: ["Start New Chat"]
+            text: `Thank you, ${userData.name}.\n\nYour inquiry has been logged successfully under ${userData.company}.\n\nBudget: ${userData.budget}\nTimeline: ${val}\n\nA Senior Solutions Architect will coordinate with you via ${userData.email} or call you at ${userData.phone} within 2 business hours.`,
+            options: ["Start New Session"]
           });
         } else {
-          addMessage({ sender: "bot", text: "Oops, something went wrong. Could you please try again or contact us via phone?" });
+          addMessage({ sender: "bot", text: "Submission pipeline encountered an exception. Please contact our corporate desk directly." });
         }
         break;
       case "done":
-        if (val.toLowerCase().includes("new chat") || val.toLowerCase().includes("start")) {
+        if (val.toLowerCase().includes("session") || val.toLowerCase().includes("start") || val.toLowerCase().includes("new")) {
           setMode("chat");
           setCurrentStep("name");
           setSelectedServices([]);
           setMessages([{
             id: "1",
             sender: "bot",
-            text: "Hi! I'm the DIGINET AI.\n\nAsk me about Cybersecurity, Software Development, Web Design, or Digital Marketing.",
-            options: ["Cybersecurity", "App Dev", "Web Design", "Marketing", "Connect"],
+            text: "Welcome to DIGINET Enterprise Portal. I am your Solutions Assistant.\n\nI can provide details on Cybersecurity, Web Architecture, App Engineering, PPC Growth Marketing, or connect you with our engineering desks.",
+            options: ["Cybersecurity", "App Eng", "Web Design", "Marketing", "Consultation"],
           }]);
         } else {
-          addMessage({ sender: "bot", text: "We have received your inquiry. Thank you!" });
+          addMessage({ sender: "bot", text: "Our solutions desks are currently reviewing your parameters. Thank you!" });
         }
         break;
     }
@@ -653,8 +686,8 @@ export default function Chatbot() {
                   <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-slate-950 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></span>
                 </div>
                 <div>
-                  <h3 className="font-bold text-sm text-slate-100 tracking-tight leading-none mb-1">DIGINET AI</h3>
-                  <p className="text-[9px] text-slate-400 font-extrabold uppercase tracking-widest leading-none">Online</p>
+                  <h3 className="font-bold text-sm text-slate-100 tracking-tight leading-none mb-1">DIGINET Architect AI</h3>
+                  <p className="text-[9px] text-slate-400 font-extrabold uppercase tracking-widest leading-none">Enterprise Consultation Desk</p>
                 </div>
               </div>
               <button 
@@ -728,7 +761,7 @@ export default function Chatbot() {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   disabled={isTyping}
-                  placeholder="Type a message..."
+                  placeholder={mode === "lead_gen" ? "Enter details here..." : "Ask the Solutions Assistant..."}
                   className="w-full pl-4 pr-12 py-3 bg-slate-950 border border-slate-800 rounded-full text-xs sm:text-sm font-semibold focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500/20 text-slate-100 placeholder-slate-500 transition-all"
                 />
                 <button 
