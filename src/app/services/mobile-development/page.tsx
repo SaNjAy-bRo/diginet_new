@@ -618,19 +618,19 @@ export default function MobileDevelopmentPage() {
                           <stop offset="100%" stopColor="#0072FF" />
                         </linearGradient>
                       </defs>
-                      {/* Red/Orange Chevron */}
-                      <path
-                        d="M 32 28 L 53 50 L 32 72"
-                        stroke="url(#orangeGrad)"
-                        strokeWidth="15"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
                       {/* Blue/Cyan Chevron */}
                       <path
                         d="M 68 28 L 47 50 L 68 72"
                         stroke="url(#blueGrad)"
-                        strokeWidth="15"
+                        strokeWidth="18"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      {/* Red/Orange Chevron */}
+                      <path
+                        d="M 32 28 L 53 50 L 32 72"
+                        stroke="url(#orangeGrad)"
+                        strokeWidth="18"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
@@ -1351,16 +1351,16 @@ export default function MobileDevelopmentPage() {
                       </linearGradient>
                     </defs>
                     <path
-                      d="M 32 28 L 53 50 L 32 72"
-                      stroke="url(#ctaOrangeGrad2)"
-                      strokeWidth="15"
+                      d="M 68 28 L 47 50 L 68 72"
+                      stroke="url(#ctaBlueGrad2)"
+                      strokeWidth="18"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                     <path
-                      d="M 68 28 L 47 50 L 68 72"
-                      stroke="url(#ctaBlueGrad2)"
-                      strokeWidth="15"
+                      d="M 32 28 L 53 50 L 32 72"
+                      stroke="url(#ctaOrangeGrad2)"
+                      strokeWidth="18"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
