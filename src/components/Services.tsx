@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Code, Cloud, Megaphone, Check, ArrowRight } from "lucide-react";
+import { Code, Cloud, Megaphone, Check } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface ServiceItem {
@@ -84,7 +84,7 @@ export default function Services() {
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              className={`group relative flex flex-col justify-between rounded-2xl md:rounded-[20px] border border-slate-200/80 bg-white p-8 md:p-9 shadow-lg shadow-slate-100/50 hover:scale-[1.01] hover:-translate-y-1.5 transition-all duration-300 ${service.hoverGlow}`}
+              className={`group relative flex flex-col rounded-2xl md:rounded-[20px] border border-slate-200/80 bg-white p-8 md:p-9 shadow-lg shadow-slate-100/50 hover:scale-[1.01] hover:-translate-y-1.5 transition-all duration-300 ${service.hoverGlow}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -107,7 +107,7 @@ export default function Services() {
                 </p>
 
                 {/* Bullet List */}
-                <div className="flex flex-col gap-3.5 mb-8">
+                <div className="flex flex-col gap-3.5">
                   {service.features.map((feature) => (
                     <div key={feature} className="flex items-center gap-3">
                       <div className="h-5 w-5 rounded-full border border-sky-100 bg-sky-50/70 flex items-center justify-center shrink-0">
@@ -120,15 +120,6 @@ export default function Services() {
                   ))}
                 </div>
               </div>
-
-              {/* Action Link */}
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-1 text-sm font-bold text-accent-blue hover:text-hover-blue transition-colors group/link pt-4 border-t border-slate-100"
-              >
-                Learn more
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" />
-              </a>
             </motion.div>
           ))}
         </div>

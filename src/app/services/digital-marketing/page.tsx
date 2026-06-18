@@ -625,21 +625,12 @@ export default function DigitalMarketingPage() {
                 desc: "Engage your audience with compelling content and social strategies that build brand loyalty."
               }
             ].map((srv, idx) => (
-              <div key={idx} className="group bg-white border border-slate-100 p-8 md:p-10 rounded-[24px] flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-blue-100/80 transition-all duration-300">
-                <div>
-                  <div className="h-16 w-16 rounded-2xl bg-blue-50/50 flex items-center justify-center mb-8 border border-blue-100/50 transition-all duration-300 group-hover:scale-105">
-                    {srv.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 font-poppins mb-4">{srv.title}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed font-normal mb-8">{srv.desc}</p>
+              <div key={idx} className="group bg-white border border-slate-100 p-8 md:p-10 rounded-[24px] shadow-sm hover:shadow-xl hover:border-blue-100/80 transition-all duration-300">
+                <div className="h-16 w-16 rounded-2xl bg-blue-50/50 flex items-center justify-center mb-8 border border-blue-100/50 transition-all duration-300 group-hover:scale-105">
+                  {srv.icon}
                 </div>
-                <button
-                  onClick={openBooking}
-                  className="inline-flex items-center text-sm font-bold text-[#1877F2] hover:text-blue-700 transition-colors group/link mt-auto w-fit"
-                >
-                  Learn more
-                  <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
-                </button>
+                <h3 className="text-xl font-bold text-slate-900 font-poppins mb-4">{srv.title}</h3>
+                <p className="text-sm text-slate-500 leading-relaxed font-normal">{srv.desc}</p>
               </div>
             ))}
           </div>
@@ -1046,17 +1037,6 @@ export default function DigitalMarketingPage() {
                           <span className="text-[9px] text-slate-400 font-bold uppercase tracking-wider mt-1.5 leading-normal">{m.label}</span>
                         </div>
                       ))}
-                    </div>
-
-                    {/* Action Link */}
-                    <div className="pt-4 mt-1">
-                      <button
-                        onClick={openBooking}
-                        className="inline-flex items-center text-xs font-bold text-blue-600 hover:text-blue-700 transition-colors group/cs"
-                      >
-                        View Case Study
-                        <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover/cs:translate-x-1" />
-                      </button>
                     </div>
                   </div>
                 </div>

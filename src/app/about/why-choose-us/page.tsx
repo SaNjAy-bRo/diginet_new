@@ -268,17 +268,13 @@ export default function WhyChooseUsPage() {
                     </p>
                   </div>
 
-                  <div className="flex items-center justify-between border-t border-slate-200/60 pt-4 mt-auto">
+                  <div className="flex items-center border-t border-slate-200/60 pt-4 mt-auto">
                     <div className="flex items-center gap-2">
                       <div className={`p-1.5 rounded-lg ${study.bg} ${study.color}`}>
                         <IconComponent className="w-4 h-4" />
                       </div>
                       <span className="text-xs font-bold text-slate-700">Client Success Case</span>
                     </div>
-                    <button onClick={openBooking} className="text-xs font-bold text-cyan-600 hover:text-cyan-700 flex items-center gap-1 cursor-pointer">
-                      View Case Study
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
                   </div>
                 </motion.div>
               );

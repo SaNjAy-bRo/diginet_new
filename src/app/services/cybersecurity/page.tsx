@@ -349,16 +349,9 @@ export default function CybersecurityPage() {
                   <h3 className="text-base md:text-lg font-bold text-slate-900 font-poppins mb-2 leading-tight">
                     {srv.title}
                   </h3>
-                  <p className="text-xs md:text-sm text-slate-500 leading-relaxed font-normal mb-4">
+                  <p className="text-xs md:text-sm text-slate-500 leading-relaxed font-normal">
                     {srv.desc}
                   </p>
-                  <button
-                    onClick={openBooking}
-                    className="inline-flex items-center text-xs md:text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors group/link w-fit"
-                  >
-                    Learn more
-                    <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
-                  </button>
                 </div>
               </div>
             ))}
@@ -546,16 +539,6 @@ export default function CybersecurityPage() {
                     </div>
                   ))}
                 </div>
-              </div>
-
-              <div className="pt-4 mt-auto border-t border-slate-100/60">
-                <button
-                  onClick={openBooking}
-                  className="inline-flex items-center text-xs font-bold text-blue-600 hover:text-blue-700 transition-colors group/link"
-                >
-                  View case study
-                  <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform group-hover/link:translate-x-1" />
-                </button>
               </div>
             </div>
 

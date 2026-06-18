@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface CaseItem {
@@ -52,15 +51,6 @@ export default function CaseStudies() {
               Real results. Real impact.
             </h2>
           </div>
-          <div className="mt-4 sm:mt-0">
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-1 text-xs md:text-sm font-bold text-accent-blue hover:text-hover-blue transition-colors group"
-            >
-              View all case studies
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
-          </div>
         </div>
 
         {/* Case Studies Grid */}
@@ -84,17 +74,9 @@ export default function CaseStudies() {
                   {c.title}
                 </h3>
                 
-                <p className="hidden sm:block text-[10px] sm:text-xs text-slate-500 leading-relaxed mb-3">
+                <p className="hidden sm:block text-[10px] sm:text-xs text-slate-500 leading-relaxed">
                   {c.description}
                 </p>
-
-                <a
-                  href={c.href}
-                  className="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold text-accent-blue hover:text-hover-blue transition-colors group/link"
-                >
-                  View case study
-                  <ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover/link:translate-x-1" />
-                </a>
               </div>
 
               {/* Right Column (Image Thumbnail) */}

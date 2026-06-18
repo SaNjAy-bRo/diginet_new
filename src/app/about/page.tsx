@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { 
   Shield, Eye, Award, CheckCircle, Code, PieChart, UserCheck, 
-  ArrowRight, Download, Users, Network, Globe, TrendingUp,
+  ArrowRight, Users, Network, Globe, TrendingUp,
   Calendar, User, Cpu, ShieldAlert 
 } from "lucide-react";
 import { useBooking } from "@/context/BookingContext";
@@ -13,11 +13,6 @@ import Image from "next/image";
 
 export default function About() {
   const { openBooking } = useBooking();
-
-  const handleDownloadBrochure = (e: React.MouseEvent) => {
-    e.preventDefault();
-    alert("Corporate brochure download initiated. (Brochure PDF template would download here)");
-  };
 
   const timeline = [
     {
@@ -152,15 +147,8 @@ export default function About() {
 
             <div className="flex flex-wrap gap-4">
               <button
-                onClick={handleDownloadBrochure}
-                className="cursor-pointer px-6 py-3 rounded-full font-bold text-xs shadow-md transition-all duration-300 bg-slate-900 text-white hover:bg-slate-800 hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2"
-              >
-                <Download className="w-4 h-4" />
-                Download Corporate Brochure
-              </button>
-              <button
                 onClick={openBooking}
-                className="cursor-pointer px-6 py-3 rounded-full font-bold text-xs transition-all duration-300 border border-slate-300 text-slate-700 hover:bg-slate-50 inline-flex items-center gap-2"
+                className="cursor-pointer px-6 py-3 rounded-full font-bold text-xs shadow-md transition-all duration-300 bg-slate-900 text-white hover:bg-slate-800 hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2"
               >
                 Book Consultation
                 <ArrowRight className="w-4 h-4" />
@@ -216,21 +204,15 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="p-8 rounded-2xl bg-white border border-slate-200 hover:border-cyan-400/50 hover:shadow-lg transition-all text-left flex flex-col justify-between group"
+              className="p-8 rounded-2xl bg-white border border-slate-200 hover:border-cyan-400/50 hover:shadow-lg transition-all text-left group"
             >
-              <div>
-                <div className="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center mb-6">
-                  <Code className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">What We Do</h3>
-                <p className="text-xs md:text-sm text-slate-600 leading-relaxed mb-6">
-                  Technology can be complicated, but we simplify it for you so you can focus completely on growing your business operations.
-                </p>
+              <div className="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center mb-6">
+                <Code className="w-6 h-6" />
               </div>
-              <Link href="/services" className="text-xs font-bold text-cyan-600 group-hover:text-cyan-700 flex items-center gap-1.5 mt-auto">
-                Find Out More
-                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-              </Link>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">What We Do</h3>
+              <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
+                Technology can be complicated, but we simplify it for you so you can focus completely on growing your business operations.
+              </p>
             </motion.div>
 
             {/* Card 2: Who We Help */}
@@ -239,21 +221,15 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="p-8 rounded-2xl bg-white border border-slate-200 hover:border-cyan-400/50 hover:shadow-lg transition-all text-left flex flex-col justify-between group"
+              className="p-8 rounded-2xl bg-white border border-slate-200 hover:border-cyan-400/50 hover:shadow-lg transition-all text-left group"
             >
-              <div>
-                <div className="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center mb-6">
-                  <PieChart className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Who We Help?</h3>
-                <p className="text-xs md:text-sm text-slate-600 leading-relaxed mb-6">
-                  Our professional IT support frees your business to focus on key areas, improve worker productivity, and scale seamlessly.
-                </p>
+              <div className="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center mb-6">
+                <PieChart className="w-6 h-6" />
               </div>
-              <button onClick={openBooking} className="text-xs font-bold text-cyan-600 group-hover:text-cyan-700 flex items-center gap-1.5 mt-auto focus:outline-none cursor-pointer">
-                Solve Core Business Problems
-                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-              </button>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Who We Help?</h3>
+              <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
+                Our professional IT support frees your business to focus on key areas, improve worker productivity, and scale seamlessly.
+              </p>
             </motion.div>
 
             {/* Card 3: Why Choose Us */}
@@ -262,21 +238,15 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="p-8 rounded-2xl bg-white border border-slate-200 hover:border-cyan-400/50 hover:shadow-lg transition-all text-left flex flex-col justify-between group"
+              className="p-8 rounded-2xl bg-white border border-slate-200 hover:border-cyan-400/50 hover:shadow-lg transition-all text-left group"
             >
-              <div>
-                <div className="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center mb-6">
-                  <UserCheck className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Why Choose Us</h3>
-                <p className="text-xs md:text-sm text-slate-600 leading-relaxed mb-6">
-                  We have a genuine passion to help you scale your business and will partner with your team every step of the way.
-                </p>
+              <div className="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center mb-6">
+                <UserCheck className="w-6 h-6" />
               </div>
-              <Link href="/about/why-choose-us" className="text-xs font-bold text-cyan-600 group-hover:text-cyan-700 flex items-center gap-1.5 mt-auto">
-                Find Out More
-                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-              </Link>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Why Choose Us</h3>
+              <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
+                We have a genuine passion to help you scale your business and will partner with your team every step of the way.
+              </p>
             </motion.div>
           </div>
         </div>
@@ -410,17 +380,13 @@ export default function About() {
                     </p>
                   </div>
 
-                  <div className="flex items-center justify-between border-t border-slate-200/60 pt-4 mt-auto">
+                  <div className="flex items-center border-t border-slate-200/60 pt-4 mt-auto">
                     <div className="flex items-center gap-2">
                       <div className={`p-1.5 rounded-lg ${art.bg} ${art.color}`}>
                         <IconComponent className="w-4 h-4" />
                       </div>
                       <span className="text-xs font-bold text-slate-700">{art.author}</span>
                     </div>
-                    <button onClick={openBooking} className="text-xs font-bold text-cyan-600 hover:text-cyan-700 flex items-center gap-1 cursor-pointer">
-                      Read Article
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
                   </div>
                 </motion.div>
               );
