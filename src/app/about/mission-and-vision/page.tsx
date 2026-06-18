@@ -7,6 +7,7 @@ import {
   HelpCircle, ShieldCheck, Heart 
 } from "lucide-react";
 import { useBooking } from "@/context/BookingContext";
+import Link from "next/link";
 
 export default function MissionVisionPage() {
   const { openBooking } = useBooking();
@@ -192,13 +193,13 @@ export default function MissionVisionPage() {
               </div>
             </div>
             
-            <button
-              onClick={openBooking}
+            <Link
+              href="/contact"
               className="cursor-pointer self-start px-6 py-3 rounded-xl font-extrabold text-xs transition-all duration-300 bg-cyan-400 text-slate-950 hover:bg-cyan-300 hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2 relative z-10"
             >
               Get in touch
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </Link>
           </motion.div>
 
         </div>
@@ -338,13 +339,13 @@ export default function MissionVisionPage() {
           <p className="text-slate-300 mb-10 max-w-xl mx-auto text-xs sm:text-sm md:text-base leading-relaxed font-medium">
             Stop worrying about technology problems. Focus completely on your core business goals. Let us provide the technical reliability and support you deserve.
           </p>
-          <button
-            onClick={openBooking}
+          <Link
+            href="/contact"
             className="cursor-pointer px-8 py-3.5 rounded-full font-extrabold text-xs sm:text-sm shadow-md transition-all duration-300 bg-cta-blue text-white hover:bg-hover-blue hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2 shadow-cyan-500/10"
           >
             Contact us Now
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </Link>
         </div>
       </section>
     </main>

@@ -385,13 +385,6 @@ export default function CybersecurityPage() {
               <p className="text-xs md:text-sm text-slate-400 leading-relaxed mb-6 max-w-[340px]">
                 Our SOC continuously monitors, detects, and responds to threats in real time—so you can stay ahead of attackers and protect what matters most.
               </p>
-              <button
-                onClick={openBooking}
-                className="inline-flex items-center justify-center px-6 py-2.5 rounded-xl text-xs font-semibold text-slate-300 border border-slate-700 bg-white/[0.04] hover:bg-white/[0.08] hover:text-white transition-all duration-300"
-              >
-                How Our SOC Works
-                <ArrowRight className="ml-2 h-3.5 w-3.5" />
-              </button>
             </div>
 
             {/* Right side 4 capabilities columns */}

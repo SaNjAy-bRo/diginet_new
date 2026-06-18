@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Shield, ArrowRight, Mail } from "lucide-react";
+import Link from "next/link";
 
 export default function PrivacyPage() {
   const currentYear = new Date().getFullYear();
@@ -111,13 +112,13 @@ export default function PrivacyPage() {
           <p className="text-slate-300 mb-6 max-w-xl mx-auto text-xs sm:text-sm md:text-base leading-relaxed font-medium">
             Stop worrying about technology problems. Focus completely on your core business goals. Let us provide the technical reliability and support you deserve.
           </p>
-          <a
-            href="mailto:info@diginet.sg"
+          <Link
+            href="/contact"
             className="cursor-pointer px-8 py-3.5 rounded-full font-extrabold text-xs sm:text-sm shadow-md transition-all duration-300 bg-cta-blue text-white hover:bg-hover-blue hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2 shadow-cyan-500/10"
           >
             Contact us Now
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
       </section>
     </main>

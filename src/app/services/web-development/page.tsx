@@ -537,11 +537,6 @@ export default function WebDevelopmentPage() {
                     {srv.desc}
                   </p>
                 </div>
-
-                {/* Chevron Arrow */}
-                <div className="shrink-0 h-8 w-8 rounded-full bg-slate-100/80 border border-slate-200/60 flex items-center justify-center text-slate-400 group-hover:bg-cyan-500 group-hover:border-cyan-500 group-hover:text-white transition-all duration-300">
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </div>
               </div>
             ))}
           </div>
