@@ -27,7 +27,7 @@ export default function Hero() {
       </div>
 
       {/* Main hero content */}
-      <div className="w-full max-w-[1280px] mx-auto px-6 md:px-10 relative z-10">
+      <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 md:px-10 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-12 items-center">
 
           {/* ===== LEFT: Text Content ===== */}
@@ -42,11 +42,11 @@ export default function Hero() {
 
             {/* Main Heading — exactly 2 lines on desktop */}
             <motion.h1
-              className="text-3xl sm:text-[44px] lg:text-[48px] xl:text-[54px] font-black tracking-tight text-white leading-[1.08] mb-4 font-poppins"
+              className="text-[26px] min-[375px]:text-[29px] min-[415px]:text-[32px] sm:text-[44px] lg:text-[48px] xl:text-[54px] font-black tracking-tight text-white leading-[1.08] mb-4 font-poppins"
               custom={1} variants={fadeUp} initial="hidden" animate="visible"
             >
-              <span className="block whitespace-normal md:whitespace-nowrap">Technology. Marketing.</span>
-              <span className="block mt-0.5">
+              <span className="block whitespace-nowrap">Technology. Marketing.</span>
+              <span className="block mt-0.5 whitespace-nowrap">
                 Growth.{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-accent-blue to-hover-blue">
                   Together.
