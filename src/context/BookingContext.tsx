@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState } from "react";
 import BookingModal from "@/components/BookingModal";
+import { useRouter } from "next/navigation";
 
 interface BookingContextType {
   openBooking: () => void;
@@ -13,8 +14,11 @@ const BookingContext = createContext<BookingContextType | undefined>(undefined);
 
 export function BookingProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
-  const openBooking = () => setIsOpen(true);
+  const openBooking = () => {
+    router.push("/contact");
+  };
   const closeBooking = () => setIsOpen(false);
 
   return (
