@@ -29,11 +29,11 @@ const categories: FooterCategory[] = [
     title: "Our Services",
     links: [
       { label: "Digital Marketing", href: "/services/digital-marketing" },
-      { label: "Mobile Development", href: "/services/mobile-development" },
       { label: "Web Development", href: "/services/web-development" },
       { label: "Cybersecurity", href: "/services/cybersecurity" },
       { label: "IT Services", href: "/services/it-services" },
       { label: "IT Consultancy", href: "/services/it-consultancy" },
+      { label: "Mobile Development", href: "/services/mobile-development" },
     ],
   },
 ];

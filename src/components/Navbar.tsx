@@ -18,14 +18,6 @@ const services = [
     bg: "bg-cyan-500/10",
   },
   {
-    name: "Mobile Development",
-    href: "/services/mobile-development",
-    description: "Native iOS & Android apps and cross-platform arrays.",
-    icon: Smartphone,
-    color: "text-indigo-400",
-    bg: "bg-indigo-500/10",
-  },
-  {
     name: "Web Development",
     href: "/services/web-development",
     description: "Elite custom web platforms and full-stack solutions.",
@@ -56,6 +48,14 @@ const services = [
     icon: Briefcase,
     color: "text-purple-400",
     bg: "bg-purple-500/10",
+  },
+  {
+    name: "Mobile Development",
+    href: "/services/mobile-development",
+    description: "Native iOS & Android apps and cross-platform arrays.",
+    icon: Smartphone,
+    color: "text-indigo-400",
+    bg: "bg-indigo-500/10",
   },
 ];
 
